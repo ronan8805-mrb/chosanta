@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services | Chosanta Management — Complete Property &amp; Accommodation Solutions Ireland</title>
+  <meta name="description" content="Full property & accommodation services: asset management, tenant sourcing, fully managed workforce accommodation with on-site staffing, and commercial property management across Ireland." />
+  <meta name="keywords" content="workforce accommodation Ireland, construction accommodation Dublin, property management Drogheda, corporate housing Ireland, infrastructure project accommodation, fully managed accommodation, tenant placement Ireland" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ========================
+       SERVICES PAGE STYLES
+    ======================== */
+    .services-page { padding: 100px 24px; }
+    .services-page-inner { max-width: 1200px; margin: 0 auto; }
+
+    /* Full-width service blocks */
+    .service-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      padding: 80px 0;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .service-block:last-child { border-bottom: none; }
+    .service-block.reverse { direction: rtl; }
+    .service-block.reverse > * { direction: ltr; }
+
+    .service-block-visual {
+      border-radius: var(--radius-lg);
+      position: relative;
+      overflow: hidden;
+      min-height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 36px;
+    }
+    .service-block-visual img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    .service-block-visual-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10,21,32,0.92) 0%, rgba(10,21,32,0.45) 55%, rgba(10,21,32,0.15) 100%);
+    }
+    .service-block-visual-content {
+      position: relative;
+      z-index: 2;
+    }
+    .service-block-visual::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -20%;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(201,168,76,0.2) 0%, transparent 70%);
+    }
+    .service-big-icon {
+      width: 72px;
+      height: 72px;
+      background: rgba(201,168,76,0.12);
+      border: 1.5px solid rgba(201,168,76,0.35);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 1;
+    }
+    .service-big-icon svg {
+      width: 36px;
+      height: 36px;
+      stroke: #c9a84c;
+      fill: none;
+      stroke-width: 1.6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .service-block-visual h3 {
+      color: var(--white);
+      font-size: 1.3rem;
+      margin-bottom: 14px;
+    }
+    .service-visual-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .service-visual-tag {
+      background: rgba(201,168,76,0.15);
+      border: 1px solid rgba(201,168,76,0.35);
+      color: var(--gold-light);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      padding: 6px 14px;
+      border-radius: 50px;
+    }
+    .service-block-text h2 { margin-bottom: 8px; }
+    .service-block-text p {
+      color: var(--gray-600);
+      line-height: 1.85;
+      margin-bottom: 28px;
+    }
+    .service-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .service-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.95rem;
+      color: var(--text-body);
+    }
+    .service-features li .check {
+      width: 22px;
+      height: 22px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dim));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 0.7rem;
+      color: var(--navy);
+      font-weight: 800;
+      margin-top: 1px;
+    }
+    .capacity-banner {
+      background: linear-gradient(135deg, rgba(201,168,76,0.08), rgba(201,168,76,0.03));
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      margin-top: 28px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .capacity-banner .cap-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .capacity-banner .cap-label {
+      font-size: 0.9rem;
+      color: var(--navy);
+      font-weight: 600;
+    }
+    .capacity-banner .cap-sub {
+      font-size: 0.82rem;
+      color: var(--gray-600);
+    }
+
+    @media (max-width: 900px) {
+      .service-block { grid-template-columns: 1fr; gap: 40px; }
+      .service-block.reverse { direction: ltr; }
+    }
+
+    /* ========================
+       PROPERTY TYPES GRID
+    ======================== */
+    .prop-types-section {
+      padding: 80px 24px;
+      background: var(--off-white);
+    }
+    .prop-types-inner { max-width: 1200px; margin: 0 auto; }
+    .prop-types-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 48px;
+    }
+    .prop-type-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 32px;
+      text-align: center;
+      border: 1px solid var(--gray-200);
+      transition: var(--transition);
+    }
+    .prop-type-card:hover {
+      border-color: var(--gold);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-4px);
+    }
+    .prop-type-card .icon { font-size: 2.5rem; margin-bottom: 16px; }
+    .prop-type-card h4 {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+    @media (max-width: 768px) {
+      .prop-types-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .prop-types-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar transparent" id="navbar">
+  <div class="navbar-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/>
+          <rect x="9" y="14" width="6" height="7"/>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <span class="logo-name">Chosanta</span>
+        <span class="logo-sub">Management</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <span class="section-label">Our Services</span>
+    <h1>What We Offer</h1>
+    <p>A complete, end-to-end property solution — managing assets, sourcing tenants, and delivering fully managed accommodation for Ireland's most demanding clients.</p>
+  </div>
+</section>
+
+<!-- SERVICE BLOCKS -->
+<section class="services-page">
+  <div class="services-page-inner">
+
+    <!-- Tenant Sourcing & Placement (NEW) -->
+    <div class="service-block" style="padding-top:40px;">
+      <div class="service-block-visual fade-in">
+        <img src="img/tenant_placement.png" alt="Premium apartment interior — tenant placement" />
+        <div class="service-block-visual-overlay"></div>
+        <div class="service-block-visual-content">
+          <h3>Tenant Sourcing &amp; Placement</h3>
+          <div class="service-visual-tags">
+            <span class="service-visual-tag">Residential</span>
+            <span class="service-visual-tag">Commercial</span>
+            <span class="service-visual-tag">Corporate</span>
+            <span class="service-visual-tag">Long-Term</span>
+            <span class="service-visual-tag">Short-Term</span>
+          </div>
+        </div>
+      </div>
+      <div class="service-block-text fade-in fade-in-delay-1">
+        <span class="section-label">Service 01</span>
+        <h2>Tenant Sourcing &amp; Placement</h2>
+        <span class="gold-line"></span>
+        <p>We secure reliable, high-quality tenants — matching the right occupants to the right properties to maximise long-term value and ensure stable, consistent returns for property owners.</p>
+        <ul class="service-features">
+          <li><span class="check">✓</span>Strategic tenant matching for all property types</li>
+          <li><span class="check">✓</span>Residential and commercial tenant placement</li>
+          <li><span class="check">✓</span>Corporate and workforce occupant sourcing</li>
+          <li><span class="check">✓</span>Vetting and qualification of tenants</li>
+          <li><span class="check">✓</span>Long-term and short-term arrangements</li>
+          <li><span class="check">✓</span>Ongoing tenant relationship management</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Property Portfolio Management -->
+    <div class="service-block">
+      <div class="service-block-visual fade-in">
+        <img src="img/property_management.png" alt="Premium property portfolio" />
+        <div class="service-block-visual-overlay"></div>
+        <div class="service-block-visual-content">
+          <h3>Property Portfolio Management</h3>
+          <div class="service-visual-tags">
+            <span class="service-visual-tag">Hotels</span>
+            <span class="service-visual-tag">Apartments</span>
+            <span class="service-visual-tag">Guesthouses</span>
+            <span class="service-visual-tag">Hostels</span>
+            <span class="service-visual-tag">B&amp;Bs</span>
+            <span class="service-visual-tag">Commercial</span>
+          </div>
+        </div>
+      </div>
+      <div class="service-block-text fade-in fade-in-delay-1">
+        <span class="section-label">Service 02</span>
+        <h2>Property Portfolio Management</h2>
+        <span class="gold-line"></span>
+        <p>We manage a wide and diverse range of properties across Ireland, maintaining the highest standards of operation and presentation at every level. Our professional team ensures efficient day-to-day management so you can focus on growth.</p>
+        <ul class="service-features">
+          <li><span class="check">✓</span>Hotels & boutique accommodations</li>
+          <li><span class="check">✓</span>Bed &amp; Breakfasts and guesthouses</li>
+          <li><span class="check">✓</span>Apartments and residential units</li>
+          <li><span class="check">✓</span>Hostels and shared accommodation</li>
+          <li><span class="check">✓</span>Commercial buildings and offices</li>
+          <li><span class="check">✓</span>High standards, efficient operations</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Workforce Accommodation -->
+    <div class="service-block reverse">
+      <div class="service-block-visual fade-in">
+        <img src="img/workforce_accommodation.png" alt="Large-scale workforce accommodation facility" />
+        <div class="service-block-visual-overlay"></div>
+        <div class="service-block-visual-content">
+          <h3>Workforce &amp; Infrastructure Accommodation</h3>
+          <div class="service-visual-tags">
+            <span class="service-visual-tag">Construction</span>
+            <span class="service-visual-tag">Corporate</span>
+            <span class="service-visual-tag">Infrastructure</span>
+            <span class="service-visual-tag">Short-Term</span>
+            <span class="service-visual-tag">Long-Term</span>
+          </div>
+        </div>
+      </div>
+      <div class="service-block-text fade-in fade-in-delay-1">
+        <span class="section-label">Service 03</span>
+        <h2>Fully Managed Workforce Accommodation</h2>
+        <span class="gold-line"></span>
+        <p>We provide large-scale, fully managed accommodation solutions for construction crews, corporate teams, and infrastructure projects. Strategically positioned near key project zones, our solutions support Ireland's growing infrastructure sector.</p>
+        <ul class="service-features">
+          <li><span class="check">✓</span>Construction crew accommodation</li>
+          <li><span class="check">✓</span>Infrastructure project housing</li>
+          <li><span class="check">✓</span>Corporate team accommodation</li>
+          <li><span class="check">✓</span>Flexible short &amp; long-term stays</li>
+          <li><span class="check">✓</span>Strategic locations near Dublin and key project areas</li>
+          <li><span class="check">✓</span>Fully managed accommodation, including professional staffing and on-site operations</li>
+          <li><span class="check">✓</span>We recruit and manage qualified, fully compliant staff to operate and maintain accommodation, ensuring high standards across all properties and tenant types</li>
+        </ul>
+        <div class="capacity-banner fade-in fade-in-delay-2">
+          <div class="cap-num">2,000</div>
+          <div>
+            <div class="cap-label">Large-scale Capacity</div>
+            <div class="cap-sub">Up to 2,000 workers accommodated at a single time</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Staffing & Operations (Standalone Callout) -->
+    <div class="service-block">
+      <div class="service-block-visual fade-in">
+        <img src="img/staffing_operations.png" alt="Professional staffing and operations management" />
+        <div class="service-block-visual-overlay"></div>
+        <div class="service-block-visual-content">
+          <h3>Staffing &amp; Operations Management</h3>
+          <div class="service-visual-tags">
+            <span class="service-visual-tag">Right Staff</span>
+            <span class="service-visual-tag">Right Framework</span>
+            <span class="service-visual-tag">Fully Compliant</span>
+            <span class="service-visual-tag">All Property Types</span>
+          </div>
+          <blockquote style="margin-top:20px;padding:14px 18px;background:rgba(201,168,76,0.12);border-left:3px solid #c9a84c;border-radius:0 8px 8px 0;">
+            <p style="color:rgba(255,255,255,0.9);font-size:0.88rem;line-height:1.65;font-style:italic;margin:0;">&ldquo;We don&rsquo;t just fill roles &mdash; we build the right team for the right structure.&rdquo;</p>
+          </blockquote>
+        </div>
+      </div>
+      <div class="service-block-text fade-in fade-in-delay-1">
+        <span class="section-label">Staffing &amp; Operations</span>
+        <h2>The Right Staff. The Right Framework.</h2>
+        <span class="gold-line"></span>
+        <p>We recruit and deploy the right people for the right operational framework — matching qualified, fully compliant staff to the specific requirements of each accommodation facility, property type, and client contract.</p>
+        <p style="color:var(--gray-600);line-height:1.85;margin-bottom:28px;font-size:0.95rem;">Whether it's a workforce accommodation site, a managed residential block, or a hospitality property, we understand that each environment demands a different standard of operation — and we staff accordingly.</p>
+        <ul class="service-features">
+          <li><span class="check">✓</span>Framework-matched recruitment for every property type</li>
+          <li><span class="check">✓</span>Fully compliant staff across all regulatory requirements</li>
+          <li><span class="check">✓</span>On-site operations management and daily oversight</li>
+          <li><span class="check">✓</span>Maintenance, housekeeping, and facility personnel</li>
+          <li><span class="check">✓</span>Consistent high standards across all properties and tenant types</li>
+          <li><span class="check">✓</span>Ongoing performance management and staff development</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Commercial Property Management -->
+    <div class="service-block">
+      <div class="service-block-visual fade-in">
+        <img src="img/property_management.png" alt="Commercial property management" style="object-position: center 30%;" />
+        <div class="service-block-visual-overlay"></div>
+        <div class="service-block-visual-content">
+          <h3>Commercial Property Management</h3>
+          <div class="service-visual-tags">
+            <span class="service-visual-tag">Maintenance</span>
+            <span class="service-visual-tag">Tenants</span>
+            <span class="service-visual-tag">Operations</span>
+            <span class="service-visual-tag">Oversight</span>
+          </div>
+        </div>
+      </div>
+      <div class="service-block-text fade-in fade-in-delay-1">
+        <span class="section-label">Service 04</span>
+        <h2>Commercial Property Management</h2>
+        <span class="gold-line"></span>
+        <p>Full-service management of commercial properties with end-to-end operational oversight. We handle everything from maintenance coordination to tenant management so your assets perform at their best.</p>
+        <ul class="service-features">
+          <li><span class="check">✓</span>Full management of commercial properties</li>
+          <li><span class="check">✓</span>Maintenance coordination &amp; oversight</li>
+          <li><span class="check">✓</span>Tenant management &amp; communications</li>
+          <li><span class="check">✓</span>Operational reporting &amp; compliance</li>
+          <li><span class="check">✓</span>Proactive issue resolution</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROPERTY TYPES -->
+<section class="prop-types-section">
+  <div class="prop-types-inner">
+    <div style="text-align:center; max-width:600px; margin:0 auto;">
+      <span class="section-label">Portfolio Types</span>
+      <h2>Properties We Manage</h2>
+      <span class="gold-line center"></span>
+    </div>
+    <div class="prop-types-grid">
+      <div class="prop-type-card fade-in">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="40" height="40"><path d="M3 22V9.5L12 3l9 6.5V22H3z"/><path d="M9 22V16h6v6"/></svg></div>
+        <h4>Hotels</h4>
+      </div>
+      <div class="prop-type-card fade-in fade-in-delay-1">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="40" height="40"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><line x1="12" y1="4" x2="12" y2="10"/><rect x="2" y="20" width="20" height="2" rx="1"/></svg></div>
+        <h4>Bed &amp; Breakfasts</h4>
+      </div>
+      <div class="prop-type-card fade-in fade-in-delay-2">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="40" height="40"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div>
+        <h4>Guesthouses</h4>
+      </div>
+      <div class="prop-type-card fade-in fade-in-delay-1">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="40" height="40"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22V12h6v10"/><path d="M9 7h1m5 0h1M9 11h1m5 0h1"/></svg></div>
+        <h4>Apartments</h4>
+      </div>
+      <div class="prop-type-card fade-in fade-in-delay-2">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="40" height="40"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h4>Hostels</h4>
+      </div>
+      <div class="prop-type-card fade-in fade-in-delay-3">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="40" height="40"><path d="M6 2h12a2 2 0 0 1 2 2v18H4V4a2 2 0 0 1 2-2z"/><path d="M9 22V12h6v10M9 7h1m5 0h1M9 11h1m5 0h1"/></svg></div>
+        <h4>Commercial Buildings</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="padding:80px 24px; background:linear-gradient(135deg,#0d1b2a,#162438); text-align:center;">
+  <div style="max-width:600px; margin:0 auto;">
+    <h2 style="color:#fff; margin-bottom:16px;" class="fade-in">Ready to Get Started?</h2>
+    <p style="color:rgba(255,255,255,0.7); margin-bottom:36px;" class="fade-in fade-in-delay-1">Contact Chosanta Management to discuss your property or accommodation requirements.</p>
+    <a href="contact.html" class="btn btn-primary fade-in fade-in-delay-2">Contact Us Today</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div class="footer-gold-bar"></div>
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2">
+            <path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/>
+            <rect x="9" y="14" width="6" height="7"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Chosanta</span>
+          <span class="logo-sub">Management</span>
+        </div>
+      </div>
+      <p>Premium property management and workforce accommodation solutions across Ireland.</p>
+    </div>
+    <div>
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <ul>
+        <li><a href="services.html">Property Management</a></li>
+        <li><a href="services.html">Workforce Accommodation</a></li>
+        <li><a href="services.html">Commercial Property</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <div class="footer-contact-item">
+        <div class="icon">✉</div>
+        <span>info@chosanta.com</span>
+      </div>
+      <div class="footer-contact-item">
+        <div class="icon">📞</div>
+        <span><a href="tel:+353868305196" style="color:inherit;text-decoration:none;">+353 86 830 5196</a></span>
+      </div>
+      <div class="footer-contact-item">
+        <div class="icon">📍</div>
+        <span>Office 107, Brú Digital Hub,<br>56 West Street, Drogheda,<br>Co. Louth, Ireland · A92 E4CY</span>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Chosanta Management. All rights reserved.</span>
+    <span>Construction Accommodation Dublin · Property Management Drogheda</span>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

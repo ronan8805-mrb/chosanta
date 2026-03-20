@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chosanta Management | Complete Property &amp; Accommodation Solutions Ireland</title>
+  <meta name="description" content="Chosanta Management provides complete, end-to-end property solutions — managing assets, securing tenants, and delivering fully managed workforce accommodation across Ireland." />
+  <meta name="keywords" content="workforce accommodation Ireland, construction accommodation Dublin, property management Drogheda, corporate housing Ireland, infrastructure project accommodation, fully managed accommodation, tenant placement Ireland" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ========================
+       HOME PAGE — HERO
+    ======================== */
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, #0a1520 0%, #0d1b2a 45%, #162438 100%);
+      overflow: hidden;
+    }
+    .hero-bg-pattern {
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 20% 50%, rgba(201,168,76,0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(201,168,76,0.06) 0%, transparent 40%),
+        radial-gradient(circle at 60% 80%, rgba(36,59,85,0.5) 0%, transparent 40%);
+    }
+    .hero-grid-lines {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 120px 24px 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .hero-left {}
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(201,168,76,0.12);
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 50px;
+      padding: 8px 20px;
+      margin-bottom: 28px;
+    }
+    .hero-badge span {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .hero-badge .dot {
+      width: 7px; height: 7px;
+      background: var(--gold);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%,100% { opacity: 1; transform: scale(1); }
+      50%      { opacity: 0.6; transform: scale(1.3); }
+    }
+    .hero h1 {
+      color: var(--white);
+      margin-bottom: 24px;
+    }
+    .hero h1 .highlight {
+      color: var(--gold);
+      position: relative;
+      display: inline-block;
+    }
+    .hero-sub {
+      font-size: 1.12rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.75;
+      margin-bottom: 40px;
+      max-width: 480px;
+    }
+    .hero-cta {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .hero-right {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .hero-stat-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: var(--radius-md);
+      padding: 28px 24px;
+      backdrop-filter: blur(10px);
+      transition: var(--transition);
+    }
+    .hero-stat-card:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(201,168,76,0.45);
+      transform: translateY(-4px);
+    }
+    .hero-stat-card.span2 { grid-column: span 2; }
+    .hero-stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .hero-stat-label {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.6);
+      font-weight: 500;
+    }
+    .hero-stat-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(201,168,76,0.12);
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+    }
+    .hero-stat-icon svg {
+      width: 22px; height: 22px;
+      stroke: #c9a84c; fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .intro-pillar-icon {
+      width: 42px;
+      height: 42px;
+      background: rgba(201,168,76,0.08);
+      border: 1px solid rgba(201,168,76,0.25);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .intro-pillar-icon svg {
+      width: 20px; height: 20px;
+      stroke: var(--gold-dim); fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .card-icon {
+      width: 52px;
+      height: 52px;
+      background: rgba(201,168,76,0.08);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .card-icon svg {
+      width: 26px; height: 26px;
+      stroke: var(--gold-dim); fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    /* scroll indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.4);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      animation: float 3s ease-in-out infinite;
+    }
+    .scroll-indicator .arrow { font-size: 1.2rem; }
+    @keyframes float {
+      0%,100% { transform: translateX(-50%) translateY(0); }
+      50%      { transform: translateX(-50%) translateY(8px); }
+    }
+    @media (max-width: 900px) {
+      .hero-content { grid-template-columns: 1fr; gap: 48px; padding-top: 140px; }
+      .hero-right { max-width: 480px; }
+    }
+    @media (max-width: 560px) {
+      .hero-cta { flex-direction: column; }
+    }
+
+    /* ========================
+       INTRO SECTION
+    ======================== */
+    .intro-section {
+      padding: 100px 24px;
+      background: var(--off-white);
+    }
+    .intro-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .intro-text h2 { margin-bottom: 8px; }
+    .intro-text p {
+      color: var(--gray-600);
+      line-height: 1.85;
+      margin-bottom: 20px;
+    }
+    .intro-pillars {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .intro-pillar {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 20px;
+      background: var(--white);
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-sm);
+      border-left: 3px solid var(--gold);
+      transition: var(--transition);
+    }
+    .intro-pillar:hover {
+      transform: translateX(6px);
+      box-shadow: var(--shadow-md);
+    }
+    .intro-pillar-icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .intro-pillar h4 {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+    .intro-pillar p {
+      font-size: 0.88rem;
+      color: var(--gray-600);
+      margin: 0;
+    }
+    @media (max-width: 900px) {
+      .intro-inner { grid-template-columns: 1fr; gap: 48px; }
+    }
+
+    /* ========================
+       WHAT WE DO (3 columns)
+    ======================== */
+    .services-section {
+      padding: 100px 24px;
+    }
+    .services-header {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 64px;
+    }
+    .services-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .service-card .card-icon { font-size: 2rem; }
+    .service-card h3 { margin-bottom: 12px; }
+    .service-card p { color: var(--gray-600); font-size: 0.95rem; line-height: 1.75; }
+    .service-card .learn-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 24px;
+      color: var(--gold-dim);
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+    .service-card .learn-more:hover { color: var(--gold); gap: 10px; }
+    @media (max-width: 900px) {
+      .services-grid { grid-template-columns: 1fr; max-width: 520px; }
+    }
+
+    /* ========================
+       STATS SECTION
+    ======================== */
+    .stats-section {
+      padding: 80px 24px;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    }
+    .stats-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      text-align: center;
+    }
+    .stat-item {}
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .stat-label {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.65);
+      font-weight: 500;
+      letter-spacing: 0.03em;
+    }
+    @media (max-width: 768px) {
+      .stats-inner { grid-template-columns: 1fr 1fr; gap: 48px; }
+    }
+    @media (max-width: 480px) {
+      .stats-inner { grid-template-columns: 1fr; }
+    }
+
+    /* ========================
+       LOCATION SECTION
+    ======================== */
+    .location-section {
+      padding: 100px 24px;
+      background: var(--gray-100);
+    }
+    .location-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .location-map-placeholder {
+      background: linear-gradient(135deg, var(--navy-mid), var(--navy-light));
+      border-radius: var(--radius-lg);
+      aspect-ratio: 4/3;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(201,168,76,0.3);
+    }
+    .location-map-placeholder::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 50% 50%, rgba(201,168,76,0.2) 0%, transparent 60%);
+    }
+    .location-map-inner {
+      text-align: center;
+      z-index: 1;
+      position: relative;
+    }
+    .location-map-inner .pin { font-size: 4rem; animation: bounce 2s ease-in-out infinite; }
+    @keyframes bounce {
+      0%,100% { transform: translateY(0); }
+      50%      { transform: translateY(-12px); }
+    }
+    .location-map-inner p {
+      color: rgba(255,255,255,0.8);
+      margin-top: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    .location-map-inner span {
+      color: var(--gold);
+      font-size: 0.85rem;
+    }
+    .location-text h2 { margin-bottom: 8px; }
+    .location-text p { color: var(--gray-600); line-height: 1.85; margin-bottom: 28px; }
+    .location-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 8px;
+    }
+    .location-tag {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 50px;
+      padding: 8px 18px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .location-tag::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+    @media (max-width: 900px) {
+      .location-inner { grid-template-columns: 1fr; gap: 48px; }
+    }
+
+    /* ========================
+       CTA SECTION
+    ======================== */
+    .cta-section {
+      padding: 100px 24px;
+      background: linear-gradient(135deg, #0d1b2a 0%, #162438 100%);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, rgba(201,168,76,0.1) 0%, transparent 70%);
+    }
+    .cta-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .cta-section .power-statement {
+      font-size: 1.1rem;
+      color: var(--gold);
+      font-style: italic;
+      margin-bottom: 40px;
+      line-height: 1.6;
+      border-left: 3px solid var(--gold);
+      padding-left: 20px;
+      text-align: left;
+      background: rgba(201,168,76,0.07);
+      padding: 20px 24px;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    }
+    .cta-section h2 { color: var(--white); margin-bottom: 16px; }
+    .cta-section p { color: rgba(255,255,255,0.7); margin-bottom: 40px; font-size: 1.1rem; }
+  </style>
+</head>
+<body>
+
+<!-- ====== NAVBAR ====== -->
+<nav class="navbar transparent" id="navbar">
+  <div class="navbar-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/>
+          <rect x="9" y="14" width="6" height="7"/>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <span class="logo-name">Chosanta</span>
+        <span class="logo-sub">Management</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ====== HERO ====== -->
+<section class="hero" id="home">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        <span>Ireland's Trusted Property Partner</span>
+      </div>
+      <h1>Complete Property &amp; <span class="highlight">Accommodation Solutions</span></h1>
+      <p class="hero-sub">Managing property assets, securing high-quality tenants, and delivering fully managed accommodation solutions across Ireland.</p>
+      <div class="hero-cta">
+        <a href="contact.html" class="btn btn-primary">Contact Us</a>
+        <a href="services.html" class="btn btn-outline">Our Services</a>
+      </div>
+    </div>
+    <div class="hero-right fade-in fade-in-delay-2">
+      <div class="hero-stat-card">
+        <div class="hero-stat-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+        </div>
+        <div class="hero-stat-number stat-number" data-target="2000" data-suffix="+">0+</div>
+        <div class="hero-stat-label">Workers accommodated</div>
+      </div>
+      <div class="hero-stat-card">
+        <div class="hero-stat-icon">
+          <svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22V12h6v10"/><path d="M9 7h1m5 0h1M9 11h1m5 0h1"/></svg>
+        </div>
+        <div class="hero-stat-number stat-number" data-target="50" data-suffix="+">0+</div>
+        <div class="hero-stat-label">Properties managed</div>
+      </div>
+      <div class="hero-stat-card span2">
+        <div class="hero-stat-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="10" r="3"/><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+        </div>
+        <div class="hero-stat-number">Drogheda HQ</div>
+        <div class="hero-stat-label">Serving Dublin, national infrastructure projects &amp; clients across Ireland</div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <span>Scroll</span>
+    <span class="arrow">↓</span>
+  </div>
+</section>
+
+<!-- ====== INTRO ====== -->
+<section class="intro-section">
+  <div class="intro-inner">
+    <div class="intro-text fade-in">
+      <span class="section-label">Who We Are</span>
+      <h2>A Complete, End-to-End Property Solution</h2>
+      <span class="gold-line"></span>
+      <p>Chosanta Management provides a complete, end-to-end property solution for private, corporate, and infrastructure clients.</p>
+      <p>From managing property portfolios and securing the right tenants, to delivering large-scale, fully managed accommodation solutions, we ensure our clients achieve maximum value and long-term performance from their assets.</p>
+      <a href="about.html" class="btn btn-outline-dark">Learn More About Us</a>
+    </div>
+    <div class="intro-pillars fade-in fade-in-delay-1">
+      <div class="intro-pillar">
+        <div class="intro-pillar-icon">
+          <svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22V12h6v10"/><path d="M9 7h1m5 0h1M9 11h1m5 0h1"/></svg>
+        </div>
+        <div>
+          <h4>Property Asset Management</h4>
+          <p>High standards, strong occupancy, and maximum return for property owners.</p>
+        </div>
+      </div>
+      <div class="intro-pillar">
+        <div class="intro-pillar-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div>
+          <h4>Tenant Sourcing &amp; Placement</h4>
+          <p>Matching the right occupants to the right properties to maximise long-term value.</p>
+        </div>
+      </div>
+      <div class="intro-pillar">
+        <div class="intro-pillar-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg>
+        </div>
+        <div>
+          <h4>Fully Managed Accommodation</h4>
+          <p>Large-scale, fully staffed accommodation for construction, corporate &amp; infrastructure clients.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== WHAT WE DO ====== -->
+<section class="services-section">
+  <div class="services-header fade-in">
+    <span class="section-label">What We Do</span>
+    <h2>A Complete Property &amp; Accommodation Solution</h2>
+    <span class="gold-line center"></span>
+    <p style="color:var(--gray-600);margin-top:12px;font-size:1rem;line-height:1.7;">We provide a complete, end-to-end service — managing property assets, securing high-quality tenants, and delivering fully managed accommodation solutions, including professional staffing and operations.</p>
+  </div>
+  <div class="services-grid">
+    <div class="card service-card fade-in fade-in-delay-1">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22V12h6v10"/><path d="M9 7h1m5 0h1M9 11h1m5 0h1"/></svg>
+      </div>
+      <h3>Property Asset Management</h3>
+      <p>We manage a diverse portfolio of properties, ensuring high standards, strong occupancy, and maximum return for our clients — from hotels and guesthouses to apartments and commercial buildings.</p>
+      <a href="services.html" class="learn-more">Explore Services →</a>
+    </div>
+    <div class="card service-card fade-in fade-in-delay-2">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <h3>Tenant Sourcing &amp; Placement</h3>
+      <p>We secure reliable, high-quality tenants — matching the right occupants to the right properties to maximise long-term value and ensure stable, consistent returns.</p>
+      <a href="services.html" class="learn-more">Explore Services →</a>
+    </div>
+    <div class="card service-card fade-in fade-in-delay-3">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+      </div>
+      <h3>Workforce Accommodation</h3>
+      <p>Large-scale accommodation for construction crews, corporate teams, and infrastructure projects — capacity for up to 2,000 workers. We recruit and manage qualified, fully compliant staff to operate and maintain accommodation, ensuring high standards across all properties and tenant types.</p>
+      <a href="services.html" class="learn-more">Explore Services →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ====== STATS ====== -->
+<section class="stats-section">
+  <div class="stats-inner">
+    <div class="stat-item fade-in">
+      <span class="stat-number" data-target="2000" data-suffix="+">0+</span>
+      <span class="stat-label">Workers Accommodated</span>
+    </div>
+    <div class="stat-item fade-in fade-in-delay-1">
+      <span class="stat-number" data-target="50" data-suffix="+">0+</span>
+      <span class="stat-label">Properties Managed</span>
+    </div>
+    <div class="stat-item fade-in fade-in-delay-2">
+      <span class="stat-number" data-target="10" data-suffix="+">0+</span>
+      <span class="stat-label">Years Experience</span>
+    </div>
+    <div class="stat-item fade-in fade-in-delay-3">
+      <span class="stat-number" data-target="100" data-suffix="%">0%</span>
+      <span class="stat-label">Professional Standards</span>
+    </div>
+  </div>
+</section>
+
+<!-- ====== LOCATION ====== -->
+<section class="location-section">
+  <div class="location-inner">
+    <div class="location-map-placeholder fade-in">
+      <div class="location-map-inner">
+        <div style="width:64px;height:64px;background:rgba(201,168,76,0.12);border:1.5px solid rgba(201,168,76,0.4);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;animation:bounce 2s ease-in-out infinite;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="30" height="30"><circle cx="12" cy="10" r="3"/><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+        </div>
+        <p>Drogheda, Co. Louth</p>
+        <span>Serving Dublin · Airport Corridor · Nationwide</span>
+      </div>
+    </div>
+    <div class="location-text fade-in fade-in-delay-1">
+      <span class="section-label">Our Location</span>
+      <h2>Strategically Based in Drogheda</h2>
+      <span class="gold-line"></span>
+      <p>Strategically located in Drogheda, we support clients across Dublin, the airport corridor, and nationwide infrastructure projects. Our central position allows us to respond quickly and manage properties efficiently across the island.</p>
+      <div class="location-tags">
+        <span class="location-tag">Drogheda HQ</span>
+        <span class="location-tag">Dublin</span>
+        <span class="location-tag">Dublin Airport</span>
+        <span class="location-tag">Nationwide</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== WHY CHOSANTA ====== -->
+<section style="padding:100px 24px; background:var(--off-white);">
+  <div style="max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center;">
+    <div class="fade-in">
+      <span class="section-label">Why Chosanta</span>
+      <h2>The Complete Solution — Nothing Left to Chance</h2>
+      <span class="gold-line"></span>
+      <p style="color:var(--gray-600);line-height:1.85;margin-bottom:28px;">Based in Drogheda, Chosanta Management is ideally positioned to support Dublin, the airport corridor, and major infrastructure projects across Ireland. Our clients don't have to worry about a thing — we handle it all.</p>
+      <a href="contact.html" class="btn btn-primary">Discuss Your Requirements</a>
+    </div>
+    <div class="fade-in fade-in-delay-1" style="display:flex;flex-direction:column;gap:14px;">
+      <div class="intro-pillar">
+        <div class="intro-pillar-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg>
+        </div>
+        <div><h4>Complete Property Solution</h4><p>Full asset management from acquisition through to daily operations.</p></div>
+      </div>
+      <div class="intro-pillar">
+        <div class="intro-pillar-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 16.92v.08a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 8.81 19.79 19.79 0 0 1 1.61 2.2 2 2 0 0 1 3.6.02h.08"/></svg>
+        </div>
+        <div><h4>Strategic Tenant Placement</h4><p>The right tenants, secured efficiently, for maximum long-term value.</p></div>
+      </div>
+      <div class="intro-pillar">
+        <div class="intro-pillar-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </div>
+        <div><h4>Fully Managed Operations &amp; Staffing</h4><p>Professional on-site staff and day-to-day operations — fully handled.</p></div>
+      </div>
+      <div class="intro-pillar">
+        <div class="intro-pillar-icon">
+          <svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+        </div>
+        <div><h4>Large-Scale Accommodation Capability</h4><p>Up to 2,000 workers — flexible, scalable, and strategically located.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== CTA ====== -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <div class="power-statement fade-in">
+      "We provide a complete, end-to-end service — managing property assets, securing high-quality tenants, and delivering fully managed accommodation solutions, including professional staffing and operations."
+    </div>
+    <h2 class="fade-in fade-in-delay-1">Looking for a Reliable Partner to Manage Your Property or Accommodation Needs?</h2>
+    <p class="fade-in fade-in-delay-2">Contact us today to discuss how we can support you.</p>
+    <a href="contact.html" class="btn btn-primary fade-in fade-in-delay-3">Contact Us Today</a>
+  </div>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<div class="footer-gold-bar"></div>
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/>
+            <rect x="9" y="14" width="6" height="7"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Chosanta</span>
+          <span class="logo-sub">Management</span>
+        </div>
+      </div>
+      <p>Complete property &amp; accommodation solutions across Ireland. Managing assets, placing tenants, and delivering fully managed workforce accommodation.</p>
+      <p style="margin-top:12px; color:var(--gold); font-style:italic; font-size:0.85rem;">Maximising Property Value. Delivering Fully Managed Accommodation.</p>
+    </div>
+    <div>
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <ul>
+        <li><a href="services.html">Property Asset Management</a></li>
+        <li><a href="services.html">Tenant Sourcing &amp; Placement</a></li>
+        <li><a href="services.html">Workforce Accommodation</a></li>
+        <li><a href="services.html">Commercial Property</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <div class="footer-contact-item">
+        <div class="icon">✉</div>
+        <span>info@chosanta.com</span>
+      </div>
+      <div class="footer-contact-item">
+        <div class="icon">📞</div>
+        <span><a href="tel:+353868305196" style="color:inherit;text-decoration:none;">+353 86 830 5196</a></span>
+      </div>
+      <div class="footer-contact-item">
+        <div class="icon">📍</div>
+        <span>Office 107, Brú Digital Hub,<br>56 West Street, Drogheda,<br>Co. Louth, Ireland · A92 E4CY</span>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Chosanta Management. All rights reserved.</span>
+    <span>Maximising Property Value · Delivering Fully Managed Accommodation</span>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

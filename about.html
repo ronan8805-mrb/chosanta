@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Chosanta Management — Property & Accommodation Solutions Ireland</title>
+  <meta name="description" content="Chosanta Management is a trusted property management company based in Drogheda. We specialise in managing high-quality properties and large-scale workforce accommodation across Ireland." />
+  <meta name="keywords" content="property management Drogheda, workforce accommodation Ireland, corporate housing Ireland, infrastructure accommodation, Chosanta Management" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ========================
+       ABOUT PAGE STYLES
+    ======================== */
+    .about-intro {
+      padding: 100px 24px;
+      background: var(--white);
+    }
+    .about-intro-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .about-intro-text h2 { margin-bottom: 8px; }
+    .about-intro-text p {
+      color: var(--gray-600);
+      line-height: 1.9;
+      margin-bottom: 20px;
+    }
+    .about-visual {
+      background: linear-gradient(135deg, var(--navy), var(--navy-light));
+      border-radius: var(--radius-lg);
+      padding: 48px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-visual::before {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      right: -20%;
+      width: 280px; height: 280px;
+      background: radial-gradient(circle, rgba(201,168,76,0.2) 0%, transparent 70%);
+    }
+    .about-visual-quote {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--white);
+      line-height: 1.55;
+      margin-bottom: 32px;
+      position: relative;
+      z-index: 1;
+    }
+    .about-visual-quote::before {
+      content: '"';
+      font-size: 5rem;
+      color: var(--gold);
+      line-height: 0;
+      display: block;
+      margin-bottom: 20px;
+      margin-top: 24px;
+    }
+    .about-specialisms {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      position: relative;
+      z-index: 1;
+    }
+    .about-specialisms li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: rgba(255,255,255,0.8);
+      font-size: 0.93rem;
+    }
+    .about-specialisms li::before {
+      content: '';
+      width: 8px; height: 8px;
+      background: var(--gold);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 900px) {
+      .about-intro-inner { grid-template-columns: 1fr; gap: 48px; }
+    }
+
+    /* ========================
+       APPROACH SECTION
+    ======================== */
+    .approach-section {
+      padding: 100px 24px;
+      background: var(--off-white);
+    }
+    .approach-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .approach-header {
+      text-align: center;
+      max-width: 560px;
+      margin: 0 auto 64px;
+    }
+    .approach-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .approach-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 36px 28px;
+      text-align: center;
+      border: 1px solid var(--gray-200);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .approach-card::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      transform: scaleX(0);
+      transition: transform var(--transition);
+      transform-origin: left;
+    }
+    .approach-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-4px);
+    }
+    .approach-card:hover::after { transform: scaleX(1); }
+    .approach-card .icon {
+      width: 52px;
+      height: 52px;
+      background: rgba(201,168,76,0.08);
+      border: 1px solid rgba(201,168,76,0.22);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+    .approach-card .icon svg {
+      width: 26px; height: 26px;
+      stroke: var(--gold-dim); fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .approach-card h3 {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+    .approach-card p {
+      font-size: 0.88rem;
+      color: var(--gray-600);
+      line-height: 1.7;
+    }
+    @media (max-width: 900px) {
+      .approach-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .approach-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ========================
+       CLIENTS SECTION
+    ======================== */
+    .clients-section {
+      padding: 100px 24px;
+      background: linear-gradient(135deg, var(--navy), var(--navy-light));
+    }
+    .clients-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .clients-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    .clients-header h2 { color: var(--white); }
+    .clients-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .client-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: var(--radius-md);
+      padding: 40px 32px;
+      backdrop-filter: blur(8px);
+      transition: var(--transition);
+    }
+    .client-card:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(201,168,76,0.5);
+      transform: translateY(-5px);
+    }
+    .client-card .icon {
+      width: 56px;
+      height: 56px;
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .client-card .icon svg {
+      width: 28px; height: 28px;
+      stroke: #c9a84c; fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .client-card h3 {
+      color: var(--white);
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+    }
+    .client-card p {
+      color: rgba(255,255,255,0.65);
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+    @media (max-width: 768px) {
+      .clients-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+    }
+
+    /* ========================
+       POWER STATEMENT BANNER
+    ======================== */
+    .power-banner {
+      padding: 60px 24px;
+      background: var(--gold);
+      text-align: center;
+    }
+    .power-banner blockquote {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      font-weight: 600;
+      color: var(--navy);
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar transparent" id="navbar">
+  <div class="navbar-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/>
+          <rect x="9" y="14" width="6" height="7"/>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <span class="logo-name">Chosanta</span>
+        <span class="logo-sub">Management</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <span class="section-label">About Chosanta</span>
+    <h1>Who We Are</h1>
+    <p>A trusted property management company with a growing portfolio and an unwavering commitment to professionalism across Ireland.</p>
+  </div>
+</section>
+
+<!-- ABOUT INTRO -->
+<section class="about-intro">
+  <div class="about-intro-inner">
+    <div class="about-intro-text fade-in">
+      <span class="section-label">Our Story</span>
+      <h2>Built on Trust, Driven by Excellence</h2>
+      <span class="gold-line"></span>
+      <p>Chosanta Management is a trusted property management company with a growing portfolio across Ireland. We combine deep industry experience with a genuine commitment to our clients' needs.</p>
+      <p>We specialise in managing high-quality residential, commercial, and hospitality properties, while also supporting corporate clients and construction companies with scalable accommodation solutions.</p>
+      <p>Based in Drogheda, Co. Louth, we are ideally positioned to serve clients across Dublin, the airport corridor, and nationwide infrastructure projects.</p>
+    </div>
+    <div class="about-visual fade-in fade-in-delay-1">
+      <div class="about-visual-quote">
+        Managing properties and people with the same level of care and professionalism.
+      </div>
+      <ul class="about-specialisms">
+        <li>Managing high-quality residential &amp; commercial properties</li>
+        <li>Supporting corporate and infrastructure clients</li>
+        <li>Delivering flexible accommodation solutions at scale</li>
+        <li>Based in Drogheda — serving Ireland nationwide</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section class="approach-section">
+  <div class="approach-inner">
+    <div class="approach-header fade-in">
+      <span class="section-label">Our Approach</span>
+      <h2>The Chosanta Way</h2>
+      <span class="gold-line center"></span>
+    </div>
+    <div class="approach-grid">
+      <div class="approach-card fade-in">
+        <div class="icon">
+          <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <h3>Professional</h3>
+        <p>Every property and client engagement is handled with full professionalism and attention to detail.</p>
+      </div>
+      <div class="approach-card fade-in fade-in-delay-1">
+        <div class="icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Reliable</h3>
+        <p>Clients trust us to deliver consistent, dependable management and accommodation services.</p>
+      </div>
+      <div class="approach-card fade-in fade-in-delay-2">
+        <div class="icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>Client-Focused</h3>
+        <p>We build lasting partnerships by putting our clients' needs and goals at the centre of everything we do.</p>
+      </div>
+      <div class="approach-card fade-in fade-in-delay-3">
+        <div class="icon">
+          <svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+        </div>
+        <h3>Scalable</h3>
+        <p>Our solutions grow with you — from a single property to a portfolio, from 10 to 2,000 workers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section class="clients-section">
+  <div class="clients-inner">
+    <div class="clients-header fade-in">
+      <span class="section-label">Who We Work With</span>
+      <h2>Our Experience</h2>
+      <span class="gold-line center" style="margin:16px auto 0;"></span>
+    </div>
+    <div class="clients-grid">
+      <div class="client-card fade-in">
+        <div class="icon">
+          <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <h3>Private Clients</h3>
+        <p>Individual property owners and private investors who require expert management of their residential and hospitality assets.</p>
+      </div>
+      <div class="client-card fade-in fade-in-delay-1">
+        <div class="icon">
+          <svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22V12h6v10"/><path d="M9 7h1m5 0h1M9 11h1m5 0h1"/></svg>
+        </div>
+        <h3>Corporate Clients</h3>
+        <p>Businesses and organisations requiring professional accommodation and property management solutions for their teams and operations.</p>
+      </div>
+      <div class="client-card fade-in fade-in-delay-2">
+        <div class="icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+        </div>
+        <h3>Construction &amp; Infrastructure</h3>
+        <p>Major construction companies and national infrastructure projects requiring large-scale, reliable workforce accommodation across Ireland.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POWER STATEMENT BANNER -->
+<section class="power-banner">
+  <blockquote class="fade-in">
+    "We provide scalable accommodation solutions for Ireland's growing infrastructure and construction sector."
+  </blockquote>
+</section>
+
+<!-- LEADERSHIP -->
+<section style="padding:90px 24px; background:var(--white);">
+  <div style="max-width:1100px; margin:0 auto; display:grid; grid-template-columns:360px 1fr; gap:72px; align-items:center;">
+    <div class="fade-in" style="text-align:center;">
+      <div style="width:260px;height:260px;border-radius:50%;overflow:hidden;margin:0 auto 20px;border:4px solid var(--gold);box-shadow:0 12px 40px rgba(201,168,76,0.2);">
+        <img src="img/ian_mckeown.png" alt="Ian McKeown, CEO of Chosanta Management" style="width:100%;height:100%;object-fit:cover;object-position:top center;" />
+      </div>
+      <h3 style="font-family:'Inter',sans-serif;font-size:1.25rem;font-weight:700;color:var(--navy);margin-bottom:4px;">Ian McKeown</h3>
+      <p style="color:var(--gold-dim);font-size:0.88rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:12px;">Chief Executive Officer</p>
+      <a href="tel:+353868305196" style="display:inline-flex;align-items:center;gap:8px;color:var(--navy);font-size:0.9rem;font-weight:500;text-decoration:none;transition:color 0.2s;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 10.5 19.79 19.79 0 0 1 2 2.18 2 2 0 0 1 4 0h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 7.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        +353 86 830 5196
+      </a>
+    </div>
+    <div class="fade-in fade-in-delay-1">
+      <span class="section-label">Leadership</span>
+      <h2>Meet the CEO</h2>
+      <span class="gold-line"></span>
+      <p style="color:var(--gray-600);line-height:1.9;margin-bottom:20px;">Ian McKeown is a Drogheda-based Chartered Accountant (ACCA) with over 30 years of experience in corporate finance, strategic financial planning, and business advisory. A former senior-level professional at Mazars, Ian brings deep expertise in asset analysis, investment management, and business performance — experience he applies directly to the leadership of Chosanta Management.</p>
+      <p style="color:var(--gray-600);line-height:1.9;margin-bottom:24px;">His commercially focused, results-driven approach ensures that every property and accommodation solution Chosanta delivers is driven by sound financial strategy, long-term value creation, and an unwavering commitment to client outcomes.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px;">
+        <span style="background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.25);color:var(--navy);font-size:0.8rem;font-weight:600;padding:5px 12px;border-radius:20px;">Chartered Accountant (ACCA)</span>
+        <span style="background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.25);color:var(--navy);font-size:0.8rem;font-weight:600;padding:5px 12px;border-radius:20px;">30+ Years Experience</span>
+        <span style="background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.25);color:var(--navy);font-size:0.8rem;font-weight:600;padding:5px 12px;border-radius:20px;">Corporate Finance</span>
+        <span style="background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.25);color:var(--navy);font-size:0.8rem;font-weight:600;padding:5px 12px;border-radius:20px;">Mazars Alumni</span>
+        <span style="background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.25);color:var(--navy);font-size:0.8rem;font-weight:600;padding:5px 12px;border-radius:20px;">Property &amp; Asset Strategy</span>
+      </div>
+      <a href="contact.html" class="btn btn-primary">Get in Touch with Ian</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="padding:80px 24px; background:var(--off-white); text-align:center;">
+  <div style="max-width:600px; margin:0 auto;">
+    <h2 class="fade-in" style="margin-bottom:16px;">Ready to Work Together?</h2>
+    <p class="fade-in fade-in-delay-1" style="color:var(--gray-600); margin-bottom:36px;">Reach out to our team in Drogheda today and find out how we can support your property or accommodation needs.</p>
+    <a href="contact.html" class="btn btn-primary fade-in fade-in-delay-2">Get In Touch</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div class="footer-gold-bar"></div>
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2">
+            <path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/>
+            <rect x="9" y="14" width="6" height="7"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Chosanta</span>
+          <span class="logo-sub">Management</span>
+        </div>
+      </div>
+      <p>Premium property management and workforce accommodation solutions across Ireland.</p>
+    </div>
+    <div>
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <ul>
+        <li><a href="services.html">Property Management</a></li>
+        <li><a href="services.html">Workforce Accommodation</a></li>
+        <li><a href="services.html">Commercial Property</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <div class="footer-contact-item">
+        <div class="icon">✉</div>
+        <span>info@chosanta.com</span>
+      </div>
+      <div class="footer-contact-item">
+        <div class="icon">📞</div>
+        <span><a href="tel:+353868305196" style="color:inherit;text-decoration:none;">+353 86 830 5196</a></span>
+      </div>
+      <div class="footer-contact-item">
+        <div class="icon">📍</div>
+        <span>Office 107, Brú Digital Hub,<br>56 West Street, Drogheda,<br>Co. Louth, Ireland · A92 E4CY</span>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Chosanta Management. All rights reserved.</span>
+    <span>Workforce Accommodation Ireland · Property Management Drogheda</span>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
