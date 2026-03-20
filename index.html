@@ -41,10 +41,6 @@
       max-width: 1200px;
       margin: 0 auto;
       padding: 120px 24px 80px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
     }
     .hero-left {}
     .hero-badge {
@@ -99,6 +95,9 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 16px;
+    }
+    @media (max-width: 500px) {
+      .hero-right { grid-template-columns: 1fr; }
     }
     .hero-stat-card {
       background: rgba(255,255,255,0.05);
@@ -203,11 +202,13 @@
       0%,100% { transform: translateX(-50%) translateY(0); }
       50%      { transform: translateX(-50%) translateY(8px); }
     }
-    @media (max-width: 900px) {
-      .hero-content { grid-template-columns: 1fr; gap: 48px; padding-top: 140px; }
-      .hero-right { max-width: 480px; }
+    @media (max-width: 1000px) {
+      .hero-content { text-align: center; padding-top: 140px; }
+      .hero-sub { margin-left: auto; margin-right: auto; }
+      .hero-cta { justify-content: center; }
+      .hero-right { margin: 48px auto 0; }
     }
-    @media (max-width: 560px) {
+    @media (max-width: 500px) {
       .hero-cta { flex-direction: column; }
     }
 
@@ -221,10 +222,6 @@
     .intro-inner {
       max-width: 1200px;
       margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
     }
     .intro-text h2 { margin-bottom: 8px; }
     .intro-text p {
@@ -269,9 +266,7 @@
       color: var(--gray-600);
       margin: 0;
     }
-    @media (max-width: 900px) {
-      .intro-inner { grid-template-columns: 1fr; gap: 48px; }
-    }
+    /* Intro layout handled by .grid-2 */
 
     /* ========================
        WHAT WE DO (3 columns)
@@ -503,7 +498,7 @@
 <section class="hero" id="home">
   <div class="hero-bg-pattern"></div>
   <div class="hero-grid-lines"></div>
-  <div class="hero-content">
+  <div class="hero-content grid-2">
     <div class="hero-left">
       <div class="hero-badge">
         <span class="dot"></span>
@@ -548,7 +543,7 @@
 
 <!-- ====== INTRO ====== -->
 <section class="intro-section">
-  <div class="intro-inner">
+  <div class="intro-inner grid-2">
     <div class="intro-text fade-in">
       <span class="section-label">Who We Are</span>
       <h2>A Complete, End-to-End Property Solution</h2>
@@ -595,7 +590,7 @@
     <span class="section-label">What We Do</span>
     <h2>A Complete Property &amp; Accommodation Solution</h2>
     <span class="gold-line center"></span>
-    <p style="color:var(--gray-600);margin-top:12px;font-size:1rem;line-height:1.7;">We provide a complete, end-to-end service — managing property assets, securing high-quality tenants, and delivering fully managed accommodation solutions, including professional staffing and operations.</p>
+    <p>We provide a complete, end-to-end service — managing property assets, securing high-quality tenants, and delivering fully managed accommodation solutions, including professional staffing and operations.</p>
   </div>
   <div class="services-grid">
     <div class="card service-card fade-in fade-in-delay-1">
@@ -652,7 +647,7 @@
   <div class="location-inner">
     <div class="location-map-placeholder fade-in">
       <div class="location-map-inner">
-        <div style="width:64px;height:64px;background:rgba(201,168,76,0.12);border:1.5px solid rgba(201,168,76,0.4);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;animation:bounce 2s ease-in-out infinite;">
+        <div class="contact-detail-icon m-auto mb-24">
           <svg viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="30" height="30"><circle cx="12" cy="10" r="3"/><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
         </div>
         <p>Drogheda, Co. Louth</p>
@@ -675,16 +670,16 @@
 </section>
 
 <!-- ====== WHY CHOSANTA ====== -->
-<section style="padding:100px 24px; background:var(--off-white);">
-  <div style="max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center;">
+<section class="section-dark">
+  <div class="container grid-2">
     <div class="fade-in">
       <span class="section-label">Why Chosanta</span>
       <h2>The Complete Solution — Nothing Left to Chance</h2>
       <span class="gold-line"></span>
-      <p style="color:var(--gray-600);line-height:1.85;margin-bottom:28px;">Based in Drogheda, Chosanta Management is ideally positioned to support Dublin, the airport corridor, and major infrastructure projects across Ireland. Our clients don't have to worry about a thing — we handle it all.</p>
+      <p class="mb-48">Based in Drogheda, Chosanta Management is ideally positioned to support Dublin, the airport corridor, and major infrastructure projects across Ireland. Our clients don't have to worry about a thing — we handle it all.</p>
       <a href="contact.html" class="btn btn-primary">Discuss Your Requirements</a>
     </div>
-    <div class="fade-in fade-in-delay-1" style="display:flex;flex-direction:column;gap:14px;">
+    <div class="fade-in fade-in-delay-1 stack-mobile" style="display:flex;flex-direction:column;gap:14px;">
       <div class="intro-pillar">
         <div class="intro-pillar-icon">
           <svg viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg>

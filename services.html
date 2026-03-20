@@ -16,16 +16,9 @@
 
     /* Full-width service blocks */
     .service-block {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-      padding: 80px 0;
       border-bottom: 1px solid var(--gray-200);
+      padding: 80px 0;
     }
-    .service-block:last-child { border-bottom: none; }
-    .service-block.reverse { direction: rtl; }
-    .service-block.reverse > * { direction: ltr; }
 
     .service-block-visual {
       border-radius: var(--radius-lg);
@@ -256,7 +249,7 @@
   <div class="services-page-inner">
 
     <!-- Tenant Sourcing & Placement (NEW) -->
-    <div class="service-block" style="padding-top:40px;">
+    <div class="service-block grid-2">
       <div class="service-block-visual fade-in">
         <img src="img/tenant_placement.png" alt="Premium apartment interior — tenant placement" />
         <div class="service-block-visual-overlay"></div>
@@ -271,12 +264,12 @@
           </div>
         </div>
       </div>
-      <div class="service-block-text fade-in fade-in-delay-1">
+      <div class="service-block-text fade-in fade-in-delay-1 text-center-mobile">
         <span class="section-label">Service 01</span>
         <h2>Tenant Sourcing &amp; Placement</h2>
         <span class="gold-line"></span>
         <p>We secure reliable, high-quality tenants — matching the right occupants to the right properties to maximise long-term value and ensure stable, consistent returns for property owners.</p>
-        <ul class="service-features">
+        <ul class="service-features" style="text-align: left;">
           <li><span class="check">✓</span>Strategic tenant matching for all property types</li>
           <li><span class="check">✓</span>Residential and commercial tenant placement</li>
           <li><span class="check">✓</span>Corporate and workforce occupant sourcing</li>
@@ -288,7 +281,7 @@
     </div>
 
     <!-- Property Portfolio Management -->
-    <div class="service-block">
+    <div class="service-block grid-2 reverse">
       <div class="service-block-visual fade-in">
         <img src="img/property_management.png" alt="Premium property portfolio" />
         <div class="service-block-visual-overlay"></div>
@@ -304,12 +297,12 @@
           </div>
         </div>
       </div>
-      <div class="service-block-text fade-in fade-in-delay-1">
+      <div class="service-block-text fade-in fade-in-delay-1 text-center-mobile">
         <span class="section-label">Service 02</span>
         <h2>Property Portfolio Management</h2>
         <span class="gold-line"></span>
         <p>We manage a wide and diverse range of properties across Ireland, maintaining the highest standards of operation and presentation at every level. Our professional team ensures efficient day-to-day management so you can focus on growth.</p>
-        <ul class="service-features">
+        <ul class="service-features" style="text-align: left;">
           <li><span class="check">✓</span>Hotels & boutique accommodations</li>
           <li><span class="check">✓</span>Bed &amp; Breakfasts and guesthouses</li>
           <li><span class="check">✓</span>Apartments and residential units</li>
@@ -321,7 +314,7 @@
     </div>
 
     <!-- Workforce Accommodation -->
-    <div class="service-block reverse">
+    <div class="service-block grid-2">
       <div class="service-block-visual fade-in">
         <img src="img/workforce_accommodation.png" alt="Large-scale workforce accommodation facility" />
         <div class="service-block-visual-overlay"></div>
@@ -336,23 +329,23 @@
           </div>
         </div>
       </div>
-      <div class="service-block-text fade-in fade-in-delay-1">
+      <div class="service-block-text fade-in fade-in-delay-1 text-center-mobile">
         <span class="section-label">Service 03</span>
         <h2>Fully Managed Workforce Accommodation</h2>
         <span class="gold-line"></span>
         <p>We provide large-scale, fully managed accommodation solutions for construction crews, corporate teams, and infrastructure projects. Strategically positioned near key project zones, our solutions support Ireland's growing infrastructure sector.</p>
-        <ul class="service-features">
+        <ul class="service-features" style="text-align: left;">
           <li><span class="check">✓</span>Construction crew accommodation</li>
           <li><span class="check">✓</span>Infrastructure project housing</li>
           <li><span class="check">✓</span>Corporate team accommodation</li>
           <li><span class="check">✓</span>Flexible short &amp; long-term stays</li>
           <li><span class="check">✓</span>Strategic locations near Dublin and key project areas</li>
           <li><span class="check">✓</span>Fully managed accommodation, including professional staffing and on-site operations</li>
-          <li><span class="check">✓</span>We recruit and manage qualified, fully compliant staff to operate and maintain accommodation, ensuring high standards across all properties and tenant types</li>
+          <li><span class="check">✓</span>We recruit and manage qualified, fully compliant staff to operate and maintain accommodation</li>
         </ul>
-        <div class="capacity-banner fade-in fade-in-delay-2">
-          <div class="cap-num">2,000</div>
-          <div>
+        <div class="capacity-banner fade-in fade-in-delay-2 m-auto" style="max-width: 400px;">
+          <div class="cap-num">2,000+</div>
+          <div style="text-align: left;">
             <div class="cap-label">Large-scale Capacity</div>
             <div class="cap-sub">Up to 2,000 workers accommodated at a single time</div>
           </div>
@@ -361,7 +354,7 @@
     </div>
 
     <!-- Staffing & Operations (Standalone Callout) -->
-    <div class="service-block">
+    <div class="service-block grid-2 reverse">
       <div class="service-block-visual fade-in">
         <img src="img/staffing_operations.png" alt="Professional staffing and operations management" />
         <div class="service-block-visual-overlay"></div>
@@ -378,25 +371,24 @@
           </blockquote>
         </div>
       </div>
-      <div class="service-block-text fade-in fade-in-delay-1">
+      <div class="service-block-text fade-in fade-in-delay-1 text-center-mobile">
         <span class="section-label">Staffing &amp; Operations</span>
         <h2>The Right Staff. The Right Framework.</h2>
         <span class="gold-line"></span>
         <p>We recruit and deploy the right people for the right operational framework — matching qualified, fully compliant staff to the specific requirements of each accommodation facility, property type, and client contract.</p>
-        <p style="color:var(--gray-600);line-height:1.85;margin-bottom:28px;font-size:0.95rem;">Whether it's a workforce accommodation site, a managed residential block, or a hospitality property, we understand that each environment demands a different standard of operation — and we staff accordingly.</p>
-        <ul class="service-features">
+        <ul class="service-features" style="text-align: left;">
           <li><span class="check">✓</span>Framework-matched recruitment for every property type</li>
           <li><span class="check">✓</span>Fully compliant staff across all regulatory requirements</li>
           <li><span class="check">✓</span>On-site operations management and daily oversight</li>
           <li><span class="check">✓</span>Maintenance, housekeeping, and facility personnel</li>
-          <li><span class="check">✓</span>Consistent high standards across all properties and tenant types</li>
-          <li><span class="check">✓</span>Ongoing performance management and staff development</li>
+          <li><span class="check">✓</span>Consistent high standards across all properties</li>
+          <li><span class="check">✓</span>Ongoing performance management and development</li>
         </ul>
       </div>
     </div>
 
     <!-- Commercial Property Management -->
-    <div class="service-block">
+    <div class="service-block grid-2">
       <div class="service-block-visual fade-in">
         <img src="img/property_management.png" alt="Commercial property management" style="object-position: center 30%;" />
         <div class="service-block-visual-overlay"></div>
@@ -410,12 +402,12 @@
           </div>
         </div>
       </div>
-      <div class="service-block-text fade-in fade-in-delay-1">
+      <div class="service-block-text fade-in fade-in-delay-1 text-center-mobile">
         <span class="section-label">Service 04</span>
         <h2>Commercial Property Management</h2>
         <span class="gold-line"></span>
         <p>Full-service management of commercial properties with end-to-end operational oversight. We handle everything from maintenance coordination to tenant management so your assets perform at their best.</p>
-        <ul class="service-features">
+        <ul class="service-features" style="text-align: left;">
           <li><span class="check">✓</span>Full management of commercial properties</li>
           <li><span class="check">✓</span>Maintenance coordination &amp; oversight</li>
           <li><span class="check">✓</span>Tenant management &amp; communications</li>
