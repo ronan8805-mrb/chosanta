@@ -1,93 +1,149 @@
 import React, { useState, useEffect } from 'react';
-import { api } from '../App';
+import { api, useAuth } from '../App';
+
+const TYPES = ['Physical Intervention','Mechanical Restraint','Environmental Restriction','Chemical Restraint','Seclusion','Other'];
+const TECHNIQUES = ['TCI Basket Hold','TCI Single Elbow','TCI Team Control','MAPA Low','MAPA Medium','MAPA High','Guided Away','Blocked Exit','Other'];
 
 const SH = ({ num, title }) => (
   <div style={{ background: 'linear-gradient(135deg, #0d1b2a, #1b2d42)', color: '#fff', padding: '6px 14px', borderRadius: 5, margin: '16px 0 8px', fontSize: 13, fontWeight: 700, display: 'flex', alignItems: 'center', gap: 10 }}>
-    <span style={{ background: 'linear-gradient(135deg, #c9a84c, #e0c070)', color: '#0d1b2a', width: 22, height: 22, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 11, fontWeight: 800 }}>{num}</span>{title}
+    <span style={{ background: 'linear-gradient(135deg, #c9a84c, #e0c070)', color: '#0d1b2a', width: 22, height: 22, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 11, fontWeight: 800 }}>{num}</span>
+    {title}
   </div>
 );
-const Check = ({ label, checked, onChange }) => (
+const CK = ({ label, checked, onChange }) => (
   <label style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 13, cursor: 'pointer' }}>
-    <input type="checkbox" checked={checked||false} onChange={onChange} style={{ width: 16, height: 16, accentColor: '#c9a84c' }} />{label}
+    <input type="checkbox" checked={checked || false} onChange={onChange} style={{ width: 16, height: 16, accentColor: '#c9a84c' }} />{label}
   </label>
 );
 
-const TYPES = ['Physical hold / restraint (TCI-approved)','Guided away','Room restriction','Separation from peers','Environmental restriction','Other'];
-
-export default function RestrictivePractice() {
+export default function RestrictivePracticeLog() {
+  const { user } = useAuth();
+  const [rows, setRows] = useState([]);
   const [children, setChildren] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [form, setForm] = useState({});
-  useEffect(() => { api('/api/children').then(setChildren); }, []);
+
+  const load = () => { api('/api/logs/restrictive').then(setRows).catch(() => {}); api('/api/children').then(setChildren).catch(() => {}); };
+  useEffect(load, []);
   const F = (k, v) => setForm(p => ({ ...p, [k]: v }));
-  const openNew = () => {
-    setForm({ date: new Date().toISOString().slice(0,10), time_start:'', time_end:'', duration:'', location:'', child_id:'', intervention_type:'', technique:'', behaviour:'', immediate_risk:'', deescalation:'', why_insufficient:'', staff_involved:'', child_spoken_to:true, proportionate:true, injury_detail:'', child_checked:true, medical_needed:false, sw_notified:false, parent_notified:false, nims_submitted:false, nims_ref:'', child_debrief_date:'', child_willing:true, child_q1:'', child_q2:'', child_q3:'', child_q4:'', child_q5:'', learning:'', pic_reviewed:false });
-    setShowModal(true);
+  const childName = id => { const c = children.find(c => c.id === id); return c ? `${c.first_name} ${c.last_name}` : '—'; };
+
+  const blank = () => ({
+    child_id: '', date: new Date().toISOString().slice(0,10),
+    start_time: '', end_time: '', duration_mins: '',
+    type: 'Physical Intervention', technique: '', reason: '',
+    antecedent: '', behaviour: '', deescalation_attempted: 'Yes', deescalation_detail: '',
+    description: '', child_presentation: '', child_post_incident: '',
+    injuries_child: 'None', injuries_staff: 'None',
+    staff_involved: '', witnesses: '',
+    child_debrief: false, child_debrief_date: '', child_debrief_notes: '', child_account: '',
+    staff_debrief: false, staff_debrief_date: '',
+    proportionate: true, necessary: true, minimum_force: true,
+    pic_reviewed: false, pic_review_date: '', pic_notes: '',
+    sen_submitted: false, sen_ref: '',
+    risk_assessment_updated: false, care_plan_updated: false,
+    status: 'Open'
+  });
+  const openNew = () => { setForm(blank()); setShowModal(true); };
+  const save = async () => {
+    const d = { ...form };
+    ['child_debrief','staff_debrief','proportionate','necessary','minimum_force','pic_reviewed','sen_submitted','risk_assessment_updated','care_plan_updated'].forEach(k => d[k] = d[k] ? 1 : 0);
+    await api('/api/logs/restrictive', { method: 'POST', body: JSON.stringify(d) });
+    setShowModal(false); load();
   };
+
+  const noDebrief = rows.filter(r => !r.child_debrief).length;
 
   return (
     <div>
-      <div className="page-header">
-        <div><h1>Physical Intervention &amp; Restrictive Practice</h1><p style={{fontSize:12,color:'#9a9484',marginTop:2}}>HIQA Standard 3 · TCI Model · Tusla NIMS</p></div>
-        <button className="btn btn-primary" onClick={openNew}>+ New Record</button>
+      <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 16 }}>
+        <div><h1 className="page-title">Restrictive Practice Register</h1><p style={{ color: '#9a9484', fontSize: 12 }}>HIQA Standard 3 · PBS Policy · S.I. 674/2017 · Tusla SEN Required</p></div>
+        <button className="btn btn-primary" onClick={openNew}>+ Record Intervention</button>
       </div>
-      <div style={{background:'#fff0f0',border:'1px solid #c0392b',borderRadius:6,padding:'10px 16px',marginBottom:16,fontSize:12}}>
-        <strong>⚠ CRITICAL:</strong> Physical intervention = absolute last resort. Record within 24 hours. Report to PIC immediately. Notify Tusla via NIMS.
+      {noDebrief > 0 && <div style={{ background: 'rgba(231,76,60,0.1)', border: '1px solid rgba(231,76,60,0.3)', borderRadius: 8, padding: '10px 16px', marginBottom: 16, fontSize: 12 }}>⚠️ <strong>{noDebrief} intervention(s)</strong> without child debrief — mandatory within 24 hours per HIQA Standard 3</div>}
+      <div style={{ background: '#fff8e7', borderLeft: '4px solid #c9a84c', borderRadius: '0 6px 6px 0', padding: '10px 16px', marginBottom: 16, fontSize: 12 }}>
+        <strong>Regulatory:</strong> Every physical intervention must be recorded immediately, reviewed by PIC, and reported as SEN to Tusla via NIMS. Child debrief is mandatory within 24 hours. Staff debrief must occur same shift.
       </div>
-      <div className="card"><div className="card-body"><div className="empty-state"><div className="icon">🛑</div><p>No restrictive practice records yet.</p></div></div></div>
-
+      <div className="card">
+        <table className="data-table"><thead><tr><th>Date</th><th>Time</th><th>Child</th><th>Type</th><th>Duration</th><th>Debrief</th><th>PIC</th><th>SEN</th><th>Status</th></tr></thead>
+          <tbody>{rows.map(r => (<tr key={r.id}>
+            <td><strong>{r.date}</strong></td><td>{r.start_time}–{r.end_time}</td>
+            <td>{childName(r.child_id)}</td>
+            <td style={{ fontSize: 11 }}>{r.type}</td>
+            <td>{r.duration_mins ? `${r.duration_mins}m` : '—'}</td>
+            <td>{r.child_debrief ? <span style={{ color: '#27ae60' }}>✅ Done</span> : <span style={{ color: '#e74c3c' }}>❌ Missing</span>}</td>
+            <td>{r.pic_reviewed ? <span style={{ color: '#27ae60' }}>✅</span> : <span style={{ color: '#e65100' }}>⏳</span>}</td>
+            <td>{r.sen_submitted ? '✅' : '—'}</td>
+            <td><span className={`badge badge-${r.status === 'Closed' ? 'active' : 'draft'}`}>{r.status}</span></td>
+          </tr>))}
+          {rows.length === 0 && <tr><td colSpan={9}><div className="empty-state"><div className="icon">🛑</div><p>No restrictive practice records</p></div></td></tr>}</tbody></table>
+      </div>
       {showModal && (
         <div className="modal-overlay" onClick={() => setShowModal(false)}>
-          <div className="modal" style={{width:780,maxHeight:'92vh'}} onClick={e => e.stopPropagation()}>
-            <div className="modal-header" style={{background:'linear-gradient(135deg,#0d1b2a,#1b2d42)',color:'#fff',borderRadius:'12px 12px 0 0'}}><h2 style={{color:'#fff'}}>🛑 Physical Intervention Record</h2><button className="modal-close" style={{color:'#fff'}} onClick={() => setShowModal(false)}>×</button></div>
-            <div className="modal-body" style={{padding:'12px 24px 20px'}}>
-              <SH num="1" title="Incident Details" />
-              <div className="form-grid">
-                <div className="form-group"><label>Date</label><input type="date" value={form.date} onChange={e=>F('date',e.target.value)}/></div>
-                <div className="form-group"><label>Time Started</label><input type="time" value={form.time_start} onChange={e=>F('time_start',e.target.value)}/></div>
-                <div className="form-group"><label>Time Ended</label><input type="time" value={form.time_end} onChange={e=>F('time_end',e.target.value)}/></div>
-                <div className="form-group"><label>Duration</label><input value={form.duration||''} onChange={e=>F('duration',e.target.value)} placeholder="e.g. 3 minutes"/></div>
-                <div className="form-group"><label>Location</label><input value={form.location||''} onChange={e=>F('location',e.target.value)}/></div>
-                <div className="form-group"><label>Child</label><select value={form.child_id} onChange={e=>F('child_id',e.target.value)}><option value="">Select...</option>{children.map(c=><option key={c.id} value={c.id}>{c.ref_code} — {c.first_name} {c.last_name}</option>)}</select></div>
-              </div>
-              <SH num="2" title="Type of Intervention" />
-              <div style={{display:'flex',flexDirection:'column',gap:6,marginBottom:8}}>{TYPES.map(t=><Check key={t} label={t} checked={form.intervention_type===t} onChange={()=>F('intervention_type',t)}/>)}</div>
-              <SH num="3" title="Events Leading to Intervention" />
-              <div className="form-group"><label>Child's behaviour / state?</label><textarea value={form.behaviour||''} onChange={e=>F('behaviour',e.target.value)} rows={2}/></div>
-              <div className="form-group"><label>Immediate risk / danger?</label><textarea value={form.immediate_risk||''} onChange={e=>F('immediate_risk',e.target.value)} rows={2}/></div>
-              <div className="form-group"><label>De-escalation attempted</label><textarea value={form.deescalation||''} onChange={e=>F('deescalation',e.target.value)} rows={2}/></div>
-              <SH num="4" title="During the Intervention" />
-              <div className="form-group"><label>Staff Involved (name, role, TCI trained?)</label><textarea value={form.staff_involved||''} onChange={e=>F('staff_involved',e.target.value)} rows={2}/></div>
-              <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:6,margin:'8px 0'}}>
-                <Check label="Child spoken to throughout?" checked={form.child_spoken_to} onChange={e=>F('child_spoken_to',e.target.checked)}/>
-                <Check label="Proportionate to risk?" checked={form.proportionate} onChange={e=>F('proportionate',e.target.checked)}/>
-              </div>
-              <div className="form-group"><label>Injuries (child or staff)</label><textarea value={form.injury_detail||''} onChange={e=>F('injury_detail',e.target.value)} rows={2} placeholder="None / Detail..."/></div>
-              <SH num="5" title="After the Intervention" />
-              <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:6,margin:'8px 0'}}>
-                <Check label="Child checked for wellbeing?" checked={form.child_checked} onChange={e=>F('child_checked',e.target.checked)}/>
-                <Check label="Medical attention needed?" checked={form.medical_needed} onChange={e=>F('medical_needed',e.target.checked)}/>
-                <Check label="Social worker notified?" checked={form.sw_notified} onChange={e=>F('sw_notified',e.target.checked)}/>
-                <Check label="Parent / guardian notified?" checked={form.parent_notified} onChange={e=>F('parent_notified',e.target.checked)}/>
-                <Check label="NIMS submitted?" checked={form.nims_submitted} onChange={e=>F('nims_submitted',e.target.checked)}/>
-              </div>
-              <SH num="6" title="Child Debrief (within 24hrs)" />
-              <p style={{fontSize:11,color:'#9a9484',fontStyle:'italic',marginBottom:6}}>By staff NOT involved. Use child's own words.</p>
-              <Check label="Child willing to participate?" checked={form.child_willing} onChange={e=>F('child_willing',e.target.checked)}/>
-              {form.child_willing && <>
-                <div className="form-group"><label>What happened from your point of view?</label><textarea value={form.child_q1||''} onChange={e=>F('child_q1',e.target.value)} rows={2}/></div>
-                <div className="form-group"><label>What were you feeling at the time?</label><textarea value={form.child_q2||''} onChange={e=>F('child_q2',e.target.value)} rows={2}/></div>
-                <div className="form-group"><label>What could have helped before it escalated?</label><textarea value={form.child_q3||''} onChange={e=>F('child_q3',e.target.value)} rows={2}/></div>
-                <div className="form-group"><label>How are you feeling now?</label><textarea value={form.child_q4||''} onChange={e=>F('child_q4',e.target.value)} rows={2}/></div>
-                <div className="form-group"><label>Anything about how staff handled it?</label><textarea value={form.child_q5||''} onChange={e=>F('child_q5',e.target.value)} rows={2}/></div>
-              </>}
-              <SH num="7" title="Staff Debrief (within 48hrs)" />
-              <div className="form-group"><label>Learning / changes</label><textarea value={form.learning||''} onChange={e=>F('learning',e.target.value)} rows={2}/></div>
-              <SH num="8" title="PIC Review & Sign-Off" />
-              <Check label="PIC reviewed all documentation?" checked={form.pic_reviewed} onChange={e=>F('pic_reviewed',e.target.checked)}/>
-              <div style={{background:'#faf9f7',border:'1px dashed #c9a84c',borderRadius:6,padding:'8px 12px',marginTop:16,fontSize:11,color:'#5c5648'}}><strong>Ref:</strong> CM-RPL-001 · HIQA Standard 3 · TCI Cornell · Tusla NIMS</div>
+          <div className="modal" style={{ width: 800, maxHeight: '94vh' }} onClick={e => e.stopPropagation()}>
+            <div className="modal-header" style={{ background: 'linear-gradient(135deg, #3d0c0c, #1a0505)', borderRadius: '12px 12px 0 0' }}>
+              <h2 style={{ color: '#ff6b6b' }}>🛑 Restrictive Practice Record</h2>
+              <button className="modal-close" style={{ color: '#fff' }} onClick={() => setShowModal(false)}>×</button>
             </div>
-            <div className="modal-footer" style={{borderTop:'2px solid #c9a84c'}}><button className="btn btn-ghost" onClick={()=>setShowModal(false)}>Cancel</button><button className="btn btn-primary" onClick={()=>setShowModal(false)}>💾 Save</button></div>
+            <div className="modal-body" style={{ padding: '12px 24px 20px', maxHeight: '72vh', overflow: 'auto' }}>
+              <SH num="1" title="Intervention Details" />
+              <div className="form-grid">
+                <div className="form-group"><label>Child</label><select value={form.child_id} onChange={e => F('child_id', parseInt(e.target.value))}><option value="">Select...</option>{children.map(c => <option key={c.id} value={c.id}>{c.first_name} {c.last_name}</option>)}</select></div>
+                <div className="form-group"><label>Date</label><input type="date" value={form.date} onChange={e => F('date', e.target.value)} /></div>
+                <div className="form-group"><label>Start Time</label><input type="time" value={form.start_time} onChange={e => F('start_time', e.target.value)} /></div>
+                <div className="form-group"><label>End Time</label><input type="time" value={form.end_time} onChange={e => F('end_time', e.target.value)} /></div>
+                <div className="form-group"><label>Duration (minutes)</label><input type="number" value={form.duration_mins} onChange={e => F('duration_mins', parseInt(e.target.value))} /></div>
+                <div className="form-group"><label>Type</label><select value={form.type} onChange={e => F('type', e.target.value)}>{TYPES.map(t => <option key={t}>{t}</option>)}</select></div>
+                <div className="form-group"><label>Technique Used</label><select value={form.technique} onChange={e => F('technique', e.target.value)}><option value="">Select...</option>{TECHNIQUES.map(t => <option key={t}>{t}</option>)}</select></div>
+                <div className="form-group"><label>Staff Involved</label><input value={form.staff_involved || ''} onChange={e => F('staff_involved', e.target.value)} placeholder="Names and roles" /></div>
+              </div>
+              <SH num="2" title="Antecedent — Behaviour — Consequence" />
+              <div className="form-group"><label>What happened before (antecedent)?</label><textarea rows={2} value={form.antecedent || ''} onChange={e => F('antecedent', e.target.value)} /></div>
+              <div className="form-group"><label>Behaviour that necessitated intervention</label><textarea rows={2} value={form.behaviour || ''} onChange={e => F('behaviour', e.target.value)} /></div>
+              <div className="form-group"><label>De-escalation attempted?</label><select value={form.deescalation_attempted} onChange={e => F('deescalation_attempted', e.target.value)}><option>Yes</option><option>No — explain</option></select></div>
+              <div className="form-group"><label>De-escalation detail</label><textarea rows={2} value={form.deescalation_detail || ''} onChange={e => F('deescalation_detail', e.target.value)} placeholder="What strategies were tried before intervention?" /></div>
+              <SH num="3" title="Full Account" />
+              <div className="form-group"><label>Description of intervention</label><textarea rows={3} value={form.description || ''} onChange={e => F('description', e.target.value)} /></div>
+              <div className="form-group"><label>Child's presentation during</label><textarea rows={2} value={form.child_presentation || ''} onChange={e => F('child_presentation', e.target.value)} /></div>
+              <div className="form-group"><label>Child's condition after</label><textarea rows={2} value={form.child_post_incident || ''} onChange={e => F('child_post_incident', e.target.value)} /></div>
+              <div className="form-grid">
+                <div className="form-group"><label>Injuries to child</label><input value={form.injuries_child || ''} onChange={e => F('injuries_child', e.target.value)} /></div>
+                <div className="form-group"><label>Injuries to staff</label><input value={form.injuries_staff || ''} onChange={e => F('injuries_staff', e.target.value)} /></div>
+              </div>
+              <SH num="4" title="Debriefs (MANDATORY)" />
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+                <div style={{ border: '1px solid rgba(201,168,76,0.2)', borderRadius: 8, padding: 12 }}>
+                  <h4 style={{ color: '#c9a84c', fontSize: 13, marginBottom: 8 }}>👧 Child Debrief</h4>
+                  <CK label="Child debrief completed" checked={form.child_debrief} onChange={e => F('child_debrief', e.target.checked)} />
+                  {form.child_debrief && <>
+                    <div className="form-group" style={{ marginTop: 8 }}><label>Date</label><input type="date" value={form.child_debrief_date || ''} onChange={e => F('child_debrief_date', e.target.value)} /></div>
+                    <div className="form-group"><label>Child's own account</label><textarea rows={2} value={form.child_account || ''} onChange={e => F('child_account', e.target.value)} placeholder="Record the child's perspective in their own words" /></div>
+                    <div className="form-group"><label>Debrief notes</label><textarea rows={2} value={form.child_debrief_notes || ''} onChange={e => F('child_debrief_notes', e.target.value)} /></div>
+                  </>}
+                </div>
+                <div style={{ border: '1px solid rgba(201,168,76,0.2)', borderRadius: 8, padding: 12 }}>
+                  <h4 style={{ color: '#c9a84c', fontSize: 13, marginBottom: 8 }}>👨‍💼 Staff Debrief</h4>
+                  <CK label="Staff debrief completed" checked={form.staff_debrief} onChange={e => F('staff_debrief', e.target.checked)} />
+                  {form.staff_debrief && <div className="form-group" style={{ marginTop: 8 }}><label>Date</label><input type="date" value={form.staff_debrief_date || ''} onChange={e => F('staff_debrief_date', e.target.value)} /></div>}
+                </div>
+              </div>
+              <SH num="5" title="PIC Review & SEN" />
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
+                <CK label="Was the intervention proportionate?" checked={form.proportionate} onChange={e => F('proportionate', e.target.checked)} />
+                <CK label="Was it necessary?" checked={form.necessary} onChange={e => F('necessary', e.target.checked)} />
+                <CK label="Was minimum force used?" checked={form.minimum_force} onChange={e => F('minimum_force', e.target.checked)} />
+                <CK label="PIC reviewed" checked={form.pic_reviewed} onChange={e => F('pic_reviewed', e.target.checked)} />
+                <CK label="SEN submitted to Tusla" checked={form.sen_submitted} onChange={e => F('sen_submitted', e.target.checked)} />
+                <CK label="Risk assessment updated" checked={form.risk_assessment_updated} onChange={e => F('risk_assessment_updated', e.target.checked)} />
+                <CK label="Care plan updated" checked={form.care_plan_updated} onChange={e => F('care_plan_updated', e.target.checked)} />
+              </div>
+              {form.sen_submitted && <div className="form-group" style={{ marginTop: 8 }}><label>NIMS Reference</label><input value={form.sen_ref || ''} onChange={e => F('sen_ref', e.target.value)} /></div>}
+              <div className="form-group"><label>PIC Review Notes</label><textarea rows={2} value={form.pic_notes || ''} onChange={e => F('pic_notes', e.target.value)} /></div>
+            </div>
+            <div className="modal-footer" style={{ borderTop: '2px solid #e74c3c' }}>
+              <button className="btn btn-ghost" onClick={() => setShowModal(false)}>Cancel</button>
+              <button className="btn btn-primary" onClick={save} style={{ background: '#e74c3c' }}>💾 Save Record</button>
+            </div>
           </div>
         </div>
       )}

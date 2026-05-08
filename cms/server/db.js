@@ -432,6 +432,139 @@ CREATE TABLE IF NOT EXISTS fire_equipment (
   notes TEXT,
   created_by INTEGER, created_at TEXT DEFAULT (datetime('now'))
 );
+CREATE TABLE IF NOT EXISTS restrictive_practices (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  child_id INTEGER, date TEXT NOT NULL,
+  start_time TEXT, end_time TEXT, duration_mins INTEGER,
+  type TEXT DEFAULT 'Physical Intervention',
+  technique TEXT, reason TEXT,
+  antecedent TEXT, behaviour TEXT,
+  deescalation_attempted TEXT, deescalation_detail TEXT,
+  description TEXT, child_presentation TEXT,
+  child_post_incident TEXT, injuries_child TEXT, injuries_staff TEXT,
+  staff_involved TEXT, witnesses TEXT,
+  child_debrief INTEGER DEFAULT 0, child_debrief_date TEXT,
+  child_debrief_notes TEXT, child_account TEXT,
+  staff_debrief INTEGER DEFAULT 0, staff_debrief_date TEXT,
+  proportionate INTEGER DEFAULT 1, necessary INTEGER DEFAULT 1,
+  minimum_force INTEGER DEFAULT 1,
+  pic_reviewed INTEGER DEFAULT 0, pic_review_date TEXT, pic_notes TEXT,
+  sen_submitted INTEGER DEFAULT 0, sen_ref TEXT,
+  risk_assessment_updated INTEGER DEFAULT 0,
+  care_plan_updated INTEGER DEFAULT 0,
+  status TEXT DEFAULT 'Open',
+  created_by INTEGER, created_at TEXT DEFAULT (datetime('now')),
+  FOREIGN KEY (child_id) REFERENCES children(id)
+);
+CREATE TABLE IF NOT EXISTS safeguarding_referrals (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  date TEXT NOT NULL, child_id INTEGER,
+  concern_type TEXT, source TEXT,
+  reporter_id INTEGER, dlp_id INTEGER,
+  preliminary_screen TEXT DEFAULT 'Pending',
+  screen_date TEXT, screen_outcome TEXT,
+  mandated_report INTEGER DEFAULT 0,
+  mandated_reporter_id INTEGER,
+  referral_method TEXT, referral_date TEXT,
+  tusla_ref TEXT, retrospective_sent INTEGER DEFAULT 0,
+  retrospective_date TEXT,
+  garda_notified INTEGER DEFAULT 0, garda_date TEXT,
+  parent_notified INTEGER DEFAULT 0,
+  sw_notified INTEGER DEFAULT 0,
+  outcome TEXT, follow_up TEXT,
+  status TEXT DEFAULT 'Open',
+  created_by INTEGER, created_at TEXT DEFAULT (datetime('now')),
+  FOREIGN KEY (child_id) REFERENCES children(id)
+);
+CREATE TABLE IF NOT EXISTS child_participation (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  date TEXT NOT NULL, type TEXT DEFAULT 'House Meeting',
+  facilitator_id INTEGER, children_present TEXT,
+  topics TEXT, child_feedback TEXT,
+  requests TEXT, actions TEXT,
+  action_owner TEXT, action_status TEXT DEFAULT 'Open',
+  notes TEXT,
+  created_by INTEGER, created_at TEXT DEFAULT (datetime('now')),
+  FOREIGN KEY (facilitator_id) REFERENCES users(id)
+);
+CREATE TABLE IF NOT EXISTS absence_plans (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  child_id INTEGER, date TEXT NOT NULL,
+  triggers TEXT, early_warning_signs TEXT,
+  deescalation_strategies TEXT,
+  search_protocol TEXT, high_risk_locations TEXT,
+  notification_order TEXT,
+  return_interview_protocol TEXT,
+  safety_plan TEXT, review_date TEXT,
+  status TEXT DEFAULT 'Active',
+  created_by INTEGER, created_at TEXT DEFAULT (datetime('now')),
+  FOREIGN KEY (child_id) REFERENCES children(id)
+);
+CREATE TABLE IF NOT EXISTS medication_stock (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  child_id INTEGER, medication_name TEXT NOT NULL,
+  form TEXT DEFAULT 'Tablet', strength TEXT,
+  prescriber TEXT, pharmacy TEXT,
+  quantity_received INTEGER, date_received TEXT,
+  quantity_current INTEGER, date_checked TEXT,
+  checked_by INTEGER, discrepancy TEXT,
+  expiry_date TEXT, controlled INTEGER DEFAULT 0,
+  disposal_date TEXT, disposal_witness INTEGER,
+  notes TEXT,
+  created_by INTEGER, created_at TEXT DEFAULT (datetime('now')),
+  FOREIGN KEY (child_id) REFERENCES children(id)
+);
+CREATE TABLE IF NOT EXISTS prn_protocols (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  child_id INTEGER, medication_name TEXT NOT NULL,
+  dose TEXT, route TEXT DEFAULT 'Oral',
+  indication TEXT, max_dose_24h TEXT,
+  min_interval TEXT, prescriber TEXT,
+  gp_authorisation_date TEXT,
+  special_instructions TEXT,
+  review_date TEXT, status TEXT DEFAULT 'Active',
+  created_by INTEGER, created_at TEXT DEFAULT (datetime('now')),
+  FOREIGN KEY (child_id) REFERENCES children(id)
+);
+CREATE TABLE IF NOT EXISTS night_checks (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  date TEXT NOT NULL, time TEXT NOT NULL,
+  staff_id INTEGER, child_id INTEGER,
+  status TEXT DEFAULT 'Asleep',
+  presentation TEXT, concerns TEXT,
+  action_taken TEXT,
+  created_by INTEGER, created_at TEXT DEFAULT (datetime('now')),
+  FOREIGN KEY (staff_id) REFERENCES users(id),
+  FOREIGN KEY (child_id) REFERENCES children(id)
+);
+CREATE TABLE IF NOT EXISTS policy_versions (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  document_id INTEGER, version INTEGER,
+  change_summary TEXT, changed_by INTEGER,
+  approved_by INTEGER, effective_date TEXT,
+  created_at TEXT DEFAULT (datetime('now')),
+  FOREIGN KEY (document_id) REFERENCES documents(id),
+  FOREIGN KEY (changed_by) REFERENCES users(id)
+);
+CREATE TABLE IF NOT EXISTS digital_signatures (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  record_type TEXT NOT NULL, record_id INTEGER NOT NULL,
+  signer_id INTEGER NOT NULL, role TEXT,
+  statement TEXT DEFAULT 'I confirm this record is accurate',
+  signed_at TEXT DEFAULT (datetime('now')),
+  ip_address TEXT,
+  FOREIGN KEY (signer_id) REFERENCES users(id)
+);
+CREATE TABLE IF NOT EXISTS governance_actions (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  source TEXT DEFAULT 'Governance Meeting',
+  source_id INTEGER, date TEXT NOT NULL,
+  action TEXT NOT NULL, owner TEXT,
+  target_date TEXT, priority TEXT DEFAULT 'Medium',
+  progress TEXT, evidence TEXT,
+  status TEXT DEFAULT 'Open',
+  created_by INTEGER, created_at TEXT DEFAULT (datetime('now'))
+);
 `);
 
 // Seed roles

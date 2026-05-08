@@ -10,17 +10,24 @@ const NAV = [
   { section: 'Daily Operations' },
   { path: '/handovers', icon: '🔄', label: 'Shift Handover' },
   { path: '/visitors', icon: '👤', label: 'Visitor Log' },
+  { path: '/nightchecks', icon: '🌙', label: 'Night Welfare Checks' },
   { path: '/incidents', icon: '⚠️', label: 'Incidents & Near Miss' },
+  { path: '/trends', icon: '📈', label: 'Incident Trend Analysis' },
   { path: '/sen', icon: '📡', label: 'SEN Register' },
   { path: '/restrictive', icon: '🛑', label: 'Restrictive Practice' },
   { path: '/missing', icon: '🔍', label: 'Missing Child' },
   { path: '/missingchronology', icon: '📍', label: 'Missing Chronology' },
+  { path: '/absenceplans', icon: '🗺️', label: 'Absence Plans' },
   { path: '/oncall', icon: '📞', label: 'On-Call & Escalation' },
+
+  { section: 'Safeguarding' },
+  { path: '/safeguarding', icon: '🛡️', label: 'Safeguarding Referrals', minLevel: 2 },
 
   { section: 'Children' },
   { path: '/childregister', icon: '👧', label: 'Children\'s Register' },
   { path: '/admissions', icon: '🏠', label: 'Admissions & Discharge' },
   { path: '/keyworking', icon: '💬', label: 'Keyworking Sessions' },
+  { path: '/participation', icon: '🗣️', label: 'Participation & Voice' },
   { path: '/sanctions', icon: '⚖️', label: 'Sanctions & Consequences' },
   { path: '/childrisk', icon: '⚠️', label: 'Child Risk Assessment' },
   { path: '/careplans', icon: '📋', label: 'Care Plans' },
@@ -30,6 +37,7 @@ const NAV = [
 
   { section: 'Health & Medication' },
   { path: '/mar', icon: '💊', label: 'MAR (Medication)' },
+  { path: '/medstock', icon: '📦', label: 'Stock & PRN Protocols' },
   { path: '/medication', icon: '🔬', label: 'Medication Audit & Fire Drill' },
   { path: '/pettycash', icon: '💰', label: 'Petty Cash & Finance' },
 
@@ -39,7 +47,7 @@ const NAV = [
   { path: '/training', icon: '🎓', label: 'Training Sign-Off' },
   { path: '/supervision', icon: '👁', label: 'Staff Supervision' },
   { path: '/induction', icon: '📝', label: 'Induction Checklist' },
-  { path: '/appraisals', icon: '⭐', label: 'Performance Appraisals' },
+  { path: '/appraisals', icon: '⭐', label: 'Performance Appraisals', minLevel: 4 },
 
   { section: 'Safety & Compliance' },
   { path: '/healthsafety', icon: '🏥', label: 'H&S Inspection' },
@@ -51,10 +59,11 @@ const NAV = [
 
   { section: 'Governance' },
   { path: '/audit', icon: '📁', label: 'Audit Trail & Documents' },
-  { path: '/complaints', icon: '📝', label: 'Complaints & Feedback' },
+  { path: '/complaints', icon: '📝', label: 'Complaints & Feedback', minLevel: 2 },
   { path: '/compliments', icon: '⭐', label: 'Compliments' },
-  { path: '/governance', icon: '🏛', label: 'Governance Minutes' },
-  { path: '/qip', icon: '📈', label: 'Quality Improvement Plan' },
+  { path: '/governance', icon: '🏛', label: 'Governance Minutes', minLevel: 3 },
+  { path: '/govactions', icon: '✅', label: 'Governance Actions', minLevel: 3 },
+  { path: '/qip', icon: '📈', label: 'Quality Improvement Plan', minLevel: 3 },
 ];
 
 export default function Layout({ children }) {

@@ -42,6 +42,13 @@ import QIPTracker from './components/QIPTracker';
 import StaffInduction from './components/StaffInduction';
 import StaffAppraisals from './components/StaffAppraisals';
 import FireEquipment from './components/FireEquipment';
+import SafeguardingReferral from './components/SafeguardingReferral';
+import ChildParticipation from './components/ChildParticipation';
+import AbsencePlans from './components/AbsencePlans';
+import NightChecks from './components/NightChecks';
+import MedicationStock from './components/MedicationStock';
+import GovernanceActions from './components/GovernanceActions';
+import IncidentTrends from './components/IncidentTrends';
 
 export const AuthContext = createContext(null);
 export const useAuth = () => useContext(AuthContext);
@@ -108,6 +115,13 @@ export default function App() {
             <Route path="/induction" element={<StaffInduction />} />
             <Route path="/appraisals" element={<StaffAppraisals />} />
             <Route path="/fireequipment" element={<FireEquipment />} />
+            <Route path="/safeguarding" element={<SafeguardingReferral />} />
+            <Route path="/participation" element={<ChildParticipation />} />
+            <Route path="/absenceplans" element={<AbsencePlans />} />
+            <Route path="/nightchecks" element={<NightChecks />} />
+            <Route path="/medstock" element={<MedicationStock />} />
+            <Route path="/govactions" element={<GovernanceActions />} />
+            <Route path="/trends" element={<IncidentTrends />} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </Layout>

@@ -47,6 +47,18 @@ const TABLES = {
   riskregister:     { table: 'risk_register', orderBy: 'id DESC', minRead: 3, minWrite: 3, required: ['description'] },
   induction:        { table: 'staff_induction', orderBy: 'start_date DESC', minRead: 3, minWrite: 3, required: ['staff_id','start_date'] },
   appraisals:       { table: 'staff_appraisals', orderBy: 'date DESC', minRead: 4, minWrite: 4, required: ['staff_id','date','appraiser_id'] },
+
+  // High-risk governance modules
+  restrictive:      { table: 'restrictive_practices', orderBy: 'date DESC', minRead: 2, minWrite: 2, required: ['date','child_id','type','description'] },
+  safeguarding:     { table: 'safeguarding_referrals', orderBy: 'date DESC', minRead: 3, minWrite: 2, required: ['date','child_id','concern_type'] },
+  participation:    { table: 'child_participation', orderBy: 'date DESC', minRead: 1, minWrite: 1, required: ['date','type'] },
+  absenceplans:     { table: 'absence_plans', orderBy: 'date DESC', minRead: 2, minWrite: 2, required: ['date','child_id','triggers'] },
+  medstock:         { table: 'medication_stock', orderBy: 'date_received DESC', minRead: 2, minWrite: 2, required: ['child_id','medication_name'] },
+  prnprotocols:     { table: 'prn_protocols', orderBy: 'id DESC', minRead: 2, minWrite: 3, required: ['child_id','medication_name','indication'] },
+  nightchecks:      { table: 'night_checks', orderBy: 'date DESC, time DESC', minRead: 1, minWrite: 1, required: ['date','time','child_id'] },
+  policyversions:   { table: 'policy_versions', orderBy: 'created_at DESC', minRead: 3, minWrite: 3, required: ['document_id','version','change_summary'] },
+  signatures:       { table: 'digital_signatures', orderBy: 'signed_at DESC', minRead: 3, minWrite: 1, required: ['record_type','record_id'] },
+  govactions:       { table: 'governance_actions', orderBy: 'date DESC', minRead: 3, minWrite: 3, required: ['date','action'] },
 };
 
 // ── Column whitelist — prevent SQL injection via dynamic column names ──
