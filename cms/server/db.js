@@ -363,6 +363,74 @@ CREATE TABLE IF NOT EXISTS missing_chronology (
   created_by INTEGER, created_at TEXT DEFAULT (datetime('now')),
   FOREIGN KEY (child_id) REFERENCES children(id)
 );
+CREATE TABLE IF NOT EXISTS peeps (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  child_id INTEGER, date TEXT NOT NULL,
+  mobility TEXT, communication TEXT,
+  cognitive TEXT, medical_needs TEXT,
+  evacuation_method TEXT, assembly_point TEXT,
+  assigned_staff INTEGER, night_plan TEXT,
+  equipment_needed TEXT, review_date TEXT,
+  status TEXT DEFAULT 'Active',
+  created_by INTEGER, created_at TEXT DEFAULT (datetime('now')),
+  FOREIGN KEY (child_id) REFERENCES children(id),
+  FOREIGN KEY (assigned_staff) REFERENCES users(id)
+);
+CREATE TABLE IF NOT EXISTS qip (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  date TEXT NOT NULL, standard TEXT,
+  finding TEXT, action TEXT,
+  owner TEXT, target_date TEXT,
+  progress TEXT, evidence TEXT,
+  priority TEXT DEFAULT 'Medium',
+  status TEXT DEFAULT 'Open',
+  source TEXT DEFAULT 'Internal Review',
+  created_by INTEGER, created_at TEXT DEFAULT (datetime('now'))
+);
+CREATE TABLE IF NOT EXISTS staff_induction (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  staff_id INTEGER, start_date TEXT NOT NULL,
+  mentor_id INTEGER,
+  policies_read INTEGER DEFAULT 0,
+  safeguarding_training INTEGER DEFAULT 0,
+  fire_safety_training INTEGER DEFAULT 0,
+  first_aid_training INTEGER DEFAULT 0,
+  medication_training INTEGER DEFAULT 0,
+  manual_handling INTEGER DEFAULT 0,
+  children_first INTEGER DEFAULT 0,
+  house_orientation INTEGER DEFAULT 0,
+  emergency_procedures INTEGER DEFAULT 0,
+  data_protection INTEGER DEFAULT 0,
+  lone_working INTEGER DEFAULT 0,
+  completion_date TEXT,
+  sign_off_by INTEGER,
+  notes TEXT,
+  status TEXT DEFAULT 'In Progress',
+  created_by INTEGER, created_at TEXT DEFAULT (datetime('now')),
+  FOREIGN KEY (staff_id) REFERENCES users(id),
+  FOREIGN KEY (mentor_id) REFERENCES users(id)
+);
+CREATE TABLE IF NOT EXISTS staff_appraisals (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  staff_id INTEGER, date TEXT NOT NULL,
+  appraiser_id INTEGER, period_covered TEXT,
+  achievements TEXT, areas_for_development TEXT,
+  goals_set TEXT, training_needs TEXT,
+  wellbeing_check TEXT, overall_rating TEXT DEFAULT 'Meets Expectations',
+  staff_comments TEXT, next_review TEXT,
+  created_by INTEGER, created_at TEXT DEFAULT (datetime('now')),
+  FOREIGN KEY (staff_id) REFERENCES users(id),
+  FOREIGN KEY (appraiser_id) REFERENCES users(id)
+);
+CREATE TABLE IF NOT EXISTS fire_equipment (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  equipment_type TEXT, location TEXT,
+  serial_number TEXT, install_date TEXT,
+  last_service TEXT, next_service TEXT,
+  contractor TEXT, status TEXT DEFAULT 'In Service',
+  notes TEXT,
+  created_by INTEGER, created_at TEXT DEFAULT (datetime('now'))
+);
 `);
 
 // Seed roles

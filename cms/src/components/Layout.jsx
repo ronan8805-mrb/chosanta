@@ -25,6 +25,7 @@ const NAV = [
   { path: '/childrisk', icon: '⚠️', label: 'Child Risk Assessment' },
   { path: '/careplans', icon: '📋', label: 'Care Plans' },
   { path: '/education', icon: '📚', label: 'Education & School' },
+  { path: '/peeps', icon: '🔥', label: 'PEEPs (Evacuation)' },
   { path: '/roomsearch', icon: '🚪', label: 'Room Search' },
 
   { section: 'Health & Medication' },
@@ -37,6 +38,8 @@ const NAV = [
   { path: '/attendance', icon: '✅', label: 'Staff Attendance' },
   { path: '/training', icon: '🎓', label: 'Training Sign-Off' },
   { path: '/supervision', icon: '👁', label: 'Staff Supervision' },
+  { path: '/induction', icon: '📝', label: 'Induction Checklist' },
+  { path: '/appraisals', icon: '⭐', label: 'Performance Appraisals' },
 
   { section: 'Safety & Compliance' },
   { path: '/healthsafety', icon: '🏥', label: 'H&S Inspection' },
@@ -44,12 +47,14 @@ const NAV = [
   { path: '/compliancereview', icon: '📊', label: 'Compliance Review' },
   { path: '/houserisk', icon: '🏠', label: 'House Risk Assessment' },
   { path: '/riskregister', icon: '📉', label: 'Risk Register' },
+  { path: '/fireequipment', icon: '🧯', label: 'Fire Equipment Service' },
 
   { section: 'Governance' },
   { path: '/audit', icon: '📁', label: 'Audit Trail & Documents' },
   { path: '/complaints', icon: '📝', label: 'Complaints & Feedback' },
   { path: '/compliments', icon: '⭐', label: 'Compliments' },
   { path: '/governance', icon: '🏛', label: 'Governance Minutes' },
+  { path: '/qip', icon: '📈', label: 'Quality Improvement Plan' },
 ];
 
 export default function Layout({ children }) {

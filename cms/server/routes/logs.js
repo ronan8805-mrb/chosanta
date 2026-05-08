@@ -28,6 +28,11 @@ const TABLES = {
   houserisk: { table: 'house_risk_assessments', orderBy: 'date DESC' },
   riskregister: { table: 'risk_register', orderBy: 'id DESC' },
   missingchronology: { table: 'missing_chronology', orderBy: 'date DESC' },
+  peeps: { table: 'peeps', orderBy: 'date DESC' },
+  qip: { table: 'qip', orderBy: 'date DESC' },
+  induction: { table: 'staff_induction', orderBy: 'start_date DESC' },
+  appraisals: { table: 'staff_appraisals', orderBy: 'date DESC' },
+  fireequipment: { table: 'fire_equipment', orderBy: 'next_service ASC' },
 };
 
 router.get('/:type', (req, res) => {

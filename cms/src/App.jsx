@@ -37,6 +37,11 @@ import EducationContacts from './components/EducationContacts';
 import HouseRiskAssessment from './components/HouseRiskAssessment';
 import RiskRegister from './components/RiskRegister';
 import MissingChronology from './components/MissingChronology';
+import PEEPLog from './components/PEEPLog';
+import QIPTracker from './components/QIPTracker';
+import StaffInduction from './components/StaffInduction';
+import StaffAppraisals from './components/StaffAppraisals';
+import FireEquipment from './components/FireEquipment';
 
 export const AuthContext = createContext(null);
 export const useAuth = () => useContext(AuthContext);
@@ -98,6 +103,11 @@ export default function App() {
             <Route path="/houserisk" element={<HouseRiskAssessment />} />
             <Route path="/riskregister" element={<RiskRegister />} />
             <Route path="/missingchronology" element={<MissingChronology />} />
+            <Route path="/peeps" element={<PEEPLog />} />
+            <Route path="/qip" element={<QIPTracker />} />
+            <Route path="/induction" element={<StaffInduction />} />
+            <Route path="/appraisals" element={<StaffAppraisals />} />
+            <Route path="/fireequipment" element={<FireEquipment />} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </Layout>
