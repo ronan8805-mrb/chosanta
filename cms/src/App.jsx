@@ -56,9 +56,27 @@ export const useAuth = () => useContext(AuthContext);
 const api = async (url, opts = {}) => {
   const res = await fetch(url, { ...opts, credentials: 'include', headers: { 'Content-Type': 'application/json', ...opts.headers } });
   if (res.status === 401) throw new Error('AUTH');
-  return res.json();
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.error || `HTTP ${res.status}`);
+  return data;
 };
 export { api };
+
+class ErrorBoundary extends React.Component {
+  constructor(props) { super(props); this.state = { error: null }; }
+  static getDerivedStateFromError(error) { return { error: error.message }; }
+  render() {
+    if (this.state.error) return (
+      <div style={{ padding: 40, textAlign: 'center' }}>
+        <div style={{ fontSize: 48, marginBottom: 16 }}>🔒</div>
+        <h2 style={{ marginBottom: 8 }}>Access Restricted</h2>
+        <p style={{ color: '#9a9484', marginBottom: 16 }}>{this.state.error}</p>
+        <button className="btn btn-primary" onClick={() => { this.setState({ error: null }); window.history.back(); }}>← Go Back</button>
+      </div>
+    );
+    return this.props.children;
+  }
+}
 
 export default function App() {
   const [user, setUser] = useState(null);
@@ -75,6 +93,7 @@ export default function App() {
     <AuthContext.Provider value={{ user, setUser }}>
       <BrowserRouter>
         <Layout>
+          <ErrorBoundary>
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/incidents" element={<IncidentLog />} />
@@ -124,6 +143,7 @@ export default function App() {
             <Route path="/trends" element={<IncidentTrends />} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
+          </ErrorBoundary>
         </Layout>
       </BrowserRouter>
     </AuthContext.Provider>
