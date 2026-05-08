@@ -20,7 +20,8 @@ CREATE TABLE IF NOT EXISTS users (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   email TEXT UNIQUE NOT NULL, password_hash TEXT NOT NULL,
   full_name TEXT NOT NULL, role_id INTEGER DEFAULT 1,
-  active INTEGER DEFAULT 1, created_at TEXT DEFAULT (datetime('now')),
+  active INTEGER DEFAULT 1, last_login TEXT,
+  created_at TEXT DEFAULT (datetime('now')),
   FOREIGN KEY (role_id) REFERENCES roles(id)
 );
 CREATE TABLE IF NOT EXISTS children (
