@@ -10,8 +10,8 @@ export default function HandoverLog() {
   const [viewRecord, setViewRecord] = useState(null);
   const [form, setForm] = useState({});
 
-  const load = () => api('/api/handovers').then(setRows);
-  useEffect(() => { load(); api('/api/children').then(setChildren); }, []);
+  const load = () => api('/api/handovers').then(setRows).catch(() => {});
+  useEffect(() => { load(); api('/api/children').then(setChildren).catch(() => {}); }, []);
 
   const blankForm = () => ({
     date: new Date().toISOString().slice(0,10),

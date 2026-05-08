@@ -35,9 +35,9 @@ export default function IncidentLog() {
 
   const load = () => {
     const q = new URLSearchParams(Object.fromEntries(Object.entries(filters).filter(([,v]) => v)));
-    api(`/api/incidents?${q}`).then(setRows);
+    api(`/api/incidents?${q}`).then(setRows).catch(() => {});
   };
-  useEffect(() => { load(); api('/api/children').then(setChildren); }, []);
+  useEffect(() => { load(); api('/api/children').then(setChildren).catch(() => {}); }, []);
   useEffect(() => { load(); }, [filters]);
 
   const blankForm = () => ({

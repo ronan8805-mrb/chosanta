@@ -8,8 +8,8 @@ export default function VisitorLog() {
   const [editing, setEditing] = useState(null);
   const [form, setForm] = useState({});
 
-  const load = () => api('/api/visitors').then(setRows);
-  useEffect(() => { load(); api('/api/children').then(setChildren); }, []);
+  const load = () => api('/api/visitors').then(setRows).catch(() => {});
+  useEffect(() => { load(); api('/api/children').then(setChildren).catch(() => {}); }, []);
 
   const openNew = () => { setEditing(null); setForm({ date: new Date().toISOString().slice(0,10), visitor_name: '', organisation: '', purpose: '', child_id: '', time_in: new Date().toTimeString().slice(0,5), time_out: '', supervised: true, refused: false, refusal_reason: '' }); setShowModal(true); };
   const openEdit = (r) => { setEditing(r); setForm({ ...r, supervised: !!r.supervised, refused: !!r.refused }); setShowModal(true); };

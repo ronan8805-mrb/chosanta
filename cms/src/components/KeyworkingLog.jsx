@@ -7,7 +7,7 @@ export default function KeyworkingLog() {
   const [children, setChildren] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [form, setForm] = useState({});
-  useEffect(() => { api('/api/children').then(setChildren); }, []);
+  useEffect(() => { api('/api/children').then(setChildren).catch(() => {}); }, []);
   const F = (k, v) => setForm(p => ({ ...p, [k]: v }));
   const openNew = () => { setForm({ date: new Date().toISOString().slice(0,10), child_id:'', keyworker:'', duration:'', location:'', mood:'', wellbeing:'', goals_progress:'', topics:'', child_voice:'', safeguarding_check:'No concerns', actions:'', reflective_notes:'', engagement:'Good', pic_reviewed:false }); setShowModal(true); };
 

@@ -7,7 +7,7 @@ export default function MissingChild() {
   const [children, setChildren] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [form, setForm] = useState({});
-  useEffect(() => { api('/api/children').then(setChildren); }, []);
+  useEffect(() => { api('/api/children').then(setChildren).catch(() => {}); }, []);
   const F = (k, v) => setForm(p => ({ ...p, [k]: v }));
   const openNew = () => { setForm({ date: new Date().toISOString().slice(0,10), child_id:'', amp_on_file:true, chronology:'', time_returned:'', where_found:'', condition:'Unharmed', medical:false, total_duration:'', interview_date:'', interviewer:'', child_willing:true, q_where:'',q_why:'',q_who:'',q_safe:'',q_worried:'',q_hurt:'',q_substance:'',q_help_stay:'', safeguarding_concern:false, cse_concern:false, substance_concern:false, ags_15min:true, protocol_followed:true, triggers:'', pic_reviewed:false }); setShowModal(true); };
 

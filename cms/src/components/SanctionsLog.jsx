@@ -9,7 +9,7 @@ export default function SanctionsLog() {
   const [children, setChildren] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [form, setForm] = useState({});
-  useEffect(() => { api('/api/children').then(setChildren); }, []);
+  useEffect(() => { api('/api/children').then(setChildren).catch(() => {}); }, []);
   const F = (k, v) => setForm(p => ({ ...p, [k]: v }));
   const openNew = () => { setForm({ date: new Date().toISOString().slice(0,10), time:'', child_id:'', staff_member:'', behaviour_category:'', behaviour_detail:'', deescalation:true, emotional_state:true, consequence_type:'', consequence_detail:'', duration:'', proportionate:true, age_appropriate:true, child_informed:true, child_view_sought:true, child_response:'', child_understands:true, right_to_complain:true, consistent:true, dignity:true, punitive_risk:false, disproportionate:false, safeguarding:false, pic_reviewed:false }); setShowModal(true); };
 

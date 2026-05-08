@@ -18,7 +18,7 @@ export default function DocumentLibrary() {
     const q = new URLSearchParams();
     if (catFilter) q.set('category', catFilter);
     if (statusFilter) q.set('status', statusFilter);
-    api(`/api/documents?${q}`).then(setDocs);
+    api(`/api/documents?${q}`).then(setDocs).catch(() => {});
   };
   useEffect(() => { load(); }, [catFilter, statusFilter]);
 

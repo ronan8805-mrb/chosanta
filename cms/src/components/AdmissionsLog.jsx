@@ -10,7 +10,7 @@ export default function AdmissionsLog() {
   const [children, setChildren] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [form, setForm] = useState({});
-  useEffect(() => { api('/api/children').then(setChildren); }, []);
+  useEffect(() => { api('/api/children').then(setChildren).catch(() => {}); }, []);
   const F = (k, v) => setForm(p => ({ ...p, [k]: v }));
   const openNew = () => { const checks = {}; CHECKLIST.forEach((c,i) => checks[`chk_${i}`] = false); setForm({ date: new Date().toISOString().slice(0,10), time:'', child_id:'', placement_type:'', referral_source:'', referring_sw:'', tusla_area:'', court_ref:'', expected_duration:'', ...checks }); setShowModal(true); };
 
