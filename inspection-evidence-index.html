@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inspection Evidence Folder — Chosanta Management</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>@page{size:A4;margin:0}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}body{font-family:'Inter',sans-serif;background:#e8ecf1;color:#1a1610;display:flex;flex-direction:column;align-items:center;padding:40px 20px;gap:40px}@media print{body{background:#fff;padding:0;gap:0}.page{box-shadow:none;width:100%;min-height:unset}.pa{display:none!important}}.page{width:210mm;min-height:297mm;background:#fff;box-shadow:0 8px 40px rgba(13,27,42,.12);position:relative;overflow:hidden;display:flex;flex-direction:column}.tb{height:6px;background:linear-gradient(90deg,#c9a84c,#e0c070 40%,#c9a84c 70%,#a8893c)}.hd{display:flex;align-items:center;justify-content:space-between;padding:14px 40px 10px;border-bottom:2px solid #f0ede8;position:relative}.hd::after{content:'';position:absolute;bottom:-2px;left:40px;width:60px;height:3px;background:linear-gradient(90deg,#c9a84c,#e0c070);border-radius:2px}.lb{display:flex;align-items:center;gap:10px}.li{width:34px;height:34px;background:linear-gradient(135deg,#c9a84c,#a8893c);border-radius:7px;display:flex;align-items:center;justify-content:center}.li svg{width:18px;height:18px}.lt{display:flex;flex-direction:column;line-height:1}.ln{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#0d1b2a}.ls{font-size:7.5px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:#c9a84c;margin-top:2px}.co{text-align:right;font-size:9px;line-height:1.6;color:#5c5648}.co .cn{font-family:'Playfair Display',serif;font-size:12px;font-weight:700;color:#0d1b2a}.co .tg{font-size:7.5px;text-transform:uppercase;letter-spacing:2px;color:#c9a84c;font-weight:600}.ct{flex:1;padding:22px 40px 16px}.dt{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:#0d1b2a;margin-bottom:4px;position:relative;padding-bottom:10px}.dt::after{content:'';position:absolute;bottom:0;left:0;width:50px;height:3px;background:linear-gradient(90deg,#c9a84c,#e0c070);border-radius:2px}.ds{font-size:9px;color:#9a9484;text-transform:uppercase;letter-spacing:2.5px;font-weight:600;margin-bottom:14px}.sh{background:linear-gradient(135deg,#0d1b2a,#1b2d42);color:#fff;padding:6px 12px;border-radius:4px;margin:12px 0 6px;font-size:9.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;display:flex;align-items:center;gap:8px}.sh .n{background:linear-gradient(135deg,#c9a84c,#e0c070);color:#0d1b2a;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:800;flex-shrink:0}.bt{font-size:10px;line-height:1.6;color:#3d3830;margin-bottom:8px}table{width:100%;border-collapse:collapse;font-size:8.5px;margin-bottom:10px}th{background:linear-gradient(135deg,#0d1b2a,#1b2d42);color:#fff;padding:5px 6px;text-align:left;font-weight:700}td{padding:6px 6px;border-bottom:1px solid #f0ede8;color:#3d3830}tr:nth-child(even) td{background:#faf9f7}.ok{color:#1a7a3c;font-weight:700}.na{color:#999;font-style:italic}.sg{font-size:9px;color:#3d3830;margin-top:10px;padding:8px;border:1px dashed #c9a84c;border-radius:6px;background:#faf9f7}.sg span{display:block;margin-bottom:5px;border-bottom:1px dotted #ddd;padding-bottom:3px}.ft{padding:10px 40px;background:linear-gradient(135deg,#0d1b2a,#1b2d42);color:rgba(255,255,255,.8);font-size:8px;line-height:1.8;display:flex;justify-content:space-between;align-items:center;margin-top:auto}.fl{display:flex;flex-direction:column}.fl span{display:inline-flex;align-items:center;gap:5px}.fd{width:1px;height:28px;background:rgba(201,168,76,.3);margin:0 14px}.fr{text-align:right;font-size:7px;color:rgba(255,255,255,.5)}.pa{position:fixed;top:20px;right:20px;display:flex;gap:12px;z-index:100}.pa button{padding:12px 24px;border:none;border-radius:8px;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;box-shadow:0 4px 12px rgba(0,0,0,.15)}.bp{background:linear-gradient(135deg,#c9a84c,#e0c070);color:#0d1b2a}.bx{background:linear-gradient(135deg,#0d1b2a,#1b2d42);color:#fff}</style></head><body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<div class="pa"><button class="bp" onclick="window.print()">🖨️ Print</button><button class="bx" id="btn" onclick="savePDF()">📄 Save as PDF</button></div>
+<script>async function savePDF(){const btn=document.getElementById('btn');btn.disabled=true;try{const{jsPDF}=window.jspdf;const pdf=new jsPDF({orientation:'portrait',unit:'mm',format:'a4'});const pages=document.querySelectorAll('.page');for(let i=0;i<pages.length;i++){btn.textContent='⏳ '+(i+1)+'/'+pages.length;await new Promise(r=>setTimeout(r,300));const c=await html2canvas(pages[i],{scale:1.5,useCORS:true,backgroundColor:'#fff',width:pages[i].scrollWidth,height:pages[i].scrollHeight,logging:false});if(i>0)pdf.addPage();pdf.addImage(c.toDataURL('image/jpeg',0.92),'JPEG',0,0,210,297);c.width=0;c.height=0;}const b=pdf.output('blob');const u=URL.createObjectURL(b);const a=document.createElement('a');a.href=u;a.download='Chosanta_Inspection_Evidence_Index.pdf';document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(u);}catch(e){alert('PDF error: '+e.message);}btn.textContent='📄 Save as PDF';btn.disabled=false;}</script>
+
+<div class="page"><div class="tb"></div>
+<header class="hd"><div class="lb"><div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="lt"><span class="ln">Chosanta</span><span class="ls">Management</span></div></div><div class="co"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div><div>Office 107, Brú Digital Hub, 56 West Street</div><div>Drogheda, Co. Louth · A92 E4CY</div></div></header>
+<main class="ct">
+<h1 class="dt">Inspection Evidence Folder</h1><p class="ds">HIQA / Tusla Inspection Readiness — Master Index</p>
+<p class="bt">This folder constitutes the operational evidence base for Chosanta Management's residential service. It is structured to align with the <strong>HIQA triangulated inspection methodology</strong>: document review, staff and child interviews, and direct observation. All records are maintained in accordance with the <em>National Standards for Children's Residential Centres 2018</em>, the <em>Child Care (Standards in Children's Residential Centres) Regulations 2018 (S.I. 674/2017)</em>, and Tusla's <em>Quality Improvement Framework</em>.</p>
+
+<div class="sh"><span class="n">A</span> Section 1 — Workforce Evidence</div>
+<table>
+<tr><th>#</th><th>Document</th><th>Regulatory Basis</th><th>Frequency</th><th>Location</th><th>Current</th></tr>
+<tr><td>1.1</td><td>Staff Supervision Records (signed)</td><td>HIQA Standard 6.3 · S.I. 674/2017 Reg.16</td><td>Every 6–8 weeks</td><td>Personnel Files</td><td class="ok">✓</td></tr>
+<tr><td>1.2</td><td>Supervision Contracts</td><td>HIQA Standard 6.3</td><td>At appointment</td><td>Personnel Files</td><td></td></tr>
+<tr><td>1.3</td><td>Annual Performance Appraisals</td><td>HIQA Standard 6.3</td><td>Annual</td><td>Personnel Files</td><td></td></tr>
+<tr><td>1.4</td><td>Staff Training Log / Matrix</td><td>S.I. 674/2017 Reg.16 · Children First Act 2015</td><td>Monthly update</td><td>Governance File</td><td class="ok">✓</td></tr>
+<tr><td>1.5</td><td>Training Certificates (originals/copies)</td><td>S.I. 674/2017 Reg.16</td><td>Per course</td><td>Personnel Files</td><td></td></tr>
+<tr><td>1.6</td><td>Garda Vetting Disclosures</td><td>National Vetting Bureau Acts 2012–2016</td><td>Every 3 years</td><td>Personnel Files (secure)</td><td></td></tr>
+<tr><td>1.7</td><td>Staff Induction Checklists</td><td>HIQA Standard 6 · S.I. 674/2017 Reg.16</td><td>At induction</td><td>Personnel Files</td><td class="ok">✓</td></tr>
+<tr><td>1.8</td><td>Reflective Practice Records</td><td>HIQA Standard 6.3</td><td>Per supervision</td><td>Personnel Files</td><td></td></tr>
+</table>
+
+<div class="sh"><span class="n">B</span> Section 2 — Governance &amp; Quality</div>
+<table>
+<tr><th>#</th><th>Document</th><th>Regulatory Basis</th><th>Frequency</th><th>Location</th><th>Current</th></tr>
+<tr><td>2.1</td><td>Governance Meeting Minutes</td><td>HIQA Standard 5 · Tusla QIF</td><td>Monthly</td><td>Governance File</td><td></td></tr>
+<tr><td>2.2</td><td>Quality Improvement Plan (QIP)</td><td>Tusla Quality Improvement Framework</td><td>Annual / rolling</td><td>Governance File</td><td></td></tr>
+<tr><td>2.3</td><td>Internal Audit Reports</td><td>HIQA Standard 5 · S.I. 674/2017</td><td>Quarterly</td><td>Governance File</td><td></td></tr>
+<tr><td>2.4</td><td>Incident Trend Analysis (NIMS-aligned)</td><td>Tusla NIMS · 5-Step Review Process</td><td>Monthly</td><td>Governance File</td><td></td></tr>
+<tr><td>2.5</td><td>Complaints Log &amp; Review</td><td>S.I. 674/2017 Reg.20 · Children First 2015</td><td>Monthly</td><td>Governance File</td><td class="ok">✓</td></tr>
+<tr><td>2.6</td><td>Significant Event Notifications (SENs)</td><td>Child Care Standards Regs 1996</td><td>Per event</td><td>Governance File</td><td></td></tr>
+</table>
+
+<div class="sh"><span class="n">C</span> Section 3 — Safety &amp; Premises</div>
+<table>
+<tr><th>#</th><th>Document</th><th>Regulatory Basis</th><th>Frequency</th><th>Location</th><th>Current</th></tr>
+<tr><td>3.1</td><td>Fire Drill Log</td><td>Fire Services Act 1981/2003 · HIQA Standard 3</td><td>Quarterly minimum</td><td>Safety File</td><td></td></tr>
+<tr><td>3.2</td><td>Personal Emergency Evacuation Plans (PEEPs)</td><td>HIQA Standard 3</td><td>Bi-annual review</td><td>Safety File / Child's File</td><td></td></tr>
+<tr><td>3.3</td><td>Fire Safety Equipment Service Records</td><td>Fire Services Act 1981</td><td>Annual</td><td>Safety File</td><td></td></tr>
+<tr><td>3.4</td><td>Medication Audit</td><td>S.I. 674/2017 · HIQA Standard 3</td><td>Monthly</td><td>Medication File</td><td></td></tr>
+<tr><td>3.5</td><td>Medication Administration Records (MARs)</td><td>S.I. 674/2017</td><td>Per administration</td><td>Medication File</td><td></td></tr>
+<tr><td>3.6</td><td>Maintenance / Environmental Log</td><td>HIQA Standard 3 · S.I. 674/2017</td><td>Weekly checks</td><td>Safety File</td><td></td></tr>
+</table>
+
+<div class="sh"><span class="n">D</span> Section 4 — Children's Records</div>
+<table>
+<tr><th>#</th><th>Document</th><th>Regulatory Basis</th><th>Frequency</th><th>Location</th><th>Current</th></tr>
+<tr><td>4.1</td><td>Placement / Emergency Placement Forms</td><td>S.I. 259/1995 · Child Care Act 1991</td><td>Per placement</td><td>Child's File</td><td class="ok">✓</td></tr>
+<tr><td>4.2</td><td>Statutory Care Plans (within 7 working days)</td><td>S.I. 259/1995 · HIQA Standard 3</td><td>Per placement</td><td>Child's File</td><td></td></tr>
+<tr><td>4.3</td><td>Individual Risk Assessments</td><td>HIQA Standard 3</td><td>Per placement / update</td><td>Child's File</td><td class="ok">✓</td></tr>
+<tr><td>4.4</td><td>Absence Management Plans</td><td>Tusla/AGS Joint Protocol</td><td>Monthly review</td><td>Child's File</td><td class="ok">✓</td></tr>
+<tr><td>4.5</td><td>Missing Child Incident Reports</td><td>Tusla/AGS Joint Protocol</td><td>Per event</td><td>Child's File + Incident Log</td><td class="ok">✓</td></tr>
+</table>
+
+<div class="sg">
+<span><strong>Folder Prepared By:</strong> _________________________ <strong>Role:</strong> _________________________</span>
+<span><strong>PIC Review:</strong> _________________________ <strong>Date:</strong> __________ <strong>Next Review:</strong> __________</span>
+<span><strong>Legislative Basis:</strong> HIQA National Standards 2018 · S.I. 674/2017 · S.I. 259/1995 · Children First Act 2015 · National Vetting Bureau Acts 2012–2016 · Tusla QIF · Tusla/AGS Joint Protocol</span>
+<span><strong>Ref:</strong> CM-IEF-001 | Version 1.0 | May 2025</span>
+</div>
+</main>
+<footer class="ft"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Inspection Evidence Folder — Master Index</div></footer></div>
+
+</body></html>

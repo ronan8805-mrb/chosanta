@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaints Policy &amp; Procedures — Chosanta Management</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        @page { size: A4; margin: 0; }
+        *, *::before, *::after {
+            box-sizing: border-box; margin: 0; padding: 0;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #e8ecf1; color: #1a1610;
+            display: flex; flex-direction: column;
+            align-items: center; padding: 40px 20px; gap: 40px;
+        }
+        @media print {
+            body { background: white; padding: 0; gap: 0; }
+            .page { box-shadow: none; width: 100%; min-height: unset; }
+            .print-actions { display: none !important; }
+        }
+        .page {
+            width: 210mm; min-height: 297mm; background: #fff;
+            box-shadow: 0 8px 40px rgba(13,27,42,0.12);
+            position: relative; overflow: hidden;
+            display: flex; flex-direction: column;
+        }
+        .top-band { height: 6px; background: linear-gradient(90deg, #c9a84c 0%, #e0c070 40%, #c9a84c 70%, #a8893c 100%); }
+        .header {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 16px 40px 12px; border-bottom: 2px solid #f0ede8; position: relative;
+        }
+        .header::after {
+            content: ''; position: absolute; bottom: -2px; left: 40px;
+            width: 60px; height: 3px;
+            background: linear-gradient(90deg, #c9a84c, #e0c070); border-radius: 2px;
+        }
+        .logo-box { display: flex; align-items: center; gap: 10px; }
+        .logo-icon {
+            width: 34px; height: 34px;
+            background: linear-gradient(135deg, #c9a84c, #a8893c);
+            border-radius: 7px; display: flex; align-items: center; justify-content: center;
+        }
+        .logo-icon svg { width: 18px; height: 18px; }
+        .logo-text { display: flex; flex-direction: column; line-height: 1; }
+        .logo-name { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: #0d1b2a; }
+        .logo-sub { font-size: 7.5px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: #c9a84c; margin-top: 2px; }
+        .co-details { text-align: right; font-size: 9px; line-height: 1.6; color: #5c5648; }
+        .co-details .cn { font-family: 'Playfair Display', serif; font-size: 12px; font-weight: 700; color: #0d1b2a; }
+        .co-details .tg { font-size: 7.5px; text-transform: uppercase; letter-spacing: 2px; color: #c9a84c; font-weight: 600; }
+        .content { flex: 1; padding: 28px 40px 20px; }
+        .doc-title {
+            font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700;
+            color: #0d1b2a; margin-bottom: 4px; position: relative; padding-bottom: 12px;
+        }
+        .doc-title::after {
+            content: ''; position: absolute; bottom: 0; left: 0;
+            width: 50px; height: 3px;
+            background: linear-gradient(90deg, #c9a84c, #e0c070); border-radius: 2px;
+        }
+        .doc-sub { font-size: 10px; color: #9a9484; text-transform: uppercase; letter-spacing: 2.5px; font-weight: 600; margin-bottom: 24px; }
+        .sh {
+            background: linear-gradient(135deg, #0d1b2a, #1b2d42);
+            color: #fff; padding: 8px 16px; border-radius: 4px;
+            margin: 20px 0 12px; font-size: 11px; font-weight: 700;
+            letter-spacing: 1px; text-transform: uppercase;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .sh .n {
+            background: linear-gradient(135deg, #c9a84c, #e0c070);
+            color: #0d1b2a; width: 22px; height: 22px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 10px; font-weight: 800; flex-shrink: 0;
+        }
+        .body-text { font-size: 12px; line-height: 1.75; color: #3d3830; margin-bottom: 16px; max-width: 620px; }
+        .aims-label { font-size: 12px; font-weight: 600; color: #0d1b2a; margin-bottom: 10px; }
+        .sub-heading { font-size: 12px; font-weight: 700; color: #0d1b2a; margin: 14px 0 6px; }
+        .bl { list-style: none; margin-bottom: 16px; }
+        .bl li {
+            position: relative; padding: 12px 14px 12px 42px; margin-bottom: 6px;
+            background: linear-gradient(135deg, #faf9f7, #f5f3ef);
+            border-radius: 6px; border-left: 3px solid #c9a84c;
+            font-size: 11.5px; line-height: 1.55; color: #3d3830;
+        }
+        .bl li::before {
+            content: '✓'; position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
+            color: #c9a84c; font-size: 13px; font-weight: 700;
+        }
+        .bl.steps li::before { content: '→'; }
+        .bl.nested { margin-top: 8px; margin-bottom: 8px; }
+        .bl.nested li { padding: 8px 14px 8px 36px; background: #f0ede8; border-left-color: #d4c48a; font-size: 11px; }
+        .contact-block { background: #faf9f7; border-radius: 6px; border-left: 3px solid #c9a84c; padding: 12px 16px; margin-bottom: 10px; font-size: 11px; line-height: 1.7; color: #3d3830; }
+        .contact-block strong { color: #0d1b2a; }
+        .footer {
+            padding: 14px 40px;
+            background: linear-gradient(135deg, #0d1b2a, #1b2d42);
+            color: rgba(255,255,255,0.8); font-size: 8.5px; line-height: 1.8;
+            display: flex; justify-content: space-between; align-items: center; margin-top: auto;
+        }
+        .fl { display: flex; flex-direction: column; }
+        .fl span { display: inline-flex; align-items: center; gap: 5px; }
+        .fd { width: 1px; height: 32px; background: rgba(201,168,76,0.3); margin: 0 16px; }
+        .fr { text-align: right; font-size: 7.5px; color: rgba(255,255,255,0.5); }
+        .print-actions { position: fixed; top: 20px; right: 20px; display: flex; gap: 12px; z-index: 100; }
+        .print-actions button {
+            padding: 12px 24px; border: none; border-radius: 8px;
+            font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600;
+            cursor: pointer; transition: all 0.2s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .bp { background: linear-gradient(135deg, #c9a84c, #e0c070); color: #0d1b2a; }
+        .bp:hover { transform: translateY(-1px); }
+        .bpdf { background: linear-gradient(135deg, #0d1b2a, #1b2d42); color: #fff; }
+        .bpdf:hover { transform: translateY(-1px); }
+    </style>
+</head>
+<body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<div class="print-actions">
+    <button class="bp" onclick="window.print()">🖨️ Print</button>
+    <button class="bpdf" id="savePdfBtn" onclick="savePDF()">📄 Save as PDF</button>
+</div>
+<script>
+async function savePDF() {
+    const btn = document.getElementById('savePdfBtn');
+    btn.disabled = true;
+    try {
+        const { jsPDF } = window.jspdf;
+        const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
+        const pages = document.querySelectorAll('.page');
+        for (let i = 0; i < pages.length; i++) {
+            btn.textContent = '⏳ Page ' + (i+1) + '/' + pages.length;
+            await new Promise(r => setTimeout(r, 300));
+            const canvas = await html2canvas(pages[i], {
+                scale: 1.5, useCORS: true, letterRendering: true,
+                backgroundColor: '#ffffff',
+                width: pages[i].scrollWidth,
+                height: pages[i].scrollHeight,
+                logging: false
+            });
+            const imgData = canvas.toDataURL('image/jpeg', 0.92);
+            if (i > 0) pdf.addPage();
+            pdf.addImage(imgData, 'JPEG', 0, 0, 210, 297);
+            canvas.width = 0; canvas.height = 0;
+        }
+        const blob = pdf.output('blob');
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'Chosanta_Complaints_Policy.pdf';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    } catch (e) {
+        alert('PDF generation error: ' + e.message);
+    }
+    btn.textContent = '📄 Save as PDF';
+    btn.disabled = false;
+}
+</script>
+
+<!-- ==================== PAGE 1: PURPOSE ==================== -->
+<div class="page">
+    <div class="top-band"></div>
+    <header class="header">
+        <div class="logo-box">
+            <div class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div>
+            <div class="logo-text"><span class="logo-name">Chosanta</span><span class="logo-sub">Management</span></div>
+        </div>
+        <div class="co-details">
+            <div class="cn">Chosanta Management</div>
+            <div class="tg">Accommodation &amp; Property Solutions</div>
+            <div>Office 107, Brú Digital Hub, 56 West Street</div>
+            <div>Drogheda, Co. Louth · A92 E4CY</div>
+        </div>
+    </header>
+    <main class="content">
+        <h1 class="doc-title">Complaints Policy &amp; Procedures</h1>
+        <p class="doc-sub">Section 1: Purpose</p>
+        <div class="sh"><span class="n">1</span> Purpose</div>
+        <p class="body-text">The purpose of this Complaints Policy &amp; Procedures is to ensure that all service users, their families, and representatives have access to a clear, fair, and transparent process for expressing dissatisfaction with any aspect of the service provided by Chosanta Management.</p>
+        <p class="body-text">This policy promotes a culture of listening, learning, and continuous improvement, and ensures that complaints are handled promptly, respectfully, and without prejudice. It reflects national standards and regulatory requirements, including the Health Act 2007 and HIQA's guidance on complaints management.</p>
+    </main>
+    <footer class="footer">
+        <div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div>
+        <div class="fd"></div>
+        <div class="fr">Chosanta Management<br>Complaints Policy — Page 1 of 10</div>
+    </footer>
+</div>
+
+<!-- ==================== PAGE 2: SCOPE ==================== -->
+<div class="page">
+    <div class="top-band"></div>
+    <header class="header">
+        <div class="logo-box">
+            <div class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div>
+            <div class="logo-text"><span class="logo-name">Chosanta</span><span class="logo-sub">Management</span></div>
+        </div>
+        <div class="co-details"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div>
+    </header>
+    <main class="content">
+        <h1 class="doc-title">Complaints Policy &amp; Procedures</h1>
+        <p class="doc-sub">Section 2: Scope</p>
+        <div class="sh"><span class="n">2</span> Scope</div>
+        <p class="body-text">This policy applies to all complaints raised by or on behalf of:</p>
+        <ul class="bl">
+            <li>Residents and service users of Chosanta Management</li>
+            <li>Family members, legal guardians, or advocates acting on their behalf</li>
+            <li>Staff, volunteers, and members of the public who interact with the service</li>
+        </ul>
+        <p class="body-text">The policy covers all aspects of care, support, communication, behaviour, facilities, and organisational conduct.</p>
+        <p class="body-text">It does not cover grievances between staff (which are addressed through internal HR policies) or legal proceedings that are already underway.</p>
+    </main>
+    <footer class="footer">
+        <div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div>
+        <div class="fd"></div>
+        <div class="fr">Chosanta Management<br>Complaints Policy — Page 2 of 10</div>
+    </footer>
+</div>
+
+<!-- ==================== PAGE 3: POLICY STATEMENT & GUIDING PRINCIPLES ==================== -->
+<div class="page">
+    <div class="top-band"></div>
+    <header class="header">
+        <div class="logo-box">
+            <div class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div>
+            <div class="logo-text"><span class="logo-name">Chosanta</span><span class="logo-sub">Management</span></div>
+        </div>
+        <div class="co-details"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div>
+    </header>
+    <main class="content">
+        <h1 class="doc-title">Complaints Policy &amp; Procedures</h1>
+        <p class="doc-sub">Section 3: Policy Statement &amp; Guiding Principles</p>
+        <div class="sh"><span class="n">3</span> Policy Statement</div>
+        <p class="body-text">Chosanta Management is committed to maintaining the highest standards of care and service delivery. We recognise the right of every resident, family member, advocate, or member of the public to make a complaint without fear of retaliation or negative consequences.</p>
+        <p class="body-text">All complaints will be taken seriously, investigated promptly, and addressed with fairness and respect. This policy supports the organisation's culture of openness, accountability, and continuous improvement, and is aligned with the Health Act 2007, HIQA National Standards, and all applicable legislation.</p>
+        <div class="sh"><span class="n">3</span> Guiding Principles</div>
+        <ul class="bl">
+            <li><strong>Rights-Based:</strong> All individuals have the right to express dissatisfaction without fear of adverse consequences, underpinned by fairness, equality, and the right to be heard</li>
+            <li><strong>Person-Centred:</strong> The needs, wishes, and preferences of the person making the complaint are central to the process</li>
+            <li><strong>Accessibility:</strong> Information about how to make a complaint is clearly displayed and available in appropriate formats</li>
+            <li><strong>Timeliness:</strong> Complaints are acknowledged within 5 working days and investigated promptly</li>
+            <li><strong>Fairness &amp; Confidentiality:</strong> All complaints are investigated fairly, impartially, and with due respect for the privacy of all individuals involved</li>
+            <li><strong>Responsiveness &amp; Improvement:</strong> Complaints are seen as an opportunity for learning and service improvement</li>
+            <li><strong>Non-Retaliation:</strong> No individual will be treated unfairly or differently as a result of making or supporting a complaint</li>
+        </ul>
+    </main>
+    <footer class="footer">
+        <div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div>
+        <div class="fd"></div>
+        <div class="fr">Chosanta Management<br>Complaints Policy — Page 3 of 10</div>
+    </footer>
+</div>
+
+<!-- ==================== PAGE 4: COMPLAINTS PROCEDURE ==================== -->
+<div class="page">
+    <div class="top-band"></div>
+    <header class="header">
+        <div class="logo-box">
+            <div class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div>
+            <div class="logo-text"><span class="logo-name">Chosanta</span><span class="logo-sub">Management</span></div>
+        </div>
+        <div class="co-details"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div>
+    </header>
+    <main class="content">
+        <h1 class="doc-title">Complaints Policy &amp; Procedures</h1>
+        <p class="doc-sub">Section 4: Complaints Procedure</p>
+        <div class="sh"><span class="n">4</span> Complaints Procedure</div>
+        <p class="body-text">Chosanta Management is committed to resolving complaints in a transparent, fair, and timely manner. The following steps outline how complaints are managed:</p>
+        <ul class="bl steps">
+            <li><strong>Step 1 — Receiving a Complaint:</strong> Complaints can be made verbally, in writing, anonymously, or through an advocate. All staff are trained to receive complaints and escalate them as appropriate.</li>
+            <li><strong>Step 2 — Acknowledgement:</strong> Formal complaints are acknowledged in writing within 5 working days. The acknowledgement includes the name of the assigned Complaints Officer and expected timelines.</li>
+            <li><strong>Step 3 — Assessment &amp; Investigation:</strong> The Complaints Officer conducts a fair and impartial investigation, which may involve interviews, documentation review, and consultation with the PIC or Registered Provider.</li>
+            <li><strong>Step 4 — Resolution &amp; Response:</strong> A formal written response is issued within 30 working days. If delays occur, updates are provided every 20 working days. The response outlines findings, actions taken, and appeal options.</li>
+            <li><strong>Step 5 — Appeal:</strong> If dissatisfied, the complainant may escalate to the Registered Provider, HIQA, HSE Feedback Service, or Ombudsman.</li>
+            <li><strong>Step 6 — Closure &amp; Learning:</strong> Complaints are formally closed when the investigation is complete. All records are retained securely and reviewed quarterly to identify trends.</li>
+        </ul>
+    </main>
+    <footer class="footer">
+        <div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div>
+        <div class="fd"></div>
+        <div class="fr">Chosanta Management<br>Complaints Policy — Page 4 of 10</div>
+    </footer>
+</div>
+
+<!-- ==================== PAGE 5: MAKING A COMPLAINT & TIMEFRAMES ==================== -->
+<div class="page">
+    <div class="top-band"></div>
+    <header class="header">
+        <div class="logo-box">
+            <div class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div>
+            <div class="logo-text"><span class="logo-name">Chosanta</span><span class="logo-sub">Management</span></div>
+        </div>
+        <div class="co-details"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div>
+    </header>
+    <main class="content">
+        <h1 class="doc-title">Complaints Policy &amp; Procedures</h1>
+        <p class="doc-sub">Section 5: Making a Complaint &amp; Timeframes</p>
+        <div class="sh"><span class="n">5</span> Making a Complaint</div>
+        <p class="body-text">Chosanta Management encourages residents, families, and staff to speak up if they are dissatisfied with any aspect of the service.</p>
+        <p class="aims-label">Methods for submitting complaints:</p>
+        <ul class="bl">
+            <li>Verbally to any staff member or the designated Complaints Officer</li>
+            <li>In writing using the organisation's complaints form</li>
+            <li>By email or telephone to the service management</li>
+            <li>Through an independent advocate</li>
+            <li>Anonymously, if preferred</li>
+        </ul>
+        <div class="sh"><span class="n">5</span> Timeframes</div>
+        <ul class="bl">
+            <li><strong>Acknowledgement:</strong> All formal complaints acknowledged in writing within 5 working days of receipt</li>
+            <li><strong>Investigation &amp; Resolution:</strong> Written response issued within 30 working days where possible; interim updates every 20 working days if delayed</li>
+            <li><strong>Appeal:</strong> Acknowledged within 5 working days; final response within 20 working days</li>
+            <li><strong>Closure:</strong> Complaint closed when outcome accepted, appeal concluded, or complainant advised of right to escalate externally</li>
+        </ul>
+    </main>
+    <footer class="footer">
+        <div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div>
+        <div class="fd"></div>
+        <div class="fr">Chosanta Management<br>Complaints Policy — Page 5 of 10</div>
+    </footer>
+</div>
+
+<!-- ==================== PAGE 6: ROLES & RESPONSIBILITIES ==================== -->
+<div class="page">
+    <div class="top-band"></div>
+    <header class="header">
+        <div class="logo-box">
+            <div class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div>
+            <div class="logo-text"><span class="logo-name">Chosanta</span><span class="logo-sub">Management</span></div>
+        </div>
+        <div class="co-details"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div>
+    </header>
+    <main class="content">
+        <h1 class="doc-title">Complaints Policy &amp; Procedures</h1>
+        <p class="doc-sub">Section 6: Roles, Responsibilities &amp; Complaints Log</p>
+        <div class="sh"><span class="n">6</span> Roles &amp; Responsibilities</div>
+        <ul class="bl">
+            <li><strong>Service Users &amp; Families:</strong> Encouraged to voice concerns openly and participate in the complaints process; have the right to access advocacy and support throughout</li>
+            <li><strong>All Staff:</strong> Must be aware of the complaints policy; responsible for reporting complaints promptly to the Complaints Officer or Person in Charge; expected to engage cooperatively in investigations</li>
+            <li><strong>Complaints Officer:</strong> Oversees all aspects of complaints handling; acknowledges complaints, initiates investigations, ensures timely responses; maintains accurate records and reports outcomes</li>
+            <li><strong>Person in Charge / Registered Provider:</strong> Ensures effective implementation; provides oversight, support, and resources; ensures patterns are reviewed at a strategic level</li>
+        </ul>
+        <div class="sh"><span class="n">6</span> Complaints Log &amp; Record-Keeping</div>
+        <p class="body-text">Chosanta Management maintains a central Complaints Log to record, track, and monitor all complaints. This ensures transparency, accountability, and full compliance with Regulation 34 of the Health Act 2007.</p>
+        <ul class="bl">
+            <li>Log includes: reference number, date received, complainant details, summary of issue, staff assigned, actions, communications, status, and escalation notes</li>
+            <li>All records handled under GDPR and Data Protection Acts; access restricted to designated personnel only</li>
+            <li>Governance Officer reviews the log quarterly; summary reports shared during governance meetings</li>
+            <li>Records retained for a minimum of 7 years; archived complaints available for HIQA inspection</li>
+        </ul>
+    </main>
+    <footer class="footer">
+        <div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div>
+        <div class="fd"></div>
+        <div class="fr">Chosanta Management<br>Complaints Policy — Page 6 of 10</div>
+    </footer>
+</div>
+
+<!-- ==================== PAGE 7: ANONYMOUS COMPLAINTS ==================== -->
+<div class="page">
+    <div class="top-band"></div>
+    <header class="header">
+        <div class="logo-box">
+            <div class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div>
+            <div class="logo-text"><span class="logo-name">Chosanta</span><span class="logo-sub">Management</span></div>
+        </div>
+        <div class="co-details"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div>
+    </header>
+    <main class="content">
+        <h1 class="doc-title">Complaints Policy &amp; Procedures</h1>
+        <p class="doc-sub">Section 7: Anonymous Complaints &amp; Procedure</p>
+        <div class="sh"><span class="n">7</span> Anonymous Complaints</div>
+        <p class="body-text">Chosanta Management recognises that some individuals may wish to raise concerns without revealing their identity. The organisation is committed to ensuring that anonymous complaints are taken seriously and handled with due care and professionalism.</p>
+        <p class="aims-label">Key provisions:</p>
+        <ul class="bl">
+            <li><strong>Acceptance:</strong> Anonymous complaints are accepted and reviewed if sufficient information is provided to allow meaningful investigation</li>
+            <li><strong>Limitations:</strong> Investigation may be limited due to lack of specific details, inability to clarify or follow up, or challenges in providing updates</li>
+            <li><strong>Safeguarding:</strong> If an anonymous complaint raises safeguarding issues, the Designated Safeguarding Person and Governance Officer will review the matter immediately</li>
+            <li><strong>Documentation:</strong> All anonymous complaints are recorded in the Complaints Log with identity noted as unknown; records include nature of concern, date, steps taken, and outcome</li>
+            <li><strong>Non-Retaliation:</strong> Chosanta Management upholds a strict non-retaliation policy; anonymous complaints are viewed as legitimate feedback</li>
+        </ul>
+    </main>
+    <footer class="footer">
+        <div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div>
+        <div class="fd"></div>
+        <div class="fr">Chosanta Management<br>Complaints Policy — Page 7 of 10</div>
+    </footer>
+</div>
+
+<!-- ==================== PAGE 8: RECORDS & LEARNING ==================== -->
+<div class="page">
+    <div class="top-band"></div>
+    <header class="header">
+        <div class="logo-box">
+            <div class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div>
+            <div class="logo-text"><span class="logo-name">Chosanta</span><span class="logo-sub">Management</span></div>
+        </div>
+        <div class="co-details"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div>
+    </header>
+    <main class="content">
+        <h1 class="doc-title">Complaints Policy &amp; Procedures</h1>
+        <p class="doc-sub">Section 8: Records &amp; Learning</p>
+        <div class="sh"><span class="n">8</span> Records</div>
+        <p class="body-text">Chosanta Management maintains accurate and secure records of all complaints, including:</p>
+        <ul class="bl">
+            <li>Date the complaint was received</li>
+            <li>Complainant's name and contact information (unless anonymous)</li>
+            <li>Nature and details of the complaint</li>
+            <li>Steps taken to investigate and resolve the issue</li>
+            <li>Communications with the complainant</li>
+            <li>Outcome, corrective actions taken, and date of closure</li>
+        </ul>
+        <div class="sh"><span class="n">8</span> Learning &amp; Improvement</div>
+        <p class="body-text">Chosanta Management views complaints as a critical tool for service improvement — not as a threat but as an opportunity to strengthen the quality of care.</p>
+        <ul class="bl">
+            <li><strong>Governance Oversight:</strong> All complaints monitored by the Governance Officer; quarterly reports submitted to the Director</li>
+            <li><strong>Quality Improvement:</strong> Complaint insights inform the Quality Improvement Plan (QIP); actions may include training, policy updates, or service redesign</li>
+            <li><strong>Feedback:</strong> Anonymised summaries shared during team meetings and training; residents and families updated on changes made in response to feedback</li>
+            <li><strong>Continuous Review:</strong> Complaints Log trends analysed every 3 months; recurring complaints may trigger Root Cause Analysis or focused audit</li>
+        </ul>
+    </main>
+    <footer class="footer">
+        <div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div>
+        <div class="fd"></div>
+        <div class="fr">Chosanta Management<br>Complaints Policy — Page 8 of 10</div>
+    </footer>
+</div>
+
+<!-- ==================== PAGE 9: RIGHT TO APPEAL & EXTERNAL CONTACTS ==================== -->
+<div class="page">
+    <div class="top-band"></div>
+    <header class="header">
+        <div class="logo-box">
+            <div class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div>
+            <div class="logo-text"><span class="logo-name">Chosanta</span><span class="logo-sub">Management</span></div>
+        </div>
+        <div class="co-details"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div>
+    </header>
+    <main class="content">
+        <h1 class="doc-title">Complaints Policy &amp; Procedures</h1>
+        <p class="doc-sub">Section 9: Right to Appeal &amp; External Contacts</p>
+        <div class="sh"><span class="n">9</span> Right to Appeal</div>
+        <p class="body-text">If a complainant is not satisfied with the outcome of their complaint, they have the right to appeal the decision.</p>
+        <ul class="bl">
+            <li><strong>Internal Appeal:</strong> The complainant may request a review by a senior manager or designated appeals officer not previously involved. The outcome will be communicated within 20 working days.</li>
+            <li><strong>External Appeal:</strong> If still dissatisfied, the complainant may escalate to the Ombudsman, HIQA, the HSE, or other relevant body.</li>
+        </ul>
+        <div class="sh"><span class="n">9</span> External Contacts</div>
+        <p class="body-text">In accordance with Regulation 34 of the Health Act 2007, individuals have the right to complain directly to external oversight bodies:</p>
+        <div class="contact-block">
+            <strong>Health Information and Quality Authority (HIQA)</strong><br>
+            George's Court, George's Lane, Smithfield, Dublin 7<br>
+            Tel: 01 814 7400 · Email: concerns@hiqa.ie · Web: www.hiqa.ie
+        </div>
+        <div class="contact-block">
+            <strong>Office of the Ombudsman</strong><br>
+            6 Earlsfort Terrace, Dublin 2, D02 W773<br>
+            Tel: 01 639 5600 · Email: complaints@ombudsman.ie · Web: www.ombudsman.ie
+        </div>
+        <div class="contact-block">
+            <strong>HSE Feedback Service</strong><br>
+            Tel: 041 685 0674 (HSE North East) · Email: yoursay@hse.ie · Web: www.hse.ie/eng/services/yourhealthservice
+        </div>
+        <div class="contact-block">
+            <strong>Tusla — Child and Family Agency</strong><br>
+            Brunel Building, Heuston South Quarter, Dublin 8<br>
+            Tel: 01 771 8500 · Email: tellus@tusla.ie · Web: www.tusla.ie
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div>
+        <div class="fd"></div>
+        <div class="fr">Chosanta Management<br>Complaints Policy — Page 9 of 10</div>
+    </footer>
+</div>
+
+<!-- ==================== PAGE 10: POLICY REVIEW ==================== -->
+<div class="page">
+    <div class="top-band"></div>
+    <header class="header">
+        <div class="logo-box">
+            <div class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div>
+            <div class="logo-text"><span class="logo-name">Chosanta</span><span class="logo-sub">Management</span></div>
+        </div>
+        <div class="co-details"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div>
+    </header>
+    <main class="content">
+        <h1 class="doc-title">Complaints Policy &amp; Procedures</h1>
+        <p class="doc-sub">Section 10: Policy Review</p>
+        <div class="sh"><span class="n">10</span> Policy Review</div>
+        <p class="body-text">This Complaints Policy &amp; Procedures document will be reviewed annually or more frequently if there are changes in legislation, HIQA standards, or organisational practice.</p>
+        <p class="body-text">Reviews will be undertaken by the Person in Charge and senior management team, and any necessary amendments will be communicated to all staff.</p>
+        <p class="body-text">The next scheduled review date will be noted on the document control sheet, and updated versions will be circulated promptly to ensure ongoing compliance and relevance.</p>
+    </main>
+    <footer class="footer">
+        <div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div>
+        <div class="fd"></div>
+        <div class="fr">Chosanta Management<br>Complaints Policy — Page 10 of 10</div>
+    </footer>
+</div>
+
+</body>
+</html>

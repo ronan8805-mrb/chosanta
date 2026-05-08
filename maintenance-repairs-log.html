@@ -1,0 +1,115 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Maintenance &amp; Repairs Log — Chosanta Management</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"><style>@page{size:A4;margin:0}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}body{font-family:'Inter',sans-serif;background:#e8ecf1;color:#1a1610;display:flex;flex-direction:column;align-items:center;padding:40px 20px;gap:40px}@media print{body{background:#fff;padding:0;gap:0}.page{box-shadow:none;width:100%;min-height:unset}.pa{display:none!important}}.page{width:210mm;min-height:297mm;background:#fff;box-shadow:0 8px 40px rgba(13,27,42,.12);position:relative;overflow:hidden;display:flex;flex-direction:column}.tb{height:6px;background:linear-gradient(90deg,#c9a84c,#e0c070 40%,#c9a84c 70%,#a8893c)}.hd{display:flex;align-items:center;justify-content:space-between;padding:14px 40px 10px;border-bottom:2px solid #f0ede8;position:relative}.hd::after{content:'';position:absolute;bottom:-2px;left:40px;width:60px;height:3px;background:linear-gradient(90deg,#c9a84c,#e0c070);border-radius:2px}.lb{display:flex;align-items:center;gap:10px}.li{width:34px;height:34px;background:linear-gradient(135deg,#c9a84c,#a8893c);border-radius:7px;display:flex;align-items:center;justify-content:center}.li svg{width:18px;height:18px}.lt{display:flex;flex-direction:column;line-height:1}.ln{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#0d1b2a}.ls{font-size:7.5px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:#c9a84c;margin-top:2px}.co{text-align:right;font-size:9px;line-height:1.6;color:#5c5648}.co .cn{font-family:'Playfair Display',serif;font-size:12px;font-weight:700;color:#0d1b2a}.co .tg{font-size:7.5px;text-transform:uppercase;letter-spacing:2px;color:#c9a84c;font-weight:600}.ct{flex:1;padding:18px 40px 14px}.dt{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:#0d1b2a;margin-bottom:4px;position:relative;padding-bottom:10px}.dt::after{content:'';position:absolute;bottom:0;left:0;width:50px;height:3px;background:linear-gradient(90deg,#c9a84c,#e0c070);border-radius:2px}.ds{font-size:8.5px;color:#9a9484;text-transform:uppercase;letter-spacing:2.5px;font-weight:600;margin-bottom:10px}.sh{background:linear-gradient(135deg,#0d1b2a,#1b2d42);color:#fff;padding:5px 12px;border-radius:4px;margin:10px 0 5px;font-size:8.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;display:flex;align-items:center;gap:8px}.sh .n{background:linear-gradient(135deg,#c9a84c,#e0c070);color:#0d1b2a;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:800;flex-shrink:0}.bt{font-size:9px;line-height:1.5;color:#3d3830;margin-bottom:6px}table{width:100%;border-collapse:collapse;font-size:7.5px;margin-bottom:8px}th{background:linear-gradient(135deg,#0d1b2a,#1b2d42);color:#fff;padding:4px 5px;text-align:left;font-weight:700}td{padding:5px 5px;border-bottom:1px solid #f0ede8;color:#3d3830}tr:nth-child(even) td{background:#faf9f7}.sg{font-size:8px;color:#3d3830;margin-top:8px;padding:6px;border:1px dashed #c9a84c;border-radius:6px;background:#faf9f7}.sg span{display:block;margin-bottom:3px;border-bottom:1px dotted #ddd;padding-bottom:3px}.ft{padding:9px 40px;background:linear-gradient(135deg,#0d1b2a,#1b2d42);color:rgba(255,255,255,.8);font-size:7.5px;line-height:1.8;display:flex;justify-content:space-between;align-items:center;margin-top:auto}.fl{display:flex;flex-direction:column}.fl span{display:inline-flex;align-items:center;gap:5px}.fd{width:1px;height:24px;background:rgba(201,168,76,.3);margin:0 12px}.fr{text-align:right;font-size:7px;color:rgba(255,255,255,.5)}.pa{position:fixed;top:20px;right:20px;display:flex;gap:12px;z-index:100}.pa button{padding:12px 24px;border:none;border-radius:8px;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;box-shadow:0 4px 12px rgba(0,0,0,.15)}.bp{background:linear-gradient(135deg,#c9a84c,#e0c070);color:#0d1b2a}.bx{background:linear-gradient(135deg,#0d1b2a,#1b2d42);color:#fff}.warn{background:linear-gradient(135deg,#fff8e7,#fff3d0);border:1px solid #c9a84c;border-radius:5px;padding:5px 8px;font-size:8px;color:#3d3830;margin-bottom:6px}</style></head><body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<div class="pa"><button class="bp" onclick="window.print()">🖨️ Print</button><button class="bx" id="btn">📄 Save as PDF</button></div>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var btn=document.getElementById('btn');
+  btn.addEventListener('click',async function(){
+    if(typeof html2canvas==='undefined'||!window.jspdf){alert('PDF libraries still loading — please wait and try again.');return;}
+    btn.disabled=true;
+    try{
+      var jsPDF=window.jspdf.jsPDF;
+      var pdf=new jsPDF({orientation:'portrait',unit:'mm',format:'a4'});
+      var pages=document.querySelectorAll('.page');
+      for(var i=0;i<pages.length;i++){
+        btn.textContent='⏳ '+(i+1)+'/'+pages.length;
+        await new Promise(function(r){setTimeout(r,500);});
+        var c=await html2canvas(pages[i],{scale:2,useCORS:true,backgroundColor:'#ffffff',logging:false});
+        if(i>0) pdf.addPage();
+        pdf.addImage(c.toDataURL('image/jpeg',0.95),'JPEG',0,0,210,297);
+      }
+      pdf.save('Chosanta_Maintenance_Repairs_Log.pdf');
+    }catch(e){alert('PDF error: '+e.message);console.error(e);}
+    btn.textContent='📄 Save as PDF';btn.disabled=false;
+  });
+});
+</script>
+
+<!-- P1 -->
+<div class="page"><div class="tb"></div>
+<header class="hd"><div class="lb"><div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="lt"><span class="ln">Chosanta</span><span class="ls">Management</span></div></div><div class="co"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div><div>Office 107, Brú Digital Hub, 56 West Street</div><div>Drogheda, Co. Louth · A92 E4CY</div></div></header>
+<main class="ct">
+<h1 class="dt">Maintenance &amp; Repairs Log</h1><p class="ds">HIQA Standard 5 · S.I. 674/2017 · Fire Services Act 1981 · Safety, Health &amp; Welfare at Work Act 2005</p>
+<p class="bt">All maintenance issues, repairs, and premises defects must be recorded on this log. The PIC is responsible for ensuring the physical environment is safe, clean, and suitable for children. Inspectors will review this log alongside their physical inspection of the premises. Outstanding high-risk items must be escalated to the Director immediately.</p>
+
+<div class="warn"><strong>⚠ Safeguarding Note:</strong> All contractors and maintenance personnel must be <strong>supervised at all times</strong> when children are present in the centre. No unvetted person may have unsupervised access to any area. Contractor visits must also be recorded in the <strong>Visitor Log</strong> (CM-VLR-001).</div>
+
+<div class="sh"><span class="n">1</span> Maintenance Request &amp; Repair Tracker</div>
+<table>
+<tr><th>Ref #</th><th>Date Reported</th><th>Issue / Defect Description</th><th>Location</th><th>Risk Level</th><th>Reported By</th><th>Interim Action</th></tr>
+<tr><td></td><td></td><td></td><td></td><td>☐ L ☐ M ☐ H ☐ Critical</td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td>☐ L ☐ M ☐ H ☐ Critical</td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td>☐ L ☐ M ☐ H ☐ Critical</td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td>☐ L ☐ M ☐ H ☐ Critical</td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td>☐ L ☐ M ☐ H ☐ Critical</td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td>☐ L ☐ M ☐ H ☐ Critical</td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td>☐ L ☐ M ☐ H ☐ Critical</td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td>☐ L ☐ M ☐ H ☐ Critical</td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td>☐ L ☐ M ☐ H ☐ Critical</td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td>☐ L ☐ M ☐ H ☐ Critical</td><td></td><td></td></tr>
+</table>
+
+<div class="sh"><span class="n">2</span> Repair Completion &amp; Sign-Off</div>
+<table>
+<tr><th>Ref #</th><th>Contractor / Staff</th><th>Company</th><th>Date Completed</th><th>Work Done</th><th>Cost (€)</th><th>PIC Sign-Off</th><th>Date</th></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</table>
+
+<div class="sh"><span class="n">3</span> Statutory Compliance Schedule</div>
+<p class="bt">The following statutory checks and services must be completed and evidenced. Inspectors will request certificates.</p>
+<table>
+<tr><th>Item</th><th>Frequency</th><th>Contractor</th><th>Last Completed</th><th>Next Due</th><th>Cert on File?</th></tr>
+<tr><td>Fire alarm system service</td><td>Quarterly</td><td></td><td></td><td></td><td>☐ Yes</td></tr>
+<tr><td>Emergency lighting test</td><td>Annually</td><td></td><td></td><td></td><td>☐ Yes</td></tr>
+<tr><td>Fire extinguisher service</td><td>Annually</td><td></td><td></td><td></td><td>☐ Yes</td></tr>
+<tr><td>Fire risk assessment</td><td>Annually</td><td></td><td></td><td></td><td>☐ Yes</td></tr>
+<tr><td>Boiler / heating service</td><td>Annually</td><td></td><td></td><td></td><td>☐ Yes</td></tr>
+<tr><td>Electrical inspection (RECI cert)</td><td>Every 5 years</td><td></td><td></td><td></td><td>☐ Yes</td></tr>
+<tr><td>Gas safety check (RGII cert)</td><td>Annually</td><td></td><td></td><td></td><td>☐ Yes</td></tr>
+<tr><td>Water temperature checks (anti-scald)</td><td>Monthly</td><td>Staff</td><td></td><td></td><td>☐ Yes</td></tr>
+<tr><td>Legionella risk assessment</td><td>Every 2 years</td><td></td><td></td><td></td><td>☐ Yes</td></tr>
+<tr><td>PAT testing (portable appliances)</td><td>Annually</td><td></td><td></td><td></td><td>☐ Yes</td></tr>
+<tr><td>Smoke / CO detector check</td><td>Weekly (staff)</td><td>Staff</td><td></td><td></td><td>☐ Log</td></tr>
+<tr><td>Window restrictors checked</td><td>Monthly</td><td>Staff</td><td></td><td></td><td>☐ Log</td></tr>
+<tr><td>CCTV system service (if applicable)</td><td>Annually</td><td></td><td></td><td></td><td>☐ Yes</td></tr>
+</table>
+
+<div class="sh"><span class="n">4</span> Monthly Premises Inspection Checklist</div>
+<p class="bt"><em>Completed monthly by PIC or designated staff member. Filed in Governance File.</em></p>
+<table>
+<tr><th>Area</th><th>Satisfactory?</th><th>Issue / Action Required</th></tr>
+<tr><td>Bedrooms (condition, furniture, locks, privacy)</td><td>☐ Y ☐ N</td><td></td></tr>
+<tr><td>Bathrooms (hot water, anti-scald, cleanliness)</td><td>☐ Y ☐ N</td><td></td></tr>
+<tr><td>Kitchen (hygiene, appliances, food storage)</td><td>☐ Y ☐ N</td><td></td></tr>
+<tr><td>Living / communal areas</td><td>☐ Y ☐ N</td><td></td></tr>
+<tr><td>Outdoor areas (fencing, lighting, security)</td><td>☐ Y ☐ N</td><td></td></tr>
+<tr><td>Fire exits (clear, signage, operational)</td><td>☐ Y ☐ N</td><td></td></tr>
+<tr><td>Fire equipment (extinguishers, blankets, in date)</td><td>☐ Y ☐ N</td><td></td></tr>
+<tr><td>Smoke / CO alarms (tested, functioning)</td><td>☐ Y ☐ N</td><td></td></tr>
+<tr><td>Heating / ventilation</td><td>☐ Y ☐ N</td><td></td></tr>
+<tr><td>Security (external doors, locks, CCTV if applicable)</td><td>☐ Y ☐ N</td><td></td></tr>
+<tr><td>General décor / homely environment</td><td>☐ Y ☐ N</td><td></td></tr>
+<tr><td>Medication storage (locked, clean, temperature)</td><td>☐ Y ☐ N</td><td></td></tr>
+<tr><td>Hazardous materials stored safely?</td><td>☐ Y ☐ N</td><td></td></tr>
+</table>
+
+<div class="sg">
+<span><strong>Monthly Inspection By:</strong> _________________________ Date: __________</span>
+<span><strong>PIC Sign-Off:</strong> _________________________ Date: __________</span>
+<span><strong>Outstanding Critical/High items escalated to Director?</strong> ☐ Yes ☐ N/A</span>
+<span><strong>Legislative Basis:</strong> HIQA National Standards 2018 (Standard 5) · S.I. 674/2017 · Fire Services Act 1981 · Safety, Health &amp; Welfare at Work Act 2005 · Building Regulations</span>
+<span><strong>Ref:</strong> CM-MRL-001 | Version 1.0 | May 2025 | Review: Monthly | <strong>Owner:</strong> PIC / Director</span>
+</div>
+</main>
+<footer class="ft"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Maintenance &amp; Repairs Log</div></footer></div>
+
+</body></html>

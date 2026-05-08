@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infection Prevention &amp; Control Policy — Chosanta Management</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        @page { size: A4; margin: 0; }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+        body { font-family: 'Inter', sans-serif; background: #e8ecf1; color: #1a1610; display: flex; flex-direction: column; align-items: center; padding: 40px 20px; gap: 40px; }
+        @media print { body { background: white; padding: 0; gap: 0; } .page { box-shadow: none; width: 100%; min-height: unset; } .pa { display: none !important; } }
+        .page { width: 210mm; min-height: 297mm; background: #fff; box-shadow: 0 8px 40px rgba(13,27,42,0.12); position: relative; overflow: hidden; display: flex; flex-direction: column; }
+        .tb { height: 6px; background: linear-gradient(90deg, #c9a84c 0%, #e0c070 40%, #c9a84c 70%, #a8893c 100%); }
+        .hd { display: flex; align-items: center; justify-content: space-between; padding: 16px 40px 12px; border-bottom: 2px solid #f0ede8; position: relative; }
+        .hd::after { content: ''; position: absolute; bottom: -2px; left: 40px; width: 60px; height: 3px; background: linear-gradient(90deg, #c9a84c, #e0c070); border-radius: 2px; }
+        .lb { display: flex; align-items: center; gap: 10px; }
+        .li { width: 34px; height: 34px; background: linear-gradient(135deg, #c9a84c, #a8893c); border-radius: 7px; display: flex; align-items: center; justify-content: center; }
+        .li svg { width: 18px; height: 18px; }
+        .lt { display: flex; flex-direction: column; line-height: 1; }
+        .ln { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: #0d1b2a; }
+        .ls { font-size: 7.5px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: #c9a84c; margin-top: 2px; }
+        .co { text-align: right; font-size: 9px; line-height: 1.6; color: #5c5648; }
+        .co .cn { font-family: 'Playfair Display', serif; font-size: 12px; font-weight: 700; color: #0d1b2a; }
+        .co .tg { font-size: 7.5px; text-transform: uppercase; letter-spacing: 2px; color: #c9a84c; font-weight: 600; }
+        .ct { flex: 1; padding: 28px 40px 20px; }
+        .dt { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: #0d1b2a; margin-bottom: 4px; position: relative; padding-bottom: 12px; }
+        .dt::after { content: ''; position: absolute; bottom: 0; left: 0; width: 50px; height: 3px; background: linear-gradient(90deg, #c9a84c, #e0c070); border-radius: 2px; }
+        .ds { font-size: 10px; color: #9a9484; text-transform: uppercase; letter-spacing: 2.5px; font-weight: 600; margin-bottom: 24px; }
+        .sh { background: linear-gradient(135deg, #0d1b2a, #1b2d42); color: #fff; padding: 8px 16px; border-radius: 4px; margin: 20px 0 12px; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; display: flex; align-items: center; gap: 8px; }
+        .sh .n { background: linear-gradient(135deg, #c9a84c, #e0c070); color: #0d1b2a; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 800; flex-shrink: 0; }
+        .bt { font-size: 12px; line-height: 1.75; color: #3d3830; margin-bottom: 16px; max-width: 620px; }
+        .al { font-size: 12px; font-weight: 600; color: #0d1b2a; margin-bottom: 10px; }
+        .bl { list-style: none; margin-bottom: 16px; }
+        .bl li { position: relative; padding: 10px 14px 10px 42px; margin-bottom: 5px; background: linear-gradient(135deg, #faf9f7, #f5f3ef); border-radius: 6px; border-left: 3px solid #c9a84c; font-size: 11px; line-height: 1.55; color: #3d3830; }
+        .bl li::before { content: '✓'; position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: #c9a84c; font-size: 13px; font-weight: 700; }
+        .ft { padding: 14px 40px; background: linear-gradient(135deg, #0d1b2a, #1b2d42); color: rgba(255,255,255,0.8); font-size: 8.5px; line-height: 1.8; display: flex; justify-content: space-between; align-items: center; margin-top: auto; }
+        .fl { display: flex; flex-direction: column; } .fl span { display: inline-flex; align-items: center; gap: 5px; }
+        .fd { width: 1px; height: 32px; background: rgba(201,168,76,0.3); margin: 0 16px; }
+        .fr { text-align: right; font-size: 7.5px; color: rgba(255,255,255,0.5); }
+        .pa { position: fixed; top: 20px; right: 20px; display: flex; gap: 12px; z-index: 100; }
+        .pa button { padding: 12px 24px; border: none; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+        .bp { background: linear-gradient(135deg, #c9a84c, #e0c070); color: #0d1b2a; } .bp:hover { transform: translateY(-1px); }
+        .bx { background: linear-gradient(135deg, #0d1b2a, #1b2d42); color: #fff; } .bx:hover { transform: translateY(-1px); }
+    </style>
+</head>
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<div class="pa"><button class="bp" onclick="window.print()">🖨️ Print</button><button class="bx" id="savePdfBtn" onclick="savePDF()">📄 Save as PDF</button></div>
+<script>
+async function savePDF(){const btn=document.getElementById('savePdfBtn');btn.disabled=true;try{const{jsPDF}=window.jspdf;const pdf=new jsPDF({orientation:'portrait',unit:'mm',format:'a4'});const pages=document.querySelectorAll('.page');for(let i=0;i<pages.length;i++){btn.textContent='⏳ '+(i+1)+'/'+pages.length;await new Promise(r=>setTimeout(r,300));const c=await html2canvas(pages[i],{scale:1.5,useCORS:true,letterRendering:true,backgroundColor:'#fff',width:pages[i].scrollWidth,height:pages[i].scrollHeight,logging:false});if(i>0)pdf.addPage();pdf.addImage(c.toDataURL('image/jpeg',0.92),'JPEG',0,0,210,297);c.width=0;c.height=0;}const b=pdf.output('blob');const u=URL.createObjectURL(b);const a=document.createElement('a');a.href=u;a.download='Chosanta_Infection_Prevention_Control.pdf';document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(u);}catch(e){alert('PDF error: '+e.message);}btn.textContent='📄 Save as PDF';btn.disabled=false;}
+</script>
+
+<!-- P1: PURPOSE + SCOPE -->
+<div class="page"><div class="tb"></div>
+<header class="hd"><div class="lb"><div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="lt"><span class="ln">Chosanta</span><span class="ls">Management</span></div></div><div class="co"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div><div>Office 107, Brú Digital Hub, 56 West Street</div><div>Drogheda, Co. Louth · A92 E4CY</div></div></header>
+<main class="ct">
+    <h1 class="dt">Infection Prevention &amp; Control Policy</h1><p class="ds">Sections 1–2: Purpose &amp; Scope</p>
+    <div class="sh"><span class="n">1</span> Purpose</div>
+    <p class="bt">This policy establishes clear infection prevention and control (IPC) standards across Chosanta Management to protect residents, staff, visitors, and contractors from the transmission of infectious diseases, in accordance with HIQA National Standards, the Health Act 2007, and HSE best practice guidelines.</p>
+    <ul class="bl">
+        <li>Minimise risk of infection in care settings</li>
+        <li>Promote hygiene and sanitation</li>
+        <li>Support outbreak management</li>
+        <li>Ensure staff understand their roles in maintaining infection control at all times</li>
+    </ul>
+    <div class="sh"><span class="n">2</span> Scope</div>
+    <p class="bt">This policy applies to all locations, staff, residents, contractors, agency personnel, and visitors. It encompasses residential units, common areas, kitchens, laundry, bathrooms, medical care delivery, transport, and external activities.</p>
+    <p class="al">Relevant to all infectious risks, including:</p>
+    <ul class="bl">
+        <li>Respiratory illnesses (e.g. COVID-19, influenza)</li>
+        <li>Gastrointestinal infections (e.g. Norovirus)</li>
+        <li>Bloodborne viruses (e.g. Hepatitis B/C)</li>
+        <li>Antibiotic-resistant organisms (e.g. MRSA, CPE)</li>
+    </ul>
+</main>
+<footer class="ft"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Infection Prevention &amp; Control — Page 1 of 5</div></footer></div>
+
+<!-- P2: RESPONSIBILITIES + KEY MEASURES -->
+<div class="page"><div class="tb"></div>
+<header class="hd"><div class="lb"><div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="lt"><span class="ln">Chosanta</span><span class="ls">Management</span></div></div><div class="co"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div></header>
+<main class="ct">
+    <h1 class="dt">Infection Prevention &amp; Control Policy</h1><p class="ds">Sections 3–4: Responsibilities &amp; Key Measures</p>
+    <div class="sh"><span class="n">3</span> Responsibilities</div>
+    <ul class="bl">
+        <li><strong>Registered Provider:</strong> Ensure the organisation has effective IPC systems and resources; oversee compliance with HIQA standards</li>
+        <li><strong>Person in Charge (PIC):</strong> Implement IPC policy daily; ensure training; monitor infection risks and outbreaks; report to HIQA</li>
+        <li><strong>Staff Members:</strong> Follow IPC protocols including hand hygiene, PPE, and safe waste disposal; report symptoms or breaches immediately</li>
+        <li><strong>Residents &amp; Visitors:</strong> Maintain personal hygiene; comply with outbreak precautions and visitor policies</li>
+    </ul>
+    <div class="sh"><span class="n">4</span> Key Measures</div>
+    <p class="al">4.1 Hand Hygiene:</p>
+    <ul class="bl">
+        <li>Hand washing facilities with soap and water at key locations; alcohol-based sanitiser in communal areas</li>
+        <li>Staff and residents educated on correct hand hygiene technique</li>
+    </ul>
+    <p class="al">4.2 PPE:</p>
+    <ul class="bl">
+        <li>PPE provided based on risk assessment (gloves, aprons, masks, visors); safe donning/doffing procedures</li>
+    </ul>
+    <p class="al">4.3 Cleaning &amp; Disinfection:</p>
+    <ul class="bl">
+        <li>Daily cleaning with increased frequency during outbreaks; approved disinfectants in high-touch areas</li>
+    </ul>
+    <p class="al">4.4 Waste &amp; Laundry:</p>
+    <ul class="bl">
+        <li>Segregation of clinical and domestic waste; secure sharps bins; separate soiled/clean linen handling</li>
+    </ul>
+</main>
+<footer class="ft"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Infection Prevention &amp; Control — Page 2 of 5</div></footer></div>
+
+<!-- P3: TRAINING + CLEANING PROTOCOLS -->
+<div class="page"><div class="tb"></div>
+<header class="hd"><div class="lb"><div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="lt"><span class="ln">Chosanta</span><span class="ls">Management</span></div></div><div class="co"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div></header>
+<main class="ct">
+    <h1 class="dt">Infection Prevention &amp; Control Policy</h1><p class="ds">Sections 5–6: Training &amp; Cleaning Protocols</p>
+    <div class="sh"><span class="n">5</span> Training</div>
+    <ul class="bl">
+        <li><strong>Induction:</strong> All new staff complete IPC training including standard precautions, hand hygiene, PPE, waste disposal, and outbreak response</li>
+        <li><strong>Refresher:</strong> Every 2 years or earlier if policy changes or after outbreaks; tailored to staff roles</li>
+        <li><strong>Records:</strong> Attendance logged in Staff Training Register; PIC monitors compliance</li>
+        <li><strong>Evaluation:</strong> Training outcomes reviewed regularly and revised to align with national guidance</li>
+    </ul>
+    <div class="sh"><span class="n">6</span> Cleaning Protocols</div>
+    <p class="al">6.1 Daily Cleaning:</p>
+    <ul class="bl">
+        <li>General cleaning of all communal areas, bedrooms, bathrooms, kitchens, and corridors</li>
+        <li>High-touch surfaces (door handles, switches, handrails) cleaned at least twice daily</li>
+    </ul>
+    <p class="al">6.2 Deep Cleaning:</p>
+    <ul class="bl">
+        <li>Weekly in high-traffic areas; more frequently during outbreaks</li>
+        <li>Includes skirting boards, walls, under furniture, and sanitisation of soft furnishings</li>
+    </ul>
+    <p class="al">6.3 Standards:</p>
+    <ul class="bl">
+        <li>Only HSE-approved cleaning agents and disinfectants used; correct dilution and contact times</li>
+        <li>Colour-coded equipment to prevent cross-contamination</li>
+        <li>All cleaning activities logged with date, time, area, and staff initials; reviewed weekly by PIC</li>
+    </ul>
+</main>
+<footer class="ft"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Infection Prevention &amp; Control — Page 3 of 5</div></footer></div>
+
+<!-- P4: PPE + OUTBREAK RESPONSE -->
+<div class="page"><div class="tb"></div>
+<header class="hd"><div class="lb"><div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="lt"><span class="ln">Chosanta</span><span class="ls">Management</span></div></div><div class="co"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div></header>
+<main class="ct">
+    <h1 class="dt">Infection Prevention &amp; Control Policy</h1><p class="ds">Sections 7–8: PPE &amp; Outbreak Response</p>
+    <div class="sh"><span class="n">7</span> PPE &amp; Supplies</div>
+    <ul class="bl">
+        <li><strong>Types:</strong> Gloves, aprons, surgical masks, FFP2/FFP3 respirators, face shields, goggles — worn per task-specific risk assessment</li>
+        <li><strong>Storage:</strong> Designated clean areas; stock levels checked weekly and reordered proactively</li>
+        <li><strong>Supply Chain:</strong> Infection control supplies in standard orders; emergency stock reserves maintained onsite</li>
+        <li><strong>Monitoring:</strong> PIC oversees stock levels and PPE compliance; misuse escalated immediately</li>
+        <li><strong>Disposal:</strong> Disposable PPE disposed per healthcare waste protocols; reusable items sanitised after each use</li>
+    </ul>
+    <div class="sh"><span class="n">8</span> Outbreak Response</div>
+    <p class="al">8.1 Identification:</p>
+    <ul class="bl">
+        <li>Two or more residents/staff with similar symptoms reported to PIC; clinical guidance sought from GP or HSE Public Health</li>
+    </ul>
+    <p class="al">8.2 Isolation &amp; Control:</p>
+    <ul class="bl">
+        <li>Affected individuals isolated or cohorted; dedicated staff and equipment assigned</li>
+        <li>Entry/exit protocols enforced; enhanced cleaning and additional PPE measures introduced</li>
+        <li>Non-essential activities and visits suspended</li>
+    </ul>
+    <p class="al">8.3 Communication &amp; Documentation:</p>
+    <ul class="bl">
+        <li>Families, staff, and health authorities informed with transparent updates throughout</li>
+        <li>Full outbreak report maintained including timeline, actions, and outcomes</li>
+        <li>Post-outbreak debriefing and review to inform future improvements</li>
+    </ul>
+</main>
+<footer class="ft"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Infection Prevention &amp; Control — Page 4 of 5</div></footer></div>
+
+<!-- P5: MONITORING + REVIEW -->
+<div class="page"><div class="tb"></div>
+<header class="hd"><div class="lb"><div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="lt"><span class="ln">Chosanta</span><span class="ls">Management</span></div></div><div class="co"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div></header>
+<main class="ct">
+    <h1 class="dt">Infection Prevention &amp; Control Policy</h1><p class="ds">Sections 9–10: Monitoring &amp; Review</p>
+    <div class="sh"><span class="n">9</span> Monitoring &amp; Audit</div>
+    <p class="al">9.1 Routine Monitoring:</p>
+    <ul class="bl">
+        <li>Daily checks of hand hygiene facilities, PPE availability, and cleanliness</li>
+        <li>PIC and team leaders conduct walk-through reviews and log compliance observations</li>
+    </ul>
+    <p class="al">9.2 Scheduled Audits:</p>
+    <ul class="bl">
+        <li>Formal IPC audits conducted monthly using a standard checklist</li>
+        <li>Focus on cleaning protocols, equipment sanitation, staff compliance, and PPE usage</li>
+        <li>Results reviewed by management during governance meetings</li>
+    </ul>
+    <p class="al">9.3 Outcomes &amp; Actions:</p>
+    <ul class="bl">
+        <li>Findings documented, dated, and signed; action plans with assigned responsibility and deadlines</li>
+        <li>Learning integrated into future training; residents and staff encouraged to provide feedback</li>
+        <li>Results reported to Registered Provider and retained for HIQA inspection</li>
+    </ul>
+    <div class="sh"><span class="n">10</span> Policy Review &amp; Continuous Improvement</div>
+    <ul class="bl">
+        <li><strong>Review Cycle:</strong> Formally reviewed at least annually; interim reviews triggered by HIQA updates, outbreaks, legislation, or audit findings</li>
+        <li><strong>Feedback:</strong> Staff, residents, and families contribute via governance meetings; lessons from incidents and audits inform revisions</li>
+        <li><strong>Version Control:</strong> All versions dated, signed, and archived; most recent version clearly marked and accessible</li>
+        <li><strong>Commitment:</strong> Organisation aligned with best practice and regulatory expectations at all times</li>
+    </ul>
+</main>
+<footer class="ft"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Infection Prevention &amp; Control — Page 5 of 5</div></footer></div>
+
+</body>
+</html>

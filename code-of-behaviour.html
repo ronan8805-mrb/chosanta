@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Code of Behaviour for Staff — Chosanta Management</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+@page{size:A4;margin:0}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+body{font-family:'Inter',sans-serif;background:#e8ecf1;color:#1a1610;display:flex;flex-direction:column;align-items:center;padding:40px 20px;gap:40px}
+@media print{body{background:#fff;padding:0;gap:0}.page{box-shadow:none;width:100%;min-height:unset}.pa{display:none!important}}
+.page{width:210mm;min-height:297mm;background:#fff;box-shadow:0 8px 40px rgba(13,27,42,.12);position:relative;display:flex;flex-direction:column;overflow:hidden}
+.tb{height:6px;background:linear-gradient(90deg,#c9a84c,#e0c070 40%,#c9a84c 70%,#a8893c)}
+.hd{display:flex;align-items:center;justify-content:space-between;padding:16px 40px 12px;border-bottom:2px solid #f0ede8;position:relative}
+.hd::after{content:'';position:absolute;bottom:-2px;left:40px;width:60px;height:3px;background:linear-gradient(90deg,#c9a84c,#e0c070);border-radius:2px}
+.lb{display:flex;align-items:center;gap:10px}
+.li{width:34px;height:34px;background:linear-gradient(135deg,#c9a84c,#a8893c);border-radius:7px;display:flex;align-items:center;justify-content:center}
+.li svg{width:18px;height:18px}
+.lt{display:flex;flex-direction:column;line-height:1}
+.ln{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#0d1b2a}
+.ls{font-size:7.5px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:#c9a84c;margin-top:2px}
+.co{text-align:right;font-size:9px;line-height:1.6;color:#5c5648}
+.co .cn{font-family:'Playfair Display',serif;font-size:12px;font-weight:700;color:#0d1b2a}
+.co .tg{font-size:7.5px;text-transform:uppercase;letter-spacing:2px;color:#c9a84c;font-weight:600}
+.ct{flex:1;padding:28px 40px 20px}
+.dt{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#0d1b2a;margin-bottom:4px;position:relative;padding-bottom:12px}
+.dt::after{content:'';position:absolute;bottom:0;left:0;width:50px;height:3px;background:linear-gradient(90deg,#c9a84c,#e0c070);border-radius:2px}
+.ds{font-size:10px;color:#9a9484;text-transform:uppercase;letter-spacing:2.5px;font-weight:600;margin-bottom:20px}
+.intro{font-size:11.5px;line-height:1.7;color:#3d3830;margin-bottom:20px}
+.sh{background:linear-gradient(135deg,#0d1b2a,#1b2d42);color:#fff;padding:8px 16px;border-radius:4px;margin:16px 0 10px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;display:flex;align-items:center;gap:8px}
+.sh .n{background:linear-gradient(135deg,#c9a84c,#e0c070);color:#0d1b2a;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;flex-shrink:0}
+.bl{list-style:none;margin-bottom:16px}
+.bl li{position:relative;padding:9px 12px 9px 38px;margin-bottom:6px;background:linear-gradient(135deg,#faf9f7,#f5f3ef);border-radius:6px;border-left:3px solid #c9a84c;font-size:11px;line-height:1.5;color:#3d3830}
+.bl li::before{content:'✓';position:absolute;left:14px;top:50%;transform:translateY(-50%);color:#c9a84c;font-size:12px;font-weight:700}
+.bl.red li{border-left-color:#e63946}
+.bl.red li::before{content:'✕';color:#e63946}
+.bt{font-size:11.5px;line-height:1.7;color:#3d3830;margin-bottom:14px}
+.ff{display:flex;align-items:baseline;gap:8px;margin-bottom:12px;font-size:11px;color:#3d3830}
+.ff label{font-weight:600;color:#0d1b2a;white-space:nowrap;min-width:120px}
+.ff .line{flex:1;border-bottom:1.5px solid #c9a84c;min-width:60px;height:1px;margin-bottom:2px}
+.ft{padding:14px 40px;background:linear-gradient(135deg,#0d1b2a,#1b2d42);color:rgba(255,255,255,.8);font-size:8.5px;line-height:1.8;display:flex;justify-content:space-between;align-items:center;margin-top:auto}
+.fl{display:flex;flex-direction:column}
+.fl span{display:inline-flex;align-items:center;gap:5px}
+.fd{width:1px;height:32px;background:rgba(201,168,76,.3);margin:0 16px}
+.fr{text-align:right;font-size:7.5px;color:rgba(255,255,255,.5)}
+.pa{position:fixed;top:20px;right:20px;display:flex;gap:12px;z-index:100}
+.pa button{padding:12px 24px;border:none;border-radius:8px;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;box-shadow:0 4px 12px rgba(0,0,0,.15)}
+.bp{background:linear-gradient(135deg,#c9a84c,#e0c070);color:#0d1b2a}
+.bx{background:linear-gradient(135deg,#0d1b2a,#1b2d42);color:#fff}
+</style>
+</head>
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<div class="pa">
+  <button class="bp" onclick="window.print()">🖨️ Print</button>
+  <button class="bx" id="savePdfBtn" onclick="savePDF()">📄 Save as PDF</button>
+</div>
+<script>
+async function savePDF(){
+  const btn=document.getElementById('savePdfBtn');
+  btn.disabled=true;
+  try{
+    const{jsPDF}=window.jspdf;
+    const pdf=new jsPDF({orientation:'portrait',unit:'mm',format:'a4'});
+    const pages=document.querySelectorAll('.page');
+    for(let i=0;i<pages.length;i++){
+      btn.textContent='⏳ Rendering '+(i+1)+'/'+pages.length+'...';
+      await new Promise(r=>setTimeout(r,500));
+      const c=await html2canvas(pages[i],{scale:2,useCORS:true,allowTaint:true,backgroundColor:'#ffffff',width:pages[i].scrollWidth,height:pages[i].scrollHeight,logging:false});
+      const imgData=c.toDataURL('image/jpeg',0.95);
+      if(i>0)pdf.addPage();
+      pdf.addImage(imgData,'JPEG',0,0,210,297);
+      c.remove();
+    }
+    btn.textContent='⏳ Saving...';
+    await new Promise(r=>setTimeout(r,200));
+    pdf.save('Chosanta_Code_of_Behaviour_Staff.pdf');
+  }catch(e){
+    alert('PDF generation error: '+e.message);
+    console.error(e);
+  }
+  btn.textContent='📄 Save as PDF';
+  btn.disabled=false;
+}
+</script>
+
+<!-- PAGE 1 -->
+<div class="page">
+  <div class="tb"></div>
+  <header class="hd">
+    <div class="lb">
+      <div class="li">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg>
+      </div>
+      <div class="lt"><span class="ln">Chosanta</span><span class="ls">Management</span></div>
+    </div>
+    <div class="co">
+      <div class="cn">Chosanta Management</div>
+      <div class="tg">Accommodation &amp; Property Solutions</div>
+      <div>Office 107, Brú Digital Hub, 56 West Street</div>
+      <div>Drogheda, Co. Louth · A92 E4CY</div>
+    </div>
+  </header>
+  
+  <main class="ct">
+    <h1 class="dt">Code of Behaviour for Staff</h1>
+    <p class="ds">Conduct Standards &amp; Safeguarding Guidelines</p>
+    
+    <p class="intro">
+      This Code of Behaviour outlines the standards of conduct expected from all staff and volunteers working with children and families in <strong>Chosanta Management</strong>. Its purpose is to ensure a safe, respectful and protective environment for children and young people.
+    </p>
+
+    <div class="sh"><span class="n">1</span> General Principles</div>
+    <ul class="bl">
+      <li>Always act in the best interest of the child.</li>
+      <li>Treat all children and families with respect, dignity and fairness.</li>
+      <li>Be a positive role model through your language, behaviour and attitude.</li>
+      <li>Ensure professional boundaries are maintained at all times.</li>
+    </ul>
+
+    <div class="sh"><span class="n">2</span> Appropriate Behaviour</div>
+    <ul class="bl">
+      <li>Listen to children and take their views seriously.</li>
+      <li>Use age-appropriate language and tone.</li>
+      <li>Involve children and families in decisions that affect them, where appropriate.</li>
+      <li>Respect the privacy and confidentiality of children and families, within the limits of child protection requirements.</li>
+      <li>Report all concerns, disclosures or suspicions of abuse to the Designated Liaison Person (DLP) promptly.</li>
+    </ul>
+
+    <div class="sh" style="background:linear-gradient(135deg,#e63946,#d62828);"><span class="n" style="background:#fff;color:#e63946;">3</span> Prohibited Behaviour</div>
+    <ul class="bl red">
+      <li>Do not use any form of physical punishment or degrading treatment.</li>
+      <li>Do not engage in rough physical play or inappropriate physical contact.</li>
+      <li>Do not engage in sexually suggestive or explicit conversations or jokes.</li>
+      <li>Do not use discriminatory, aggressive, or threatening language or behaviour.</li>
+      <li>Do not develop close personal or secretive relationships with children.</li>
+      <li>Do not take children alone in a car or to your own home.</li>
+      <li>Do not exchange personal contact information or communicate with children via social media or private messaging.</li>
+    </ul>
+  </main>
+  
+  <footer class="ft">
+    <div class="fl">
+      <span>✉ info@chosanta.ie</span>
+      <span>📍 Drogheda, Co. Louth · A92 E4CY</span>
+    </div>
+    <div class="fd"></div>
+    <div class="fr">Chosanta Management<br>Code of Behaviour — Page 1 of 2</div>
+  </footer>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page">
+  <div class="tb"></div>
+  <header class="hd">
+    <div class="lb">
+      <div class="li">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg>
+      </div>
+      <div class="lt"><span class="ln">Chosanta</span><span class="ls">Management</span></div>
+    </div>
+    <div class="co">
+      <div class="cn">Chosanta Management</div>
+      <div class="tg">Accommodation &amp; Property Solutions</div>
+    </div>
+  </header>
+  
+  <main class="ct">
+    <h1 class="dt">Code of Behaviour for Staff</h1>
+    <p class="ds">Conduct Standards &amp; Safeguarding Guidelines</p>
+    
+    <div class="sh"><span class="n">4</span> One-to-One Interactions</div>
+    <ul class="bl">
+      <li>Avoid being alone with a child. Where necessary, ensure visibility (e.g., leave doors open or remain in view).</li>
+      <li>Keep meetings with children time-limited and documented.</li>
+    </ul>
+
+    <div class="sh"><span class="n">5</span> Breaches of the Code</div>
+    <p class="bt" style="background:#fff5f5;border:1px solid #ffcdd2;padding:12px;border-radius:6px;color:#c62828;">
+      Any breach of this Code of Behaviour will be taken seriously and may result in disciplinary action, up to and including dismissal or removal from role. In cases where abuse is suspected or alleged, it will be reported to the appropriate authorities.
+    </p>
+
+    <div class="sh"><span class="n">6</span> Declaration</div>
+    <p class="bt" style="margin-bottom:24px;">I have read, understood, and agree to abide by this Code of Behaviour.</p>
+    
+    <div class="ff">
+      <label>Signature:</label>
+      <span class="line"></span>
+    </div>
+    <div class="ff" style="margin-top:16px;">
+      <label>Name (Block Capitals):</label>
+      <span class="line"></span>
+    </div>
+    <div class="ff" style="margin-top:16px;">
+      <label>Date:</label>
+      <span class="line"></span>
+    </div>
+  </main>
+  
+  <footer class="ft">
+    <div class="fl">
+      <span>✉ info@chosanta.ie</span>
+      <span>📍 Drogheda, Co. Louth · A92 E4CY</span>
+    </div>
+    <div class="fd"></div>
+    <div class="fr">Chosanta Management<br>Code of Behaviour — Page 2 of 2</div>
+  </footer>
+</div>
+
+</body>
+</html>

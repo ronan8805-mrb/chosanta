@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Risk Register &amp; Index — Chosanta Management</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+@page{size:A4 landscape;margin:0}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+body{font-family:'Inter',sans-serif;background:#e8ecf1;color:#1a1610;display:flex;flex-direction:column;align-items:center;padding:40px 20px;gap:40px}
+@media print{body{background:#fff;padding:0;gap:0}.page{box-shadow:none;width:100%;min-height:unset}.pa{display:none!important}}
+.page{width:297mm;min-height:210mm;background:#fff;box-shadow:0 8px 40px rgba(13,27,42,.12);position:relative;display:flex;flex-direction:column;overflow:hidden}
+.tb{height:6px;background:linear-gradient(90deg,#c9a84c,#e0c070 40%,#c9a84c 70%,#a8893c)}
+.hd{display:flex;align-items:center;justify-content:space-between;padding:16px 40px 12px;border-bottom:2px solid #f0ede8;position:relative}
+.hd::after{content:'';position:absolute;bottom:-2px;left:40px;width:60px;height:3px;background:linear-gradient(90deg,#c9a84c,#e0c070);border-radius:2px}
+.lb{display:flex;align-items:center;gap:10px}
+.li{width:34px;height:34px;background:linear-gradient(135deg,#c9a84c,#a8893c);border-radius:7px;display:flex;align-items:center;justify-content:center}
+.li svg{width:18px;height:18px}
+.lt{display:flex;flex-direction:column;line-height:1}
+.ln{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#0d1b2a}
+.ls{font-size:7.5px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:#c9a84c;margin-top:2px}
+.co{text-align:right;font-size:9px;line-height:1.6;color:#5c5648}
+.co .cn{font-family:'Playfair Display',serif;font-size:12px;font-weight:700;color:#0d1b2a}
+.co .tg{font-size:7.5px;text-transform:uppercase;letter-spacing:2px;color:#c9a84c;font-weight:600}
+.ct{flex:1;padding:24px 40px 20px}
+.dt{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#0d1b2a;margin-bottom:4px;position:relative;padding-bottom:12px}
+.dt::after{content:'';position:absolute;bottom:0;left:0;width:50px;height:3px;background:linear-gradient(90deg,#c9a84c,#e0c070);border-radius:2px}
+.ds{font-size:10px;color:#9a9484;text-transform:uppercase;letter-spacing:2.5px;font-weight:600;margin-bottom:20px}
+table{width:100%;border-collapse:collapse;margin-top:10px;font-size:9px}
+th{background:linear-gradient(135deg,#0d1b2a,#1b2d42);color:#fff;padding:10px;text-align:left;font-weight:600;text-transform:uppercase;letter-spacing:1px;font-size:8px;border:1px solid #1b2d42}
+td{padding:10px;border:1px solid #e0ddd6;color:#3d3830;vertical-align:top}
+tr:nth-child(even) td{background:#faf9f7}
+.badge{display:inline-block;padding:3px 6px;border-radius:4px;font-size:8px;font-weight:700;text-transform:uppercase}
+.b-high{background:#fee2e2;color:#b91c1c}
+.b-med{background:#fef3c7;color:#b45309}
+.b-low{background:#dcfce7;color:#15803d}
+.ft{padding:14px 40px;background:linear-gradient(135deg,#0d1b2a,#1b2d42);color:rgba(255,255,255,.8);font-size:8.5px;line-height:1.8;display:flex;justify-content:space-between;align-items:center;margin-top:auto}
+.fl{display:flex;flex-direction:column}
+.fl span{display:inline-flex;align-items:center;gap:5px}
+.fd{width:1px;height:32px;background:rgba(201,168,76,.3);margin:0 16px}
+.fr{text-align:right;font-size:7.5px;color:rgba(255,255,255,.5)}
+.pa{position:fixed;top:20px;right:20px;display:flex;gap:12px;z-index:100}
+.pa button{padding:12px 24px;border:none;border-radius:8px;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;box-shadow:0 4px 12px rgba(0,0,0,.15)}
+.bp{background:linear-gradient(135deg,#c9a84c,#e0c070);color:#0d1b2a}
+.bx{background:linear-gradient(135deg,#0d1b2a,#1b2d42);color:#fff}
+</style>
+</head>
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<div class="pa">
+  <button class="bp" onclick="window.print()">🖨️ Print</button>
+  <button class="bx" id="savePdfBtn" onclick="savePDF()">📄 Save as PDF</button>
+</div>
+<script>
+async function savePDF(){
+  const btn=document.getElementById('savePdfBtn');
+  btn.disabled=true;
+  try{
+    const{jsPDF}=window.jspdf;
+    const pdf=new jsPDF({orientation:'landscape',unit:'mm',format:'a4'});
+    const pages=document.querySelectorAll('.page');
+    for(let i=0;i<pages.length;i++){
+      btn.textContent='⏳ Rendering '+(i+1)+'/'+pages.length+'...';
+      await new Promise(r=>setTimeout(r,500));
+      const c=await html2canvas(pages[i],{scale:2,useCORS:true,allowTaint:true,backgroundColor:'#ffffff',width:pages[i].scrollWidth,height:pages[i].scrollHeight,logging:false});
+      const imgData=c.toDataURL('image/jpeg',0.95);
+      if(i>0)pdf.addPage();
+      pdf.addImage(imgData,'JPEG',0,0,297,210);
+      c.remove();
+    }
+    btn.textContent='⏳ Saving...';
+    await new Promise(r=>setTimeout(r,200));
+    pdf.save('Chosanta_Risk_Register.pdf');
+  }catch(e){
+    alert('PDF generation error: '+e.message);
+    console.error(e);
+  }
+  btn.textContent='📄 Save as PDF';
+  btn.disabled=false;
+}
+</script>
+
+<div class="page">
+  <div class="tb"></div>
+  <header class="hd">
+    <div class="lb">
+      <div class="li">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg>
+      </div>
+      <div class="lt"><span class="ln">Chosanta</span><span class="ls">Management</span></div>
+    </div>
+    <div class="co">
+      <div class="cn">Chosanta Management</div>
+      <div class="tg">Accommodation &amp; Property Solutions</div>
+      <div>Office 107, Brú Digital Hub, 56 West Street</div>
+      <div>Drogheda, Co. Louth · A92 E4CY</div>
+    </div>
+  </header>
+  
+  <main class="ct">
+    <h1 class="dt">Risk Register &amp; Index</h1>
+    <p class="ds">Operational Risk Overview — July 2025</p>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Risk ID</th>
+          <th>Description of Risk</th>
+          <th>Location</th>
+          <th>Likelihood</th>
+          <th>Impact</th>
+          <th>Rating</th>
+          <th>Control Measures in Place</th>
+          <th>Responsible Person</th>
+          <th>Review Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>R01</strong></td>
+          <td>Fire hazard due to electric faults</td>
+          <td>Kitchen / Laundry</td>
+          <td>Possible</td>
+          <td>Severe</td>
+          <td><span class="badge b-high">High</span></td>
+          <td>Regular PAT testing, smoke alarms, Fire drills, fire extinguisher checks</td>
+          <td>PIC / Maintenance</td>
+          <td>Monthly</td>
+        </tr>
+        <tr>
+          <td><strong>R02</strong></td>
+          <td>Resident absconding or leaving the building</td>
+          <td>All exits</td>
+          <td>Unlikely</td>
+          <td>Major</td>
+          <td><span class="badge b-med">Medium</span></td>
+          <td>Keypad lock, staff supervision, missing person protocol, risk assessment</td>
+          <td>PIC / Staff</td>
+          <td>Quarterly</td>
+        </tr>
+        <tr>
+          <td><strong>R03</strong></td>
+          <td>Medication errors</td>
+          <td>Medication Room</td>
+          <td>Unlikely</td>
+          <td>Major</td>
+          <td><span class="badge b-med">Medium</span></td>
+          <td>Medication policy, double checks, training, MAR chart audits</td>
+          <td>Medication Lead / Nurse</td>
+          <td>Monthly</td>
+        </tr>
+        <tr>
+          <td><strong>R04</strong></td>
+          <td>Slips and trips</td>
+          <td>Bathroom &amp; corridors</td>
+          <td>Possible</td>
+          <td>Moderate</td>
+          <td><span class="badge b-med">Medium</span></td>
+          <td>Wet floor signs, anti-slip mats, daily safety checks</td>
+          <td>Staff on duty</td>
+          <td>Weekly</td>
+        </tr>
+        <tr>
+          <td><strong>R05</strong></td>
+          <td>Aggression or challenging behaviour</td>
+          <td>Communal areas</td>
+          <td>Possible</td>
+          <td>Moderate</td>
+          <td><span class="badge b-med">Medium</span></td>
+          <td>De-escalation training, incident reporting</td>
+          <td>Keyworker / Behaviour Support</td>
+          <td>Monthly</td>
+        </tr>
+        <tr>
+          <td><strong>R06</strong></td>
+          <td>Food hygiene risk</td>
+          <td>Kitchen</td>
+          <td>Rare</td>
+          <td>Major</td>
+          <td><span class="badge b-med">Medium</span></td>
+          <td>HACCP compliance, staff training, daily fridge temp checks</td>
+          <td>House Manager / Chef</td>
+          <td>Weekly</td>
+        </tr>
+        <tr>
+          <td><strong>R07</strong></td>
+          <td>Infection outbreak (e.g. Covid, Flu)</td>
+          <td>Whole house</td>
+          <td>Possible</td>
+          <td>Severe</td>
+          <td><span class="badge b-high">High</span></td>
+          <td>Infection control policy, PPE, cleaning schedule, isolation protocol</td>
+          <td>PIC / Infection Control Leader</td>
+          <td>Monthly</td>
+        </tr>
+        <tr>
+          <td><strong>R08</strong></td>
+          <td>Lone working staff at night</td>
+          <td>Entire premises</td>
+          <td>Unlikely</td>
+          <td>Major</td>
+          <td><span class="badge b-med">Medium</span></td>
+          <td>Night checks, alert system, lone worker policy, contact rota</td>
+          <td>PIC / Rota Coordinator</td>
+          <td>Monthly</td>
+        </tr>
+        <tr>
+          <td><strong>R09</strong></td>
+          <td>Breach of confidentiality</td>
+          <td>Office / Staff areas</td>
+          <td>Rare</td>
+          <td>Moderate</td>
+          <td><span class="badge b-low">Low</span></td>
+          <td>GDPR training, locked cabinets, password protection</td>
+          <td>Manager / All staff</td>
+          <td>Quarterly</td>
+        </tr>
+        <tr>
+          <td><strong>R10</strong></td>
+          <td>Lack of staff cover or absent staff</td>
+          <td>House-wide</td>
+          <td>Possible</td>
+          <td>Major</td>
+          <td><span class="badge b-high">High</span></td>
+          <td>On-call system, relief panel, daily rota reviews</td>
+          <td>PIC / HR</td>
+          <td>Weekly</td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+  
+  <footer class="ft">
+    <div class="fl">
+      <span>✉ info@chosanta.ie</span>
+      <span>📍 Drogheda, Co. Louth · A92 E4CY</span>
+    </div>
+    <div class="fd"></div>
+    <div class="fr">Chosanta Management<br>Risk Register &amp; Index — Page 1 of 1</div>
+  </footer>
+</div>
+
+</body>
+</html>

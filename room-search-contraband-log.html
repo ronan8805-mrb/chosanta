@@ -1,0 +1,122 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Room Search &amp; Contraband Log — Chosanta Management</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"><style>@page{size:A4;margin:0}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}body{font-family:'Inter',sans-serif;background:#e8ecf1;color:#1a1610;display:flex;flex-direction:column;align-items:center;padding:40px 20px;gap:40px}@media print{body{background:#fff;padding:0;gap:0}.page{box-shadow:none;width:100%;min-height:unset}.pa{display:none!important}}.page{width:210mm;min-height:297mm;background:#fff;box-shadow:0 8px 40px rgba(13,27,42,.12);position:relative;overflow:hidden;display:flex;flex-direction:column}.tb{height:6px;background:linear-gradient(90deg,#c9a84c,#e0c070 40%,#c9a84c 70%,#a8893c)}.hd{display:flex;align-items:center;justify-content:space-between;padding:14px 40px 10px;border-bottom:2px solid #f0ede8;position:relative}.hd::after{content:'';position:absolute;bottom:-2px;left:40px;width:60px;height:3px;background:linear-gradient(90deg,#c9a84c,#e0c070);border-radius:2px}.lb{display:flex;align-items:center;gap:10px}.li{width:34px;height:34px;background:linear-gradient(135deg,#c9a84c,#a8893c);border-radius:7px;display:flex;align-items:center;justify-content:center}.li svg{width:18px;height:18px}.lt{display:flex;flex-direction:column;line-height:1}.ln{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#0d1b2a}.ls{font-size:7.5px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:#c9a84c;margin-top:2px}.co{text-align:right;font-size:9px;line-height:1.6;color:#5c5648}.co .cn{font-family:'Playfair Display',serif;font-size:12px;font-weight:700;color:#0d1b2a}.co .tg{font-size:7.5px;text-transform:uppercase;letter-spacing:2px;color:#c9a84c;font-weight:600}.ct{flex:1;padding:18px 40px 14px}.dt{font-family:'Playfair Display',serif;font-size:19px;font-weight:700;color:#0d1b2a;margin-bottom:4px;position:relative;padding-bottom:10px}.dt::after{content:'';position:absolute;bottom:0;left:0;width:50px;height:3px;background:linear-gradient(90deg,#c9a84c,#e0c070);border-radius:2px}.ds{font-size:8.5px;color:#9a9484;text-transform:uppercase;letter-spacing:2.5px;font-weight:600;margin-bottom:10px}.sh{background:linear-gradient(135deg,#0d1b2a,#1b2d42);color:#fff;padding:4px 12px;border-radius:4px;margin:8px 0 4px;font-size:8.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;display:flex;align-items:center;gap:8px}.sh .n{background:linear-gradient(135deg,#c9a84c,#e0c070);color:#0d1b2a;width:15px;height:15px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:800;flex-shrink:0}.bt{font-size:9px;line-height:1.5;color:#3d3830;margin-bottom:5px}table{width:100%;border-collapse:collapse;font-size:7.5px;margin-bottom:7px}th{background:linear-gradient(135deg,#0d1b2a,#1b2d42);color:#fff;padding:3px 5px;text-align:left;font-weight:700}td{padding:4px 5px;border-bottom:1px solid #f0ede8;color:#3d3830}tr:nth-child(even) td{background:#faf9f7}.box{border:1px solid #e0ddd8;border-radius:4px;padding:4px 8px;min-height:20px;font-size:8px;margin-bottom:5px}.sg{font-size:8px;color:#3d3830;margin-top:6px;padding:6px;border:1px dashed #c9a84c;border-radius:6px;background:#faf9f7}.sg span{display:block;margin-bottom:3px;border-bottom:1px dotted #ddd;padding-bottom:3px}.ft{padding:8px 40px;background:linear-gradient(135deg,#0d1b2a,#1b2d42);color:rgba(255,255,255,.8);font-size:7.5px;line-height:1.8;display:flex;justify-content:space-between;align-items:center;margin-top:auto}.fl{display:flex;flex-direction:column}.fl span{display:inline-flex;align-items:center;gap:5px}.fd{width:1px;height:24px;background:rgba(201,168,76,.3);margin:0 12px}.fr{text-align:right;font-size:7px;color:rgba(255,255,255,.5)}.pa{position:fixed;top:20px;right:20px;display:flex;gap:12px;z-index:100}.pa button{padding:12px 24px;border:none;border-radius:8px;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;box-shadow:0 4px 12px rgba(0,0,0,.15)}.bp{background:linear-gradient(135deg,#c9a84c,#e0c070);color:#0d1b2a}.bx{background:linear-gradient(135deg,#0d1b2a,#1b2d42);color:#fff}.warn{background:linear-gradient(135deg,#fff0f0,#ffe8e8);border:1px solid #c0392b;border-radius:5px;padding:5px 8px;font-size:8px;color:#3d3830;margin-bottom:6px}.note{background:#fff8e7;border-left:3px solid #c9a84c;padding:4px 8px;font-size:8px;color:#3d3830;margin-bottom:5px;border-radius:0 4px 4px 0}.bl{list-style:none;margin-bottom:6px}.bl li{position:relative;padding:4px 8px 4px 20px;margin-bottom:2px;background:linear-gradient(135deg,#faf9f7,#f5f3ef);border-radius:3px;border-left:3px solid #c9a84c;font-size:8px;line-height:1.3;color:#3d3830}.bl li::before{content:'•';position:absolute;left:8px;top:50%;transform:translateY(-50%);color:#c9a84c;font-size:10px;font-weight:700}</style></head><body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<div class="pa"><button class="bp" onclick="window.print()">🖨️ Print</button><button class="bx" id="btn">📄 Save as PDF</button></div>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var btn=document.getElementById('btn');
+  btn.addEventListener('click',async function(){
+    if(typeof html2canvas==='undefined'||!window.jspdf){alert('PDF libraries still loading — please wait and try again.');return;}
+    btn.disabled=true;
+    try{
+      var jsPDF=window.jspdf.jsPDF;
+      var pdf=new jsPDF({orientation:'portrait',unit:'mm',format:'a4'});
+      var pages=document.querySelectorAll('.page');
+      for(var i=0;i<pages.length;i++){
+        btn.textContent='⏳ '+(i+1)+'/'+pages.length;
+        await new Promise(function(r){setTimeout(r,500);});
+        var c=await html2canvas(pages[i],{scale:2,useCORS:true,backgroundColor:'#ffffff',logging:false});
+        if(i>0) pdf.addPage();
+        pdf.addImage(c.toDataURL('image/jpeg',0.95),'JPEG',0,0,210,297);
+      }
+      pdf.save('Chosanta_Room_Search_Contraband_Log.pdf');
+    }catch(e){alert('PDF error: '+e.message);console.error(e);}
+    btn.textContent='📄 Save as PDF';btn.disabled=false;
+  });
+});
+</script>
+
+<!-- P1 -->
+<div class="page"><div class="tb"></div>
+<header class="hd"><div class="lb"><div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="lt"><span class="ln">Chosanta</span><span class="ls">Management</span></div></div><div class="co"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div><div>Office 107, Brú Digital Hub, 56 West Street</div><div>Drogheda, Co. Louth · A92 E4CY</div></div></header>
+<main class="ct">
+<h1 class="dt">Room Search &amp; Contraband Log</h1><p class="ds">HIQA Standard 3 · S.I. 674/2017 · Children First Act 2015 · UNCRC Article 16</p>
+<p class="bt">A room search is an intrusion on a child's right to privacy (UNCRC Article 16). It must only be conducted where there is a <strong>reasonable belief</strong> that there is an immediate risk to the safety of the child or others, or that prohibited items are present. Every search must be authorised, documented on this form, and reviewed by the PIC.</p>
+
+<div class="warn"><strong>⚠ Rights-Based Approach:</strong> Room searches must be proportionate, respectful, and conducted with the <strong>minimum intrusion necessary</strong>. The child must be informed before or immediately after the search (unless doing so would increase risk). Personal items such as diaries, letters, and photographs must <strong>not</strong> be read or removed unless they constitute evidence of harm. Tusla ACIMS inspectors will review this log for proportionality.</div>
+
+<div class="sh"><span class="n">1</span> Grounds for Search</div>
+<p class="bt"><em>A search may only be authorised on one or more of the following grounds:</em></p>
+<ul class="bl">
+<li>Reasonable suspicion of <strong>illegal substances</strong> (drugs, alcohol where prohibited)</li>
+<li>Reasonable suspicion of <strong>weapons or sharp objects</strong> capable of causing harm</li>
+<li>Reasonable suspicion of <strong>stolen property</strong></li>
+<li>Concern about <strong>self-harm materials</strong> (ligatures, blades, hoarded medication)</li>
+<li>Concern about <strong>fire-setting materials</strong> (lighters, accelerants)</li>
+<li>Concern about items facilitating <strong>exploitation</strong> (unregistered phones, cash of unknown origin)</li>
+<li>Return from <strong>absence / absconding</strong> where risk is assessed as high</li>
+</ul>
+
+<div class="sh"><span class="n">2</span> Search Record</div>
+<table>
+<tr><th>Search Ref #</th><td></td><th>Date</th><td></td><th>Time</th><td></td></tr>
+<tr><th>Child / Young Person</th><td></td><th>DOB</th><td></td><th>Room / Area Searched</th><td></td></tr>
+</table>
+<table>
+<tr><th>Question</th><th>Detail</th></tr>
+<tr><td><strong>Reason / grounds for search</strong></td><td style="height:20px"></td></tr>
+<tr><td><strong>Authorised by</strong> (PIC / Deputy — name)</td><td></td></tr>
+<tr><td>Time of authorisation</td><td></td></tr>
+<tr><td>Child informed before search?</td><td>☐ Yes — time: ______ ☐ No — reason:</td></tr>
+<tr><td>Child present during search?</td><td>☐ Yes ☐ No — reason:</td></tr>
+</table>
+
+<div class="sh"><span class="n">3</span> Search Conducted By</div>
+<table>
+<tr><th>Staff Member 1 (conducting)</th><td></td><th>Role</th><td></td></tr>
+<tr><th>Staff Member 2 (witness)</th><td></td><th>Role</th><td></td></tr>
+</table>
+<div class="note"><strong>Rule:</strong> A minimum of <strong>two staff members</strong> must be present. One conducts the search, one acts as witness. Where possible, staff should be the same gender as the child.</div>
+
+<div class="sh"><span class="n">4</span> Items Found</div>
+<table>
+<tr><th>Item</th><th>Description / Quantity</th><th>Location Found</th><th>Action Taken</th></tr>
+<tr><td></td><td></td><td></td><td>☐ Confiscated ☐ Destroyed ☐ Handed to AGS ☐ Returned to child ☐ Stored securely</td></tr>
+<tr><td></td><td></td><td></td><td>☐ Confiscated ☐ Destroyed ☐ Handed to AGS ☐ Returned to child ☐ Stored securely</td></tr>
+<tr><td></td><td></td><td></td><td>☐ Confiscated ☐ Destroyed ☐ Handed to AGS ☐ Returned to child ☐ Stored securely</td></tr>
+</table>
+<p class="bt">☐ No prohibited items found</p>
+<p class="bt"><strong>If items confiscated — storage location:</strong> _______________________________ <strong>Secure?</strong> ☐ Yes</p>
+
+<div class="sh"><span class="n">5</span> Notifications</div>
+<table>
+<tr><td>Child informed after search (if not before)?</td><td>☐ Yes — time: ______ ☐ N/A (informed before)</td></tr>
+<tr><td>Child's social worker notified?</td><td>☐ Yes — date/time: ______ ☐ N/A</td></tr>
+<tr><td>Parent / guardian notified?</td><td>☐ Yes ☐ N/A — date/time: ______</td></tr>
+<tr><td>An Garda Síochána notified?</td><td>☐ Yes — Ref: ______ ☐ N/A</td></tr>
+<tr><td>NIMS / SEN required?</td><td>☐ Yes — Ref: ______ ☐ No</td></tr>
+<tr><td>Entered on Restrictive Practice Register?</td><td>☐ Yes ☐ N/A (no physical intervention)</td></tr>
+</table>
+
+<div class="sh"><span class="n">6</span> Child Debrief</div>
+<p class="bt"><em>The child must be offered a debrief after every search. Record whether they accepted or declined.</em></p>
+<table>
+<tr><td>Debrief offered?</td><td>☐ Yes — accepted ☐ Yes — declined ☐ Deferred (offer again)</td></tr>
+<tr><td>Conducted by (not involved in search)</td><td></td></tr>
+<tr><td>Child's response / feelings about the search</td><td style="height:18px"></td></tr>
+<tr><td>Complaint or concern raised by child?</td><td>☐ No ☐ Yes — detail:</td></tr>
+<tr><td>Advocacy (EPIC) offered?</td><td>☐ Yes ☐ Previously aware</td></tr>
+</table>
+
+<div class="sh"><span class="n">7</span> PIC Review &amp; Sign-Off</div>
+<table>
+<tr><td>Search justified and proportionate?</td><td>☐ Yes ☐ No — action:</td></tr>
+<tr><td>Conducted respectfully and with minimum intrusion?</td><td>☐ Yes ☐ No — action:</td></tr>
+<tr><td>Child's rights respected (privacy, dignity)?</td><td>☐ Yes ☐ No — action:</td></tr>
+<tr><td>Risk assessment updated?</td><td>☐ Yes ☐ N/A</td></tr>
+<tr><td>Care plan updated?</td><td>☐ Yes ☐ N/A</td></tr>
+<tr><td>Practice concern identified?</td><td>☐ No ☐ Yes — referred to Director</td></tr>
+<tr><td>Reported at governance meeting?</td><td>☐ Yes — date: ______</td></tr>
+</table>
+
+<div class="sg">
+<span><strong>Conducting Staff Signature:</strong> _________________________ Date: __________</span>
+<span><strong>Witness Staff Signature:</strong> _________________________ Date: __________</span>
+<span><strong>PIC Review Signature:</strong> _________________________ Date: __________</span>
+<span><strong>Key Principle:</strong> Chosanta Management respects children's right to privacy. Room searches are a last resort and must always be proportionate, documented, and subject to management review.</span>
+<span><strong>Legislative Basis:</strong> HIQA Standards 2018 (Standard 3) · UNCRC Article 16 (right to privacy) · S.I. 674/2017 · Children First Act 2015</span>
+<span><strong>Ref:</strong> CM-RSC-001 | Version 1.0 | May 2025 | Review: Annual | <strong>Owner:</strong> PIC / Director</span>
+</div>
+</main>
+<footer class="ft"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Room Search &amp; Contraband Log</div></footer></div>
+
+</body></html>

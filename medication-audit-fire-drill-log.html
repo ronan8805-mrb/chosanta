@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medication Audit &amp; Fire Drill Log — Chosanta Management</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>@page{size:A4;margin:0}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}body{font-family:'Inter',sans-serif;background:#e8ecf1;color:#1a1610;display:flex;flex-direction:column;align-items:center;padding:40px 20px;gap:40px}@media print{body{background:#fff;padding:0;gap:0}.page{box-shadow:none;width:100%;min-height:unset}.pa{display:none!important}}.page{width:210mm;min-height:297mm;background:#fff;box-shadow:0 8px 40px rgba(13,27,42,.12);position:relative;overflow:hidden;display:flex;flex-direction:column}.tb{height:6px;background:linear-gradient(90deg,#c9a84c,#e0c070 40%,#c9a84c 70%,#a8893c)}.hd{display:flex;align-items:center;justify-content:space-between;padding:14px 40px 10px;border-bottom:2px solid #f0ede8;position:relative}.hd::after{content:'';position:absolute;bottom:-2px;left:40px;width:60px;height:3px;background:linear-gradient(90deg,#c9a84c,#e0c070);border-radius:2px}.lb{display:flex;align-items:center;gap:10px}.li{width:34px;height:34px;background:linear-gradient(135deg,#c9a84c,#a8893c);border-radius:7px;display:flex;align-items:center;justify-content:center}.li svg{width:18px;height:18px}.lt{display:flex;flex-direction:column;line-height:1}.ln{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#0d1b2a}.ls{font-size:7.5px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:#c9a84c;margin-top:2px}.co{text-align:right;font-size:9px;line-height:1.6;color:#5c5648}.co .cn{font-family:'Playfair Display',serif;font-size:12px;font-weight:700;color:#0d1b2a}.co .tg{font-size:7.5px;text-transform:uppercase;letter-spacing:2px;color:#c9a84c;font-weight:600}.ct{flex:1;padding:20px 40px 14px}.dt{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:#0d1b2a;margin-bottom:4px;position:relative;padding-bottom:10px}.dt::after{content:'';position:absolute;bottom:0;left:0;width:50px;height:3px;background:linear-gradient(90deg,#c9a84c,#e0c070);border-radius:2px}.ds{font-size:9px;color:#9a9484;text-transform:uppercase;letter-spacing:2.5px;font-weight:600;margin-bottom:12px}.sh{background:linear-gradient(135deg,#0d1b2a,#1b2d42);color:#fff;padding:5px 12px;border-radius:4px;margin:10px 0 5px;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;display:flex;align-items:center;gap:8px}.sh .n{background:linear-gradient(135deg,#c9a84c,#e0c070);color:#0d1b2a;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:800;flex-shrink:0}.bt{font-size:9.5px;line-height:1.55;color:#3d3830;margin-bottom:6px}table{width:100%;border-collapse:collapse;font-size:8.5px;margin-bottom:8px}th{background:linear-gradient(135deg,#0d1b2a,#1b2d42);color:#fff;padding:4px 6px;text-align:left;font-weight:700}td{padding:5px 6px;border-bottom:1px solid #f0ede8;color:#3d3830}tr:nth-child(even) td{background:#faf9f7}.sg{font-size:8.5px;color:#3d3830;margin-top:8px;padding:7px;border:1px dashed #c9a84c;border-radius:6px;background:#faf9f7}.sg span{display:block;margin-bottom:4px;border-bottom:1px dotted #ddd;padding-bottom:3px}.ft{padding:9px 40px;background:linear-gradient(135deg,#0d1b2a,#1b2d42);color:rgba(255,255,255,.8);font-size:8px;line-height:1.8;display:flex;justify-content:space-between;align-items:center;margin-top:auto}.fl{display:flex;flex-direction:column}.fl span{display:inline-flex;align-items:center;gap:5px}.fd{width:1px;height:26px;background:rgba(201,168,76,.3);margin:0 14px}.fr{text-align:right;font-size:7px;color:rgba(255,255,255,.5)}.pa{position:fixed;top:20px;right:20px;display:flex;gap:12px;z-index:100}.pa button{padding:12px 24px;border:none;border-radius:8px;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;box-shadow:0 4px 12px rgba(0,0,0,.15)}.bp{background:linear-gradient(135deg,#c9a84c,#e0c070);color:#0d1b2a}.bx{background:linear-gradient(135deg,#0d1b2a,#1b2d42);color:#fff}.warn{background:linear-gradient(135deg,#fff8e7,#fff3d0);border:1px solid #c9a84c;border-radius:5px;padding:6px 10px;font-size:8.5px;color:#3d3830;margin-bottom:7px}</style></head><body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<div class="pa"><button class="bp" onclick="window.print()">🖨️ Print</button><button class="bx" id="btn" onclick="savePDF()">📄 Save as PDF</button></div>
+<script>async function savePDF(){const btn=document.getElementById('btn');btn.disabled=true;try{const{jsPDF}=window.jspdf;const pdf=new jsPDF({orientation:'portrait',unit:'mm',format:'a4'});const pages=document.querySelectorAll('.page');for(let i=0;i<pages.length;i++){btn.textContent='⏳ '+(i+1)+'/'+pages.length;await new Promise(r=>setTimeout(r,300));const c=await html2canvas(pages[i],{scale:1.5,useCORS:true,backgroundColor:'#fff',width:pages[i].scrollWidth,height:pages[i].scrollHeight,logging:false});if(i>0)pdf.addPage();pdf.addImage(c.toDataURL('image/jpeg',0.92),'JPEG',0,0,210,297);c.width=0;c.height=0;}const b=pdf.output('blob');const u=URL.createObjectURL(b);const a=document.createElement('a');a.href=u;a.download='Chosanta_Medication_Audit_FireDrill.pdf';document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(u);}catch(e){alert('PDF error: '+e.message);}btn.textContent='📄 Save as PDF';btn.disabled=false;}</script>
+
+<!-- P1: Medication Audit -->
+<div class="page"><div class="tb"></div>
+<header class="hd"><div class="lb"><div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="lt"><span class="ln">Chosanta</span><span class="ls">Management</span></div></div><div class="co"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div><div>Office 107, Brú Digital Hub, 56 West Street</div><div>Drogheda, Co. Louth · A92 E4CY</div></div></header>
+<main class="ct">
+<h1 class="dt">Medication Audit</h1><p class="ds">Monthly Internal Audit — S.I. 674/2017 · HIQA National Standards 2018</p>
+<table>
+<tr><th>Audit Date</th><td></td><th>Auditor</th><td></td><th>Role</th><td></td></tr>
+<tr><th>Period Covered</th><td></td><th>Centre</th><td></td><th>No. of Residents</th><td></td></tr>
+</table>
+<p class="bt">This audit maps to the Chosanta Medication Management Policy and the <em>Child Care (Standards in Children's Residential Centres) Regulations 2018</em>. Each area is scored: <strong>C = Compliant · SC = Substantially Compliant · NC = Non-Compliant · N/A = Not Applicable</strong></p>
+
+<div class="sh"><span class="n">1</span> Prescribing &amp; Administration Records</div>
+<table>
+<tr><th>Criteria</th><th>C/SC/NC/NA</th><th>Evidence / Comment</th></tr>
+<tr><td>Prescription sheets accurate, current, and signed by authorised prescriber</td><td></td><td></td></tr>
+<tr><td>Medication Administration Records (MARs) completed for every dose</td><td></td><td></td></tr>
+<tr><td>PRN (as-needed) medications have clear instructions and frequency limits</td><td></td><td></td></tr>
+<tr><td>Dose administered matches prescription — no unauthorised variations</td><td></td><td></td></tr>
+<tr><td>Medication given at prescribed times; late/missed doses documented</td><td></td><td></td></tr>
+<tr><td>Staff administering medication have completed Medication Management training</td><td></td><td></td></tr>
+</table>
+
+<div class="sh"><span class="n">2</span> Storage &amp; Security</div>
+<table>
+<tr><th>Criteria</th><th>C/SC/NC/NA</th><th>Evidence / Comment</th></tr>
+<tr><td>Medications stored in locked cabinet at correct temperature</td><td></td><td></td></tr>
+<tr><td>Controlled drugs stored in double-locked cabinet; keys held by named person</td><td></td><td></td></tr>
+<tr><td>Medications labelled clearly with child's name, dose, and instructions</td><td></td><td></td></tr>
+<tr><td>Expired medications identified and disposed of correctly</td><td></td><td></td></tr>
+<tr><td>Medication stock reconciled — counts match records</td><td></td><td></td></tr>
+</table>
+
+<div class="sh"><span class="n">3</span> Incidents, Errors &amp; Self-Administration</div>
+<table>
+<tr><th>Criteria</th><th>C/SC/NC/NA</th><th>Evidence / Comment</th></tr>
+<tr><td>Medication errors / near misses reported and recorded via NIMS/SEN</td><td></td><td></td></tr>
+<tr><td>Root cause analysis completed for any medication errors since last audit</td><td></td><td></td></tr>
+<tr><td>Children self-administering have a current risk assessment on file</td><td></td><td></td></tr>
+<tr><td>Parent/guardian consent obtained for all medications administered</td><td></td><td></td></tr>
+</table>
+
+<div class="sh"><span class="n">4</span> Audit Summary &amp; Action Plan</div>
+<table>
+<tr><th>Overall Finding</th><th>Priority Actions</th><th>Owner</th><th>Target Date</th></tr>
+<tr><td style="height:18px"></td><td></td><td></td><td></td></tr>
+<tr><td style="height:18px"></td><td></td><td></td><td></td></tr>
+</table>
+<div class="sg">
+<span><strong>Auditor Signature:</strong> _________________________ Date: __________</span>
+<span><strong>PIC Sign-Off:</strong> _________________________ Date: __________</span>
+<span><strong>Next Audit Due:</strong> __________ | <strong>Ref:</strong> CM-MDA-001 | HIQA Standard 3 · S.I. 674/2017</span>
+</div>
+</main>
+<footer class="ft"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Medication Audit — Page 1 of 2</div></footer></div>
+
+<!-- P2: Fire Drill Log -->
+<div class="page"><div class="tb"></div>
+<header class="hd"><div class="lb"><div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="lt"><span class="ln">Chosanta</span><span class="ls">Management</span></div></div><div class="co"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div></header>
+<main class="ct">
+<h1 class="dt">Fire Drill &amp; Safety Log</h1><p class="ds">Quarterly Fire Drill Record — Fire Services Act 1981/2003 · HIQA Standard 3</p>
+<p class="bt">HIQA inspectors examine fire drill records and Personal Emergency Evacuation Plans (PEEPs) as a core safety evidence requirement. Drills must include all staff and residents and must be conducted at varied times (day/night). PEEPs must be reviewed bi-annually and on each new admission.</p>
+
+<div class="sh"><span class="n">A</span> Fire Drill Record</div>
+<table>
+<tr><th>Date</th><td></td><th>Time</th><td></td><th>Type</th><td>☐ Planned &nbsp; ☐ Surprise &nbsp; ☐ Night</td></tr>
+<tr><th>Alarm Activated By</th><td></td><th>Assembly Point</th><td></td><th>All Evacuated?</th><td>☐ Yes &nbsp; ☐ No</td></tr>
+<tr><th>Total Evacuation Time</th><td></td><th>Fire Warden</th><td></td><th>Roll Call Completed?</th><td>☐ Yes &nbsp; ☐ No</td></tr>
+</table>
+<p class="bt"><strong>Staff Present:</strong> ___________________________________________</p>
+<p class="bt"><strong>Children / Young People Present:</strong> ___________________________________________</p>
+<p class="bt"><strong>Issues / Problems Identified:</strong></p>
+<div style="border:1px solid #e0ddd8;border-radius:4px;padding:6px 10px;min-height:30px;font-size:9px;color:#999;font-style:italic;margin-bottom:6px">e.g. Delay at rear exit — door stiff. Action: Maintenance request submitted.</div>
+<p class="bt"><strong>Corrective Actions Taken:</strong></p>
+<div style="border:1px solid #e0ddd8;border-radius:4px;padding:6px 10px;min-height:24px;font-size:9px;color:#999;font-style:italic;margin-bottom:6px">e.g. Door repaired 15/05/25. Signed off by PIC.</div>
+<div class="sg">
+<span><strong>Fire Warden Signature:</strong> _________________________ Date: __________</span>
+<span><strong>PIC Sign-Off:</strong> _________________________ Date: __________</span>
+</div>
+
+<div class="sh"><span class="n">B</span> Annual Fire Drill Summary Log</div>
+<table>
+<tr><th>Quarter</th><th>Date</th><th>Time</th><th>Type</th><th>Evacuation Time</th><th>Issues?</th><th>PIC Sign</th></tr>
+<tr><td>Q1</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Q2</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Q3</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Q4</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</table>
+
+<div class="sh"><span class="n">C</span> Personal Emergency Evacuation Plans (PEEPs)</div>
+<p class="bt">A PEEP must be in place for each child in residence. PEEPs must be reviewed bi-annually and on every new admission. HIQA inspectors specifically check for current PEEPs per child.</p>
+<table>
+<tr><th>Child Ref / Initials</th><th>PEEP Created</th><th>Last Reviewed</th><th>Next Review Due</th><th>Special Requirements</th><th>PIC Sign</th></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</table>
+
+<div class="sh"><span class="n">D</span> Fire Safety Equipment Service Log</div>
+<table>
+<tr><th>Equipment</th><th>Last Serviced</th><th>Next Service Due</th><th>Contractor</th><th>Certificate on File?</th></tr>
+<tr><td>Fire alarm system</td><td></td><td></td><td></td><td>☐ Yes ☐ No</td></tr>
+<tr><td>Fire extinguishers</td><td></td><td></td><td></td><td>☐ Yes ☐ No</td></tr>
+<tr><td>Emergency lighting</td><td></td><td></td><td></td><td>☐ Yes ☐ No</td></tr>
+<tr><td>Smoke / heat detectors</td><td></td><td></td><td></td><td>☐ Yes ☐ No</td></tr>
+<tr><td>Fire doors / exits</td><td></td><td></td><td></td><td>☐ Yes ☐ No</td></tr>
+</table>
+<div class="sg">
+<span><strong>Legislative Basis:</strong> Fire Services Act 1981 (as amended 2003) · HIQA National Standards 2018 Standard 3 · S.I. 674/2017</span>
+<span><strong>Ref:</strong> CM-FDL-001 | Version 1.0 | May 2025 | Review: Annual</span>
+</div>
+</main>
+<footer class="ft"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Fire Drill &amp; Safety Log — Page 2 of 2</div></footer></div>
+
+</body></html>

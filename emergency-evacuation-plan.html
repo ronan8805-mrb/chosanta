@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Evacuation Plan — Chosanta Management</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        @page { size: A4; margin: 0; }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+        body { font-family: 'Inter', sans-serif; background: #e8ecf1; color: #1a1610; display: flex; flex-direction: column; align-items: center; padding: 40px 20px; gap: 40px; }
+        @media print { body { background: white; padding: 0; gap: 0; } .page { box-shadow: none; width: 100%; min-height: unset; } .print-actions { display: none !important; } }
+        .page { width: 210mm; min-height: 297mm; background: #fff; box-shadow: 0 8px 40px rgba(13,27,42,0.12); position: relative; overflow: hidden; display: flex; flex-direction: column; }
+        .top-band { height: 6px; background: linear-gradient(90deg, #c9a84c 0%, #e0c070 40%, #c9a84c 70%, #a8893c 100%); }
+        .header { display: flex; align-items: center; justify-content: space-between; padding: 16px 40px 12px; border-bottom: 2px solid #f0ede8; position: relative; }
+        .header::after { content: ''; position: absolute; bottom: -2px; left: 40px; width: 60px; height: 3px; background: linear-gradient(90deg, #c9a84c, #e0c070); border-radius: 2px; }
+        .logo-box { display: flex; align-items: center; gap: 10px; }
+        .logo-icon { width: 34px; height: 34px; background: linear-gradient(135deg, #c9a84c, #a8893c); border-radius: 7px; display: flex; align-items: center; justify-content: center; }
+        .logo-icon svg { width: 18px; height: 18px; }
+        .logo-text { display: flex; flex-direction: column; line-height: 1; }
+        .logo-name { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: #0d1b2a; }
+        .logo-sub { font-size: 7.5px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: #c9a84c; margin-top: 2px; }
+        .co-details { text-align: right; font-size: 9px; line-height: 1.6; color: #5c5648; }
+        .co-details .cn { font-family: 'Playfair Display', serif; font-size: 12px; font-weight: 700; color: #0d1b2a; }
+        .co-details .tg { font-size: 7.5px; text-transform: uppercase; letter-spacing: 2px; color: #c9a84c; font-weight: 600; }
+        .content { flex: 1; padding: 28px 40px 20px; }
+        .doc-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: #0d1b2a; margin-bottom: 4px; position: relative; padding-bottom: 12px; }
+        .doc-title::after { content: ''; position: absolute; bottom: 0; left: 0; width: 50px; height: 3px; background: linear-gradient(90deg, #c9a84c, #e0c070); border-radius: 2px; }
+        .doc-sub { font-size: 10px; color: #9a9484; text-transform: uppercase; letter-spacing: 2.5px; font-weight: 600; margin-bottom: 24px; }
+        .sh { background: linear-gradient(135deg, #0d1b2a, #1b2d42); color: #fff; padding: 8px 16px; border-radius: 4px; margin: 20px 0 12px; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; display: flex; align-items: center; gap: 8px; }
+        .sh .n { background: linear-gradient(135deg, #c9a84c, #e0c070); color: #0d1b2a; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 800; flex-shrink: 0; }
+        .body-text { font-size: 12px; line-height: 1.75; color: #3d3830; margin-bottom: 16px; max-width: 620px; }
+        .aims-label { font-size: 12px; font-weight: 600; color: #0d1b2a; margin-bottom: 10px; }
+        .bl { list-style: none; margin-bottom: 16px; }
+        .bl li { position: relative; padding: 12px 14px 12px 42px; margin-bottom: 6px; background: linear-gradient(135deg, #faf9f7, #f5f3ef); border-radius: 6px; border-left: 3px solid #c9a84c; font-size: 11.5px; line-height: 1.55; color: #3d3830; }
+        .bl li::before { content: '✓'; position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: #c9a84c; font-size: 13px; font-weight: 700; }
+        .bl.alert li { border-left-color: #d44; }
+        .bl.alert li::before { content: '⚠'; color: #d44; }
+        .form-field { display: flex; align-items: baseline; gap: 8px; margin-bottom: 10px; font-size: 11.5px; color: #3d3830; }
+        .form-field label { font-weight: 600; color: #0d1b2a; white-space: nowrap; min-width: 200px; }
+        .form-field .line { flex: 1; border-bottom: 1px solid #c9a84c; min-width: 100px; height: 1px; margin-bottom: 2px; }
+        .footer { padding: 14px 40px; background: linear-gradient(135deg, #0d1b2a, #1b2d42); color: rgba(255,255,255,0.8); font-size: 8.5px; line-height: 1.8; display: flex; justify-content: space-between; align-items: center; margin-top: auto; }
+        .fl { display: flex; flex-direction: column; }
+        .fl span { display: inline-flex; align-items: center; gap: 5px; }
+        .fd { width: 1px; height: 32px; background: rgba(201,168,76,0.3); margin: 0 16px; }
+        .fr { text-align: right; font-size: 7.5px; color: rgba(255,255,255,0.5); }
+        .print-actions { position: fixed; top: 20px; right: 20px; display: flex; gap: 12px; z-index: 100; }
+        .print-actions button { padding: 12px 24px; border: none; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+        .bp { background: linear-gradient(135deg, #c9a84c, #e0c070); color: #0d1b2a; }
+        .bp:hover { transform: translateY(-1px); }
+        .bpdf { background: linear-gradient(135deg, #0d1b2a, #1b2d42); color: #fff; }
+        .bpdf:hover { transform: translateY(-1px); }
+    </style>
+</head>
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<div class="print-actions">
+    <button class="bp" onclick="window.print()">🖨️ Print</button>
+    <button class="bpdf" id="savePdfBtn" onclick="savePDF()">📄 Save as PDF</button>
+</div>
+<script>
+async function savePDF() {
+    const btn = document.getElementById('savePdfBtn');
+    btn.disabled = true;
+    try {
+        const { jsPDF } = window.jspdf;
+        const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
+        const pages = document.querySelectorAll('.page');
+        for (let i = 0; i < pages.length; i++) {
+            btn.textContent = '⏳ Page ' + (i+1) + '/' + pages.length;
+            await new Promise(r => setTimeout(r, 300));
+            const canvas = await html2canvas(pages[i], { scale: 1.5, useCORS: true, letterRendering: true, backgroundColor: '#ffffff', width: pages[i].scrollWidth, height: pages[i].scrollHeight, logging: false });
+            const imgData = canvas.toDataURL('image/jpeg', 0.92);
+            if (i > 0) pdf.addPage();
+            pdf.addImage(imgData, 'JPEG', 0, 0, 210, 297);
+            canvas.width = 0; canvas.height = 0;
+        }
+        const blob = pdf.output('blob');
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url; a.download = 'Chosanta_Emergency_Evacuation_Plan.pdf';
+        document.body.appendChild(a); a.click(); document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    } catch (e) { alert('PDF error: ' + e.message); }
+    btn.textContent = '📄 Save as PDF'; btn.disabled = false;
+}
+</script>
+
+<!-- ==================== PAGE 1 ==================== -->
+<div class="page">
+    <div class="top-band"></div>
+    <header class="header">
+        <div class="logo-box">
+            <div class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div>
+            <div class="logo-text"><span class="logo-name">Chosanta</span><span class="logo-sub">Management</span></div>
+        </div>
+        <div class="co-details">
+            <div class="cn">Chosanta Management</div>
+            <div class="tg">Accommodation &amp; Property Solutions</div>
+            <div>Office 107, Brú Digital Hub, 56 West Street</div>
+            <div>Drogheda, Co. Louth · A92 E4CY</div>
+        </div>
+    </header>
+    <main class="content">
+        <h1 class="doc-title">Emergency Evacuation Plan</h1>
+        <p class="doc-sub">Sections 1–5: Purpose, Scope, Emergencies, Alarm &amp; Procedure</p>
+
+        <div class="form-field"><label>Premises:</label><span class="line"></span></div>
+        <div class="form-field"><label>Date of Issue:</label><span class="line"></span></div>
+        <div class="form-field"><label>Review Date:</label><span class="line"></span></div>
+        <div class="form-field"><label>Person Responsible:</label><span class="line"></span></div>
+
+        <div class="sh"><span class="n">1</span> Purpose</div>
+        <p class="body-text">To ensure the safe and efficient evacuation of all occupants in the event of an emergency, minimising risk to life and enabling rapid response by emergency services.</p>
+
+        <div class="sh"><span class="n">2</span> Scope</div>
+        <p class="body-text">Applies to all staff, residents/service users, contractors, and visitors present in the premises at any time.</p>
+
+        <div class="sh"><span class="n">3</span> Emergency Types Covered</div>
+        <ul class="bl alert">
+            <li>Fire or Smoke</li>
+            <li>Gas Leak</li>
+            <li>Bomb Threat</li>
+            <li>Medical Emergency</li>
+            <li>Severe Weather / Flood</li>
+            <li>Security Threat or Intruder</li>
+        </ul>
+
+        <div class="sh"><span class="n">4</span> Alarm System</div>
+        <ul class="bl">
+            <li>Type: Fire alarm / manual call point / smoke detection</li>
+            <li>Audible &amp; visual alarms located throughout the premises</li>
+            <li>All staff trained to recognise and respond immediately</li>
+        </ul>
+
+        <div class="sh"><span class="n">5</span> Evacuation Procedure</div>
+        <ul class="bl">
+            <li><strong>Step 1 — Raise the Alarm:</strong> Activate the nearest fire alarm point or call out loudly. Call 999/112 and state the emergency type, location, and any hazards.</li>
+            <li><strong>Step 2 — Immediate Action:</strong> Stop all activities, leave belongings behind, assist residents to evacuate — prioritising those with mobility or sensory impairments.</li>
+            <li><strong>Step 3 — Use of Exits:</strong> Follow illuminated exit signs to the nearest safe exit. Do not use lifts. Close doors behind you to slow the spread of fire/smoke.</li>
+            <li><strong>Step 4 — Assembly Point:</strong> Proceed to the designated assembly point. Stay in a group and await instructions.</li>
+            <li><strong>Step 5 — Roll Call:</strong> Person in Charge or Fire Warden to take register. Report anyone missing to emergency services immediately.</li>
+        </ul>
+    </main>
+    <footer class="footer">
+        <div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div>
+        <div class="fd"></div>
+        <div class="fr">Chosanta Management<br>Emergency Evacuation Plan — Page 1 of 2</div>
+    </footer>
+</div>
+
+<!-- ==================== PAGE 2 ==================== -->
+<div class="page">
+    <div class="top-band"></div>
+    <header class="header">
+        <div class="logo-box">
+            <div class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div>
+            <div class="logo-text"><span class="logo-name">Chosanta</span><span class="logo-sub">Management</span></div>
+        </div>
+        <div class="co-details"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div>
+    </header>
+    <main class="content">
+        <h1 class="doc-title">Emergency Evacuation Plan</h1>
+        <p class="doc-sub">Sections 6–11: Responsibilities, Accessibility, Training &amp; Review</p>
+
+        <div class="sh"><span class="n">6</span> Responsibilities</div>
+        <ul class="bl">
+            <li><strong>Person in Charge / Fire Warden:</strong> Lead evacuation and ensure building is cleared; take roll call; liaise with emergency services</li>
+            <li><strong>Staff:</strong> Follow evacuation routes; assist service users; do not re-enter the building until declared safe</li>
+            <li><strong>Visitors:</strong> Must be escorted to the assembly point by staff</li>
+        </ul>
+
+        <div class="sh"><span class="n">7</span> Assistance for Persons with Disabilities</div>
+        <ul class="bl">
+            <li>Assign staff "buddies" to assist individuals with mobility or sensory needs</li>
+            <li>Ensure evacuation chairs or mobility aids are positioned at stairwells</li>
+        </ul>
+
+        <div class="sh"><span class="n">8</span> Training &amp; Drills</div>
+        <ul class="bl">
+            <li>Evacuation drills every 6 months</li>
+            <li>New staff trained during induction</li>
+            <li>Records maintained</li>
+        </ul>
+
+        <div class="sh"><span class="n">9</span> Plan Display</div>
+        <ul class="bl">
+            <li>Evacuation routes and assembly points displayed in all rooms and corridors</li>
+            <li>Laminated copies in reception and staff areas</li>
+        </ul>
+
+        <div class="sh"><span class="n">10</span> Contact Information</div>
+        <ul class="bl alert">
+            <li><strong>Emergency Services:</strong> 999 / 112</li>
+            <li><strong>On-Site Emergency Coordinator:</strong> [Name &amp; Phone]</li>
+            <li><strong>Backup Coordinator:</strong> [Name &amp; Phone]</li>
+        </ul>
+
+        <div class="sh"><span class="n">11</span> Review</div>
+        <p class="body-text">Reviewed annually or after major incidents or layout changes.</p>
+    </main>
+    <footer class="footer">
+        <div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div>
+        <div class="fd"></div>
+        <div class="fr">Chosanta Management<br>Emergency Evacuation Plan — Page 2 of 2</div>
+    </footer>
+</div>
+
+</body>
+</html>

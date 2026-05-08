@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Child Safeguarding Risk Assessment — Chosanta Management</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+@page{size:A4;margin:0}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+body{font-family:'Inter',sans-serif;background:#e8ecf1;color:#1a1610;display:flex;flex-direction:column;align-items:center;padding:40px 20px;gap:40px}
+@media print{body{background:#fff;padding:0;gap:0}.page{box-shadow:none;width:100%;min-height:unset}.pa{display:none!important}}
+.page{width:210mm;min-height:297mm;background:#fff;box-shadow:0 8px 40px rgba(13,27,42,.12);position:relative;display:flex;flex-direction:column}
+.tb{height:6px;background:linear-gradient(90deg,#c9a84c,#e0c070 40%,#c9a84c 70%,#a8893c)}
+.hd{display:flex;align-items:center;justify-content:space-between;padding:16px 40px 12px;border-bottom:2px solid #f0ede8;position:relative}
+.hd::after{content:'';position:absolute;bottom:-2px;left:40px;width:60px;height:3px;background:linear-gradient(90deg,#c9a84c,#e0c070);border-radius:2px}
+.lb{display:flex;align-items:center;gap:10px}
+.li{width:34px;height:34px;background:linear-gradient(135deg,#c9a84c,#a8893c);border-radius:7px;display:flex;align-items:center;justify-content:center}
+.li svg{width:18px;height:18px}
+.lt{display:flex;flex-direction:column;line-height:1}
+.ln{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#0d1b2a}
+.ls{font-size:7.5px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:#c9a84c;margin-top:2px}
+.co{text-align:right;font-size:9px;line-height:1.6;color:#5c5648}
+.co .cn{font-family:'Playfair Display',serif;font-size:12px;font-weight:700;color:#0d1b2a}
+.co .tg{font-size:7.5px;text-transform:uppercase;letter-spacing:2px;color:#c9a84c;font-weight:600}
+.ct{flex:1;padding:28px 40px 20px}
+.dt{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#0d1b2a;margin-bottom:4px;position:relative;padding-bottom:12px}
+.dt::after{content:'';position:absolute;bottom:0;left:0;width:50px;height:3px;background:linear-gradient(90deg,#c9a84c,#e0c070);border-radius:2px}
+.ds{font-size:10px;color:#9a9484;text-transform:uppercase;letter-spacing:2.5px;font-weight:600;margin-bottom:16px}
+.intro{font-size:11.5px;line-height:1.7;color:#3d3830;margin-bottom:24px;background:linear-gradient(135deg,#faf9f7,#f5f3ef);padding:14px;border-radius:6px;border-left:3px solid #c9a84c}
+.risk-table{width:100%;border-collapse:collapse;margin-bottom:24px;font-size:10.5px}
+.risk-table th{background:linear-gradient(135deg,#0d1b2a,#1b2d42);color:#fff;text-align:left;padding:12px;font-weight:600;text-transform:uppercase;letter-spacing:1px;font-size:9.5px;border:1px solid #1b2d42}
+.risk-table td{padding:12px;border:1px solid #e0ede8;color:#3d3830;line-height:1.5;vertical-align:top}
+.risk-table tr:nth-child(even) td{background:#faf9f7}
+.risk-table td:nth-child(1){font-weight:600;color:#0d1b2a;width:35%}
+.risk-table td:nth-child(2){width:45%}
+.risk-table td:nth-child(3){width:20%;font-weight:500;color:#5c5648}
+.footer-note{font-size:10.5px;font-style:italic;color:#5c5648;text-align:center;margin-top:20px;padding-top:16px;border-top:1px dashed #d4ccbc}
+.ft{padding:12px 40px;background:linear-gradient(135deg,#0d1b2a,#1b2d42);color:rgba(255,255,255,.8);font-size:8.5px;line-height:1.8;display:flex;justify-content:space-between;align-items:center;margin-top:auto}
+.fl{display:flex;flex-direction:column}
+.fl span{display:inline-flex;align-items:center;gap:5px}
+.fd{width:1px;height:32px;background:rgba(201,168,76,.3);margin:0 16px}
+.fr{text-align:right;font-size:7.5px;color:rgba(255,255,255,.5)}
+.pa{position:fixed;top:20px;right:20px;display:flex;gap:12px;z-index:100}
+.pa button{padding:12px 24px;border:none;border-radius:8px;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;box-shadow:0 4px 12px rgba(0,0,0,.15)}
+.bp{background:linear-gradient(135deg,#c9a84c,#e0c070);color:#0d1b2a}
+.bx{background:linear-gradient(135deg,#0d1b2a,#1b2d42);color:#fff}
+</style>
+</head>
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<div class="pa">
+  <button class="bp" onclick="window.print()">🖨️ Print</button>
+  <button class="bx" id="savePdfBtn" onclick="savePDF()">📄 Save as PDF</button>
+</div>
+<script>
+async function savePDF(){
+  const btn=document.getElementById('savePdfBtn');
+  btn.disabled=true;
+  try{
+    const{jsPDF}=window.jspdf;
+    const pdf=new jsPDF({orientation:'portrait',unit:'mm',format:'a4'});
+    const pages=document.querySelectorAll('.page');
+    for(let i=0;i<pages.length;i++){
+      btn.textContent='⏳ Rendering '+(i+1)+'/'+pages.length+'...';
+      await new Promise(r=>setTimeout(r,500));
+      const c=await html2canvas(pages[i],{scale:2,useCORS:true,allowTaint:true,backgroundColor:'#ffffff',width:pages[i].scrollWidth,height:pages[i].scrollHeight,logging:false});
+      const imgData=c.toDataURL('image/jpeg',0.95);
+      if(i>0)pdf.addPage();
+      pdf.addImage(imgData,'JPEG',0,0,210,297);
+      c.remove();
+    }
+    btn.textContent='⏳ Saving...';
+    await new Promise(r=>setTimeout(r,200));
+    pdf.save('Chosanta_Child_Safeguarding_Risk_Assessment.pdf');
+  }catch(e){
+    alert('PDF generation error: '+e.message);
+    console.error(e);
+  }
+  btn.textContent='📄 Save as PDF';
+  btn.disabled=false;
+}
+</script>
+
+<div class="page">
+  <div class="tb"></div>
+  <header class="hd">
+    <div class="lb">
+      <div class="li">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg>
+      </div>
+      <div class="lt"><span class="ln">Chosanta</span><span class="ls">Management</span></div>
+    </div>
+    <div class="co">
+      <div class="cn">Chosanta Management</div>
+      <div class="tg">Accommodation &amp; Property Solutions</div>
+      <div>Office 107, Brú Digital Hub, 56 West Street</div>
+      <div>Drogheda, Co. Louth · A92 E4CY</div>
+    </div>
+  </header>
+  
+  <main class="ct">
+    <h1 class="dt">Child Safeguarding Risk Assessment</h1>
+    <p class="ds">Children First Act 2015 Compliance</p>
+    
+    <div class="intro">
+      This risk assessment is conducted in accordance with the Children First Act 2015 and is a component of the Child Safeguarding Statement. It identifies potential risks of harm to children while availing of our services and outlines the procedures in place to manage those risks.
+    </div>
+
+    <table class="risk-table">
+      <thead>
+        <tr>
+          <th>Risk Identified</th>
+          <th>Procedure/Policy in Place to Manage Risk</th>
+          <th>Person Responsible</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>A child may be harmed by a staff member, volunteer or visitor.</td>
+          <td>Safe recruitment procedures, Garda vetting, supervision, Code of Behaviour, DLP reporting procedures.</td>
+          <td>Manager, DLP</td>
+        </tr>
+        <tr>
+          <td>Inappropriate behaviour or language used by staff/volunteers.</td>
+          <td>Code of Behaviour, supervision, training and disciplinary procedures.</td>
+          <td>Manager, Team Leads</td>
+        </tr>
+        <tr>
+          <td>A child makes a disclosure and is not taken seriously.</td>
+          <td>Mandatory training, clear reporting procedure, DLP oversight.</td>
+          <td>All Staff, DLP</td>
+        </tr>
+        <tr>
+          <td>Children left unsupervised in communal areas.</td>
+          <td>Supervision policy, rota, visitor access restrictions.</td>
+          <td>Support Staff, Manager</td>
+        </tr>
+        <tr>
+          <td>Children exposed to online or social media risks.</td>
+          <td>Online safety guidance, restrictions on digital communication.</td>
+          <td>Manager, All Staff</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="footer-note">
+      This risk assessment will be reviewed annually or in the event of any significant change to the service or its operations.
+    </div>
+  </main>
+  
+  <footer class="ft">
+    <div class="fl">
+      <span>✉ info@chosanta.ie</span>
+      <span>📍 Drogheda, Co. Louth · A92 E4CY</span>
+    </div>
+    <div class="fd"></div>
+    <div class="fr">Chosanta Management<br>Child Safeguarding Risk Assessment</div>
+  </footer>
+</div>
+
+</body>
+</html>

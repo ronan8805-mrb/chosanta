@@ -1,0 +1,38 @@
+'Title' | Child Protection Incident / Concern Report Form
+'Normal' | This form is to be used by staff or volunteers to report any child protection or welfare concerns, in line with the Children First Act 2015 and the organisation's Child Safeguarding Policy.
+
+'Heading 1' | 1. Person Reporting the Concern
+'Normal' | Name: ____________________________________________
+'Normal' | Role: _____________________________________________
+'Normal' | Contact Number: _________________________________
+'Normal' | Date of Report: _____________   Time: ____________
+'Heading 1' | 2. Details of Child
+'Normal' | Name of Child: ____________________________________
+'Normal' | Date of Birth: _______________  Age: ______________
+'Normal' | Parent/Guardian Name(s): ___________________________
+'Normal' | Address: __________________________________________
+'Normal' | __________________________________________________
+'Heading 1' | 3. Details of the Concern
+'Normal' | Date/Time of Incident or Concern: __________________________
+'Normal' | Location of Incident (if relevant): __________________________
+'Normal' | Describe the concern, including any physical/emotional signs, disclosures, or behaviours observed:
+
+'Normal' | 
+
+
+
+
+
+'Heading 1' | 4. Action Taken
+'Normal' | Who was the concern reported to (e.g. DLP)? ____________________
+'Normal' | Was Tusla contacted?  Yes / No   Date: ___________
+'Normal' | Was An Garda Síochána contacted?  Yes / No   Date: ___________
+'Normal' | Other actions taken:
+
+'Normal' | 
+
+
+
+'Heading 1' | 5. Reporter Declaration
+'Normal' | I declare that the information provided is accurate to the best of my knowledge.
+'Normal' | Signature: _______________________   Date: ________________

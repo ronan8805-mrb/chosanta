@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Communication Policy — Chosanta Management</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        @page { size: A4; margin: 0; }
+        *, *::before, *::after {
+            box-sizing: border-box; margin: 0; padding: 0;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #e8ecf1; color: #1a1610;
+            display: flex; flex-direction: column;
+            align-items: center; padding: 40px 20px; gap: 40px;
+        }
+        @media print {
+            body { background: white; padding: 0; gap: 0; }
+            .page { box-shadow: none; width: 100%; min-height: unset; }
+            .print-actions { display: none !important; }
+        }
+        .page {
+            width: 210mm; min-height: 297mm; background: #fff;
+            box-shadow: 0 8px 40px rgba(13,27,42,0.12);
+            position: relative; overflow: hidden;
+            display: flex; flex-direction: column;
+        }
+        .top-band { height: 6px; background: linear-gradient(90deg, #c9a84c 0%, #e0c070 40%, #c9a84c 70%, #a8893c 100%); }
+        .header {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 16px 40px 12px; border-bottom: 2px solid #f0ede8; position: relative;
+        }
+        .header::after {
+            content: ''; position: absolute; bottom: -2px; left: 40px;
+            width: 60px; height: 3px;
+            background: linear-gradient(90deg, #c9a84c, #e0c070); border-radius: 2px;
+        }
+        .logo-box { display: flex; align-items: center; gap: 10px; }
+        .logo-icon {
+            width: 34px; height: 34px;
+            background: linear-gradient(135deg, #c9a84c, #a8893c);
+            border-radius: 7px; display: flex; align-items: center; justify-content: center;
+        }
+        .logo-icon svg { width: 18px; height: 18px; }
+        .logo-text { display: flex; flex-direction: column; line-height: 1; }
+        .logo-name { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: #0d1b2a; }
+        .logo-sub { font-size: 7.5px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: #c9a84c; margin-top: 2px; }
+        .co-details { text-align: right; font-size: 9px; line-height: 1.6; color: #5c5648; }
+        .co-details .cn { font-family: 'Playfair Display', serif; font-size: 12px; font-weight: 700; color: #0d1b2a; }
+        .co-details .tg { font-size: 7.5px; text-transform: uppercase; letter-spacing: 2px; color: #c9a84c; font-weight: 600; }
+
+        .content { flex: 1; padding: 28px 40px 20px; }
+
+        .doc-title {
+            font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700;
+            color: #0d1b2a; margin-bottom: 4px; position: relative; padding-bottom: 12px;
+        }
+        .doc-title::after {
+            content: ''; position: absolute; bottom: 0; left: 0;
+            width: 50px; height: 3px;
+            background: linear-gradient(90deg, #c9a84c, #e0c070); border-radius: 2px;
+        }
+        .doc-sub { font-size: 10px; color: #9a9484; text-transform: uppercase; letter-spacing: 2.5px; font-weight: 600; margin-bottom: 24px; }
+
+        .sh {
+            background: linear-gradient(135deg, #0d1b2a, #1b2d42);
+            color: #fff; padding: 8px 16px; border-radius: 4px;
+            margin: 20px 0 12px; font-size: 11px; font-weight: 700;
+            letter-spacing: 1px; text-transform: uppercase;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .sh .n {
+            background: linear-gradient(135deg, #c9a84c, #e0c070);
+            color: #0d1b2a; width: 22px; height: 22px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 10px; font-weight: 800; flex-shrink: 0;
+        }
+
+        .body-text { font-size: 12px; line-height: 1.75; color: #3d3830; margin-bottom: 16px; max-width: 620px; }
+
+        .aims-label {
+            font-size: 12px; font-weight: 600; color: #0d1b2a;
+            margin-bottom: 10px;
+        }
+
+        .bl { list-style: none; margin-bottom: 16px; }
+        .bl li {
+            position: relative; padding: 12px 14px 12px 42px; margin-bottom: 6px;
+            background: linear-gradient(135deg, #faf9f7, #f5f3ef);
+            border-radius: 6px; border-left: 3px solid #c9a84c;
+            font-size: 11.5px; line-height: 1.55; color: #3d3830;
+        }
+        .bl li::before {
+            content: '✓'; position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
+            color: #c9a84c; font-size: 13px; font-weight: 700;
+        }
+
+        .footer {
+            padding: 14px 40px;
+            background: linear-gradient(135deg, #0d1b2a, #1b2d42);
+            color: rgba(255,255,255,0.8); font-size: 8.5px; line-height: 1.8;
+            display: flex; justify-content: space-between; align-items: center; margin-top: auto;
+        }
+        .fl { display: flex; flex-direction: column; }
+        .fl span { display: inline-flex; align-items: center; gap: 5px; }
+        .fd { width: 1px; height: 32px; background: rgba(201,168,76,0.3); margin: 0 16px; }
+        .fr { text-align: right; font-size: 7.5px; color: rgba(255,255,255,0.5); }
+
+        .print-actions { position: fixed; top: 20px; right: 20px; display: flex; gap: 12px; z-index: 100; }
+        .print-actions button {
+            padding: 12px 24px; border: none; border-radius: 8px;
+            font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600;
+            cursor: pointer; transition: all 0.2s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .bp { background: linear-gradient(135deg, #c9a84c, #e0c070); color: #0d1b2a; }
+        .bp:hover { transform: translateY(-1px); }
+        .bpdf { background: linear-gradient(135deg, #0d1b2a, #1b2d42); color: #fff; }
+        .bpdf:hover { transform: translateY(-1px); }
+    </style>
+</head>
+<body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<div class="print-actions">
+    <button class="bp" onclick="window.print()">🖨️ Print</button>
+    <button class="bpdf" id="savePdfBtn" onclick="savePDF()">📄 Save as PDF</button>
+</div>
+<script>
+async function savePDF() {
+    const btn = document.getElementById('savePdfBtn');
+    btn.textContent = '⏳ Generating...';
+    btn.disabled = true;
+    try {
+        const { jsPDF } = window.jspdf;
+        const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
+        const pages = document.querySelectorAll('.page');
+        for (let i = 0; i < pages.length; i++) {
+            const canvas = await html2canvas(pages[i], {
+                scale: 2, useCORS: true, letterRendering: true,
+                backgroundColor: '#ffffff',
+                width: pages[i].scrollWidth,
+                height: pages[i].scrollHeight
+            });
+            const imgData = canvas.toDataURL('image/jpeg', 0.95);
+            const pdfW = 210, pdfH = 297;
+            if (i > 0) pdf.addPage();
+            pdf.addImage(imgData, 'JPEG', 0, 0, pdfW, pdfH);
+        }
+        pdf.save('Chosanta_Communication_Policy.pdf');
+    } catch (e) {
+        alert('PDF failed: ' + e.message + '. Use Print > Save as PDF instead.');
+    }
+    btn.textContent = '📄 Save as PDF';
+    btn.disabled = false;
+}
+</script>
+
+<!-- ==================== PAGE 1 ==================== -->
+<div class="page">
+    <div class="top-band"></div>
+    <header class="header">
+        <div class="logo-box">
+            <div class="logo-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/>
+                </svg>
+            </div>
+            <div class="logo-text">
+                <span class="logo-name">Chosanta</span>
+                <span class="logo-sub">Management</span>
+            </div>
+        </div>
+        <div class="co-details">
+            <div class="cn">Chosanta Management</div>
+            <div class="tg">Accommodation &amp; Property Solutions</div>
+            <div>Office 107, Brú Digital Hub, 56 West Street</div>
+            <div>Drogheda, Co. Louth · A92 E4CY</div>
+        </div>
+    </header>
+
+    <main class="content">
+        <h1 class="doc-title">Communication Policy</h1>
+        <p class="doc-sub">Section 1: Purpose</p>
+
+        <div class="sh"><span class="n">1</span> Purpose</div>
+
+        <p class="body-text">
+            The purpose of this Communication Policy is to ensure that all communication within Chosanta Management is clear, timely, respectful, and inclusive. Effective communication is essential to the delivery of high-quality care and support, and is fundamental to building trust and understanding between staff, residents, families, and stakeholders.
+        </p>
+
+        <p class="aims-label">This policy aims to:</p>
+
+        <ul class="bl">
+            <li>Promote open and transparent communication within the service</li>
+            <li>Ensure that residents' communication needs and preferences are recognised and supported</li>
+            <li>Facilitate consistent communication practices among staff</li>
+            <li>Ensure compliance with relevant legislation, national standards, and best practice guidelines</li>
+        </ul>
+    </main>
+
+    <footer class="footer">
+        <div class="fl">
+            <span>✉ info@chosanta.com</span>
+            <span>📍 Drogheda, Co. Louth · A92 E4CY</span>
+        </div>
+        <div class="fd"></div>
+        <div class="fr">Chosanta Management<br>Communication Policy — Page 1 of 10</div>
+    </footer>
+</div>
+
+<!-- ==================== PAGE 2: SCOPE ==================== -->
+<div class="page">
+    <div class="top-band"></div>
+    <header class="header">
+        <div class="logo-box">
+            <div class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div>
+            <div class="logo-text"><span class="logo-name">Chosanta</span><span class="logo-sub">Management</span></div>
+        </div>
+        <div class="co-details"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div>
+    </header>
+    <main class="content">
+        <h1 class="doc-title">Communication Policy</h1>
+        <p class="doc-sub">Section 2: Scope</p>
+        <div class="sh"><span class="n">2</span> Scope</div>
+        <p class="body-text">This policy applies to all forms of communication within and relating to the service, including interactions between staff, residents, families, and external professionals.</p>
+        <p class="aims-label">It applies to the following persons:</p>
+        <ul class="bl">
+            <li>All staff members, including full-time, part-time, and agency workers</li>
+            <li>Management and leadership teams</li>
+            <li>Residents and young people in care</li>
+            <li>Families, guardians, and advocates</li>
+            <li>External professionals, including social workers, healthcare providers, and inspectors</li>
+            <li>Volunteers and students on placement</li>
+        </ul>
+        <p class="aims-label">Types of communication covered:</p>
+        <ul class="bl">
+            <li>Verbal communication — face-to-face, telephone, and video calls</li>
+            <li>Written communication — reports, care plans, emails, and handover notes</li>
+            <li>Digital communication — messaging apps, social media, and electronic records</li>
+            <li>Non-verbal communication — body language, visual aids, and assistive technology</li>
+        </ul>
+    </main>
+    <footer class="footer">
+        <div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div>
+        <div class="fd"></div>
+        <div class="fr">Chosanta Management<br>Communication Policy — Page 2 of 10</div>
+    </footer>
+</div>
+
+<!-- ==================== PAGE 3: PRINCIPLES ==================== -->
+<div class="page">
+    <div class="top-band"></div>
+    <header class="header">
+        <div class="logo-box">
+            <div class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div>
+            <div class="logo-text"><span class="logo-name">Chosanta</span><span class="logo-sub">Management</span></div>
+        </div>
+        <div class="co-details"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div>
+    </header>
+    <main class="content">
+        <h1 class="doc-title">Communication Policy</h1>
+        <p class="doc-sub">Section 3: Principles</p>
+        <div class="sh"><span class="n">3</span> Principles</div>
+        <p class="body-text">All communication within the service should be guided by the following core principles:</p>
+        <ul class="bl">
+            <li><strong>Respect:</strong> All communication should be respectful, considerate, and sensitive to the needs and feelings of others</li>
+            <li><strong>Clarity:</strong> Information should be communicated clearly and in a manner that is easily understood by the intended audience</li>
+            <li><strong>Timeliness:</strong> Communication should be prompt and timely, ensuring that relevant information is shared without unnecessary delay</li>
+            <li><strong>Confidentiality:</strong> All communication must adhere to data protection legislation and organisational confidentiality policies</li>
+            <li><strong>Inclusivity:</strong> Communication should be accessible and adapted to meet the individual needs of residents, including those with additional communication requirements</li>
+            <li><strong>Accountability:</strong> Staff are responsible for ensuring that their communication is professional, accurate, and recorded appropriately</li>
+        </ul>
+    </main>
+    <footer class="footer">
+        <div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div>
+        <div class="fd"></div>
+        <div class="fr">Chosanta Management<br>Communication Policy — Page 3 of 10</div>
+    </footer>
+</div>
+
+<!-- ==================== PAGE 4: RESIDENT COMMUNICATION ==================== -->
+<div class="page">
+    <div class="top-band"></div>
+    <header class="header">
+        <div class="logo-box">
+            <div class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div>
+            <div class="logo-text"><span class="logo-name">Chosanta</span><span class="logo-sub">Management</span></div>
+        </div>
+        <div class="co-details"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div>
+    </header>
+    <main class="content">
+        <h1 class="doc-title">Communication Policy</h1>
+        <p class="doc-sub">Section 4: Resident Communication</p>
+        <div class="sh"><span class="n">4</span> Resident Communication</div>
+        <p class="body-text">Residents have a right to be heard and to communicate their needs, wishes, and concerns. Staff must ensure that communication with residents is:</p>
+        <ul class="bl">
+            <li>Age-appropriate and developmentally suitable</li>
+            <li>Adapted to the individual's communication needs, including the use of visual aids, easy-read materials, or interpreters where required</li>
+            <li>Supportive and encouraging, promoting the resident's confidence and self-expression</li>
+            <li>Recorded accurately and in a timely manner in the resident's care file</li>
+        </ul>
+        <p class="aims-label">Key practices:</p>
+        <ul class="bl">
+            <li>Key worker sessions should be used to facilitate open and meaningful dialogue with residents</li>
+            <li>Residents should be informed of decisions that affect them in a manner they can understand</li>
+            <li>Residents should be supported to participate in care planning and review meetings</li>
+            <li>Complaints and concerns raised by residents must be taken seriously and responded to promptly</li>
+        </ul>
+    </main>
+    <footer class="footer">
+        <div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div>
+        <div class="fd"></div>
+        <div class="fr">Chosanta Management<br>Communication Policy — Page 4 of 10</div>
+    </footer>
+</div>
+
+<!-- ==================== PAGE 5: STAFF COMMUNICATION ==================== -->
+<div class="page">
+    <div class="top-band"></div>
+    <header class="header">
+        <div class="logo-box">
+            <div class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div>
+            <div class="logo-text"><span class="logo-name">Chosanta</span><span class="logo-sub">Management</span></div>
+        </div>
+        <div class="co-details"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div>
+    </header>
+    <main class="content">
+        <h1 class="doc-title">Communication Policy</h1>
+        <p class="doc-sub">Section 5: Staff Communication</p>
+        <div class="sh"><span class="n">5</span> Staff Communication</div>
+        <p class="body-text">Effective staff communication is essential to the safe and consistent delivery of care. Staff are expected to:</p>
+        <ul class="bl">
+            <li>Participate in daily handover meetings to ensure continuity of care</li>
+            <li>Complete handover notes accurately and legibly at the end of each shift</li>
+            <li>Attend team meetings and contribute to discussions regarding resident care</li>
+            <li>Report concerns, incidents, and significant events to the person in charge without delay</li>
+            <li>Use professional language at all times, avoiding jargon or abbreviations that may be unclear</li>
+        </ul>
+        <p class="aims-label">Communication channels for staff include:</p>
+        <ul class="bl">
+            <li>Daily handover meetings (verbal and written)</li>
+            <li>Staff meetings (monthly or as required)</li>
+            <li>Supervision sessions (individual and group)</li>
+            <li>Email and internal messaging systems</li>
+            <li>Notice boards and communication logs</li>
+        </ul>
+    </main>
+    <footer class="footer">
+        <div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div>
+        <div class="fd"></div>
+        <div class="fr">Chosanta Management<br>Communication Policy — Page 5 of 10</div>
+    </footer>
+</div>
+
+<!-- ==================== PAGE 6: FAMILY & ADVOCATES ==================== -->
+<div class="page">
+    <div class="top-band"></div>
+    <header class="header">
+        <div class="logo-box">
+            <div class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div>
+            <div class="logo-text"><span class="logo-name">Chosanta</span><span class="logo-sub">Management</span></div>
+        </div>
+        <div class="co-details"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div>
+    </header>
+    <main class="content">
+        <h1 class="doc-title">Communication Policy</h1>
+        <p class="doc-sub">Section 6: Family &amp; Advocates</p>
+        <div class="sh"><span class="n">6</span> Communication with Families &amp; Advocates</div>
+        <p class="body-text">Maintaining positive and transparent communication with families and advocates is essential to the wellbeing of residents. The service will:</p>
+        <ul class="bl">
+            <li>Keep families informed of significant events, changes in care, and the general wellbeing of the resident, subject to any court orders or care plan restrictions</li>
+            <li>Facilitate family visits and phone calls in accordance with the resident's care plan</li>
+            <li>Respond to queries and concerns from families in a timely and professional manner</li>
+            <li>Involve families in care planning and review processes where appropriate and in the best interest of the resident</li>
+            <li>Provide families with information about the service's policies, procedures, and complaints process</li>
+        </ul>
+        <p class="aims-label">Where communication with a family member is restricted:</p>
+        <ul class="bl">
+            <li>Clear records must be maintained outlining the reason for the restriction</li>
+            <li>Any restrictions must be reviewed regularly and documented in the care plan</li>
+        </ul>
+    </main>
+    <footer class="footer">
+        <div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div>
+        <div class="fd"></div>
+        <div class="fr">Chosanta Management<br>Communication Policy — Page 6 of 10</div>
+    </footer>
+</div>
+
+<!-- ==================== PAGE 7: EXTERNAL PROFESSIONALS ==================== -->
+<div class="page">
+    <div class="top-band"></div>
+    <header class="header">
+        <div class="logo-box">
+            <div class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div>
+            <div class="logo-text"><span class="logo-name">Chosanta</span><span class="logo-sub">Management</span></div>
+        </div>
+        <div class="co-details"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div>
+    </header>
+    <main class="content">
+        <h1 class="doc-title">Communication Policy</h1>
+        <p class="doc-sub">Section 7: External Professionals</p>
+        <div class="sh"><span class="n">7</span> Communication with External Professionals</div>
+        <p class="body-text">The service works closely with a range of external professionals, including social workers, GPs, CAMHS, therapists, guardians ad litem, and inspectors. Communication with external professionals must be:</p>
+        <ul class="bl">
+            <li>Professional, timely, and focused on the needs and best interests of the resident</li>
+            <li>Documented accurately in the resident's file and shared in accordance with data protection requirements</li>
+            <li>Coordinated through the person in charge or designated staff member to ensure consistency</li>
+            <li>Supportive of inter-agency cooperation and information sharing protocols</li>
+        </ul>
+        <p class="aims-label">Key external communication includes:</p>
+        <ul class="bl">
+            <li>Statutory reports and notifications to Tusla</li>
+            <li>Referrals to health, education, and therapeutic services</li>
+            <li>Participation in child-in-care reviews, case conferences, and court proceedings</li>
+            <li>Cooperation with HIQA inspections and regulatory requirements</li>
+        </ul>
+    </main>
+    <footer class="footer">
+        <div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div>
+        <div class="fd"></div>
+        <div class="fr">Chosanta Management<br>Communication Policy — Page 7 of 10</div>
+    </footer>
+</div>
+
+<!-- ==================== PAGE 8: CONFIDENTIALITY & DATA PROTECTION ==================== -->
+<div class="page">
+    <div class="top-band"></div>
+    <header class="header">
+        <div class="logo-box">
+            <div class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div>
+            <div class="logo-text"><span class="logo-name">Chosanta</span><span class="logo-sub">Management</span></div>
+        </div>
+        <div class="co-details"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div>
+    </header>
+    <main class="content">
+        <h1 class="doc-title">Communication Policy</h1>
+        <p class="doc-sub">Section 8: Confidentiality &amp; Data Protection</p>
+        <div class="sh"><span class="n">8</span> Confidentiality &amp; Data Protection</div>
+        <p class="body-text">All communication must comply with the General Data Protection Regulation (GDPR), the Data Protection Acts 1988–2018, and the organisation's confidentiality policy. Staff must ensure that:</p>
+        <ul class="bl">
+            <li>Personal and sensitive information is only shared on a need-to-know basis</li>
+            <li>Confidential information is not discussed in public areas or in the presence of unauthorised persons</li>
+            <li>Electronic communications are sent via secure and approved channels only</li>
+            <li>Physical records are stored securely and access is restricted to authorised personnel</li>
+            <li>Residents' right to privacy is upheld in all forms of communication</li>
+        </ul>
+        <p class="aims-label">Breaches of confidentiality:</p>
+        <ul class="bl">
+            <li>Any breach of confidentiality must be reported immediately to the person in charge</li>
+            <li>Breaches will be investigated and may result in disciplinary action</li>
+            <li>All breaches must be documented and reported to the Data Protection Officer where applicable</li>
+        </ul>
+    </main>
+    <footer class="footer">
+        <div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div>
+        <div class="fd"></div>
+        <div class="fr">Chosanta Management<br>Communication Policy — Page 8 of 10</div>
+    </footer>
+</div>
+
+<!-- ==================== PAGE 9: TRAINING ==================== -->
+<div class="page">
+    <div class="top-band"></div>
+    <header class="header">
+        <div class="logo-box">
+            <div class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div>
+            <div class="logo-text"><span class="logo-name">Chosanta</span><span class="logo-sub">Management</span></div>
+        </div>
+        <div class="co-details"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div>
+    </header>
+    <main class="content">
+        <h1 class="doc-title">Communication Policy</h1>
+        <p class="doc-sub">Section 9: Training</p>
+        <div class="sh"><span class="n">9</span> Training</div>
+        <p class="body-text">The organisation is committed to ensuring that all staff have the knowledge and skills necessary to communicate effectively. Training will be provided in the following areas:</p>
+        <ul class="bl">
+            <li>Communication skills and active listening</li>
+            <li>Report writing and record keeping</li>
+            <li>Data protection and confidentiality</li>
+            <li>Working with residents who have additional communication needs</li>
+            <li>Use of assistive technology and communication aids</li>
+            <li>Conflict resolution and de-escalation techniques</li>
+        </ul>
+        <p class="aims-label">Training requirements:</p>
+        <ul class="bl">
+            <li>All new staff must complete communication training as part of their induction programme</li>
+            <li>Refresher training will be provided annually or as required</li>
+            <li>Training records will be maintained and reviewed as part of the supervision process</li>
+        </ul>
+    </main>
+    <footer class="footer">
+        <div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div>
+        <div class="fd"></div>
+        <div class="fr">Chosanta Management<br>Communication Policy — Page 9 of 10</div>
+    </footer>
+</div>
+
+<!-- ==================== PAGE 10: MONITORING & REVIEW ==================== -->
+<div class="page">
+    <div class="top-band"></div>
+    <header class="header">
+        <div class="logo-box">
+            <div class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div>
+            <div class="logo-text"><span class="logo-name">Chosanta</span><span class="logo-sub">Management</span></div>
+        </div>
+        <div class="co-details"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div>
+    </header>
+    <main class="content">
+        <h1 class="doc-title">Communication Policy</h1>
+        <p class="doc-sub">Section 10: Monitoring &amp; Review</p>
+        <div class="sh"><span class="n">10</span> Monitoring &amp; Review</div>
+        <p class="body-text">This policy will be monitored and reviewed to ensure its continued effectiveness and compliance with relevant legislation, standards, and best practice.</p>
+        <p class="aims-label">Monitoring will include:</p>
+        <ul class="bl">
+            <li>Regular audits of communication records, handover notes, and care plans</li>
+            <li>Feedback from residents, families, staff, and external professionals</li>
+            <li>Review of complaints and incidents related to communication</li>
+            <li>Supervision and performance review discussions</li>
+        </ul>
+        <p class="aims-label">Review schedule:</p>
+        <ul class="bl">
+            <li>This policy will be reviewed annually or sooner if there is a significant change in legislation, standards, or practice</li>
+            <li>All staff will be notified of any changes to this policy and provided with updated training where necessary</li>
+        </ul>
+    </main>
+    <footer class="footer">
+        <div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div>
+        <div class="fd"></div>
+        <div class="fr">Chosanta Management<br>Communication Policy — Page 10 of 10</div>
+    </footer>
+</div>
+
+</body>
+</html>

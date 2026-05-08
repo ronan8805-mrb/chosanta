@@ -1,0 +1,127 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Daily Shift Handover Log — Chosanta Management</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"><style>@page{size:A4;margin:0}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}body{font-family:'Inter',sans-serif;background:#e8ecf1;color:#1a1610;display:flex;flex-direction:column;align-items:center;padding:40px 20px;gap:40px}@media print{body{background:#fff;padding:0;gap:0}.page{box-shadow:none;width:100%;min-height:unset}.pa{display:none!important}}.page{width:210mm;min-height:297mm;background:#fff;box-shadow:0 8px 40px rgba(13,27,42,.12);position:relative;overflow:hidden;display:flex;flex-direction:column}.tb{height:6px;background:linear-gradient(90deg,#c9a84c,#e0c070 40%,#c9a84c 70%,#a8893c)}.hd{display:flex;align-items:center;justify-content:space-between;padding:12px 40px 8px;border-bottom:2px solid #f0ede8;position:relative}.hd::after{content:'';position:absolute;bottom:-2px;left:40px;width:60px;height:3px;background:linear-gradient(90deg,#c9a84c,#e0c070);border-radius:2px}.lb{display:flex;align-items:center;gap:10px}.li{width:30px;height:30px;background:linear-gradient(135deg,#c9a84c,#a8893c);border-radius:6px;display:flex;align-items:center;justify-content:center}.li svg{width:16px;height:16px}.lt{display:flex;flex-direction:column;line-height:1}.ln{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:#0d1b2a}.ls{font-size:7px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:#c9a84c;margin-top:2px}.co{text-align:right;font-size:8px;line-height:1.5;color:#5c5648}.co .cn{font-family:'Playfair Display',serif;font-size:11px;font-weight:700;color:#0d1b2a}.ct{flex:1;padding:14px 36px 10px}.dt{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:#0d1b2a;margin-bottom:3px;position:relative;padding-bottom:8px}.dt::after{content:'';position:absolute;bottom:0;left:0;width:45px;height:3px;background:linear-gradient(90deg,#c9a84c,#e0c070);border-radius:2px}.ds{font-size:7.5px;color:#9a9484;text-transform:uppercase;letter-spacing:2px;font-weight:600;margin-bottom:8px}.sh{background:linear-gradient(135deg,#0d1b2a,#1b2d42);color:#fff;padding:3px 10px;border-radius:3px;margin:6px 0 3px;font-size:7.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;display:flex;align-items:center;gap:6px}.sh .n{background:linear-gradient(135deg,#c9a84c,#e0c070);color:#0d1b2a;width:14px;height:14px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:6.5px;font-weight:800;flex-shrink:0}.bt{font-size:8px;line-height:1.4;color:#3d3830;margin-bottom:4px}table{width:100%;border-collapse:collapse;font-size:7px;margin-bottom:5px}th{background:linear-gradient(135deg,#0d1b2a,#1b2d42);color:#fff;padding:2.5px 4px;text-align:left;font-weight:700}td{padding:3px 4px;border-bottom:1px solid #f0ede8;color:#3d3830}tr:nth-child(even) td{background:#faf9f7}.box{border:1px solid #e0ddd8;border-radius:3px;padding:3px 6px;min-height:16px;font-size:7px;margin-bottom:4px}.sg{font-size:7px;color:#3d3830;margin-top:5px;padding:5px;border:1px dashed #c9a84c;border-radius:5px;background:#faf9f7}.sg span{display:block;margin-bottom:2px;border-bottom:1px dotted #ddd;padding-bottom:2px}.ft{padding:7px 36px;background:linear-gradient(135deg,#0d1b2a,#1b2d42);color:rgba(255,255,255,.8);font-size:7px;line-height:1.7;display:flex;justify-content:space-between;align-items:center;margin-top:auto}.fl{display:flex;flex-direction:column}.fl span{display:inline-flex;align-items:center;gap:4px}.fd{width:1px;height:20px;background:rgba(201,168,76,.3);margin:0 10px}.fr{text-align:right;font-size:6.5px;color:rgba(255,255,255,.5)}.pa{position:fixed;top:20px;right:20px;display:flex;gap:12px;z-index:100}.pa button{padding:12px 24px;border:none;border-radius:8px;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;box-shadow:0 4px 12px rgba(0,0,0,.15)}.bp{background:linear-gradient(135deg,#c9a84c,#e0c070);color:#0d1b2a}.bx{background:linear-gradient(135deg,#0d1b2a,#1b2d42);color:#fff}.note{background:#fff8e7;border-left:3px solid #c9a84c;padding:3px 8px;font-size:7px;color:#3d3830;margin-bottom:5px;border-radius:0 3px 3px 0}</style></head><body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<div class="pa"><button class="bp" onclick="window.print()">🖨️ Print</button><button class="bx" id="btn">📄 Save as PDF</button></div>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var btn=document.getElementById('btn');
+  btn.addEventListener('click',async function(){
+    if(typeof html2canvas==='undefined'||!window.jspdf){alert('PDF libraries still loading — please wait and try again.');return;}
+    btn.disabled=true;
+    try{
+      var jsPDF=window.jspdf.jsPDF;
+      var pdf=new jsPDF({orientation:'portrait',unit:'mm',format:'a4'});
+      var pages=document.querySelectorAll('.page');
+      for(var i=0;i<pages.length;i++){
+        btn.textContent='⏳ '+(i+1)+'/'+pages.length;
+        await new Promise(function(r){setTimeout(r,500);});
+        var c=await html2canvas(pages[i],{scale:2,useCORS:true,backgroundColor:'#ffffff',logging:false});
+        if(i>0) pdf.addPage();
+        pdf.addImage(c.toDataURL('image/jpeg',0.95),'JPEG',0,0,210,297);
+      }
+      pdf.save('Chosanta_Daily_Shift_Handover.pdf');
+    }catch(e){alert('PDF error: '+e.message);console.error(e);}
+    btn.textContent='📄 Save as PDF';btn.disabled=false;
+  });
+});
+</script>
+
+<!-- P1: Daily Shift Handover -->
+<div class="page"><div class="tb"></div>
+<header class="hd"><div class="lb"><div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="lt"><span class="ln">Chosanta</span><span class="ls">Management</span></div></div><div class="co"><div class="cn">Chosanta Management</div><div>Office 107, Brú Digital Hub · Drogheda · A92 E4CY</div></div></header>
+<main class="ct">
+<h1 class="dt">Daily Shift Handover Log</h1><p class="ds">HIQA Standards 3 &amp; 5 · S.I. 674/2017 · Tusla ACIMS Inspection Record</p>
+<div class="note"><strong>Inspector Note:</strong> HIQA inspectors compare handover logs against their direct observations and interviews with staff and children. Entries must be factual, objective, signed, and demonstrate management oversight. No correction fluid — errors must be struck through with a single line, initialled and dated.</div>
+
+<div class="sh"><span class="n">A</span> Shift Details</div>
+<table>
+<tr><th>Date</th><td></td><th>Shift</th><td>☐ Day (08:00–20:00) &nbsp; ☐ Night (20:00–08:00) &nbsp; ☐ Sleepover</td></tr>
+<tr><th>Shift Leader</th><td></td><th>Role</th><td></td></tr>
+</table>
+<table>
+<tr><th>Staff On Shift</th><th>Role</th><th>Time In</th><th>Time Out</th><th>Signature</th></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+</table>
+
+<div class="sh"><span class="n">B</span> Children — Individual Updates</div>
+<p class="bt"><em>Record wellbeing, mood, significant events, care plan activity for each child in placement.</em></p>
+<table>
+<tr><th style="width:15%">Child (Ref/Initials)</th><th>Present?</th><th style="width:45%">Wellbeing / Mood / Key Events This Shift</th><th>Risk Update?</th></tr>
+<tr><td></td><td>☐ Y ☐ N</td><td style="height:20px"></td><td>☐ None ☐ Updated</td></tr>
+<tr><td></td><td>☐ Y ☐ N</td><td style="height:20px"></td><td>☐ None ☐ Updated</td></tr>
+<tr><td></td><td>☐ Y ☐ N</td><td style="height:20px"></td><td>☐ None ☐ Updated</td></tr>
+<tr><td></td><td>☐ Y ☐ N</td><td style="height:20px"></td><td>☐ None ☐ Updated</td></tr>
+</table>
+
+<div class="sh"><span class="n">C</span> Incidents / Significant Events This Shift</div>
+<table>
+<tr><th>Time</th><th>Description</th><th>Child/Staff</th><th>Action Taken</th><th>SEN Required?</th><th>Incident Form #</th></tr>
+<tr><td></td><td></td><td></td><td></td><td>☐ Y ☐ N</td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td>☐ Y ☐ N</td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td>☐ Y ☐ N</td><td></td></tr>
+</table>
+<p class="bt">☐ No incidents this shift</p>
+
+<div class="sh"><span class="n">D</span> Safeguarding</div>
+<table>
+<tr><td>Any child protection / safeguarding concerns this shift?</td><td>☐ No ☐ Yes — detail &amp; DLP notified:</td></tr>
+<tr><td>Any disclosures from children?</td><td>☐ No ☐ Yes — recorded separately:</td></tr>
+<tr><td>Any concerns about staff conduct?</td><td>☐ No ☐ Yes — PIC notified:</td></tr>
+</table>
+
+<div class="sh"><span class="n">E</span> Medication</div>
+<table>
+<tr><td>All medications administered as per MAR?</td><td>☐ Yes ☐ No — detail:</td></tr>
+<tr><td>Medication errors / refusals?</td><td>☐ None ☐ Yes — incident form #: ______</td></tr>
+<tr><td>Controlled drugs checked &amp; balanced?</td><td>☐ Yes ☐ N/A &nbsp; Checked by: ____________ &amp; ____________</td></tr>
+</table>
+
+<div class="sh"><span class="n">F</span> Absences / Missing Children</div>
+<table>
+<tr><th>Child</th><th>Time Absent</th><th>Reason / Status</th><th>AGS Notified?</th><th>SW Notified?</th><th>Time Returned</th></tr>
+<tr><td></td><td></td><td></td><td>☐ Y ☐ N/A</td><td>☐ Y ☐ N/A</td><td></td></tr>
+</table>
+<p class="bt">☐ No absences this shift</p>
+
+<div class="sh"><span class="n">G</span> Appointments / Visitors / Activities</div>
+<table>
+<tr><th>Time</th><th>Type</th><th>Child</th><th>Details / Notes</th></tr>
+<tr><td></td><td>☐ Appointment ☐ Visitor ☐ Activity ☐ Family contact</td><td></td><td></td></tr>
+<tr><td></td><td>☐ Appointment ☐ Visitor ☐ Activity ☐ Family contact</td><td></td><td></td></tr>
+<tr><td></td><td>☐ Appointment ☐ Visitor ☐ Activity ☐ Family contact</td><td></td><td></td></tr>
+</table>
+
+<div class="sh"><span class="n">H</span> Tasks / Actions Outstanding for Next Shift</div>
+<table>
+<tr><th>Task</th><th>For Whom</th><th>Priority</th><th>Notes</th></tr>
+<tr><td></td><td></td><td>☐ Urgent ☐ Routine</td><td></td></tr>
+<tr><td></td><td></td><td>☐ Urgent ☐ Routine</td><td></td></tr>
+<tr><td></td><td></td><td>☐ Urgent ☐ Routine</td><td></td></tr>
+</table>
+
+<div class="sh"><span class="n">I</span> Health &amp; Safety / Premises</div>
+<table>
+<tr><td>Any maintenance / H&amp;S issues?</td><td>☐ None ☐ Yes — detail:</td></tr>
+<tr><td>Fire panel checked?</td><td>☐ Yes &nbsp; Checked by: ____________</td></tr>
+<tr><td>All exits clear and unlocked?</td><td>☐ Yes</td></tr>
+<tr><td>Petty cash balance correct?</td><td>☐ Yes ☐ N/A &nbsp; Balance: €______</td></tr>
+</table>
+
+<div class="sh"><span class="n">J</span> Handover Sign-Off</div>
+<table>
+<tr><th colspan="2">Outgoing Shift</th><th colspan="2">Incoming Shift</th></tr>
+<tr><td><strong>Shift Leader:</strong></td><td></td><td><strong>Shift Leader:</strong></td><td></td></tr>
+<tr><td><strong>Signature:</strong></td><td></td><td><strong>Signature:</strong></td><td></td></tr>
+<tr><td><strong>Time:</strong></td><td></td><td><strong>Time:</strong></td><td></td></tr>
+</table>
+<p class="bt"><strong>Handover conducted face-to-face?</strong> ☐ Yes &nbsp; <strong>In private?</strong> ☐ Yes</p>
+<div class="sg">
+<span><strong>Record Correction Rule:</strong> No correction fluid. Errors: single line through, initial, date.</span>
+<span><strong>Ref:</strong> CM-DSH-001 · HIQA Standards 3 &amp; 5 · S.I. 674/2017 · Tusla ACIMS</span>
+</div>
+</main>
+<footer class="ft"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Daily Shift Handover Log</div></footer></div>
+
+</body></html>

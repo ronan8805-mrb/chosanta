@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medication Management Policy — Chosanta Management</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+@page{size:A4;margin:0}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}body{font-family:'Inter',sans-serif;background:#e8ecf1;color:#1a1610;display:flex;flex-direction:column;align-items:center;padding:40px 20px;gap:40px}@media print{body{background:#fff;padding:0;gap:0}.page{box-shadow:none;width:100%;min-height:unset}.pa{display:none!important}}.page{width:210mm;min-height:297mm;background:#fff;box-shadow:0 8px 40px rgba(13,27,42,.12);position:relative;overflow:hidden;display:flex;flex-direction:column}.tb{height:6px;background:linear-gradient(90deg,#c9a84c,#e0c070 40%,#c9a84c 70%,#a8893c)}.hd{display:flex;align-items:center;justify-content:space-between;padding:16px 40px 12px;border-bottom:2px solid #f0ede8;position:relative}.hd::after{content:'';position:absolute;bottom:-2px;left:40px;width:60px;height:3px;background:linear-gradient(90deg,#c9a84c,#e0c070);border-radius:2px}.lb{display:flex;align-items:center;gap:10px}.li{width:34px;height:34px;background:linear-gradient(135deg,#c9a84c,#a8893c);border-radius:7px;display:flex;align-items:center;justify-content:center}.li svg{width:18px;height:18px}.lt{display:flex;flex-direction:column;line-height:1}.ln{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#0d1b2a}.ls{font-size:7.5px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:#c9a84c;margin-top:2px}.co{text-align:right;font-size:9px;line-height:1.6;color:#5c5648}.co .cn{font-family:'Playfair Display',serif;font-size:12px;font-weight:700;color:#0d1b2a}.co .tg{font-size:7.5px;text-transform:uppercase;letter-spacing:2px;color:#c9a84c;font-weight:600}.ct{flex:1;padding:28px 40px 20px}.dt{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#0d1b2a;margin-bottom:4px;position:relative;padding-bottom:12px}.dt::after{content:'';position:absolute;bottom:0;left:0;width:50px;height:3px;background:linear-gradient(90deg,#c9a84c,#e0c070);border-radius:2px}.ds{font-size:10px;color:#9a9484;text-transform:uppercase;letter-spacing:2.5px;font-weight:600;margin-bottom:24px}.sh{background:linear-gradient(135deg,#0d1b2a,#1b2d42);color:#fff;padding:8px 16px;border-radius:4px;margin:18px 0 10px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;display:flex;align-items:center;gap:8px}.sh .n{background:linear-gradient(135deg,#c9a84c,#e0c070);color:#0d1b2a;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;flex-shrink:0}.bt{font-size:11.5px;line-height:1.7;color:#3d3830;margin-bottom:14px}.al{font-size:11.5px;font-weight:600;color:#0d1b2a;margin-bottom:8px}.bl{list-style:none;margin-bottom:14px}.bl li{position:relative;padding:9px 12px 9px 38px;margin-bottom:4px;background:linear-gradient(135deg,#faf9f7,#f5f3ef);border-radius:6px;border-left:3px solid #c9a84c;font-size:10.5px;line-height:1.5;color:#3d3830}.bl li::before{content:'✓';position:absolute;left:12px;top:50%;transform:translateY(-50%);color:#c9a84c;font-size:12px;font-weight:700}.ff{display:flex;align-items:baseline;gap:8px;margin-bottom:7px;font-size:11px;color:#3d3830}.ff label{font-weight:600;color:#0d1b2a;white-space:nowrap;min-width:200px}.ff .line{flex:1;border-bottom:1px solid #c9a84c;min-width:60px;height:1px;margin-bottom:2px}.ft{padding:14px 40px;background:linear-gradient(135deg,#0d1b2a,#1b2d42);color:rgba(255,255,255,.8);font-size:8.5px;line-height:1.8;display:flex;justify-content:space-between;align-items:center;margin-top:auto}.fl{display:flex;flex-direction:column}.fl span{display:inline-flex;align-items:center;gap:5px}.fd{width:1px;height:32px;background:rgba(201,168,76,.3);margin:0 16px}.fr{text-align:right;font-size:7.5px;color:rgba(255,255,255,.5)}.pa{position:fixed;top:20px;right:20px;display:flex;gap:12px;z-index:100}.pa button{padding:12px 24px;border:none;border-radius:8px;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;box-shadow:0 4px 12px rgba(0,0,0,.15)}.bp{background:linear-gradient(135deg,#c9a84c,#e0c070);color:#0d1b2a}.bx{background:linear-gradient(135deg,#0d1b2a,#1b2d42);color:#fff}
+</style></head><body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<div class="pa"><button class="bp" onclick="window.print()">🖨️ Print</button><button class="bx" id="savePdfBtn" onclick="savePDF()">📄 Save as PDF</button></div>
+<script>async function savePDF(){const btn=document.getElementById('savePdfBtn');btn.disabled=true;try{const{jsPDF}=window.jspdf;const pdf=new jsPDF({orientation:'portrait',unit:'mm',format:'a4'});const pages=document.querySelectorAll('.page');for(let i=0;i<pages.length;i++){btn.textContent='⏳ '+(i+1)+'/'+pages.length;await new Promise(r=>setTimeout(r,300));const c=await html2canvas(pages[i],{scale:1.5,useCORS:true,backgroundColor:'#fff',width:pages[i].scrollWidth,height:pages[i].scrollHeight,logging:false});if(i>0)pdf.addPage();pdf.addImage(c.toDataURL('image/jpeg',0.92),'JPEG',0,0,210,297);c.width=0;c.height=0;}const b=pdf.output('blob');const u=URL.createObjectURL(b);const a=document.createElement('a');a.href=u;a.download='Chosanta_Medication_Management_Policy.pdf';document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(u);}catch(e){alert('PDF error: '+e.message);}btn.textContent='📄 Save as PDF';btn.disabled=false;}</script>
+
+<!-- P1 -->
+<div class="page"><div class="tb"></div>
+<header class="hd"><div class="lb"><div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="lt"><span class="ln">Chosanta</span><span class="ls">Management</span></div></div><div class="co"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div><div>Office 107, Brú Digital Hub, 56 West Street</div><div>Drogheda, Co. Louth · A92 E4CY</div></div></header>
+<main class="ct">
+<h1 class="dt">Medication Management Policy</h1><p class="ds">Sections 1–3: Purpose, Scope &amp; Responsibilities</p>
+<div class="sh"><span class="n">1</span> Purpose</div>
+<p class="bt">To ensure the safe, effective, and accountable management of medications within Chosanta Management, covering prescribing, storage, administration, and disposal in accordance with legislative and best practice guidelines.</p>
+<div class="sh"><span class="n">2</span> Scope</div>
+<ul class="bl"><li>Registered Nurses, HCAs, PICs, GPs, pharmacists, agency staff, and management</li><li>Prescribing, ordering, receiving, storing, administering, documenting, auditing, and disposing of medications</li><li>All prescribed, non-prescribed, controlled, and PRN (as-needed) medications</li></ul>
+<div class="sh"><span class="n">3</span> Responsibilities</div>
+<ul class="bl"><li><strong>Registered Provider:</strong> Oversees policy; ensures governance systems, resources, and training</li><li><strong>PIC:</strong> Ensures correct protocols; reviews records/audits; reports errors; coordinates with pharmacy/GP</li><li><strong>Registered Nurses:</strong> Administer safely per NMBI guidelines; record immediately and accurately; report errors</li><li><strong>HCAs:</strong> Assist with self-administration if trained; monitor for side effects; do not administer unless delegated</li><li><strong>GPs &amp; Pharmacists:</strong> Accurate legible prescriptions; medication reviews; compliance support</li><li><strong>All Staff:</strong> Report errors/risks; attend mandatory training; work within scope</li></ul>
+</main>
+<footer class="ft"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Medication Management — Page 1 of 7</div></footer></div>
+
+<!-- P2 -->
+<div class="page"><div class="tb"></div>
+<header class="hd"><div class="lb"><div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="lt"><span class="ln">Chosanta</span><span class="ls">Management</span></div></div><div class="co"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div></header>
+<main class="ct">
+<h1 class="dt">Medication Management Policy</h1><p class="ds">Section 4: Prescribing &amp; Ordering</p>
+<div class="sh"><span class="n">4</span> Prescribing &amp; Ordering</div>
+<p class="al">4.1 Prescribing Standards:</p>
+<ul class="bl"><li>Only qualified registered medical practitioners may prescribe medication</li><li>Prescriptions must be clear, legible, signed — include resident name, date, drug, dose, route, frequency, duration</li><li>Verbal/telephone prescriptions not accepted except emergencies — must be documented and signed within 24 hours</li></ul>
+<p class="al">4.2 Medication Reviews:</p>
+<ul class="bl"><li>Every 3–6 months, or sooner if clinically indicated or following significant health changes</li><li>Conducted by GP and/or pharmacist in collaboration with nursing staff</li></ul>
+<p class="al">4.3 Ordering Procedures:</p>
+<ul class="bl"><li>Ordered through approved community pharmacy with formal agreement</li><li>Responsibility of Registered Nurse or PIC</li><li>All orders checked against current prescription, recorded in Medication Order Log, signed and dated</li></ul>
+</main>
+<footer class="ft"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Medication Management — Page 2 of 7</div></footer></div>
+
+<!-- P3 -->
+<div class="page"><div class="tb"></div>
+<header class="hd"><div class="lb"><div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="lt"><span class="ln">Chosanta</span><span class="ls">Management</span></div></div><div class="co"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div></header>
+<main class="ct">
+<h1 class="dt">Medication Management Policy</h1><p class="ds">Section 5: Administration</p>
+<div class="sh"><span class="n">5</span> Administration of Medication</div>
+<p class="al">Five Rights of Administration:</p>
+<ul class="bl"><li><strong>Right Resident</strong> · <strong>Right Medication</strong> · <strong>Right Dose</strong> · <strong>Right Time</strong> · <strong>Right Route</strong></li></ul>
+<p class="al">5.2 Administration Process:</p>
+<ul class="bl"><li>MAR checked before and after each administration</li><li>Medication administered directly to resident — never left unattended</li><li>Documentation completed immediately after giving medication, not before</li></ul>
+<p class="al">5.3 PRN (As Needed) Medications:</p>
+<ul class="bl"><li>Clearly prescribed with maximum dose and frequency</li><li>Reason for administration and outcome documented in notes and MAR</li></ul>
+<p class="al">5.4 Covert Administration:</p>
+<ul class="bl"><li>Only permitted after full MDT assessment, documented covert care plan, and where resident lacks capacity</li><li>Must be authorised in writing and reviewed regularly</li></ul>
+<p class="al">5.5 Refusal of Medication:</p>
+<ul class="bl"><li>Respect resident's choice unless they lack capacity</li><li>Document refusal in MAR; inform GP and PIC if repeated or serious</li></ul>
+</main>
+<footer class="ft"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Medication Management — Page 3 of 7</div></footer></div>
+
+<!-- P4 -->
+<div class="page"><div class="tb"></div>
+<header class="hd"><div class="lb"><div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="lt"><span class="ln">Chosanta</span><span class="ls">Management</span></div></div><div class="co"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div></header>
+<main class="ct">
+<h1 class="dt">Medication Management Policy</h1><p class="ds">Sections 6–7: Storage &amp; Documentation</p>
+<div class="sh"><span class="n">6</span> Storage of Medication</div>
+<ul class="bl"><li><strong>General:</strong> Locked cabinet/trolley in designated room with limited access; correct temperatures per manufacturer</li><li><strong>Refrigerated:</strong> Dedicated medication fridge; temperature checked daily and recorded; original packaging</li><li><strong>Controlled Drugs:</strong> Double-locked CD cabinet per Misuse of Drugs Regulations; CD register completed for every administration, signed by two staff, audited weekly</li><li><strong>Expired/Discontinued:</strong> Clearly marked, separated from in-use stock, returned to pharmacist and logged</li></ul>
+<div class="sh"><span class="n">7</span> Recording &amp; Documentation</div>
+<ul class="bl"><li><strong>MAR Sheet:</strong> Maintained for each resident — time, dose, route, initials, omission/refusal reasons, PRN outcomes; updated in real time, reviewed weekly</li><li><strong>Medication Error Log:</strong> Type of error, date/time, actions taken, staff involved, whether GP/family informed</li><li><strong>CD Register:</strong> Entries in ink immediately after administration; signed by two staff; balanced end of each shift</li><li><strong>Retention:</strong> All medication records retained minimum 7 years, available for HIQA inspection</li></ul>
+</main>
+<footer class="ft"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Medication Management — Page 4 of 7</div></footer></div>
+
+<!-- P5 -->
+<div class="page"><div class="tb"></div>
+<header class="hd"><div class="lb"><div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="lt"><span class="ln">Chosanta</span><span class="ls">Management</span></div></div><div class="co"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div></header>
+<main class="ct">
+<h1 class="dt">Medication Management Policy</h1><p class="ds">Sections 8–11: Errors, Disposal, Review &amp; Training</p>
+<div class="sh"><span class="n">8</span> Medication Errors</div>
+<ul class="bl"><li>Ensure resident safety first; contact GP/emergency services if needed; inform PIC immediately</li><li>Document in Error Log and resident notes; all errors reported regardless of harm</li><li>PIC investigates, initiates corrective actions, informs GP/family/regulators as required</li><li>Errors reviewed at governance meetings; may trigger policy updates, training, or enhanced supervision</li></ul>
+<div class="sh"><span class="n">9</span> Disposal of Medication</div>
+<ul class="bl"><li>Remove expired, discontinued, damaged, or unidentifiable medications from active use</li><li>Store awaiting disposal in locked, labelled container separate from in-use stock</li><li>Return to nominated pharmacist; complete disposal log (name, medication, quantity, reason, signatures)</li><li><strong>Controlled Drugs:</strong> Two staff signatures; witnessed destruction by pharmacist; separate CD disposal record</li></ul>
+<div class="sh"><span class="n">10</span> Review &amp; Audit</div>
+<ul class="bl"><li>Policy reviewed annually or following new guidance, incidents, or audit gaps</li><li>Monthly medication audits: MAR completion, storage, PRN/CD logs, disposal logs, error documentation</li><li>PIC conducts periodic spot checks during medication rounds</li></ul>
+<div class="sh"><span class="n">11</span> Staff Training &amp; Competency</div>
+<ul class="bl"><li>Mandatory HIQA-compliant training before administering any medication; refreshed every 2 years</li><li>Practical competency assessment: administration, MAR charts, CD handling, storage, ordering, disposal</li><li>PIC signs off each staff member's competency; training logs maintained by management</li></ul>
+</main>
+<footer class="ft"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Medication Management — Page 5 of 7</div></footer></div>
+
+<!-- P6: MAR TEMPLATE -->
+<div class="page"><div class="tb"></div>
+<header class="hd"><div class="lb"><div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="lt"><span class="ln">Chosanta</span><span class="ls">Management</span></div></div><div class="co"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div></header>
+<main class="ct">
+<h1 class="dt">Medication Administration Record (MAR)</h1><p class="ds">Template</p>
+<div class="ff"><label>Resident Name:</label><span class="line"></span></div>
+<div class="ff"><label>DOB:</label><span class="line"></span></div>
+<div class="ff"><label>PPSN:</label><span class="line"></span></div>
+<div class="ff"><label>Medical Card No.:</label><span class="line"></span></div>
+<div class="ff"><label>Month / Year:</label><span class="line"></span></div>
+<div class="sh"><span class="n">📋</span> Medication List</div>
+<div class="ff"><label>1.</label><span class="line"></span></div>
+<div class="ff"><label>2.</label><span class="line"></span></div>
+<div class="ff"><label>3.</label><span class="line"></span></div>
+<div class="ff"><label>4.</label><span class="line"></span></div>
+<div class="sh"><span class="n">📝</span> Daily Administration Log</div>
+<div class="ff"><label>Date:</label><span class="line"></span></div>
+<div class="ff"><label>Time:</label><span class="line"></span></div>
+<div class="ff"><label>Medication:</label><span class="line"></span></div>
+<div class="ff"><label>Dose:</label><span class="line"></span></div>
+<div class="ff"><label>Staff Initials:</label><span class="line"></span></div>
+<div class="ff"><label>Comments:</label><span class="line"></span></div>
+</main>
+<footer class="ft"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Medication Management — Page 6 of 7</div></footer></div>
+
+<!-- P7: DISPOSAL LOG + CD REGISTER -->
+<div class="page"><div class="tb"></div>
+<header class="hd"><div class="lb"><div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="lt"><span class="ln">Chosanta</span><span class="ls">Management</span></div></div><div class="co"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div></header>
+<main class="ct">
+<h1 class="dt">Medication Recording Forms</h1><p class="ds">Disposal Log &amp; Controlled Drug Register</p>
+<div class="sh"><span class="n">🗑️</span> Medication Disposal Log</div>
+<div class="ff"><label>Date of Disposal:</label><span class="line"></span></div>
+<div class="ff"><label>Resident Name:</label><span class="line"></span></div>
+<div class="ff"><label>Medication Name:</label><span class="line"></span></div>
+<div class="ff"><label>Dosage / Quantity:</label><span class="line"></span></div>
+<div class="ff"><label>Reason: ☐ Expired ☐ Discontinued ☐ Refused</label><span class="line"></span></div>
+<div class="ff"><label>Returned to (Pharmacy):</label><span class="line"></span></div>
+<div class="ff"><label>Staff Signature:</label><span class="line"></span></div>
+<div class="ff"><label>Witness Signature:</label><span class="line"></span></div>
+<div class="sh"><span class="n">🔒</span> Controlled Drug Register</div>
+<div class="ff"><label>Resident Name:</label><span class="line"></span></div>
+<div class="ff"><label>Medication:</label><span class="line"></span></div>
+<div class="ff"><label>Prescriber:</label><span class="line"></span></div>
+<div class="ff"><label>Date Received:</label><span class="line"></span></div>
+<div class="ff"><label>Quantity Received:</label><span class="line"></span></div>
+<p class="al" style="margin-top:12px">Shift Records:</p>
+<div class="ff"><label>Date / Time:</label><span class="line"></span></div>
+<div class="ff"><label>Quantity Given:</label><span class="line"></span></div>
+<div class="ff"><label>Balance Remaining:</label><span class="line"></span></div>
+<div class="ff"><label>Staff 1 Signature:</label><span class="line"></span></div>
+<div class="ff"><label>Staff 2 Signature:</label><span class="line"></span></div>
+<div class="ff"><label>Weekly Audit Check (PIC):</label><span class="line"></span></div>
+</main>
+<footer class="ft"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Medication Management — Page 7 of 7</div></footer></div>
+
+</body></html>

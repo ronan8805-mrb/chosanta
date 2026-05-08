@@ -1,0 +1,415 @@
+=====Medication_Management_Policy_Section1_Purpose.pdf=====
+Secure Living Support Services Ltd
+Medication Management Policy
+Section 1: Purpose
+1. Purpose
+The purpose of this Medication Management Policy is to ensure the safe, effective, and accountable
+management of medications within Secure Living Support Services Ltd. This policy outlines
+procedures and responsibilities related to the prescribing, storage, administration, and disposal of
+medications in accordance with legislative and best practice guidelines.
+The policy aims to protect the health and wellbeing of all service users by ensuring medications are
+handled safely and correctly, and by promoting adherence to professional standards by staff
+involved in medication-related tasks.
+
+=====Medication_Management_Policy_Section2_Scope.pdf=====
+Secure Living Support Services Ltd
+Medication Management Policy - Section 2: Scope
+2. Scope
+This policy applies to all staff involved in any aspect of medication management within Secure Living
+Support Services Ltd, including:
+- Registered Nurses (RNs)
+- Health Care Assistants (HCAs)
+- Designated Persons in Charge (PICs)
+- General Practitioners (GPs)
+- Pharmacists
+- External agency staff or locums
+- Management and quality compliance personnel
+The policy covers the following areas:
+- Prescribing, transcribing, and verifying medications
+- Ordering, receiving, and storing medications
+- Administering and assisting with self-administration
+- Documentation and record-keeping
+- Medication reviews and audits
+- Disposal of expired or discontinued medication
+- Reporting medication errors or near misses
+- Supporting residents with safe, person-centred medication use
+This scope includes all prescribed, non-prescribed (over-the-counter), controlled, and PRN
+(as-needed) medications used within residential settings.
+
+=====Medication_Management_Policy_Section3_Responsibilities.pdf=====
+Secure Living Support Services Ltd
+Medication Management Policy - Section 3: Responsibilities
+3. Responsibilities
+Ensuring safe medication practices requires shared responsibility across all levels of the
+organisation. The following outlines key roles:
+3.1 Registered Provider
+- Oversees implementation of this policy
+- Ensures governance systems are in place for medication safety
+- Ensures adequate resources, staffing, and training
+3.2 Person in Charge (PIC)
+- Ensures staff follow correct medication protocols
+- Reviews medication records and audits regularly
+- Reports medication errors to management and regulatory bodies
+- Coordinates with pharmacists and GPs for reviews and reordering
+3.3 Registered Nurses
+- Administer medications safely and in line with NMBI guidelines
+- Record all medication administrations immediately and accurately
+- Report and record any medication errors or adverse reactions
+- Participate in training and medication reviews
+3.4 Health Care Assistants (HCAs)
+- Assist residents with self-administration (if trained and authorised)
+- Monitor for side effects and report any concerns to nursing staff
+- Do not administer medication unless specifically delegated by a nurse and properly trained
+3.5 GPs and Pharmacists
+- Ensure accurate and legible prescriptions
+- Conduct medication reviews
+- Support compliance with prescribing laws and guidance
+3.6 All Staff
+- Are responsible for reporting medication errors or risks
+- Must attend mandatory medication training
+- Must work within their professional scope and training level
+
+=====Medication_Management_Policy_Section4_Prescribing_and_Ordering.pdf=====
+Secure Living Support Services Ltd
+Medication Management Policy - Section 4: Prescribing and Ordering Medication
+4. Prescribing and Ordering Medication
+The safe prescribing and ordering of medication is essential to ensure that all residents receive
+appropriate and timely treatment.
+4.1 Prescribing Standards
+- Only qualified and registered medical practitioners (GPs or consultants) may prescribe medication.
+- Prescriptions must:
+  - Be clear, legible, and signed
+  - Include full resident name, date, drug name, dose, route, frequency, and duration
+- Verbal or telephone prescriptions are not accepted, except in emergency cases - and must be
+documented and signed within 24 hours.
+4.2 Medication Reviews
+- Residents' medications must be reviewed:
+  - Every 3-6 months, or sooner if clinically indicated
+  - Following any significant change in health status
+- Reviews are conducted by the GP and/or pharmacist in collaboration with nursing staff.
+4.3 Ordering Procedures
+- Medications are ordered through an approved community pharmacy with whom the service has a
+formal agreement.
+- Ordering is the responsibility of the Registered Nurse or Person in Charge (PIC).
+- All medication orders must:
+  - Be checked against the current prescription
+  - Be recorded in the Medication Order Log
+  - Be signed and dated by the responsible staff member
+
+=====Medication_Management_Policy_Section5_Administration.pdf=====
+Secure Living Support Services Ltd
+Medication Management Policy - Section 5: Administration of Medication
+5. Administration of Medication
+The safe and accurate administration of medication is essential to ensuring positive health outcomes
+and reducing risk for all residents.
+5.1 Authorised Staff
+- Only trained and competent staff, typically Registered Nurses (RNs) or trained designated staff,
+may administer medication.
+- Staff must follow the Five Rights of medication administration:
+  - Right resident
+  - Right medication
+  - Right dose
+  - Right time
+  - Right route
+5.2 Administration Process
+- The Medication Administration Record (MAR) must be checked before and after each
+administration.
+- The medication must be administered directly to the resident and not left unattended.
+- Staff must document administration immediately after giving the medication, not before.
+5.3 PRN (As Needed) Medications
+- Must be clearly prescribed with maximum dose and frequency.
+- The reason for administration and outcome must be documented in the resident's notes and MAR.
+- Used only when necessary and effectiveness monitored.
+5.4 Covert Administration
+- Only permitted when:
+  - A full multi-disciplinary team (MDT) assessment has been completed
+  - A covert medication care plan is documented and regularly reviewed
+  - The resident lacks capacity and the intervention is in their best interests
+- Covert administration must be authorised in writing and reviewed regularly.
+5.5 Refusal of Medication
+- If a resident refuses medication:
+  - Respect their choice unless they lack capacity
+  - Document the refusal in the MAR
+  - Inform the GP and PIC if refusal is repeated or serious
+
+=====Medication_Management_Policy_Section6_Storage.pdf=====
+Secure Living Support Services Ltd
+Medication Management Policy - Section 6: Storage of Medication
+6. Storage of Medication
+Proper storage of medication is essential to preserve its effectiveness, ensure safety, and prevent
+misuse.
+6.1 General Storage Requirements
+- All medications must be stored:
+  - In a locked medication cabinet or medication trolley
+  - In a room designated for medication management with limited access
+  - At correct temperatures in line with manufacturer guidelines
+- Access is restricted to authorised staff only.
+6.2 Refrigerated Medication
+- Medications requiring refrigeration must be:
+  - Stored in a dedicated medication fridge
+  - Temperature checked daily and recorded
+  - Kept in original packaging and clearly labelled
+6.3 Controlled Drugs (CDs)
+- Must be stored in a double-locked controlled drugs cabinet in accordance with Misuse of Drugs
+Regulations.
+- The CD register must be:
+  - Completed for every administration
+  - Checked and signed by two authorised staff
+  - Audited weekly by the PIC or senior nurse
+6.4 Expired or Discontinued Medications
+- Must be clearly marked and separated from in-use stock.
+- Returned to the supplying pharmacist without delay and documented in a returns log.
+
+=====Medication_Management_Policy_Section7_Recording_and_Documentation.pdf=====
+Secure Living Support Services Ltd
+Medication Management Policy - Section 7: Recording and Documentation
+7. Recording and Documentation
+Accurate and timely documentation is essential for the safe management of medication and for
+ensuring accountability in care delivery.
+7.1 Medication Administration Record (MAR)
+- A MAR sheet must be maintained for each resident.
+- Staff must document:
+  - Time, dose, and route of administration
+  - Initials/signature of the person administering
+  - Reason for omission or refusal, if applicable
+  - Response/outcome of PRN medications
+- MARs must be updated in real time and reviewed at least weekly.
+7.2 Medication Error Log
+- Any errors or near misses must be recorded in the Medication Error Log.
+- Includes:
+  - Type of error (e.g. wrong dose, missed dose)
+  - Date/time
+  - Actions taken
+  - Staff involved
+  - Whether the resident, GP, and next of kin were informed
+- All incidents must be reported to the Person in Charge (PIC) and reviewed.
+7.3 Controlled Drugs Register
+- A CD Register must be maintained in accordance with the Misuse of Drugs Regulations.
+- Entries must be:
+  - Made in ink, immediately following administration
+  - Signed by two authorised staff
+  - Balanced at the end of each shift
+7.4 Record Retention
+- Medication records must be retained for at least 7 years in a secure, confidential location.
+- Records must be made available for inspection by HIQA or authorised personnel.
+
+=====Medication_Management_Policy_Section8_Medication_Errors.pdf=====
+Secure Living Support Services Ltd
+Medication Management Policy - Section 8: Medication Errors
+8. Medication Errors
+Medication errors must be treated seriously and managed promptly to minimise risk and promote
+learning and continuous improvement.
+8.1 Definition of a Medication Error
+A medication error is any preventable event that may cause or lead to inappropriate medication use
+or harm to a resident. Examples include:
+- Wrong medication, dose, time, or resident
+- Missed or delayed dose
+- Incorrect documentation
+- Improper storage or administration technique
+8.2 Immediate Action
+- If a medication error occurs:
+  - Ensure the resident's safety is the first priority
+  - Contact the GP or emergency services if needed
+  - Inform the Person in Charge (PIC) immediately
+  - Document the event in the Medication Error Log and resident's notes
+8.3 Reporting and Follow-up
+- All medication errors must be reported, regardless of harm caused.
+- The PIC will:
+  - Investigate the incident
+  - Initiate any corrective actions
+  - Inform the resident's GP, family (if appropriate), and relevant regulatory bodies if required
+  - Ensure staff involved reflect on the incident and attend training if necessary
+8.4 Learning and Prevention
+- Errors will be reviewed collectively at governance meetings or safety audits.
+- Actions may include:
+  - Policy updates
+  - Additional staff training
+  - Enhanced supervision or procedure checks
+
+=====Medication_Management_Policy_Section9_Disposal.pdf=====
+Secure Living Support Services Ltd
+Medication Management Policy - Section 9: Disposal of Medication
+9. Disposal of Medication
+Proper disposal of medication is essential to prevent misuse, environmental harm, and ensure
+compliance with healthcare regulations.
+9.1 Medications for Disposal
+Medications must be removed from active use if they are:
+- Expired
+- Discontinued by the prescriber
+- No longer required by the resident
+- Damaged, contaminated, or no longer identifiable
+9.2 Secure Storage Prior to Disposal
+- Medications awaiting disposal must be stored in a clearly labelled, locked container away from
+in-use stock.
+- Controlled Drugs (CDs) must be stored in the CD cabinet and recorded separately in the CD
+returns section.
+9.3 Disposal Procedure
+- All medications must be returned to the nominated community pharmacist or disposal contractor.
+- A disposal log must be completed, including:
+  - Resident name
+  - Medication name and strength
+  - Quantity disposed
+  - Reason for disposal
+  - Date and staff signatures
+9.4 Controlled Drugs
+- Disposal of CDs must follow Misuse of Drugs Regulations.
+- Requires:
+  - Two authorised staff signatures
+  - Witnessed destruction by the pharmacist or authorised destruction personnel
+  - Separate CD disposal record maintained
+
+=====Medication_Management_Policy_Section10_Review_and_Audit.pdf=====
+Secure Living Support Services Ltd
+Medication Management Policy - Section 10: Review and Audit
+10. Review and Audit
+To ensure medication practices remain safe, effective, and compliant with regulatory standards,
+regular audits and reviews are essential.
+10.1 Policy Review
+- This policy will be formally reviewed annually, or sooner if:
+  - New regulatory guidance is issued
+  - Significant changes occur in service provision, staffing, or medication procedures
+  - An audit or incident highlights a gap in practice
+10.2 Medication Audits
+- Medication audits will be carried out monthly or more frequently if necessary.
+- Audits will check:
+  - MAR chart completion
+  - Medication storage compliance
+  - PRN and Controlled Drug logs
+  - Medication disposal logs
+  - Incident and error documentation
+10.3 Staff Practice Monitoring
+- The Person in Charge (PIC) or senior nurse will conduct periodic spot checks during medication
+rounds.
+- Where issues are identified, actions may include:
+  - Supervision, retraining, or formal disciplinary procedures
+
+=====Medication_Management_Policy_Section11_Staff_Training_and_Competency.pdf=====
+Secure Living Support Services Ltd
+Medication Management Policy - Section 11: Staff Training and Competency
+11. Staff Training and Competency
+All staff responsible for medication-related tasks must be appropriately trained and assessed to
+ensure safe and effective practices.
+11.1 Mandatory Training
+- All staff involved in medication handling must complete Medication Management Training prior to
+administering any medication.
+- Training must be:
+  - HIQA-compliant
+  - Delivered by a qualified healthcare professional or accredited provider
+  - Refreshed at least every 2 years, or sooner if an incident occurs or practices change
+11.2 Competency Assessment
+- Staff must undergo practical competency assessment covering:
+  - Safe administration procedures
+  - Use of MAR charts and error reporting
+  - Controlled drug handling
+  - Storage, ordering, and disposal protocols
+- The Person in Charge (PIC) or delegated nurse signs off on each staff member's competency
+before authorising administration.
+11.3 Ongoing Development
+- Training logs will be maintained by the management team.
+- Additional refresher sessions or targeted learning may be required for:
+  - Staff returning from leave
+  - Newly promoted staff with expanded responsibilities
+  - Teams following audits or error investigations
+
+=====Medication_Administration_and_Handling_Silverwings.pdf=====
+Medication Administration and Handling Policy
+Secure Living Support Services Ltd - Silverwings
+1. Policy Commitment
+Silverwings maintains a robust medication management system to ensure the safe, secure, and accountable
+storage, handling, and administration of all medicines prescribed to children and young people in our care.
+Our practices comply with HIQA's National Standards, Tusla guidance, and professional regulations.
+2. Storage of Medicines
+- Locked cabinet in staff-only area
+- Controlled drugs in double-locked container
+- Original pharmacy-labeled packaging
+- Fridge storage secured and monitored
+3. Administration of Medicines
+- Only trained staff
+- Five Rights: Right Person, Medication, Dose, Route, Time
+- MAR sheet maintained for each resident
+4. Prescriptions and Pharmacy
+- Supplied via nominated pharmacy
+- GP and keyworker coordinate renewals
+- Written confirmation for all medication changes
+5. PRN and Controlled Medications
+- Must be in care plan
+- Documented reason/effect in logs
+- Weekly audits and shift handover sign-out
+6. Medication Errors & Refusals
+- Report to PIC, GP, and social worker
+- Incident form completed
+- Reviewed monthly
+7. Disposal of Medicines
+- Returned to pharmacy
+- Logged with witness signatures
+8. Training and Supervision
+- All staff trained at induction and yearly
+- Monthly internal audits
+
+=====Medication_Recording_Forms_Secure_Living.docx=====
+Medication Administration & Recording Templates
+Secure Living Support Services Ltd – Silverwings Centre
+1. Medication Administration Record (MAR) – Template
+Child's Name: ________________________   DOB: _______________
+PPSN: ________________________   Medical Card No.: _______________
+Month/Year: ________________________
+
+Medication List:
+1. _________________________________________
+2. _________________________________________
+3. _________________________________________
+
+Daily Administration Log (initial each box):
+| Date | Time | Medication | Dose | Staff Initials | Comments |
+2. Medication Disposal Log
+Date of Disposal: _______________
+Child's Name: ________________________
+Medication Name: ________________________
+Dosage / Quantity: ________________________
+Reason for Disposal: [ ] Expired  [ ] Discontinued  [ ] Refused
+Returned to: ________________________ (Pharmacy / Disposal Unit)
+Staff Signature: ________________________  Witness: ________________________
+3. Controlled Drug Register Template
+Child's Name: ________________________
+Medication: ________________________
+Prescriber: ________________________
+Date Received: _______________  Quantity Received: __________
+
+Shift Records:
+| Date | Time | Quantity Given | Balance Remaining | Staff 1 | Staff 2 |
+
+Weekly Audit Check: _____________________  (PIC Signature)
+
+=====Medication_Administration_and_Handling_Silverwings.docx=====
+Arrangements for Administration and Handling of Medicines
+Secure Living Support Services Ltd – Silverwings Centre
+Date of Issue: July 2025
+1. Policy Commitment
+Silverwings maintains a robust medication management system to ensure the safe, secure, and accountable storage, handling, and administration of all medicines prescribed to children and young people in our care. Our practices comply with HIQA's National Standards, Tusla guidance, and relevant professional regulations.
+2. Storage of Medicines
+- All medication stored in a locked cabinet accessible only to authorized staff.
+- Controlled drugs stored in double-locked container.
+- All medicines in original packaging with pharmacy labels.
+- Refrigerated items stored in a monitored, locked medical fridge if required.
+3. Administration of Medicines
+- Administered only by trained staff.
+- 'Five Rights' followed: Right Person, Medication, Dose, Route, Time.
+- Medication Administration Record (MAR) maintained for each child.
+4. Prescriptions and Pharmacy
+- Medicines supplied via nominated pharmacy.
+- Renewals managed with GP and keyworker.
+- Changes confirmed in writing by prescribing doctor.
+5. PRN and Controlled Medications
+- Administered only if listed in care plan.
+- Documented with reason and effect.
+- Controlled drug log maintained, weekly audits by management.
+6. Medication Errors & Refusals
+- Errors/refusals reported to PIC, GP, and social worker.
+- Incident form completed and reviewed.
+7. Disposal of Medicines
+- Unused/expired meds returned to pharmacy.
+- Logged and signed by two staff.
+8. Training and Supervision
+- All staff trained during induction and refreshed annually.
+- Monthly medication audits by management.
+

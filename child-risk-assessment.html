@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Child Safeguarding Risk Assessment — Chosanta Management</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        @page { size: A4; margin: 0; }
+        *, *::before, *::after {
+            box-sizing: border-box; margin: 0; padding: 0;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #e8ecf1;
+            color: #1a1610;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            gap: 40px;
+        }
+        @media print {
+            body { background: white; padding: 0; gap: 0; }
+            .page { box-shadow: none; width: 100%; min-height: unset; page-break-after: always; }
+            .page:last-child { page-break-after: auto; }
+            .print-actions { display: none !important; }
+        }
+
+        /* A4 PAGE */
+        .page {
+            width: 210mm; min-height: 297mm;
+            background: #ffffff;
+            box-shadow: 0 8px 40px rgba(13,27,42,0.12);
+            position: relative; overflow: hidden;
+            display: flex; flex-direction: column;
+        }
+
+        /* TOP BAND */
+        .top-band {
+            height: 6px;
+            background: linear-gradient(90deg, #c9a84c 0%, #e0c070 40%, #c9a84c 70%, #a8893c 100%);
+        }
+
+        /* HEADER */
+        .header {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 18px 44px 14px;
+            border-bottom: 2px solid #f0ede8;
+            position: relative;
+        }
+        .header::after {
+            content: ''; position: absolute; bottom: -2px; left: 44px;
+            width: 60px; height: 3px;
+            background: linear-gradient(90deg, #c9a84c, #e0c070);
+            border-radius: 2px;
+        }
+        .logo-container { display: flex; align-items: center; gap: 12px; }
+        .logo-icon {
+            width: 38px; height: 38px;
+            background: linear-gradient(135deg, #c9a84c, #a8893c);
+            border-radius: 8px;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .logo-icon svg { width: 20px; height: 20px; }
+        .logo-text { display: flex; flex-direction: column; line-height: 1; }
+        .logo-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 15px; font-weight: 700; color: #0d1b2a;
+            letter-spacing: 0.5px;
+        }
+        .logo-sub {
+            font-size: 8px; font-weight: 600;
+            letter-spacing: 2.5px; text-transform: uppercase;
+            color: #c9a84c; margin-top: 2px;
+        }
+        .company-details {
+            text-align: right; font-size: 9.5px;
+            line-height: 1.7; color: #5c5648;
+        }
+        .company-details .company-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 13px; font-weight: 700; color: #0d1b2a;
+            margin-bottom: 2px;
+        }
+        .company-details .tagline {
+            font-size: 8px; text-transform: uppercase;
+            letter-spacing: 2px; color: #c9a84c;
+            margin-bottom: 6px; font-weight: 600;
+        }
+
+        /* CONTENT */
+        .content { flex: 1; padding: 24px 44px 20px; }
+        .document-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px; font-weight: 700; color: #0d1b2a;
+            margin-bottom: 4px; position: relative; padding-bottom: 10px;
+        }
+        .document-title::after {
+            content: ''; position: absolute; bottom: 0; left: 0;
+            width: 45px; height: 3px;
+            background: linear-gradient(90deg, #c9a84c, #e0c070);
+            border-radius: 2px;
+        }
+        .document-subtitle {
+            font-size: 10px; color: #9a9484;
+            text-transform: uppercase; letter-spacing: 2px;
+            font-weight: 600; margin-bottom: 16px;
+        }
+        .intro-text {
+            font-size: 11.5px; line-height: 1.65;
+            color: #3d3830; margin-bottom: 18px; max-width: 620px;
+        }
+
+        /* FORM FIELDS */
+        .field-group {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 10px; margin-bottom: 14px;
+        }
+        .field-group.full { grid-template-columns: 1fr; }
+        .field-group.tri { grid-template-columns: 1fr 1fr 1fr; }
+        .field {
+            display: flex; flex-direction: column; gap: 3px;
+        }
+        .field label {
+            font-size: 9px; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 1.5px;
+            color: #0d1b2a;
+        }
+        .field .line {
+            border-bottom: 1.5px solid #e0dbd2;
+            min-height: 22px; font-size: 11px;
+            padding: 2px 4px; color: #3d3830;
+        }
+
+        /* SECTION HEADERS */
+        .section-header {
+            background: linear-gradient(135deg, #0d1b2a, #1b2d42);
+            color: #ffffff; padding: 8px 16px;
+            border-radius: 4px; margin: 18px 0 12px;
+            font-size: 11px; font-weight: 700;
+            letter-spacing: 1px; text-transform: uppercase;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .section-header .num {
+            background: linear-gradient(135deg, #c9a84c, #e0c070);
+            color: #0d1b2a; width: 22px; height: 22px;
+            border-radius: 50%; display: flex;
+            align-items: center; justify-content: center;
+            font-size: 10px; font-weight: 800;
+        }
+
+        /* RISK TABLE */
+        .risk-table {
+            width: 100%; border-collapse: collapse;
+            margin-bottom: 14px; font-size: 10px;
+        }
+        .risk-table th {
+            background: linear-gradient(135deg, #0d1b2a, #243b55);
+            color: #ffffff; padding: 8px 10px;
+            text-align: left; font-size: 9px;
+            font-weight: 700; letter-spacing: 1px;
+            text-transform: uppercase;
+            border: 1px solid #1b2d42;
+        }
+        .risk-table td {
+            padding: 10px; border: 1px solid #e0dbd2;
+            vertical-align: top; line-height: 1.5;
+            min-height: 32px; color: #3d3830;
+        }
+        .risk-table tr:nth-child(even) td {
+            background: #faf9f7;
+        }
+        .risk-table .empty-row td { height: 36px; }
+
+        /* CHECKLIST */
+        .checklist { list-style: none; margin-bottom: 14px; }
+        .checklist li {
+            position: relative; padding: 9px 12px 9px 40px;
+            margin-bottom: 5px;
+            background: linear-gradient(135deg, #faf9f7 0%, #f5f3ef 100%);
+            border-radius: 4px; border-left: 3px solid #c9a84c;
+            font-size: 11px; line-height: 1.5; color: #3d3830;
+        }
+        .checklist li::before {
+            content: '☐'; position: absolute;
+            left: 12px; top: 50%; transform: translateY(-50%);
+            font-size: 14px; color: #c9a84c;
+        }
+
+        /* SIGNATURE BLOCK */
+        .signature-block {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 24px; margin-top: 20px;
+            padding-top: 16px;
+            border-top: 2px solid #f0ede8;
+        }
+        .sig-field label {
+            font-size: 9px; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 1.5px;
+            color: #0d1b2a; display: block; margin-bottom: 4px;
+        }
+        .sig-line {
+            border-bottom: 1.5px solid #e0dbd2;
+            min-height: 32px;
+        }
+
+        /* FOOTER */
+        .footer {
+            padding: 14px 44px;
+            background: linear-gradient(135deg, #0d1b2a 0%, #1b2d42 100%);
+            color: rgba(255,255,255,0.8);
+            font-size: 9px; line-height: 1.8;
+            display: flex; justify-content: space-between;
+            align-items: center; margin-top: auto;
+        }
+        .footer-left { display: flex; flex-direction: column; }
+        .footer-left span { display: inline-flex; align-items: center; gap: 6px; }
+        .footer-divider {
+            width: 1px; height: 36px;
+            background: rgba(201,168,76,0.3); margin: 0 20px;
+        }
+        .footer-right {
+            text-align: right; font-size: 8px;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* NOTE BOX */
+        .note-box {
+            background: linear-gradient(135deg, rgba(201,168,76,0.08), rgba(201,168,76,0.03));
+            border: 1px solid rgba(201,168,76,0.25);
+            border-left: 3px solid #c9a84c;
+            border-radius: 4px; padding: 12px 16px;
+            margin-bottom: 14px;
+        }
+        .note-box p {
+            font-size: 10.5px; line-height: 1.6;
+            color: #3d3830; margin: 0;
+        }
+        .note-box strong { color: #0d1b2a; }
+
+        /* PRINT BUTTONS */
+        .print-actions {
+            position: fixed; top: 20px; right: 20px;
+            display: flex; gap: 12px; z-index: 100;
+        }
+        .print-actions button {
+            padding: 12px 24px; border: none; border-radius: 8px;
+            font-family: 'Inter', sans-serif; font-size: 13px;
+            font-weight: 600; cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .btn-print {
+            background: linear-gradient(135deg, #c9a84c, #e0c070);
+            color: #0d1b2a;
+        }
+        .btn-print:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(201,168,76,0.4); }
+        .btn-pdf {
+            background: linear-gradient(135deg, #0d1b2a, #1b2d42);
+            color: white;
+        }
+        .btn-pdf:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(13,27,42,0.4); }
+    </style>
+</head>
+<body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<div class="print-actions">
+    <button class="btn-print" onclick="window.print()">🖨️ Print</button>
+    <button class="btn-pdf" id="savePdfBtn" onclick="savePDF()">📄 Save as PDF</button>
+</div>
+
+<script>
+async function savePDF() {
+    const btn = document.getElementById('savePdfBtn');
+    btn.textContent = '⏳ Generating...';
+    btn.disabled = true;
+    try {
+        const { jsPDF } = window.jspdf;
+        const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
+        const pages = document.querySelectorAll('.page');
+        for (let i = 0; i < pages.length; i++) {
+            const canvas = await html2canvas(pages[i], {
+                scale: 2, useCORS: true, letterRendering: true,
+                backgroundColor: '#ffffff',
+                width: pages[i].scrollWidth,
+                height: pages[i].scrollHeight
+            });
+            const imgData = canvas.toDataURL('image/jpeg', 0.95);
+            if (i > 0) pdf.addPage();
+            pdf.addImage(imgData, 'JPEG', 0, 0, 210, 297);
+        }
+        pdf.save('Chosanta_Child_Safeguarding_Statement.pdf');
+    } catch (e) {
+        alert('PDF failed: ' + e.message + '. Use Print > Save as PDF instead.');
+    }
+    btn.textContent = '📄 Save as PDF';
+    btn.disabled = false;
+}
+</script>
+
+<!-- ==================== PAGE 1 ==================== -->
+<div class="page">
+    <div class="top-band"></div>
+    <header class="header">
+        <div class="logo-container">
+            <div class="logo-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/>
+                </svg>
+            </div>
+            <div class="logo-text">
+                <span class="logo-name">Chosanta</span>
+                <span class="logo-sub">Management</span>
+            </div>
+        </div>
+        <div class="company-details">
+            <div class="company-name">Chosanta Management</div>
+            <div class="tagline">Accommodation &amp; Property Solutions</div>
+            <div>Office 107, Brú Digital Hub, 56 West Street</div>
+            <div>Drogheda, Co. Louth · A92 E4CY</div>
+        </div>
+    </header>
+
+    <main class="content">
+        <h1 class="document-title">Child Safeguarding Statement</h1>
+        <p class="document-subtitle">Risk Assessment &amp; Policy Document</p>
+
+        <p class="intro-text">
+            Chosanta Management is committed to safeguarding children and young persons in accordance with the <strong>Children First Act 2015</strong>, the <strong>Children First: National Guidance for the Protection and Welfare of Children (2017)</strong>, and <strong>Tusla's Child Safeguarding: A Guide for Policy, Procedure and Practice</strong>.
+        </p>
+
+        <div class="note-box">
+            <p><strong>Service Provided:</strong> Chosanta Management provides accommodation coordination and property management services. While our services are not primarily directed at children, we recognise that children and young persons may reside in or visit properties managed or coordinated through our network.</p>
+        </div>
+
+        <div class="section-header">
+            <span class="num">1</span> Organisation Details
+        </div>
+        <div class="field-group">
+            <div class="field">
+                <label>Organisation Name</label>
+                <div class="line">Chosanta Management</div>
+            </div>
+            <div class="field">
+                <label>Trading Name (if different)</label>
+                <div class="line"></div>
+            </div>
+        </div>
+        <div class="field-group">
+            <div class="field">
+                <label>Registered Address</label>
+                <div class="line">Office 107, Brú Digital Hub, 56 West Street, Drogheda, Co. Louth</div>
+            </div>
+            <div class="field">
+                <label>Eircode</label>
+                <div class="line">A92 E4CY</div>
+            </div>
+        </div>
+        <div class="field-group tri">
+            <div class="field">
+                <label>Contact Person</label>
+                <div class="line"></div>
+            </div>
+            <div class="field">
+                <label>Phone Number</label>
+                <div class="line"></div>
+            </div>
+            <div class="field">
+                <label>Email Address</label>
+                <div class="line">info@chosanta.com</div>
+            </div>
+        </div>
+
+        <div class="section-header">
+            <span class="num">2</span> Nature of Service &amp; Principles
+        </div>
+        <p class="intro-text">
+            Chosanta Management has carried out a risk assessment of any potential for harm to a child while availing of our services. Below is a list of the areas of risk identified and the procedures in place to manage those risks.
+        </p>
+
+        <div class="note-box">
+            <p><strong>Guiding Principles:</strong> The safety and welfare of children is everyone's responsibility. Chosanta Management will ensure, as far as practicable, that children are protected from harm while utilising, residing in, or visiting properties or services coordinated through our organisation.</p>
+        </div>
+
+        <div class="section-header">
+            <span class="num">3</span> Relevant Person (DLP)
+        </div>
+        <p class="intro-text" style="margin-bottom:10px;">As required under the Children First Act 2015, the following person has been appointed as the Designated Liaison Person (DLP):</p>
+        <div class="field-group">
+            <div class="field">
+                <label>DLP Name</label>
+                <div class="line"></div>
+            </div>
+            <div class="field">
+                <label>DLP Contact Number</label>
+                <div class="line"></div>
+            </div>
+        </div>
+        <div class="field-group">
+            <div class="field">
+                <label>Deputy DLP Name</label>
+                <div class="line"></div>
+            </div>
+            <div class="field">
+                <label>Deputy DLP Contact Number</label>
+                <div class="line"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-left">
+            <span>✉ info@chosanta.com</span>
+            <span>📍 Drogheda, Co. Louth · A92 E4CY</span>
+        </div>
+        <div class="footer-divider"></div>
+        <div class="footer-right">
+            Chosanta Management<br>
+            Child Safeguarding Statement — Page 1 of 3
+        </div>
+    </footer>
+</div>
+
+<!-- ==================== PAGE 2 ==================== -->
+<div class="page">
+    <div class="top-band"></div>
+    <header class="header">
+        <div class="logo-container">
+            <div class="logo-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/>
+                </svg>
+            </div>
+            <div class="logo-text">
+                <span class="logo-name">Chosanta</span>
+                <span class="logo-sub">Management</span>
+            </div>
+        </div>
+        <div class="company-details">
+            <div class="company-name">Chosanta Management</div>
+            <div class="tagline">Accommodation &amp; Property Solutions</div>
+        </div>
+    </header>
+
+    <main class="content">
+        <h1 class="document-title">Risk Assessment</h1>
+        <p class="document-subtitle">Identified Risks &amp; Mitigation Procedures</p>
+
+        <table class="risk-table">
+            <thead>
+                <tr>
+                    <th style="width:5%;">No.</th>
+                    <th style="width:30%;">Risk Identified</th>
+                    <th style="width:35%;">Procedure in Place to Manage Risk</th>
+                    <th style="width:15%;">Risk Level</th>
+                    <th style="width:15%;">Review Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>A child could be harmed by a member of staff or volunteer</td>
+                    <td>All personnel are vetted. Code of conduct in place. Safe recruitment practices followed.</td>
+                    <td>Low</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>A child could be harmed by another child or young person in accommodation</td>
+                    <td>Supervision policies. Anti-bullying procedures. Clear reporting protocol.</td>
+                    <td>Low</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>A child could be harmed due to inadequate supervision at a property</td>
+                    <td>All accommodation providers are required to have appropriate supervision. Properties inspected regularly.</td>
+                    <td>Low–Medium</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>A child could be at risk during transport or transition between properties</td>
+                    <td>Transport protocols. Accompanied minors policy. Parental/guardian consent required.</td>
+                    <td>Low</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>A child could be at risk due to unauthorised access to accommodation</td>
+                    <td>Access control measures at all properties. Visitor sign-in procedures. ID verification protocols.</td>
+                    <td>Low</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>A child could be harmed due to poor physical environment or hazards</td>
+                    <td>Regular property inspections. Health &amp; safety compliance. Hazard reporting system.</td>
+                    <td>Low</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Risk of harm through online/digital communication</td>
+                    <td>Acceptable use policy. No unsupervised digital contact with minors. Data protection compliance.</td>
+                    <td>Low</td>
+                    <td></td>
+                </tr>
+                <tr class="empty-row">
+                    <td>8</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="empty-row">
+                    <td>9</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="note-box">
+            <p><strong>Note:</strong> This risk assessment is a living document and will be reviewed annually or sooner if there is a material change in the nature of services provided, or if there is reason to believe the assessment is no longer adequate.</p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-left">
+            <span>✉ info@chosanta.com</span>
+            <span>📍 Drogheda, Co. Louth · A92 E4CY</span>
+        </div>
+        <div class="footer-divider"></div>
+        <div class="footer-right">
+            Chosanta Management<br>
+            Child Safeguarding Statement — Page 2 of 3
+        </div>
+    </footer>
+</div>
+
+<!-- ==================== PAGE 3 ==================== -->
+<div class="page">
+    <div class="top-band"></div>
+    <header class="header">
+        <div class="logo-container">
+            <div class="logo-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/>
+                </svg>
+            </div>
+            <div class="logo-text">
+                <span class="logo-name">Chosanta</span>
+                <span class="logo-sub">Management</span>
+            </div>
+        </div>
+        <div class="company-details">
+            <div class="company-name">Chosanta Management</div>
+            <div class="tagline">Accommodation &amp; Property Solutions</div>
+        </div>
+    </header>
+
+    <main class="content">
+        <h1 class="document-title">Procedures &amp; Declaration</h1>
+        <p class="document-subtitle">Safeguarding Procedures &amp; Sign-off</p>
+
+        <div class="section-header">
+            <span class="num">4</span> Procedures in Place
+        </div>
+
+        <ul class="checklist">
+            <li>Procedure for reporting child protection or welfare concerns to Tusla</li>
+            <li>Procedure for maintaining a list of mandated persons under the Children First Act 2015</li>
+            <li>Procedure for appointing a relevant person under the Children First Act 2015</li>
+            <li>Safe recruitment procedures including Garda vetting for all staff and contractors</li>
+            <li>Procedure for managing and recording allegations of abuse or misconduct</li>
+            <li>Procedure for provision of information and training to staff on child safeguarding</li>
+            <li>Procedure for reporting concerns to Tusla — using standard reporting form</li>
+            <li>Procedure for maintaining confidentiality in line with GDPR and data protection</li>
+            <li>Code of conduct for all personnel interacting with children or families</li>
+            <li>Anti-bullying procedures for any accommodation settings where children may be present</li>
+        </ul>
+
+        <div class="section-header">
+            <span class="num">5</span> Implementation &amp; Review
+        </div>
+        <div class="note-box">
+            <p>This Child Safeguarding Statement has been developed in line with the requirements of the <strong>Children First Act 2015</strong> and <strong>Tusla's Guidance</strong>. It will be reviewed <strong>every 24 months</strong> or as soon as practicable after a material change in any matter to which it refers.</p>
+        </div>
+
+        <div class="field-group">
+            <div class="field">
+                <label>Date of Statement</label>
+                <div class="line"></div>
+            </div>
+            <div class="field">
+                <label>Date of Next Review</label>
+                <div class="line"></div>
+            </div>
+        </div>
+
+        <div class="section-header">
+            <span class="num">6</span> Declaration
+        </div>
+        <p class="intro-text" style="margin-bottom:14px;">
+            This Child Safeguarding Statement was adopted by Chosanta Management on the date set out below. We confirm that we have carried out a risk assessment as required under the Children First Act 2015 and that this statement is published in accordance with our legal obligations.
+        </p>
+
+        <div class="signature-block">
+            <div class="sig-field">
+                <label>Signed (Management)</label>
+                <div class="sig-line"></div>
+                <label style="margin-top:10px;">Print Name</label>
+                <div class="sig-line"></div>
+                <label style="margin-top:10px;">Position / Title</label>
+                <div class="sig-line"></div>
+            </div>
+            <div class="sig-field">
+                <label>Date</label>
+                <div class="sig-line"></div>
+                <label style="margin-top:10px;">Witnessed By</label>
+                <div class="sig-line"></div>
+                <label style="margin-top:10px;">Date</label>
+                <div class="sig-line"></div>
+            </div>
+        </div>
+
+        <div class="note-box" style="margin-top:20px;">
+            <p><strong>Tusla Contact:</strong> If you have concerns about the safety or welfare of a child, contact Tusla — Child and Family Agency. Tel: 01 771 8500 | Web: www.tusla.ie</p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-left">
+            <span>✉ info@chosanta.com</span>
+            <span>📍 Drogheda, Co. Louth · A92 E4CY</span>
+        </div>
+        <div class="footer-divider"></div>
+        <div class="footer-right">
+            Chosanta Management<br>
+            Child Safeguarding Statement — Page 3 of 3
+        </div>
+    </footer>
+</div>
+
+</body>
+</html>

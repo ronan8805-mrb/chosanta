@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Governance Policy — Chosanta Management</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        @page { size: A4; margin: 0; }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+        body { font-family: 'Inter', sans-serif; background: #e8ecf1; color: #1a1610; display: flex; flex-direction: column; align-items: center; padding: 40px 20px; gap: 40px; }
+        @media print { body { background: white; padding: 0; gap: 0; } .page { box-shadow: none; width: 100%; min-height: unset; } .print-actions { display: none !important; } }
+        .page { width: 210mm; min-height: 297mm; background: #fff; box-shadow: 0 8px 40px rgba(13,27,42,0.12); position: relative; overflow: hidden; display: flex; flex-direction: column; }
+        .top-band { height: 6px; background: linear-gradient(90deg, #c9a84c 0%, #e0c070 40%, #c9a84c 70%, #a8893c 100%); }
+        .header { display: flex; align-items: center; justify-content: space-between; padding: 16px 40px 12px; border-bottom: 2px solid #f0ede8; position: relative; }
+        .header::after { content: ''; position: absolute; bottom: -2px; left: 40px; width: 60px; height: 3px; background: linear-gradient(90deg, #c9a84c, #e0c070); border-radius: 2px; }
+        .logo-box { display: flex; align-items: center; gap: 10px; }
+        .logo-icon { width: 34px; height: 34px; background: linear-gradient(135deg, #c9a84c, #a8893c); border-radius: 7px; display: flex; align-items: center; justify-content: center; }
+        .logo-icon svg { width: 18px; height: 18px; }
+        .logo-text { display: flex; flex-direction: column; line-height: 1; }
+        .logo-name { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: #0d1b2a; }
+        .logo-sub { font-size: 7.5px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: #c9a84c; margin-top: 2px; }
+        .co-details { text-align: right; font-size: 9px; line-height: 1.6; color: #5c5648; }
+        .co-details .cn { font-family: 'Playfair Display', serif; font-size: 12px; font-weight: 700; color: #0d1b2a; }
+        .co-details .tg { font-size: 7.5px; text-transform: uppercase; letter-spacing: 2px; color: #c9a84c; font-weight: 600; }
+        .content { flex: 1; padding: 28px 40px 20px; }
+        .doc-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: #0d1b2a; margin-bottom: 4px; position: relative; padding-bottom: 12px; }
+        .doc-title::after { content: ''; position: absolute; bottom: 0; left: 0; width: 50px; height: 3px; background: linear-gradient(90deg, #c9a84c, #e0c070); border-radius: 2px; }
+        .doc-sub { font-size: 10px; color: #9a9484; text-transform: uppercase; letter-spacing: 2.5px; font-weight: 600; margin-bottom: 24px; }
+        .sh { background: linear-gradient(135deg, #0d1b2a, #1b2d42); color: #fff; padding: 8px 16px; border-radius: 4px; margin: 20px 0 12px; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; display: flex; align-items: center; gap: 8px; }
+        .sh .n { background: linear-gradient(135deg, #c9a84c, #e0c070); color: #0d1b2a; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 800; flex-shrink: 0; }
+        .body-text { font-size: 12px; line-height: 1.75; color: #3d3830; margin-bottom: 16px; max-width: 620px; }
+        .aims-label { font-size: 12px; font-weight: 600; color: #0d1b2a; margin-bottom: 10px; }
+        .bl { list-style: none; margin-bottom: 16px; }
+        .bl li { position: relative; padding: 12px 14px 12px 42px; margin-bottom: 6px; background: linear-gradient(135deg, #faf9f7, #f5f3ef); border-radius: 6px; border-left: 3px solid #c9a84c; font-size: 11.5px; line-height: 1.55; color: #3d3830; }
+        .bl li::before { content: '✓'; position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: #c9a84c; font-size: 13px; font-weight: 700; }
+        .footer { padding: 14px 40px; background: linear-gradient(135deg, #0d1b2a, #1b2d42); color: rgba(255,255,255,0.8); font-size: 8.5px; line-height: 1.8; display: flex; justify-content: space-between; align-items: center; margin-top: auto; }
+        .fl { display: flex; flex-direction: column; } .fl span { display: inline-flex; align-items: center; gap: 5px; }
+        .fd { width: 1px; height: 32px; background: rgba(201,168,76,0.3); margin: 0 16px; }
+        .fr { text-align: right; font-size: 7.5px; color: rgba(255,255,255,0.5); }
+        .print-actions { position: fixed; top: 20px; right: 20px; display: flex; gap: 12px; z-index: 100; }
+        .print-actions button { padding: 12px 24px; border: none; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+        .bp { background: linear-gradient(135deg, #c9a84c, #e0c070); color: #0d1b2a; } .bp:hover { transform: translateY(-1px); }
+        .bpdf { background: linear-gradient(135deg, #0d1b2a, #1b2d42); color: #fff; } .bpdf:hover { transform: translateY(-1px); }
+    </style>
+</head>
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<div class="print-actions"><button class="bp" onclick="window.print()">🖨️ Print</button><button class="bpdf" id="savePdfBtn" onclick="savePDF()">📄 Save as PDF</button></div>
+<script>
+async function savePDF(){const btn=document.getElementById('savePdfBtn');btn.disabled=true;try{const{jsPDF}=window.jspdf;const pdf=new jsPDF({orientation:'portrait',unit:'mm',format:'a4'});const pages=document.querySelectorAll('.page');for(let i=0;i<pages.length;i++){btn.textContent='⏳ Page '+(i+1)+'/'+pages.length;await new Promise(r=>setTimeout(r,300));const canvas=await html2canvas(pages[i],{scale:1.5,useCORS:true,letterRendering:true,backgroundColor:'#ffffff',width:pages[i].scrollWidth,height:pages[i].scrollHeight,logging:false});const imgData=canvas.toDataURL('image/jpeg',0.92);if(i>0)pdf.addPage();pdf.addImage(imgData,'JPEG',0,0,210,297);canvas.width=0;canvas.height=0;}const blob=pdf.output('blob');const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='Chosanta_Governance_Policy.pdf';document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(url);}catch(e){alert('PDF error: '+e.message);}btn.textContent='📄 Save as PDF';btn.disabled=false;}
+</script>
+
+<!-- PAGE 1: PURPOSE -->
+<div class="page">
+    <div class="top-band"></div>
+    <header class="header"><div class="logo-box"><div class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="logo-text"><span class="logo-name">Chosanta</span><span class="logo-sub">Management</span></div></div><div class="co-details"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div><div>Office 107, Brú Digital Hub, 56 West Street</div><div>Drogheda, Co. Louth · A92 E4CY</div></div></header>
+    <main class="content">
+        <h1 class="doc-title">Governance Policy</h1>
+        <p class="doc-sub">Section 1: Purpose</p>
+        <div class="sh"><span class="n">1</span> Purpose</div>
+        <p class="body-text">The purpose of this Governance Policy is to define the governance framework, roles, and responsibilities of Chosanta Management. This policy ensures that the organisation operates in line with the Health Act 2007, the National Standards for Residential Services for Children and Adults with Disabilities, and all other applicable regulatory frameworks.</p>
+        <p class="body-text">Governance is the system by which the service is directed, controlled, and held accountable. It ensures that the organisation delivers safe, effective, and person-centred care to all individuals supported.</p>
+        <p class="aims-label">This policy is designed to:</p>
+        <ul class="bl">
+            <li>Ensure a clear line of accountability across all levels of leadership and service delivery</li>
+            <li>Promote transparent decision-making based on legal, ethical, and best-practice frameworks</li>
+            <li>Establish systems for monitoring performance, managing risk, and safeguarding people who use the service</li>
+            <li>Support continuous quality improvement through leadership, planning, oversight, and communication</li>
+            <li>Ensure that roles such as the Registered Provider, Person in Charge (PIC), and Governance Officer are fully defined, resourced, and understood</li>
+        </ul>
+    </main>
+    <footer class="footer"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Governance Policy — Page 1 of 5</div></footer>
+</div>
+
+<!-- PAGE 2: GOVERNANCE STRUCTURE -->
+<div class="page">
+    <div class="top-band"></div>
+    <header class="header"><div class="logo-box"><div class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="logo-text"><span class="logo-name">Chosanta</span><span class="logo-sub">Management</span></div></div><div class="co-details"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div></header>
+    <main class="content">
+        <h1 class="doc-title">Governance Policy</h1>
+        <p class="doc-sub">Section 2: Governance Structure</p>
+        <div class="sh"><span class="n">2</span> Governance Structure</div>
+        <p class="body-text">Chosanta Management operates under a clearly defined governance structure that ensures effective leadership, oversight, and accountability across all levels of the organisation.</p>
+        <p class="aims-label">Key Governance Roles:</p>
+        <ul class="bl">
+            <li><strong>Registered Provider:</strong> Chosanta Management — holds legal responsibility for regulatory compliance, financial integrity, and the quality of care provided across all centres</li>
+            <li><strong>Director:</strong> Leads on strategic governance, risk oversight, and ensures effective resourcing of all operations and staffing</li>
+            <li><strong>Operational Governance Officer:</strong> Supports day-to-day compliance with HIQA regulations; oversees internal audits, policy reviews, and liaises with external authorities</li>
+            <li><strong>Person in Charge (PIC):</strong> Named individual responsible for direct management of the designated centre; accountable for care delivery, safeguarding, supervision, and compliance</li>
+            <li><strong>Designated Centre(s):</strong> HIQA-registered accommodation supporting adults, operated in accordance with Section 69 of the Health Act 2007</li>
+        </ul>
+        <p class="aims-label">Review Cycle:</p>
+        <ul class="bl">
+            <li>Annually as part of the quality improvement plan</li>
+            <li>Immediately following any material organisational change</li>
+            <li>In response to recommendations from HIQA or internal audits</li>
+        </ul>
+    </main>
+    <footer class="footer"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Governance Policy — Page 2 of 5</div></footer>
+</div>
+
+<!-- PAGE 3: RESPONSIBILITIES -->
+<div class="page">
+    <div class="top-band"></div>
+    <header class="header"><div class="logo-box"><div class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="logo-text"><span class="logo-name">Chosanta</span><span class="logo-sub">Management</span></div></div><div class="co-details"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div></header>
+    <main class="content">
+        <h1 class="doc-title">Governance Policy</h1>
+        <p class="doc-sub">Section 3: Responsibilities</p>
+        <div class="sh"><span class="n">3</span> Responsibilities</div>
+        <ul class="bl">
+            <li><strong>Registered Provider:</strong> Overall accountability for the designated centre; ensures compliance with the Health Act 2007; oversees appointment and performance of the PIC; provides appropriate resources</li>
+            <li><strong>Director:</strong> Provides strategic direction and oversight of governance, finance, and service delivery; conducts annual governance reviews; monitors compliance with policies and risk management</li>
+            <li><strong>Operational Governance Officer:</strong> Oversees internal audits, policy compliance, and continuous improvement; acts as lead liaison with HIQA inspectors; provides escalation support for safeguarding, staffing, or risk issues</li>
+            <li><strong>Person in Charge (PIC):</strong> Manages day-to-day operations; ensures care is delivered in line with personal plans and national standards; supervises staff; maintains records and submits notifications</li>
+            <li><strong>Multidisciplinary &amp; Support Staff:</strong> Work collaboratively under the PIC; participate in training, supervision, and team meetings; adhere to policies and support residents to achieve goals</li>
+        </ul>
+    </main>
+    <footer class="footer"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Governance Policy — Page 3 of 5</div></footer>
+</div>
+
+<!-- PAGE 4: GOVERNANCE REVIEW (was Section 5 in PDF) -->
+<div class="page">
+    <div class="top-band"></div>
+    <header class="header"><div class="logo-box"><div class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="logo-text"><span class="logo-name">Chosanta</span><span class="logo-sub">Management</span></div></div><div class="co-details"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div></header>
+    <main class="content">
+        <h1 class="doc-title">Governance Policy</h1>
+        <p class="doc-sub">Section 4: Governance Review</p>
+        <div class="sh"><span class="n">4</span> Governance Review</div>
+        <p class="body-text">Chosanta Management conducts ongoing and structured governance reviews to ensure the effectiveness of leadership, compliance with regulatory requirements, and continuous improvement.</p>
+        <p class="aims-label">Review Frequency:</p>
+        <ul class="bl">
+            <li>Formal Governance Reviews are held quarterly</li>
+            <li>A comprehensive annual review is conducted each calendar year</li>
+            <li>Extraordinary reviews may be held following serious incidents or HIQA inspections</li>
+        </ul>
+        <p class="aims-label">Scope of Review:</p>
+        <ul class="bl">
+            <li>Legal and regulatory compliance</li>
+            <li>Leadership structure and oversight effectiveness</li>
+            <li>Audit findings and follow-up actions</li>
+            <li>Quality of resident care, staff supervision, and development</li>
+            <li>Incident and complaint management</li>
+            <li>Health &amp; safety, budgeting, and resource use</li>
+        </ul>
+        <p class="aims-label">Outcomes:</p>
+        <ul class="bl">
+            <li>Drives quality improvements and updates policies</li>
+            <li>Supports risk mitigation planning</li>
+            <li>Enhances staff training and support</li>
+            <li>Provides inspection-ready governance evidence</li>
+        </ul>
+    </main>
+    <footer class="footer"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Governance Policy — Page 4 of 5</div></footer>
+</div>
+
+<!-- PAGE 5: GOVERNANCE MEETING TEMPLATE -->
+<div class="page">
+    <div class="top-band"></div>
+    <header class="header"><div class="logo-box"><div class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="logo-text"><span class="logo-name">Chosanta</span><span class="logo-sub">Management</span></div></div><div class="co-details"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div></header>
+    <main class="content">
+        <h1 class="doc-title">Governance Policy</h1>
+        <p class="doc-sub">Section 5: Governance &amp; Compliance Review Meeting Template</p>
+        <div class="sh"><span class="n">5</span> Meeting Agenda Template</div>
+        <ul class="bl">
+            <li><strong>1.</strong> Welcome &amp; Opening Remarks</li>
+            <li><strong>2.</strong> Review of Previous Minutes &amp; Actions</li>
+            <li><strong>3.</strong> Regulatory Compliance Update — HIQA correspondence, notifications (Reg 31/32), policy updates</li>
+            <li><strong>4.</strong> Safeguarding &amp; Risk Register — incidents, allegations, current concerns, escalations &amp; trends</li>
+            <li><strong>5.</strong> Quality &amp; Safety — complaints log, resident/family feedback, infection control, audits, medication</li>
+            <li><strong>6.</strong> Staffing &amp; Training — supervision records, training matrix &amp; gaps, recruitment/rota issues</li>
+            <li><strong>7.</strong> Resident Outcomes &amp; Personal Planning — reviews completed, independent advocacy reports</li>
+            <li><strong>8.</strong> Environmental &amp; Health &amp; Safety — fire safety checks, repairs, equipment, maintenance</li>
+            <li><strong>9.</strong> Finance &amp; Resources — budget updates, procurement needs</li>
+            <li><strong>10.</strong> Strategic / Business Updates — SLA/HSE feedback, funding or expansion planning</li>
+            <li><strong>11.</strong> Action Plan — assigned actions, timelines, and leads</li>
+            <li><strong>12.</strong> Next Meeting Date</li>
+        </ul>
+    </main>
+    <footer class="footer"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Governance Policy — Page 5 of 5</div></footer>
+</div>
+
+</body>
+</html>

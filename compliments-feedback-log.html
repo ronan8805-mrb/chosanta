@@ -1,0 +1,102 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Compliments &amp; Positive Feedback Log — Chosanta Management</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"><style>@page{size:A4;margin:0}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}body{font-family:'Inter',sans-serif;background:#e8ecf1;color:#1a1610;display:flex;flex-direction:column;align-items:center;padding:40px 20px;gap:40px}@media print{body{background:#fff;padding:0;gap:0}.page{box-shadow:none;width:100%;min-height:unset}.pa{display:none!important}}.page{width:210mm;min-height:297mm;background:#fff;box-shadow:0 8px 40px rgba(13,27,42,.12);position:relative;overflow:hidden;display:flex;flex-direction:column}.tb{height:6px;background:linear-gradient(90deg,#c9a84c,#e0c070 40%,#c9a84c 70%,#a8893c)}.hd{display:flex;align-items:center;justify-content:space-between;padding:14px 40px 10px;border-bottom:2px solid #f0ede8;position:relative}.hd::after{content:'';position:absolute;bottom:-2px;left:40px;width:60px;height:3px;background:linear-gradient(90deg,#c9a84c,#e0c070);border-radius:2px}.lb{display:flex;align-items:center;gap:10px}.li{width:34px;height:34px;background:linear-gradient(135deg,#c9a84c,#a8893c);border-radius:7px;display:flex;align-items:center;justify-content:center}.li svg{width:18px;height:18px}.lt{display:flex;flex-direction:column;line-height:1}.ln{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#0d1b2a}.ls{font-size:7.5px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:#c9a84c;margin-top:2px}.co{text-align:right;font-size:9px;line-height:1.6;color:#5c5648}.co .cn{font-family:'Playfair Display',serif;font-size:12px;font-weight:700;color:#0d1b2a}.co .tg{font-size:7.5px;text-transform:uppercase;letter-spacing:2px;color:#c9a84c;font-weight:600}.ct{flex:1;padding:18px 40px 14px}.dt{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:#0d1b2a;margin-bottom:4px;position:relative;padding-bottom:10px}.dt::after{content:'';position:absolute;bottom:0;left:0;width:50px;height:3px;background:linear-gradient(90deg,#c9a84c,#e0c070);border-radius:2px}.ds{font-size:8.5px;color:#9a9484;text-transform:uppercase;letter-spacing:2.5px;font-weight:600;margin-bottom:10px}.sh{background:linear-gradient(135deg,#0d1b2a,#1b2d42);color:#fff;padding:5px 12px;border-radius:4px;margin:10px 0 5px;font-size:8.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;display:flex;align-items:center;gap:8px}.sh .n{background:linear-gradient(135deg,#c9a84c,#e0c070);color:#0d1b2a;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:800;flex-shrink:0}.bt{font-size:9px;line-height:1.5;color:#3d3830;margin-bottom:6px}table{width:100%;border-collapse:collapse;font-size:7.5px;margin-bottom:8px}th{background:linear-gradient(135deg,#0d1b2a,#1b2d42);color:#fff;padding:4px 5px;text-align:left;font-weight:700}td{padding:5px 5px;border-bottom:1px solid #f0ede8;color:#3d3830}tr:nth-child(even) td{background:#faf9f7}.sg{font-size:8px;color:#3d3830;margin-top:8px;padding:6px;border:1px dashed #c9a84c;border-radius:6px;background:#faf9f7}.sg span{display:block;margin-bottom:3px;border-bottom:1px dotted #ddd;padding-bottom:3px}.ft{padding:9px 40px;background:linear-gradient(135deg,#0d1b2a,#1b2d42);color:rgba(255,255,255,.8);font-size:7.5px;line-height:1.8;display:flex;justify-content:space-between;align-items:center;margin-top:auto}.fl{display:flex;flex-direction:column}.fl span{display:inline-flex;align-items:center;gap:5px}.fd{width:1px;height:24px;background:rgba(201,168,76,.3);margin:0 12px}.fr{text-align:right;font-size:7px;color:rgba(255,255,255,.5)}.pa{position:fixed;top:20px;right:20px;display:flex;gap:12px;z-index:100}.pa button{padding:12px 24px;border:none;border-radius:8px;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;box-shadow:0 4px 12px rgba(0,0,0,.15)}.bp{background:linear-gradient(135deg,#c9a84c,#e0c070);color:#0d1b2a}.bx{background:linear-gradient(135deg,#0d1b2a,#1b2d42);color:#fff}.pos{background:linear-gradient(135deg,#f0faf0,#e6f5e6);border:1px solid #27ae60;border-radius:5px;padding:5px 8px;font-size:8px;color:#1a3d1a;margin-bottom:6px}.pos strong{color:#1e7e34}</style></head><body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<div class="pa"><button class="bp" onclick="window.print()">🖨️ Print</button><button class="bx" id="btn">📄 Save as PDF</button></div>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var btn=document.getElementById('btn');
+  btn.addEventListener('click',async function(){
+    if(typeof html2canvas==='undefined'||!window.jspdf){alert('PDF libraries still loading — please wait and try again.');return;}
+    btn.disabled=true;
+    try{
+      var jsPDF=window.jspdf.jsPDF;
+      var pdf=new jsPDF({orientation:'portrait',unit:'mm',format:'a4'});
+      var pages=document.querySelectorAll('.page');
+      for(var i=0;i<pages.length;i++){
+        btn.textContent='⏳ '+(i+1)+'/'+pages.length;
+        await new Promise(function(r){setTimeout(r,500);});
+        var c=await html2canvas(pages[i],{scale:2,useCORS:true,backgroundColor:'#ffffff',logging:false});
+        if(i>0) pdf.addPage();
+        pdf.addImage(c.toDataURL('image/jpeg',0.95),'JPEG',0,0,210,297);
+      }
+      pdf.save('Chosanta_Compliments_Feedback_Log.pdf');
+    }catch(e){alert('PDF error: '+e.message);console.error(e);}
+    btn.textContent='📄 Save as PDF';btn.disabled=false;
+  });
+});
+</script>
+
+<!-- P1 -->
+<div class="page"><div class="tb"></div>
+<header class="hd"><div class="lb"><div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="lt"><span class="ln">Chosanta</span><span class="ls">Management</span></div></div><div class="co"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div><div>Office 107, Brú Digital Hub, 56 West Street</div><div>Drogheda, Co. Louth · A92 E4CY</div></div></header>
+<main class="ct">
+<h1 class="dt">Compliments &amp; Positive Feedback Log</h1><p class="ds">HIQA Standards 1 &amp; 2 · Quality Improvement · Positive Culture Evidence</p>
+
+<div class="pos"><strong>🌟 Why This Matters:</strong> HIQA inspectors look for evidence of a positive, child-centred culture. A compliments log demonstrates that the service actively captures and celebrates good practice, listens to the views of children and families, and uses positive feedback to reinforce what's working well. This log should be presented alongside the Complaints Register to show a balanced feedback culture.</div>
+
+<p class="bt">Record all compliments, positive feedback, and expressions of satisfaction from children, families, professionals, and other stakeholders. Reviewed quarterly at governance meetings and shared with staff to promote morale and reinforce good practice.</p>
+
+<div class="sh"><span class="n">1</span> Compliments &amp; Positive Feedback Register</div>
+<table>
+<tr><th>Ref</th><th>Date</th><th>From Whom</th><th>Source</th><th>Feedback / Compliment (direct words where possible)</th><th>Relates To</th><th>Shared With Staff?</th></tr>
+<tr><td></td><td></td><td></td><td>☐ Child ☐ Family ☐ Social Worker ☐ School ☐ Professional ☐ EPIC ☐ Other</td><td style="height:18px"></td><td>☐ Staff ☐ Service ☐ Centre ☐ Specific activity</td><td>☐ Y</td></tr>
+<tr><td></td><td></td><td></td><td>☐ Child ☐ Family ☐ Social Worker ☐ School ☐ Professional ☐ EPIC ☐ Other</td><td style="height:18px"></td><td>☐ Staff ☐ Service ☐ Centre ☐ Specific activity</td><td>☐ Y</td></tr>
+<tr><td></td><td></td><td></td><td>☐ Child ☐ Family ☐ Social Worker ☐ School ☐ Professional ☐ EPIC ☐ Other</td><td style="height:18px"></td><td>☐ Staff ☐ Service ☐ Centre ☐ Specific activity</td><td>☐ Y</td></tr>
+<tr><td></td><td></td><td></td><td>☐ Child ☐ Family ☐ Social Worker ☐ School ☐ Professional ☐ EPIC ☐ Other</td><td style="height:18px"></td><td>☐ Staff ☐ Service ☐ Centre ☐ Specific activity</td><td>☐ Y</td></tr>
+<tr><td></td><td></td><td></td><td>☐ Child ☐ Family ☐ Social Worker ☐ School ☐ Professional ☐ EPIC ☐ Other</td><td style="height:18px"></td><td>☐ Staff ☐ Service ☐ Centre ☐ Specific activity</td><td>☐ Y</td></tr>
+<tr><td></td><td></td><td></td><td>☐ Child ☐ Family ☐ Social Worker ☐ School ☐ Professional ☐ EPIC ☐ Other</td><td style="height:18px"></td><td>☐ Staff ☐ Service ☐ Centre ☐ Specific activity</td><td>☐ Y</td></tr>
+<tr><td></td><td></td><td></td><td>☐ Child ☐ Family ☐ Social Worker ☐ School ☐ Professional ☐ EPIC ☐ Other</td><td style="height:18px"></td><td>☐ Staff ☐ Service ☐ Centre ☐ Specific activity</td><td>☐ Y</td></tr>
+<tr><td></td><td></td><td></td><td>☐ Child ☐ Family ☐ Social Worker ☐ School ☐ Professional ☐ EPIC ☐ Other</td><td style="height:18px"></td><td>☐ Staff ☐ Service ☐ Centre ☐ Specific activity</td><td>☐ Y</td></tr>
+<tr><td></td><td></td><td></td><td>☐ Child ☐ Family ☐ Social Worker ☐ School ☐ Professional ☐ EPIC ☐ Other</td><td style="height:18px"></td><td>☐ Staff ☐ Service ☐ Centre ☐ Specific activity</td><td>☐ Y</td></tr>
+<tr><td></td><td></td><td></td><td>☐ Child ☐ Family ☐ Social Worker ☐ School ☐ Professional ☐ EPIC ☐ Other</td><td style="height:18px"></td><td>☐ Staff ☐ Service ☐ Centre ☐ Specific activity</td><td>☐ Y</td></tr>
+</table>
+
+<div class="sh"><span class="n">2</span> Children's Feedback — Direct Voice</div>
+<p class="bt"><em>Record positive feedback from children in their own words. This provides evidence of child participation and a positive living environment.</em></p>
+<table>
+<tr><th>Date</th><th>Child (Ref / Initials)</th><th>Context</th><th>What the child said (direct quote)</th></tr>
+<tr><td></td><td></td><td>☐ Keyworking ☐ House meeting ☐ Survey ☐ Informal</td><td style="height:18px;font-style:italic;color:#1e7e34">"</td></tr>
+<tr><td></td><td></td><td>☐ Keyworking ☐ House meeting ☐ Survey ☐ Informal</td><td style="height:18px;font-style:italic;color:#1e7e34">"</td></tr>
+<tr><td></td><td></td><td>☐ Keyworking ☐ House meeting ☐ Survey ☐ Informal</td><td style="height:18px;font-style:italic;color:#1e7e34">"</td></tr>
+<tr><td></td><td></td><td>☐ Keyworking ☐ House meeting ☐ Survey ☐ Informal</td><td style="height:18px;font-style:italic;color:#1e7e34">"</td></tr>
+<tr><td></td><td></td><td>☐ Keyworking ☐ House meeting ☐ Survey ☐ Informal</td><td style="height:18px;font-style:italic;color:#1e7e34">"</td></tr>
+</table>
+
+<div class="sh"><span class="n">3</span> Quarterly Summary &amp; Themes</div>
+<table>
+<tr><th>Quarter</th><th>Total Compliments</th><th>From Children</th><th>From Families</th><th>From Professionals</th><th>Key Themes</th></tr>
+<tr><td>Q1</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Q2</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Q3</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Q4</td><td></td><td></td><td></td><td></td><td></td></tr>
+</table>
+
+<div class="sh"><span class="n">4</span> Feedback Used for Service Improvement</div>
+<p class="bt"><em>Show how positive feedback has reinforced or shaped practice — this is what inspectors want to see.</em></p>
+<table>
+<tr><th>Feedback Theme</th><th>What We Learned</th><th>What We'll Keep Doing / Build On</th></tr>
+<tr><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td></tr>
+</table>
+
+<div class="sh"><span class="n">5</span> Staff Recognition</div>
+<p class="bt"><em>Where compliments relate to individual staff members, record here. Shared at team meetings and noted in supervision.</em></p>
+<table>
+<tr><th>Date</th><th>Staff Member</th><th>Compliment From</th><th>Detail</th><th>Shared at Team Meeting?</th><th>Noted in Supervision?</th></tr>
+<tr><td></td><td></td><td></td><td></td><td>☐ Y</td><td>☐ Y</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>☐ Y</td><td>☐ Y</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>☐ Y</td><td>☐ Y</td></tr>
+</table>
+
+<div class="sg">
+<span><strong>Quarter:</strong> _________________________ <strong>Page:</strong> _____ of _____</span>
+<span><strong>Reviewed at Governance Meeting:</strong> _________________________ Date: __________</span>
+<span><strong>PIC Signature:</strong> _________________________ Date: __________</span>
+<span><strong>Presented alongside:</strong> Complaints Register (CM-CRQ-001) to demonstrate balanced feedback culture</span>
+<span><strong>Legislative Basis:</strong> HIQA National Standards 2018 (Standards 1 &amp; 2) · UNCRC Article 12 · Tusla Quality Improvement Framework</span>
+<span><strong>Ref:</strong> CM-CPF-001 | Version 1.0 | May 2025 | Frequency: Ongoing / Quarterly review | <strong>Owner:</strong> PIC</span>
+</div>
+</main>
+<footer class="ft"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Compliments &amp; Positive Feedback Log</div></footer></div>
+
+</body></html>

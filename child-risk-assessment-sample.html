@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Child Risk Assessment Folder — Sample — Chosanta Management</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        @page { size: A4; margin: 0; }
+        *, *::before, *::after {
+            box-sizing: border-box; margin: 0; padding: 0;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #e8ecf1;
+            color: #1a1610;
+            display: flex; flex-direction: column;
+            align-items: center;
+            padding: 40px 20px; gap: 40px;
+        }
+        @media print {
+            body { background: white; padding: 0; gap: 0; }
+            .page { box-shadow: none; width: 100%; min-height: unset; page-break-after: always; }
+            .page:last-child { page-break-after: auto; }
+            .print-actions { display: none !important; }
+        }
+        .page {
+            width: 210mm; min-height: 297mm;
+            background: #fff;
+            box-shadow: 0 8px 40px rgba(13,27,42,0.12);
+            position: relative; overflow: hidden;
+            display: flex; flex-direction: column;
+        }
+        .top-band {
+            height: 6px;
+            background: linear-gradient(90deg, #c9a84c 0%, #e0c070 40%, #c9a84c 70%, #a8893c 100%);
+        }
+        .header {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 16px 40px 12px; border-bottom: 2px solid #f0ede8; position: relative;
+        }
+        .header::after {
+            content:''; position:absolute; bottom:-2px; left:40px;
+            width:60px; height:3px;
+            background: linear-gradient(90deg,#c9a84c,#e0c070); border-radius:2px;
+        }
+        .logo-container { display:flex; align-items:center; gap:10px; }
+        .logo-icon {
+            width:34px; height:34px;
+            background: linear-gradient(135deg,#c9a84c,#a8893c);
+            border-radius:7px; display:flex; align-items:center; justify-content:center;
+        }
+        .logo-icon svg { width:18px; height:18px; }
+        .logo-text { display:flex; flex-direction:column; line-height:1; }
+        .logo-name { font-family:'Playfair Display',serif; font-size:14px; font-weight:700; color:#0d1b2a; }
+        .logo-sub { font-size:7.5px; font-weight:600; letter-spacing:2.5px; text-transform:uppercase; color:#c9a84c; margin-top:2px; }
+        .company-details { text-align:right; font-size:9px; line-height:1.6; color:#5c5648; }
+        .company-details .cn { font-family:'Playfair Display',serif; font-size:12px; font-weight:700; color:#0d1b2a; }
+        .company-details .tg { font-size:7.5px; text-transform:uppercase; letter-spacing:2px; color:#c9a84c; font-weight:600; }
+
+        .content { flex:1; padding:20px 40px 16px; }
+
+        .doc-title {
+            font-family:'Playfair Display',serif; font-size:19px; font-weight:700;
+            color:#0d1b2a; margin-bottom:4px; position:relative; padding-bottom:10px;
+        }
+        .doc-title::after {
+            content:''; position:absolute; bottom:0; left:0;
+            width:42px; height:3px;
+            background: linear-gradient(90deg,#c9a84c,#e0c070); border-radius:2px;
+        }
+        .doc-sub { font-size:9px; color:#9a9484; text-transform:uppercase; letter-spacing:2px; font-weight:600; margin-bottom:14px; }
+
+        /* SECTION HEADER */
+        .sh {
+            background: linear-gradient(135deg,#0d1b2a,#1b2d42);
+            color:#fff; padding:7px 14px; border-radius:4px;
+            margin:14px 0 10px; font-size:10px; font-weight:700;
+            letter-spacing:1px; text-transform:uppercase;
+            display:flex; align-items:center; gap:8px;
+        }
+        .sh .n {
+            background: linear-gradient(135deg,#c9a84c,#e0c070);
+            color:#0d1b2a; width:20px; height:20px; border-radius:50%;
+            display:flex; align-items:center; justify-content:center;
+            font-size:9px; font-weight:800;
+        }
+
+        /* PROFILE TABLE */
+        .profile { width:100%; border-collapse:collapse; margin-bottom:12px; font-size:10.5px; }
+        .profile td { padding:6px 10px; border:1px solid #e0dbd2; }
+        .profile td:first-child { font-weight:700; color:#0d1b2a; width:35%; background:#faf9f7; text-transform:uppercase; font-size:8.5px; letter-spacing:1px; }
+        .profile td:last-child { color:#3d3830; }
+
+        /* RISK TABLE */
+        .rt { width:100%; border-collapse:collapse; margin-bottom:10px; font-size:9.5px; }
+        .rt th {
+            background: linear-gradient(135deg,#0d1b2a,#243b55);
+            color:#fff; padding:7px 8px; text-align:left;
+            font-size:8px; font-weight:700; letter-spacing:1px;
+            text-transform:uppercase; border:1px solid #1b2d42;
+        }
+        .rt td { padding:7px 8px; border:1px solid #e0dbd2; vertical-align:top; line-height:1.45; color:#3d3830; }
+        .rt tr:nth-child(even) td { background:#faf9f7; }
+
+        /* RISK BADGE */
+        .rb { display:inline-block; padding:2px 8px; border-radius:10px; font-size:8px; font-weight:700; letter-spacing:0.5px; }
+        .rb.high { background:#fde8e8; color:#c0392b; }
+        .rb.med { background:#fef5e7; color:#e67e22; }
+        .rb.low { background:#eafaf1; color:#27ae60; }
+
+        /* INFO BOX */
+        .ib {
+            background: linear-gradient(135deg,rgba(201,168,76,0.08),rgba(201,168,76,0.03));
+            border:1px solid rgba(201,168,76,0.25); border-left:3px solid #c9a84c;
+            border-radius:4px; padding:10px 14px; margin-bottom:10px;
+        }
+        .ib p { font-size:10px; line-height:1.55; color:#3d3830; margin:0; }
+        .ib strong { color:#0d1b2a; }
+
+        /* SCHEDULE TABLE */
+        .st { width:100%; border-collapse:collapse; margin-bottom:10px; font-size:10px; }
+        .st td { padding:6px 10px; border:1px solid #e0dbd2; }
+        .st td:first-child { font-weight:700; color:#0d1b2a; width:25%; background:linear-gradient(135deg,#faf9f7,#f5f3ef); }
+
+        /* BULLET LIST */
+        .bl { list-style:none; margin-bottom:10px; }
+        .bl li {
+            position:relative; padding:7px 10px 7px 32px; margin-bottom:4px;
+            background:linear-gradient(135deg,#faf9f7,#f5f3ef);
+            border-radius:4px; border-left:3px solid #c9a84c;
+            font-size:10px; line-height:1.45; color:#3d3830;
+        }
+        .bl li::before {
+            content:'▸'; position:absolute; left:12px; top:50%; transform:translateY(-50%);
+            color:#c9a84c; font-size:12px; font-weight:700;
+        }
+
+        /* SIGNATURE */
+        .sig-block {
+            display:grid; grid-template-columns:1fr 1fr; gap:20px;
+            margin-top:14px; padding-top:12px; border-top:2px solid #f0ede8;
+        }
+        .sf label { font-size:8px; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; color:#0d1b2a; display:block; margin-bottom:3px; }
+        .sl { border-bottom:1.5px solid #e0dbd2; min-height:26px; }
+
+        /* FOOTER */
+        .footer {
+            padding:12px 40px;
+            background: linear-gradient(135deg,#0d1b2a,#1b2d42);
+            color:rgba(255,255,255,0.8); font-size:8.5px; line-height:1.8;
+            display:flex; justify-content:space-between; align-items:center; margin-top:auto;
+        }
+        .fl { display:flex; flex-direction:column; }
+        .fl span { display:inline-flex; align-items:center; gap:5px; }
+        .fd { width:1px; height:32px; background:rgba(201,168,76,0.3); margin:0 16px; }
+        .fr { text-align:right; font-size:7.5px; color:rgba(255,255,255,0.5); }
+
+        .print-actions { position:fixed; top:20px; right:20px; display:flex; gap:12px; z-index:100; }
+        .print-actions button {
+            padding:12px 24px; border:none; border-radius:8px;
+            font-family:'Inter',sans-serif; font-size:13px; font-weight:600;
+            cursor:pointer; transition:all 0.2s ease;
+            box-shadow:0 4px 12px rgba(0,0,0,0.15);
+        }
+        .bp { background:linear-gradient(135deg,#c9a84c,#e0c070); color:#0d1b2a; }
+        .bp:hover { transform:translateY(-1px); }
+        .bpdf { background:linear-gradient(135deg,#0d1b2a,#1b2d42); color:#fff; }
+        .bpdf:hover { transform:translateY(-1px); }
+    </style>
+</head>
+<body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<div class="print-actions">
+    <button class="bp" onclick="window.print()">🖨️ Print</button>
+    <button class="bpdf" id="savePdfBtn" onclick="savePDF()">📄 Save as PDF</button>
+</div>
+
+<script>
+async function savePDF() {
+    const btn = document.getElementById('savePdfBtn');
+    btn.textContent = '⏳ Generating...';
+    btn.disabled = true;
+    try {
+        const { jsPDF } = window.jspdf;
+        const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
+        const pages = document.querySelectorAll('.page');
+        for (let i = 0; i < pages.length; i++) {
+            const canvas = await html2canvas(pages[i], {
+                scale: 2, useCORS: true, letterRendering: true,
+                backgroundColor: '#ffffff',
+                width: pages[i].scrollWidth,
+                height: pages[i].scrollHeight
+            });
+            const imgData = canvas.toDataURL('image/jpeg', 0.95);
+            if (i > 0) pdf.addPage();
+            pdf.addImage(imgData, 'JPEG', 0, 0, 210, 297);
+        }
+        pdf.save('Chosanta_Child_Risk_Assessment_Sample.pdf');
+    } catch (e) {
+        alert('PDF failed: ' + e.message + '. Use Print > Save as PDF instead.');
+    }
+    btn.textContent = '📄 Save as PDF';
+    btn.disabled = false;
+}
+</script>
+
+<!-- ==================== PAGE 1 ==================== -->
+<div class="page">
+    <div class="top-band"></div>
+    <header class="header">
+        <div class="logo-container">
+            <div class="logo-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/>
+                </svg>
+            </div>
+            <div class="logo-text">
+                <span class="logo-name">Chosanta</span>
+                <span class="logo-sub">Management</span>
+            </div>
+        </div>
+        <div class="company-details">
+            <div class="cn">Chosanta Management</div>
+            <div class="tg">Accommodation &amp; Property Solutions</div>
+            <div>Office 107, Brú Digital Hub, 56 West Street</div>
+            <div>Drogheda, Co. Louth · A92 E4CY</div>
+        </div>
+    </header>
+
+    <main class="content">
+        <h1 class="doc-title">Child Risk Assessment Folder</h1>
+        <p class="doc-sub">Sample Assessment Document</p>
+
+        <!-- 1. Child Profile Summary -->
+        <div class="sh"><span class="n">1</span> Child Profile Summary</div>
+        <table class="profile">
+            <tr><td>Name</td><td>Jamie O'Brien</td></tr>
+            <tr><td>Date of Birth</td><td>12/03/2012</td></tr>
+            <tr><td>Age</td><td>13</td></tr>
+            <tr><td>Placement Type</td><td>Emergency Residential Care</td></tr>
+            <tr><td>Date of Admission</td><td>05/07/2025</td></tr>
+            <tr><td>Social Worker</td><td>Aisling Murphy</td></tr>
+            <tr><td>Primary Diagnosis</td><td>PTSD, ADHD</td></tr>
+        </table>
+
+        <!-- 2. Placement Overview -->
+        <div class="sh"><span class="n">2</span> Placement Overview &amp; Risk Flags</div>
+        <div class="ib">
+            <p>Jamie has experienced significant trauma, with previous incidents of absconsion, verbal aggression, and suspected CSE exploitation risk. He is currently on a high-supervision plan.</p>
+        </div>
+
+        <!-- 3A. Self-Harm -->
+        <div class="sh"><span class="n">3A</span> Self-Harm or Suicide Risk</div>
+        <table class="rt">
+            <thead>
+                <tr>
+                    <th style="width:25%;">Hazard</th>
+                    <th style="width:12%;">Risk (Before)</th>
+                    <th style="width:35%;">Controls</th>
+                    <th style="width:13%;">Risk (After)</th>
+                    <th style="width:15%;">Review</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Self-inflicted harm using sharp objects or strangulation risk</td>
+                    <td><span class="rb high">High</span></td>
+                    <td>Remove sharps, ligature checks, staff awareness training, CAMHS referral</td>
+                    <td><span class="rb med">Medium</span></td>
+                    <td>Weekly</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 3B. Absconsion -->
+        <div class="sh"><span class="n">3B</span> Absconsion Risk</div>
+        <table class="rt">
+            <thead>
+                <tr><th>Hazard</th><th>Risk (Before)</th><th>Controls</th><th>Risk (After)</th><th>Review</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Running away from placement, particularly during transitions</td>
+                    <td><span class="rb high">High</span></td>
+                    <td>Supervision during all transitions, door alarms, engagement planning</td>
+                    <td><span class="rb med">Medium</span></td>
+                    <td>Daily</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 3C. Violence -->
+        <div class="sh"><span class="n">3C</span> Violence or Aggression</div>
+        <table class="rt">
+            <thead>
+                <tr><th>Hazard</th><th>Risk (Before)</th><th>Controls</th><th>Risk (After)</th><th>Review</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Physical aggression towards peers or staff</td>
+                    <td><span class="rb high">High</span></td>
+                    <td>De-escalation techniques, safe room access, team dynamic awareness</td>
+                    <td><span class="rb med">Medium</span></td>
+                    <td>After each incident</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 3D. Sexualised Behaviour -->
+        <div class="sh"><span class="n">3D</span> Sexualised Behaviour</div>
+        <table class="rt">
+            <thead>
+                <tr><th>Hazard</th><th>Risk (Before)</th><th>Controls</th><th>Risk (After)</th><th>Review</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Inappropriate touching or conversation</td>
+                    <td><span class="rb med">Medium</span></td>
+                    <td>Constant supervision, key work sessions, trauma-informed approach</td>
+                    <td><span class="rb low">Low</span></td>
+                    <td>Monthly</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 4A. Bedroom Safety -->
+        <div class="sh"><span class="n">4A</span> Bedroom Safety</div>
+        <table class="rt">
+            <thead>
+                <tr><th>Hazard</th><th>Controls</th><th>Risk (After)</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Ligature risks or unsafe furniture</td>
+                    <td>Ligature-proof fixtures, non-breakable furniture, daily room checks</td>
+                    <td><span class="rb low">Low</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <footer class="footer">
+        <div class="fl">
+            <span>✉ info@chosanta.com</span>
+            <span>📍 Drogheda, Co. Louth · A92 E4CY</span>
+        </div>
+        <div class="fd"></div>
+        <div class="fr">Chosanta Management<br>Child Risk Assessment Folder — Page 1 of 2</div>
+    </footer>
+</div>
+
+<!-- ==================== PAGE 2 ==================== -->
+<div class="page">
+    <div class="top-band"></div>
+    <header class="header">
+        <div class="logo-container">
+            <div class="logo-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/>
+                </svg>
+            </div>
+            <div class="logo-text">
+                <span class="logo-name">Chosanta</span>
+                <span class="logo-sub">Management</span>
+            </div>
+        </div>
+        <div class="company-details">
+            <div class="cn">Chosanta Management</div>
+            <div class="tg">Accommodation &amp; Property Solutions</div>
+        </div>
+    </header>
+
+    <main class="content">
+        <h1 class="doc-title">Child Risk Assessment Folder</h1>
+        <p class="doc-sub">Sample — Continued</p>
+
+        <!-- 5. Supervision -->
+        <div class="sh"><span class="n">5</span> Supervision &amp; Staffing Plan</div>
+        <table class="profile">
+            <tr><td>Ratio</td><td>2:1 staff at all times</td></tr>
+            <tr><td>Special Measures</td><td>One staff awake in hallway during sleep hours</td></tr>
+            <tr><td>Visitors</td><td>Supervised only</td></tr>
+        </table>
+
+        <!-- 6. Positive Behaviour -->
+        <div class="sh"><span class="n">6</span> Positive Behaviour Support Summary</div>
+        <div class="ib">
+            <p>Jamie responds to praise and physical activities. Avoids conflict with clear boundaries. Behaviour plan includes debriefing after incidents.</p>
+        </div>
+
+        <!-- 7. Daily Risk Management Plan -->
+        <div class="sh"><span class="n">7</span> Daily Risk Management Plan (DRMP)</div>
+        <table class="st">
+            <tr><td>08:00 – 10:00</td><td>Routine morning supervision</td></tr>
+            <tr><td>10:00 – 15:00</td><td>Education or therapy sessions</td></tr>
+            <tr><td>15:00 – 20:00</td><td>Activities &amp; meals</td></tr>
+            <tr><td>20:00 – 22:00</td><td>Chill down, sleep prep</td></tr>
+            <tr><td>22:00 – 08:00</td><td>Overnight supervision</td></tr>
+        </table>
+
+        <!-- 8. Safeguarding -->
+        <div class="sh"><span class="n">8</span> Safeguarding &amp; Escalation Procedures</div>
+        <div class="ib">
+            <p>All concerns to be reported to Designated Liaison Person. Allegations logged within <strong>2 hours</strong>. Gardaí notified if necessary.</p>
+        </div>
+
+        <!-- 9. Parental Contact -->
+        <div class="sh"><span class="n">9</span> Parental Contact / Family Visit Risks</div>
+        <table class="rt">
+            <thead>
+                <tr><th>Risk</th><th>Control</th><th>Review</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Trigger behaviours or emotional regression</td>
+                    <td>Supervised calls only, neutral venue for visits</td>
+                    <td>Before and after each contact</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 10. Transport -->
+        <div class="sh"><span class="n">10</span> Transport Risk Assessment</div>
+        <table class="rt">
+            <thead>
+                <tr><th>Hazard</th><th>Controls</th><th>Review</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Absconsion or aggression during transport</td>
+                    <td>Two staff minimum, seated near doors, GPS tracking on vehicle</td>
+                    <td>Per outing</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 11. Review & Signature -->
+        <div class="sh"><span class="n">11</span> Review &amp; Signature Log</div>
+        <div class="ib">
+            <p>To be signed <strong>weekly</strong> by Key Worker, <strong>monthly</strong> by Social Worker, and <strong>bi-weekly</strong> by Manager. Stored in secure cabinet.</p>
+        </div>
+
+        <div class="sig-block">
+            <div class="sf">
+                <label>Key Worker Signature</label>
+                <div class="sl"></div>
+                <label style="margin-top:10px;">Print Name</label>
+                <div class="sl"></div>
+                <label style="margin-top:10px;">Date</label>
+                <div class="sl"></div>
+            </div>
+            <div class="sf">
+                <label>Manager Signature</label>
+                <div class="sl"></div>
+                <label style="margin-top:10px;">Print Name</label>
+                <div class="sl"></div>
+                <label style="margin-top:10px;">Date</label>
+                <div class="sl"></div>
+            </div>
+        </div>
+        <div class="sig-block" style="border-top:none; margin-top:10px; padding-top:0;">
+            <div class="sf">
+                <label>Social Worker Signature</label>
+                <div class="sl"></div>
+                <label style="margin-top:10px;">Date</label>
+                <div class="sl"></div>
+            </div>
+            <div class="sf"></div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="fl">
+            <span>✉ info@chosanta.com</span>
+            <span>📍 Drogheda, Co. Louth · A92 E4CY</span>
+        </div>
+        <div class="fd"></div>
+        <div class="fr">Chosanta Management<br>Child Risk Assessment Folder — Page 2 of 2</div>
+    </footer>
+</div>
+
+</body>
+</html>

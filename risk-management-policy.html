@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risk Management Policy — Chosanta Management</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        @page { size: A4; margin: 0; }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+        body { font-family: 'Inter', sans-serif; background: #e8ecf1; color: #1a1610; display: flex; flex-direction: column; align-items: center; padding: 40px 20px; gap: 40px; }
+        @media print { body { background: white; padding: 0; gap: 0; } .page { box-shadow: none; width: 100%; min-height: unset; } .print-actions { display: none !important; } }
+        .page { width: 210mm; min-height: 297mm; background: #fff; box-shadow: 0 8px 40px rgba(13,27,42,0.12); position: relative; overflow: hidden; display: flex; flex-direction: column; }
+        .top-band { height: 6px; background: linear-gradient(90deg, #c9a84c 0%, #e0c070 40%, #c9a84c 70%, #a8893c 100%); }
+        .hdr { display: flex; align-items: center; justify-content: space-between; padding: 16px 40px 12px; border-bottom: 2px solid #f0ede8; position: relative; }
+        .hdr::after { content: ''; position: absolute; bottom: -2px; left: 40px; width: 60px; height: 3px; background: linear-gradient(90deg, #c9a84c, #e0c070); border-radius: 2px; }
+        .lb { display: flex; align-items: center; gap: 10px; }
+        .li { width: 34px; height: 34px; background: linear-gradient(135deg, #c9a84c, #a8893c); border-radius: 7px; display: flex; align-items: center; justify-content: center; }
+        .li svg { width: 18px; height: 18px; }
+        .lt { display: flex; flex-direction: column; line-height: 1; }
+        .ln { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: #0d1b2a; }
+        .ls { font-size: 7.5px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: #c9a84c; margin-top: 2px; }
+        .cd { text-align: right; font-size: 9px; line-height: 1.6; color: #5c5648; }
+        .cd .cn { font-family: 'Playfair Display', serif; font-size: 12px; font-weight: 700; color: #0d1b2a; }
+        .cd .tg { font-size: 7.5px; text-transform: uppercase; letter-spacing: 2px; color: #c9a84c; font-weight: 600; }
+        .content { flex: 1; padding: 28px 40px 20px; }
+        .doc-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: #0d1b2a; margin-bottom: 4px; position: relative; padding-bottom: 12px; }
+        .doc-title::after { content: ''; position: absolute; bottom: 0; left: 0; width: 50px; height: 3px; background: linear-gradient(90deg, #c9a84c, #e0c070); border-radius: 2px; }
+        .doc-sub { font-size: 10px; color: #9a9484; text-transform: uppercase; letter-spacing: 2.5px; font-weight: 600; margin-bottom: 24px; }
+        .sh { background: linear-gradient(135deg, #0d1b2a, #1b2d42); color: #fff; padding: 8px 16px; border-radius: 4px; margin: 20px 0 12px; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; display: flex; align-items: center; gap: 8px; }
+        .sh .n { background: linear-gradient(135deg, #c9a84c, #e0c070); color: #0d1b2a; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 800; flex-shrink: 0; }
+        .bt { font-size: 12px; line-height: 1.75; color: #3d3830; margin-bottom: 16px; max-width: 620px; }
+        .al { font-size: 12px; font-weight: 600; color: #0d1b2a; margin-bottom: 10px; }
+        .bl { list-style: none; margin-bottom: 16px; }
+        .bl li { position: relative; padding: 12px 14px 12px 42px; margin-bottom: 6px; background: linear-gradient(135deg, #faf9f7, #f5f3ef); border-radius: 6px; border-left: 3px solid #c9a84c; font-size: 11.5px; line-height: 1.55; color: #3d3830; }
+        .bl li::before { content: '✓'; position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: #c9a84c; font-size: 13px; font-weight: 700; }
+        .risk-table { width: 100%; border-collapse: collapse; margin: 12px 0 16px; font-size: 11px; }
+        .risk-table th { background: linear-gradient(135deg, #0d1b2a, #1b2d42); color: #fff; padding: 8px 12px; text-align: left; font-weight: 600; letter-spacing: 0.5px; }
+        .risk-table td { padding: 8px 12px; border-bottom: 1px solid #f0ede8; }
+        .risk-table tr:nth-child(even) td { background: #faf9f7; }
+        .risk-low { color: #2a7d3f; font-weight: 700; }
+        .risk-med { color: #c9a84c; font-weight: 700; }
+        .risk-high { color: #d44; font-weight: 700; }
+        .ftr { padding: 14px 40px; background: linear-gradient(135deg, #0d1b2a, #1b2d42); color: rgba(255,255,255,0.8); font-size: 8.5px; line-height: 1.8; display: flex; justify-content: space-between; align-items: center; margin-top: auto; }
+        .fl { display: flex; flex-direction: column; } .fl span { display: inline-flex; align-items: center; gap: 5px; }
+        .fd { width: 1px; height: 32px; background: rgba(201,168,76,0.3); margin: 0 16px; }
+        .fr { text-align: right; font-size: 7.5px; color: rgba(255,255,255,0.5); }
+        .print-actions { position: fixed; top: 20px; right: 20px; display: flex; gap: 12px; z-index: 100; }
+        .print-actions button { padding: 12px 24px; border: none; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+        .bp { background: linear-gradient(135deg, #c9a84c, #e0c070); color: #0d1b2a; } .bp:hover { transform: translateY(-1px); }
+        .bpdf { background: linear-gradient(135deg, #0d1b2a, #1b2d42); color: #fff; } .bpdf:hover { transform: translateY(-1px); }
+    </style>
+</head>
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<div class="print-actions"><button class="bp" onclick="window.print()">🖨️ Print</button><button class="bpdf" id="savePdfBtn" onclick="savePDF()">📄 Save as PDF</button></div>
+<script>
+async function savePDF(){const btn=document.getElementById('savePdfBtn');btn.disabled=true;try{const{jsPDF}=window.jspdf;const pdf=new jsPDF({orientation:'portrait',unit:'mm',format:'a4'});const pages=document.querySelectorAll('.page');for(let i=0;i<pages.length;i++){btn.textContent='⏳ '+(i+1)+'/'+pages.length;await new Promise(r=>setTimeout(r,300));const c=await html2canvas(pages[i],{scale:1.5,useCORS:true,letterRendering:true,backgroundColor:'#fff',width:pages[i].scrollWidth,height:pages[i].scrollHeight,logging:false});if(i>0)pdf.addPage();pdf.addImage(c.toDataURL('image/jpeg',0.92),'JPEG',0,0,210,297);c.width=0;c.height=0;}const b=pdf.output('blob');const u=URL.createObjectURL(b);const a=document.createElement('a');a.href=u;a.download='Chosanta_Risk_Management_Policy.pdf';document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(u);}catch(e){alert('PDF error: '+e.message);}btn.textContent='📄 Save as PDF';btn.disabled=false;}
+</script>
+
+<!-- PAGE 1 -->
+<div class="page"><div class="top-band"></div>
+<header class="hdr"><div class="lb"><div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="lt"><span class="ln">Chosanta</span><span class="ls">Management</span></div></div><div class="cd"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div><div>Office 107, Brú Digital Hub, 56 West Street</div><div>Drogheda, Co. Louth · A92 E4CY</div></div></header>
+<main class="content">
+    <h1 class="doc-title">Risk Management Policy</h1><p class="doc-sub">Sections 1–5: Purpose, Scope, Definitions, Principles &amp; Responsibilities</p>
+    <div class="sh"><span class="n">1</span> Purpose</div>
+    <p class="bt">To establish a structured and proactive approach to identifying, assessing, managing, and monitoring risks across all areas of operation within Chosanta Management. The goal is to protect service users, staff, visitors, property, reputation, and business continuity while ensuring legal and regulatory compliance.</p>
+    <div class="sh"><span class="n">2</span> Scope</div>
+    <p class="bt">This policy applies to all employees, agency staff, contractors, volunteers, and management personnel. It encompasses all service areas including residential care, administration, financial operations, health and safety, and regulatory compliance.</p>
+    <div class="sh"><span class="n">3</span> Definitions</div>
+    <ul class="bl">
+        <li><strong>Risk:</strong> The chance of something happening that will have an impact on the achievement of objectives</li>
+        <li><strong>Risk Assessment:</strong> The process of evaluating and prioritising risks to determine how they should be managed</li>
+        <li><strong>Risk Register:</strong> A central record of all identified risks, their impact, likelihood, controls, and mitigation actions</li>
+    </ul>
+    <div class="sh"><span class="n">4</span> Principles</div>
+    <ul class="bl">
+        <li>Promote a risk-aware culture across all levels of the organisation</li>
+        <li>Identify, assess, and manage risks in a timely and systematic manner</li>
+        <li>Comply with HIQA regulations, the Health Act 2007, and the National Standards</li>
+        <li>Ensure accountability for risk ownership and control implementation</li>
+        <li>Continuously review and improve risk management practices</li>
+    </ul>
+    <div class="sh"><span class="n">5</span> Responsibilities</div>
+    <ul class="bl">
+        <li><strong>Board / Management:</strong> Oversee and support the implementation of the risk management framework</li>
+        <li><strong>Person in Charge (PIC):</strong> Ensure operational risks are identified, documented, and managed effectively</li>
+        <li><strong>Staff:</strong> Report potential risks or hazards immediately and follow agreed control measures</li>
+        <li><strong>H&amp;S Representative:</strong> Monitor physical and environmental risks and ensure controls are in place</li>
+    </ul>
+</main>
+<footer class="ftr"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Risk Management Policy — Page 1 of 2</div></footer></div>
+
+<!-- PAGE 2 -->
+<div class="page"><div class="top-band"></div>
+<header class="hdr"><div class="lb"><div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="lt"><span class="ln">Chosanta</span><span class="ls">Management</span></div></div><div class="cd"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div></header>
+<main class="content">
+    <h1 class="doc-title">Risk Management Policy</h1><p class="doc-sub">Sections 6–10: Identification, Assessment, Controls, Monitoring &amp; Training</p>
+    <div class="sh"><span class="n">6</span> Risk Identification</div>
+    <ul class="bl">
+        <li><strong>Operational:</strong> Staffing shortages, medication errors, equipment failure</li>
+        <li><strong>Health &amp; Safety:</strong> Fire hazards, manual handling injuries, infection control breaches</li>
+        <li><strong>Financial:</strong> Funding instability, fraud, unapproved spending</li>
+        <li><strong>Reputational:</strong> Media exposure, service complaints, regulatory breaches</li>
+        <li><strong>Strategic:</strong> Service model changes, partnership failures, planning restrictions</li>
+    </ul>
+    <div class="sh"><span class="n">7</span> Risk Assessment &amp; Evaluation</div>
+    <table class="risk-table">
+        <tr><th>Rating</th><th>Score</th><th>Action</th></tr>
+        <tr><td class="risk-low">Low</td><td>1–5</td><td>Acceptable — monitor</td></tr>
+        <tr><td class="risk-med">Medium</td><td>6–12</td><td>Requires action and review</td></tr>
+        <tr><td class="risk-high">High</td><td>13–25</td><td>Immediate action required</td></tr>
+    </table>
+    <p class="bt">Risk Rating = Likelihood (1–5) × Impact (1–5) = Total Risk Score</p>
+    <div class="sh"><span class="n">8</span> Control Measures</div>
+    <ul class="bl">
+        <li>Policies and procedures</li>
+        <li>Staff training and supervision</li>
+        <li>Equipment maintenance and inspections</li>
+        <li>Emergency response planning</li>
+        <li>Regular audits and reviews</li>
+    </ul>
+    <div class="sh"><span class="n">9</span> Monitoring &amp; Review</div>
+    <ul class="bl">
+        <li>Risk Register reviewed monthly by management</li>
+        <li>All incidents and near misses analysed for trends</li>
+        <li>Policy reviewed annually or following serious incidents, legal changes, or service expansion</li>
+    </ul>
+    <div class="sh"><span class="n">10</span> Training</div>
+    <ul class="bl">
+        <li>The importance of risk management</li>
+        <li>How to identify and report risks</li>
+        <li>Use of risk assessment tools and forms</li>
+        <li>Emergency response procedures</li>
+    </ul>
+</main>
+<footer class="ftr"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Risk Management Policy — Page 2 of 2</div></footer></div>
+
+</body>
+</html>

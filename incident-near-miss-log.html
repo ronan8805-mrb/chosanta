@@ -1,0 +1,167 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Incident &amp; Near Miss Log — Chosanta Management</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"><style>@page{size:A4;margin:0}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}body{font-family:'Inter',sans-serif;background:#e8ecf1;color:#1a1610;display:flex;flex-direction:column;align-items:center;padding:40px 20px;gap:40px}@media print{body{background:#fff;padding:0;gap:0}.page{box-shadow:none;width:100%;min-height:unset}.pa{display:none!important}}.page{width:210mm;min-height:297mm;background:#fff;box-shadow:0 8px 40px rgba(13,27,42,.12);position:relative;overflow:hidden;display:flex;flex-direction:column}.tb{height:6px;background:linear-gradient(90deg,#c9a84c,#e0c070 40%,#c9a84c 70%,#a8893c)}.hd{display:flex;align-items:center;justify-content:space-between;padding:14px 40px 10px;border-bottom:2px solid #f0ede8;position:relative}.hd::after{content:'';position:absolute;bottom:-2px;left:40px;width:60px;height:3px;background:linear-gradient(90deg,#c9a84c,#e0c070);border-radius:2px}.lb{display:flex;align-items:center;gap:10px}.li{width:34px;height:34px;background:linear-gradient(135deg,#c9a84c,#a8893c);border-radius:7px;display:flex;align-items:center;justify-content:center}.li svg{width:18px;height:18px}.lt{display:flex;flex-direction:column;line-height:1}.ln{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#0d1b2a}.ls{font-size:7.5px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:#c9a84c;margin-top:2px}.co{text-align:right;font-size:9px;line-height:1.6;color:#5c5648}.co .cn{font-family:'Playfair Display',serif;font-size:12px;font-weight:700;color:#0d1b2a}.co .tg{font-size:7.5px;text-transform:uppercase;letter-spacing:2px;color:#c9a84c;font-weight:600}.ct{flex:1;padding:18px 40px 14px}.dt{font-family:'Playfair Display',serif;font-size:19px;font-weight:700;color:#0d1b2a;margin-bottom:4px;position:relative;padding-bottom:10px}.dt::after{content:'';position:absolute;bottom:0;left:0;width:50px;height:3px;background:linear-gradient(90deg,#c9a84c,#e0c070);border-radius:2px}.ds{font-size:8.5px;color:#9a9484;text-transform:uppercase;letter-spacing:2.5px;font-weight:600;margin-bottom:10px}.sh{background:linear-gradient(135deg,#0d1b2a,#1b2d42);color:#fff;padding:4px 12px;border-radius:4px;margin:8px 0 4px;font-size:8.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;display:flex;align-items:center;gap:8px}.sh .n{background:linear-gradient(135deg,#c9a84c,#e0c070);color:#0d1b2a;width:15px;height:15px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:800;flex-shrink:0}.bt{font-size:9px;line-height:1.5;color:#3d3830;margin-bottom:5px}table{width:100%;border-collapse:collapse;font-size:7.5px;margin-bottom:7px}th{background:linear-gradient(135deg,#0d1b2a,#1b2d42);color:#fff;padding:3px 4px;text-align:left;font-weight:700}td{padding:4px 4px;border-bottom:1px solid #f0ede8;color:#3d3830}tr:nth-child(even) td{background:#faf9f7}.box{border:1px solid #e0ddd8;border-radius:4px;padding:4px 8px;min-height:20px;font-size:8px;margin-bottom:5px}.sg{font-size:8px;color:#3d3830;margin-top:6px;padding:6px;border:1px dashed #c9a84c;border-radius:6px;background:#faf9f7}.sg span{display:block;margin-bottom:3px;border-bottom:1px dotted #ddd;padding-bottom:3px}.ft{padding:8px 40px;background:linear-gradient(135deg,#0d1b2a,#1b2d42);color:rgba(255,255,255,.8);font-size:7.5px;line-height:1.8;display:flex;justify-content:space-between;align-items:center;margin-top:auto}.fl{display:flex;flex-direction:column}.fl span{display:inline-flex;align-items:center;gap:5px}.fd{width:1px;height:24px;background:rgba(201,168,76,.3);margin:0 12px}.fr{text-align:right;font-size:7px;color:rgba(255,255,255,.5)}.pa{position:fixed;top:20px;right:20px;display:flex;gap:12px;z-index:100}.pa button{padding:12px 24px;border:none;border-radius:8px;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;box-shadow:0 4px 12px rgba(0,0,0,.15)}.bp{background:linear-gradient(135deg,#c9a84c,#e0c070);color:#0d1b2a}.bx{background:linear-gradient(135deg,#0d1b2a,#1b2d42);color:#fff}</style></head><body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<div class="pa"><button class="bp" onclick="window.print()">🖨️ Print</button><button class="bx" id="btn">📄 Save as PDF</button></div>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var btn=document.getElementById('btn');
+  btn.addEventListener('click',async function(){
+    if(typeof html2canvas==='undefined'||!window.jspdf){alert('PDF libraries still loading — please wait and try again.');return;}
+    btn.disabled=true;
+    try{
+      var jsPDF=window.jspdf.jsPDF;
+      var pdf=new jsPDF({orientation:'portrait',unit:'mm',format:'a4'});
+      var pages=document.querySelectorAll('.page');
+      for(var i=0;i<pages.length;i++){
+        btn.textContent='⏳ '+(i+1)+'/'+pages.length;
+        await new Promise(function(r){setTimeout(r,500);});
+        var c=await html2canvas(pages[i],{scale:2,useCORS:true,backgroundColor:'#ffffff',logging:false});
+        if(i>0) pdf.addPage();
+        pdf.addImage(c.toDataURL('image/jpeg',0.95),'JPEG',0,0,210,297);
+      }
+      pdf.save('Chosanta_Incident_Near_Miss_Log.pdf');
+    }catch(e){alert('PDF error: '+e.message);console.error(e);}
+    btn.textContent='📄 Save as PDF';btn.disabled=false;
+  });
+});
+</script>
+
+<!-- P1: Individual Incident Record -->
+<div class="page"><div class="tb"></div>
+<header class="hd"><div class="lb"><div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="lt"><span class="ln">Chosanta</span><span class="ls">Management</span></div></div><div class="co"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div><div>Office 107, Brú Digital Hub, 56 West Street</div><div>Drogheda, Co. Louth · A92 E4CY</div></div></header>
+<main class="ct">
+<h1 class="dt">Incident &amp; Significant Event Report</h1><p class="ds">Tusla NIMS · S.I. 674/2017 · HIQA Standard 3 &amp; 5</p>
+<p class="bt">All incidents, significant events, and near misses must be recorded on this form and reviewed by the PIC within 24 hours. Significant Event Notifications (SENs) must be submitted to Tusla via NIMS. This record forms part of the Governance File and is subject to inspection by Tusla ACIMS.</p>
+
+<div class="sh"><span class="n">1</span> Incident Details</div>
+<table>
+<tr><th>Incident Ref #</th><td></td><th>Date</th><td></td><th>Time</th><td></td></tr>
+<tr><th>Location</th><td></td><th>Reported By</th><td></td><th>Role</th><td></td></tr>
+</table>
+<table>
+<tr><th colspan="2">Category (tick all that apply)</th></tr>
+<tr><td>☐ Safeguarding / child protection concern</td><td>☐ Allegation against staff</td></tr>
+<tr><td>☐ Physical aggression / assault</td><td>☐ Self-harm / suicidal ideation</td></tr>
+<tr><td>☐ Absconding / missing from care</td><td>☐ Substance misuse</td></tr>
+<tr><td>☐ Property damage</td><td>☐ Medication error</td></tr>
+<tr><td>☐ Physical intervention / restraint used</td><td>☐ Fire / fire alarm activation</td></tr>
+<tr><td>☐ Accident / injury (child)</td><td>☐ Accident / injury (staff)</td></tr>
+<tr><td>☐ Peer conflict / bullying</td><td>☐ Complaints</td></tr>
+<tr><td>☐ CSE / exploitation concern</td><td>☐ Near miss (no harm occurred)</td></tr>
+<tr><td>☐ Other: ___________________________</td><td></td></tr>
+</table>
+
+<div class="sh"><span class="n">2</span> Persons Involved</div>
+<table>
+<tr><th>Name / Ref</th><th>Role</th><th>Involvement</th><th>Injury?</th></tr>
+<tr><td></td><td>☐ Child ☐ Staff ☐ Visitor</td><td>☐ Directly ☐ Witness</td><td>☐ No ☐ Yes</td></tr>
+<tr><td></td><td>☐ Child ☐ Staff ☐ Visitor</td><td>☐ Directly ☐ Witness</td><td>☐ No ☐ Yes</td></tr>
+<tr><td></td><td>☐ Child ☐ Staff ☐ Visitor</td><td>☐ Directly ☐ Witness</td><td>☐ No ☐ Yes</td></tr>
+</table>
+
+<div class="sh"><span class="n">3</span> Description of Incident</div>
+<p class="bt"><em>Factual, objective account. Include what happened before, during, and after.</em></p>
+<div class="box" style="min-height:45px"></div>
+
+<div class="sh"><span class="n">4</span> Immediate Actions Taken</div>
+<div class="box" style="min-height:30px"></div>
+
+<div class="sh"><span class="n">5</span> Notifications</div>
+<table>
+<tr><th>Notification</th><th>Required?</th><th>Date / Time</th><th>Notified By</th></tr>
+<tr><td>PIC / Manager</td><td>☐ Yes — immediately</td><td></td><td></td></tr>
+<tr><td>Director / Registered Provider</td><td>☐ Yes ☐ N/A</td><td></td><td></td></tr>
+<tr><td>Tusla (SEN via NIMS)</td><td>☐ Yes ☐ N/A</td><td></td><td></td></tr>
+<tr><td>An Garda Síochána</td><td>☐ Yes ☐ N/A</td><td></td><td></td></tr>
+<tr><td>Child's Social Worker</td><td>☐ Yes ☐ N/A</td><td></td><td></td></tr>
+<tr><td>Parent / Guardian</td><td>☐ Yes ☐ N/A</td><td></td><td></td></tr>
+</table>
+
+<div class="sh"><span class="n">6</span> PIC Review &amp; Outcome</div>
+<table>
+<tr><td>PIC reviewed within 24 hours?</td><td>☐ Yes ☐ No — reason:</td></tr>
+<tr><td>Severity rating</td><td>☐ Minor ☐ Moderate ☐ Major ☐ Critical</td></tr>
+<tr><td>SEN required?</td><td>☐ Yes — NIMS Ref: __________ ☐ No</td></tr>
+<tr><td>Risk assessment updated?</td><td>☐ Yes ☐ No ☐ N/A</td></tr>
+<tr><td>Care plan updated?</td><td>☐ Yes ☐ No ☐ N/A</td></tr>
+</table>
+<p class="bt"><strong>Learning / Service Improvement:</strong></p>
+<div class="box"></div>
+<div class="sg">
+<span><strong>Reporting Staff:</strong> _________________________ Date: __________</span>
+<span><strong>PIC Review Signature:</strong> _________________________ Date: __________</span>
+<span><strong>Ref:</strong> CM-INC-001 · S.I. 674/2017 · Tusla NIMS · HIQA Standards 3 &amp; 5</span>
+</div>
+</main>
+<footer class="ft"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Incident Log — Page 1 of 2</div></footer></div>
+
+<!-- P2: Master Tracker + Near Miss + Trend -->
+<div class="page"><div class="tb"></div>
+<header class="hd"><div class="lb"><div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="lt"><span class="ln">Chosanta</span><span class="ls">Management</span></div></div><div class="co"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div></header>
+<main class="ct">
+<h1 class="dt">Master Incident Tracker, Near Miss Register &amp; Trend Analysis</h1><p class="ds">Section 2 — Tusla NIMS 5-Step Review · HIQA Standard 5</p>
+
+<div class="sh"><span class="n">7</span> Master Incident Tracker</div>
+<p class="bt">All incidents recorded centrally. Reviewed monthly at governance meetings. Inspected by Tusla ACIMS.</p>
+<table>
+<tr><th>Ref</th><th>Date</th><th>Category</th><th>Child</th><th>Staff</th><th>Severity</th><th>SEN?</th><th>NIMS Ref</th><th>Outcome</th><th>Learning</th></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td>☐Mi ☐Mo ☐Ma ☐Cr</td><td>☐Y ☐N</td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td>☐Mi ☐Mo ☐Ma ☐Cr</td><td>☐Y ☐N</td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td>☐Mi ☐Mo ☐Ma ☐Cr</td><td>☐Y ☐N</td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td>☐Mi ☐Mo ☐Ma ☐Cr</td><td>☐Y ☐N</td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td>☐Mi ☐Mo ☐Ma ☐Cr</td><td>☐Y ☐N</td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td>☐Mi ☐Mo ☐Ma ☐Cr</td><td>☐Y ☐N</td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td>☐Mi ☐Mo ☐Ma ☐Cr</td><td>☐Y ☐N</td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td>☐Mi ☐Mo ☐Ma ☐Cr</td><td>☐Y ☐N</td><td></td><td></td><td></td></tr>
+</table>
+
+<div class="sh"><span class="n">8</span> Near Miss Register</div>
+<p class="bt">A near miss is an event that could have resulted in harm but did not. Recording near misses demonstrates proactive risk management to inspectors.</p>
+<table>
+<tr><th>Ref</th><th>Date</th><th>Description</th><th>Potential Severity</th><th>Why No Harm?</th><th>Preventive Action</th><th>Owner</th></tr>
+<tr><td></td><td></td><td></td><td>☐Mi ☐Mo ☐Ma</td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td>☐Mi ☐Mo ☐Ma</td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td>☐Mi ☐Mo ☐Ma</td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td>☐Mi ☐Mo ☐Ma</td><td></td><td></td><td></td></tr>
+</table>
+
+<div class="sh"><span class="n">9</span> Monthly Incident Trend Analysis (Tusla NIMS 5-Step)</div>
+<p class="bt"><em>Completed monthly by PIC. Reviewed at governance meeting. Demonstrates active risk management.</em></p>
+<table>
+<tr><th>Month / Year</th><td></td><th>Total Incidents</th><td></td><th>Total SENs</th><td></td><th>Total Near Misses</th><td></td></tr>
+</table>
+<table>
+<tr><th>Category</th><th>Count</th><th>Trend vs Last Month</th><th>Highest Severity</th><th>Key Learning</th></tr>
+<tr><td>Safeguarding</td><td></td><td>☐↑ ☐↓ ☐→</td><td></td><td></td></tr>
+<tr><td>Absconding / missing</td><td></td><td>☐↑ ☐↓ ☐→</td><td></td><td></td></tr>
+<tr><td>Physical aggression</td><td></td><td>☐↑ ☐↓ ☐→</td><td></td><td></td></tr>
+<tr><td>Self-harm</td><td></td><td>☐↑ ☐↓ ☐→</td><td></td><td></td></tr>
+<tr><td>Medication errors</td><td></td><td>☐↑ ☐↓ ☐→</td><td></td><td></td></tr>
+<tr><td>Physical intervention</td><td></td><td>☐↑ ☐↓ ☐→</td><td></td><td></td></tr>
+<tr><td>Property damage</td><td></td><td>☐↑ ☐↓ ☐→</td><td></td><td></td></tr>
+<tr><td>Near misses</td><td></td><td>☐↑ ☐↓ ☐→</td><td></td><td></td></tr>
+<tr><td>Other</td><td></td><td>☐↑ ☐↓ ☐→</td><td></td><td></td></tr>
+</table>
+
+<div class="sh"><span class="n">10</span> NIMS 5-Step Review Summary</div>
+<table>
+<tr><th>Step</th><th>Action</th><th>Completed?</th></tr>
+<tr><td><strong>1. Identify</strong></td><td>All incidents identified, recorded, and categorised</td><td>☐ Yes</td></tr>
+<tr><td><strong>2. Review</strong></td><td>Each incident reviewed by PIC within 24 hours</td><td>☐ Yes</td></tr>
+<tr><td><strong>3. Analyse</strong></td><td>Monthly trend analysis completed (above)</td><td>☐ Yes</td></tr>
+<tr><td><strong>4. Act</strong></td><td>Service improvements identified and actioned</td><td>☐ Yes</td></tr>
+<tr><td><strong>5. Monitor</strong></td><td>Actions tracked on QIP; trends reported at governance meeting</td><td>☐ Yes</td></tr>
+</table>
+
+<p class="bt"><strong>Key actions arising from this month's analysis:</strong></p>
+<div class="box"></div>
+
+<div class="sg">
+<span><strong>PIC Signature:</strong> _________________________ Date: __________</span>
+<span><strong>Reviewed at Governance Meeting:</strong> _________________________ Date: __________</span>
+<span><strong>Legislative Basis:</strong> Tusla NIMS · S.I. 674/2017 · HIQA National Standards 2018 (Standards 3 &amp; 5) · Tusla Quality Improvement Framework</span>
+<span><strong>Ref:</strong> CM-IML-001 | Version 1.0 | May 2025 | Review: Monthly | <strong>Owner:</strong> PIC</span>
+</div>
+</main>
+<footer class="ft"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Incident Log — Page 2 of 2</div></footer></div>
+
+</body></html>

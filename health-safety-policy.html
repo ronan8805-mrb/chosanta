@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health &amp; Safety Policy — Chosanta Management</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        @page { size: A4; margin: 0; }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+        body { font-family: 'Inter', sans-serif; background: #e8ecf1; color: #1a1610; display: flex; flex-direction: column; align-items: center; padding: 40px 20px; gap: 40px; }
+        @media print { body { background: white; padding: 0; gap: 0; } .page { box-shadow: none; width: 100%; min-height: unset; } .print-actions { display: none !important; } }
+        .page { width: 210mm; min-height: 297mm; background: #fff; box-shadow: 0 8px 40px rgba(13,27,42,0.12); position: relative; overflow: hidden; display: flex; flex-direction: column; }
+        .top-band { height: 6px; background: linear-gradient(90deg, #c9a84c 0%, #e0c070 40%, #c9a84c 70%, #a8893c 100%); }
+        .hdr { display: flex; align-items: center; justify-content: space-between; padding: 16px 40px 12px; border-bottom: 2px solid #f0ede8; position: relative; }
+        .hdr::after { content: ''; position: absolute; bottom: -2px; left: 40px; width: 60px; height: 3px; background: linear-gradient(90deg, #c9a84c, #e0c070); border-radius: 2px; }
+        .lb { display: flex; align-items: center; gap: 10px; }
+        .li { width: 34px; height: 34px; background: linear-gradient(135deg, #c9a84c, #a8893c); border-radius: 7px; display: flex; align-items: center; justify-content: center; }
+        .li svg { width: 18px; height: 18px; }
+        .lt { display: flex; flex-direction: column; line-height: 1; }
+        .ln { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: #0d1b2a; }
+        .ls { font-size: 7.5px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: #c9a84c; margin-top: 2px; }
+        .cd { text-align: right; font-size: 9px; line-height: 1.6; color: #5c5648; }
+        .cd .cn { font-family: 'Playfair Display', serif; font-size: 12px; font-weight: 700; color: #0d1b2a; }
+        .cd .tg { font-size: 7.5px; text-transform: uppercase; letter-spacing: 2px; color: #c9a84c; font-weight: 600; }
+        .content { flex: 1; padding: 28px 40px 20px; }
+        .doc-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: #0d1b2a; margin-bottom: 4px; position: relative; padding-bottom: 12px; }
+        .doc-title::after { content: ''; position: absolute; bottom: 0; left: 0; width: 50px; height: 3px; background: linear-gradient(90deg, #c9a84c, #e0c070); border-radius: 2px; }
+        .doc-sub { font-size: 10px; color: #9a9484; text-transform: uppercase; letter-spacing: 2.5px; font-weight: 600; margin-bottom: 24px; }
+        .sh { background: linear-gradient(135deg, #0d1b2a, #1b2d42); color: #fff; padding: 8px 16px; border-radius: 4px; margin: 20px 0 12px; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; display: flex; align-items: center; gap: 8px; }
+        .sh .n { background: linear-gradient(135deg, #c9a84c, #e0c070); color: #0d1b2a; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 800; flex-shrink: 0; }
+        .bt { font-size: 12px; line-height: 1.75; color: #3d3830; margin-bottom: 16px; max-width: 620px; }
+        .al { font-size: 12px; font-weight: 600; color: #0d1b2a; margin-bottom: 10px; }
+        .bl { list-style: none; margin-bottom: 16px; }
+        .bl li { position: relative; padding: 12px 14px 12px 42px; margin-bottom: 6px; background: linear-gradient(135deg, #faf9f7, #f5f3ef); border-radius: 6px; border-left: 3px solid #c9a84c; font-size: 11.5px; line-height: 1.55; color: #3d3830; }
+        .bl li::before { content: '✓'; position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: #c9a84c; font-size: 13px; font-weight: 700; }
+        .ftr { padding: 14px 40px; background: linear-gradient(135deg, #0d1b2a, #1b2d42); color: rgba(255,255,255,0.8); font-size: 8.5px; line-height: 1.8; display: flex; justify-content: space-between; align-items: center; margin-top: auto; }
+        .fl { display: flex; flex-direction: column; } .fl span { display: inline-flex; align-items: center; gap: 5px; }
+        .fd { width: 1px; height: 32px; background: rgba(201,168,76,0.3); margin: 0 16px; }
+        .fr { text-align: right; font-size: 7.5px; color: rgba(255,255,255,0.5); }
+        .print-actions { position: fixed; top: 20px; right: 20px; display: flex; gap: 12px; z-index: 100; }
+        .print-actions button { padding: 12px 24px; border: none; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+        .bp { background: linear-gradient(135deg, #c9a84c, #e0c070); color: #0d1b2a; } .bp:hover { transform: translateY(-1px); }
+        .bpdf { background: linear-gradient(135deg, #0d1b2a, #1b2d42); color: #fff; } .bpdf:hover { transform: translateY(-1px); }
+    </style>
+</head>
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<div class="print-actions"><button class="bp" onclick="window.print()">🖨️ Print</button><button class="bpdf" id="savePdfBtn" onclick="savePDF()">📄 Save as PDF</button></div>
+<script>
+async function savePDF(){const btn=document.getElementById('savePdfBtn');btn.disabled=true;try{const{jsPDF}=window.jspdf;const pdf=new jsPDF({orientation:'portrait',unit:'mm',format:'a4'});const pages=document.querySelectorAll('.page');for(let i=0;i<pages.length;i++){btn.textContent='⏳ '+(i+1)+'/'+pages.length;await new Promise(r=>setTimeout(r,300));const c=await html2canvas(pages[i],{scale:1.5,useCORS:true,letterRendering:true,backgroundColor:'#fff',width:pages[i].scrollWidth,height:pages[i].scrollHeight,logging:false});if(i>0)pdf.addPage();pdf.addImage(c.toDataURL('image/jpeg',0.92),'JPEG',0,0,210,297);c.width=0;c.height=0;}const b=pdf.output('blob');const u=URL.createObjectURL(b);const a=document.createElement('a');a.href=u;a.download='Chosanta_Health_Safety_Policy.pdf';document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(u);}catch(e){alert('PDF error: '+e.message);}btn.textContent='📄 Save as PDF';btn.disabled=false;}
+</script>
+
+<!-- PAGE 1: PURPOSE -->
+<div class="page"><div class="top-band"></div>
+<header class="hdr"><div class="lb"><div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="lt"><span class="ln">Chosanta</span><span class="ls">Management</span></div></div><div class="cd"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div><div>Office 107, Brú Digital Hub, 56 West Street</div><div>Drogheda, Co. Louth · A92 E4CY</div></div></header>
+<main class="content">
+    <h1 class="doc-title">Health &amp; Safety Policy</h1><p class="doc-sub">Section 1: Purpose</p>
+    <div class="sh"><span class="n">1</span> Purpose</div>
+    <p class="bt">The purpose of this Health &amp; Safety Policy is to establish and maintain a safe and healthy environment for all service users, staff, visitors, and contractors at Chosanta Management.</p>
+    <p class="bt">This policy ensures compliance with the Safety, Health and Welfare at Work Act 2005 and relevant HIQA standards. It outlines the organisation's commitment to preventing injury and ill health, promoting wellbeing, and ensuring that all health and safety risks are assessed and managed effectively.</p>
+</main>
+<footer class="ftr"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Health &amp; Safety Policy — Page 1 of 11</div></footer></div>
+
+<!-- PAGE 2: SCOPE -->
+<div class="page"><div class="top-band"></div>
+<header class="hdr"><div class="lb"><div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="lt"><span class="ln">Chosanta</span><span class="ls">Management</span></div></div><div class="cd"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div></header>
+<main class="content">
+    <h1 class="doc-title">Health &amp; Safety Policy</h1><p class="doc-sub">Section 2: Scope</p>
+    <div class="sh"><span class="n">2</span> Scope</div>
+    <p class="bt">This Health &amp; Safety Policy applies to:</p>
+    <ul class="bl">
+        <li>All employees, management, and contractors of Chosanta Management</li>
+        <li>All service users residing in the organisation's facilities</li>
+        <li>All visitors, volunteers, and others who may be affected by the organisation's activities</li>
+    </ul>
+    <p class="bt">It covers all premises operated by the organisation, including HIQA-registered residential care homes, emergency placements, and any auxiliary buildings or offices.</p>
+</main>
+<footer class="ftr"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Health &amp; Safety Policy — Page 2 of 11</div></footer></div>
+
+<!-- PAGE 3: RESPONSIBILITIES -->
+<div class="page"><div class="top-band"></div>
+<header class="hdr"><div class="lb"><div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="lt"><span class="ln">Chosanta</span><span class="ls">Management</span></div></div><div class="cd"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div></header>
+<main class="content">
+    <h1 class="doc-title">Health &amp; Safety Policy</h1><p class="doc-sub">Section 3: Responsibilities</p>
+    <div class="sh"><span class="n">3</span> Responsibilities</div>
+    <p class="al">3.1 Management:</p>
+    <ul class="bl">
+        <li>Ensure compliance with health and safety legislation and best practice</li>
+        <li>Provide appropriate resources for health and safety, including training and protective equipment</li>
+        <li>Conduct risk assessments and ensure safety controls are implemented</li>
+        <li>Investigate incidents and take corrective action where necessary</li>
+    </ul>
+    <p class="al">3.2 Staff:</p>
+    <ul class="bl">
+        <li>Take reasonable care for their own health and safety and that of others</li>
+        <li>Follow all safety protocols and procedures</li>
+        <li>Report hazards, near misses, or accidents promptly</li>
+        <li>Participate in required health and safety training</li>
+    </ul>
+    <p class="al">3.3 Service Users:</p>
+    <ul class="bl">
+        <li>Are encouraged to follow house rules that promote safety</li>
+        <li>Are supported to understand and participate in safety measures relevant to their environment</li>
+    </ul>
+</main>
+<footer class="ftr"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Health &amp; Safety Policy — Page 3 of 11</div></footer></div>
+
+<!-- PAGE 4: RISK ASSESSMENT -->
+<div class="page"><div class="top-band"></div>
+<header class="hdr"><div class="lb"><div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="lt"><span class="ln">Chosanta</span><span class="ls">Management</span></div></div><div class="cd"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div></header>
+<main class="content">
+    <h1 class="doc-title">Health &amp; Safety Policy</h1><p class="doc-sub">Section 4: Risk Assessment &amp; Hazard Control</p>
+    <div class="sh"><span class="n">4</span> Risk Assessment &amp; Hazard Control</div>
+    <p class="bt">Chosanta Management carries out regular and systematic risk assessments to identify, evaluate, and manage potential hazards. All risk assessments are documented and reviewed regularly, especially following incidents or changes in operations.</p>
+    <p class="al">Control measures include:</p>
+    <ul class="bl">
+        <li>Use of personal protective equipment (PPE)</li>
+        <li>Staff training and supervision</li>
+        <li>Environmental controls and safety signage</li>
+        <li>Emergency preparedness and planning</li>
+        <li>House-wide risk register reviewed monthly</li>
+        <li>Any new hazard logged and controlled within 24 hours</li>
+        <li>Risk assessments carried out on all rooms and equipment</li>
+    </ul>
+</main>
+<footer class="ftr"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Health &amp; Safety Policy — Page 4 of 11</div></footer></div>
+
+<!-- PAGE 5: ACCIDENT & INCIDENT REPORTING -->
+<div class="page"><div class="top-band"></div>
+<header class="hdr"><div class="lb"><div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="lt"><span class="ln">Chosanta</span><span class="ls">Management</span></div></div><div class="cd"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div></header>
+<main class="content">
+    <h1 class="doc-title">Health &amp; Safety Policy</h1><p class="doc-sub">Section 5: Accident &amp; Incident Reporting</p>
+    <div class="sh"><span class="n">5</span> Accident &amp; Incident Reporting</div>
+    <p class="bt">All accidents, near misses, and incidents must be reported and documented in a timely and accurate manner to ensure legal compliance, ongoing safety improvements, and risk reduction.</p>
+    <ul class="bl">
+        <li>Immediate reporting to the Person in Charge or designated safety officer</li>
+        <li>Completion of the Incident Report Form within 24 hours</li>
+        <li>Prompt medical attention where required</li>
+        <li>Investigation of root causes and contributing factors</li>
+        <li>Implementation of corrective and preventative measures</li>
+        <li>Serious incidents reported to external authorities (e.g., HIQA, HSA, or Tusla) in line with legal requirements</li>
+        <li>All reports reviewed and stored securely for learning, trend analysis, and audit</li>
+    </ul>
+</main>
+<footer class="ftr"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Health &amp; Safety Policy — Page 5 of 11</div></footer></div>
+
+<!-- PAGE 6: FIRE SAFETY -->
+<div class="page"><div class="top-band"></div>
+<header class="hdr"><div class="lb"><div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="lt"><span class="ln">Chosanta</span><span class="ls">Management</span></div></div><div class="cd"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div></header>
+<main class="content">
+    <h1 class="doc-title">Health &amp; Safety Policy</h1><p class="doc-sub">Section 6: Fire Safety</p>
+    <div class="sh"><span class="n">6</span> Fire Safety</div>
+    <p class="bt">Chosanta Management is committed to ensuring the highest standards of fire safety across all facilities, in compliance with fire regulations, HIQA requirements, and local authority guidelines.</p>
+    <ul class="bl">
+        <li>Regular fire safety risk assessments</li>
+        <li>Maintenance and inspection of fire detection and alarm systems</li>
+        <li>Clearly marked fire exits and escape routes</li>
+        <li>Fire extinguishers placed in accessible areas and serviced regularly</li>
+        <li>Emergency lighting in corridors and communal spaces</li>
+        <li>Display of evacuation plans in key locations</li>
+        <li>Training for all staff in fire prevention, evacuation procedures, and use of extinguishers</li>
+        <li>Fire drills conducted at least quarterly; PEEPs in place for all service users requiring assistance</li>
+    </ul>
+</main>
+<footer class="ftr"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Health &amp; Safety Policy — Page 6 of 11</div></footer></div>
+
+<!-- PAGE 7: MANUAL HANDLING -->
+<div class="page"><div class="top-band"></div>
+<header class="hdr"><div class="lb"><div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="lt"><span class="ln">Chosanta</span><span class="ls">Management</span></div></div><div class="cd"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div></header>
+<main class="content">
+    <h1 class="doc-title">Health &amp; Safety Policy</h1><p class="doc-sub">Section 7: Manual Handling &amp; Ergonomics</p>
+    <div class="sh"><span class="n">7</span> Manual Handling &amp; Ergonomics</div>
+    <p class="bt">Chosanta Management recognises the risks associated with manual handling and poor ergonomic practices. All staff involved in physical activities must be trained in safe manual handling techniques.</p>
+    <ul class="bl">
+        <li>Completion of Manual Handling and Patient Handling training for all relevant staff</li>
+        <li>Use of mechanical aids (e.g., hoists, trolleys) to minimise strain</li>
+        <li>Proper posture and lifting techniques promoted through ongoing training</li>
+        <li>Workstations and equipment set up to reduce musculoskeletal strain</li>
+        <li>Regular reviews of ergonomic practices to ensure compliance and comfort</li>
+        <li>Equipment assessed before use; repositioning aids used where needed</li>
+    </ul>
+</main>
+<footer class="ftr"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Health &amp; Safety Policy — Page 7 of 11</div></footer></div>
+
+<!-- PAGE 8: INFECTION CONTROL -->
+<div class="page"><div class="top-band"></div>
+<header class="hdr"><div class="lb"><div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="lt"><span class="ln">Chosanta</span><span class="ls">Management</span></div></div><div class="cd"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div></header>
+<main class="content">
+    <h1 class="doc-title">Health &amp; Safety Policy</h1><p class="doc-sub">Section 8: Infection Control</p>
+    <div class="sh"><span class="n">8</span> Infection Control</div>
+    <p class="bt">To safeguard the health and wellbeing of service users and staff, Chosanta Management implements robust infection prevention and control procedures aligned with HSE and HIQA standards.</p>
+    <ul class="bl">
+        <li>Routine hand hygiene and use of hand sanitiser</li>
+        <li>Appropriate use and disposal of personal protective equipment (PPE)</li>
+        <li>Regular cleaning and disinfection of high-touch surfaces; daily sanitisation</li>
+        <li>Isolation protocols for individuals showing symptoms of infectious conditions</li>
+        <li>Safe handling of waste, laundry, and sharps</li>
+        <li>Staff training in standard and transmission-based precautions; hand hygiene training completed quarterly</li>
+        <li>PPE available on-site at all times; outbreak response plans in place for rapid containment</li>
+    </ul>
+</main>
+<footer class="ftr"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Health &amp; Safety Policy — Page 8 of 11</div></footer></div>
+
+<!-- PAGE 9: MENTAL HEALTH -->
+<div class="page"><div class="top-band"></div>
+<header class="hdr"><div class="lb"><div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="lt"><span class="ln">Chosanta</span><span class="ls">Management</span></div></div><div class="cd"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div></header>
+<main class="content">
+    <h1 class="doc-title">Health &amp; Safety Policy</h1><p class="doc-sub">Section 9: Mental Health &amp; Wellbeing</p>
+    <div class="sh"><span class="n">9</span> Mental Health &amp; Wellbeing</div>
+    <p class="bt">Chosanta Management recognises the importance of mental health and emotional wellbeing in a safe and healthy workplace. The organisation is committed to promoting a supportive environment where staff and service users can thrive.</p>
+    <ul class="bl">
+        <li>Promoting open communication and a culture of mutual respect</li>
+        <li>Providing access to Employee Assistance Programmes (EAPs) or counselling support</li>
+        <li>Encouraging work-life balance and stress-reducing practices</li>
+        <li>Identifying and reducing psychosocial risks in the workplace</li>
+        <li>Providing mental health training to staff to recognise signs of distress in themselves or others</li>
+    </ul>
+    <p class="bt">Mental wellbeing is integrated into health and safety planning and supported through regular staff supervision and feedback mechanisms.</p>
+</main>
+<footer class="ftr"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Health &amp; Safety Policy — Page 9 of 11</div></footer></div>
+
+<!-- PAGE 10: MONITORING & FIRST AID / LONE WORKING -->
+<div class="page"><div class="top-band"></div>
+<header class="hdr"><div class="lb"><div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="lt"><span class="ln">Chosanta</span><span class="ls">Management</span></div></div><div class="cd"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div></header>
+<main class="content">
+    <h1 class="doc-title">Health &amp; Safety Policy</h1><p class="doc-sub">Section 10: Monitoring, Audit, First Aid &amp; Lone Working</p>
+    <div class="sh"><span class="n">10</span> Monitoring &amp; Audit</div>
+    <ul class="bl">
+        <li>Scheduled internal audits of health and safety systems</li>
+        <li>Monthly inspections by management or health &amp; safety representatives</li>
+        <li>Incident reviews and analysis to identify trends or recurring risks</li>
+        <li>Service user and staff feedback on safety conditions</li>
+        <li>Action plans developed and tracked to address audit findings</li>
+    </ul>
+    <div class="sh"><span class="n">✚</span> First Aid &amp; Emergency Procedures</div>
+    <ul class="bl">
+        <li>First aid kits in every unit, checked weekly</li>
+        <li>Named First Aiders rostered per shift</li>
+        <li>Emergency numbers clearly posted</li>
+    </ul>
+    <div class="sh"><span class="n">⚑</span> Lone Working Policy</div>
+    <ul class="bl">
+        <li>No staff permitted to lone work with children</li>
+        <li>In exceptional cases, live phone check-in every 30 minutes</li>
+        <li>Lone work risk assessment filed and signed by Manager</li>
+    </ul>
+</main>
+<footer class="ftr"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Health &amp; Safety Policy — Page 10 of 11</div></footer></div>
+
+<!-- PAGE 11: POLICY REVIEW & SIGN-OFF -->
+<div class="page"><div class="top-band"></div>
+<header class="hdr"><div class="lb"><div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="lt"><span class="ln">Chosanta</span><span class="ls">Management</span></div></div><div class="cd"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div></header>
+<main class="content">
+    <h1 class="doc-title">Health &amp; Safety Policy</h1><p class="doc-sub">Section 11: Policy Review &amp; Safety Training</p>
+    <div class="sh"><span class="n">11</span> Policy Review</div>
+    <p class="bt">This Health &amp; Safety Policy is reviewed annually or more frequently if there are significant changes in operations, regulations, or following an incident that requires policy revision.</p>
+    <ul class="bl">
+        <li>Ensuring the policy remains compliant with relevant legislation and standards</li>
+        <li>Consulting with staff and service users on safety issues and incorporating feedback</li>
+        <li>Updating risk assessments, training materials, and procedures as needed</li>
+        <li>Review dates and version control documented clearly; all staff informed of changes</li>
+    </ul>
+    <div class="sh"><span class="n">📋</span> Safety Training Records</div>
+    <ul class="bl">
+        <li>Manual handling, fire safety, infection control, and PMAV training tracked</li>
+        <li>Certificates retained in HR file</li>
+        <li>Expiry dates monitored by admin monthly</li>
+    </ul>
+</main>
+<footer class="ftr"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Health &amp; Safety Policy — Page 11 of 11</div></footer></div>
+
+</body>
+</html>

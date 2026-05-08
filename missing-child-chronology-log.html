@@ -1,0 +1,165 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Missing Child Chronology Log — Chosanta Management</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"><style>@page{size:A4;margin:0}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}body{font-family:'Inter',sans-serif;background:#e8ecf1;color:#1a1610;display:flex;flex-direction:column;align-items:center;padding:40px 20px;gap:40px}@media print{body{background:#fff;padding:0;gap:0}.page{box-shadow:none;width:100%;min-height:unset}.pa{display:none!important}}.page{width:210mm;min-height:297mm;background:#fff;box-shadow:0 8px 40px rgba(13,27,42,.12);position:relative;overflow:hidden;display:flex;flex-direction:column}.tb{height:6px;background:linear-gradient(90deg,#c9a84c,#e0c070 40%,#c9a84c 70%,#a8893c)}.hd{display:flex;align-items:center;justify-content:space-between;padding:12px 40px 8px;border-bottom:2px solid #f0ede8;position:relative}.hd::after{content:'';position:absolute;bottom:-2px;left:40px;width:60px;height:3px;background:linear-gradient(90deg,#c9a84c,#e0c070);border-radius:2px}.lb{display:flex;align-items:center;gap:10px}.li{width:32px;height:32px;background:linear-gradient(135deg,#c9a84c,#a8893c);border-radius:6px;display:flex;align-items:center;justify-content:center}.li svg{width:16px;height:16px}.lt{display:flex;flex-direction:column;line-height:1}.ln{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:#0d1b2a}.ls{font-size:7px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:#c9a84c;margin-top:2px}.co{text-align:right;font-size:8px;line-height:1.5;color:#5c5648}.co .cn{font-family:'Playfair Display',serif;font-size:11px;font-weight:700;color:#0d1b2a}.ct{flex:1;padding:14px 36px 10px}.dt{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#0d1b2a;margin-bottom:3px;position:relative;padding-bottom:8px}.dt::after{content:'';position:absolute;bottom:0;left:0;width:45px;height:3px;background:linear-gradient(90deg,#c9a84c,#e0c070);border-radius:2px}.ds{font-size:7.5px;color:#9a9484;text-transform:uppercase;letter-spacing:2px;font-weight:600;margin-bottom:8px}.sh{background:linear-gradient(135deg,#0d1b2a,#1b2d42);color:#fff;padding:3px 10px;border-radius:3px;margin:6px 0 3px;font-size:7.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;display:flex;align-items:center;gap:6px}.sh .n{background:linear-gradient(135deg,#c9a84c,#e0c070);color:#0d1b2a;width:14px;height:14px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:6.5px;font-weight:800;flex-shrink:0}.bt{font-size:8px;line-height:1.4;color:#3d3830;margin-bottom:4px}table{width:100%;border-collapse:collapse;font-size:7px;margin-bottom:5px}th{background:linear-gradient(135deg,#0d1b2a,#1b2d42);color:#fff;padding:2.5px 4px;text-align:left;font-weight:700}td{padding:3px 4px;border-bottom:1px solid #f0ede8;color:#3d3830}tr:nth-child(even) td{background:#faf9f7}.box{border:1px solid #e0ddd8;border-radius:3px;padding:3px 6px;min-height:18px;font-size:7px;margin-bottom:4px}.sg{font-size:7px;color:#3d3830;margin-top:5px;padding:5px;border:1px dashed #c9a84c;border-radius:5px;background:#faf9f7}.sg span{display:block;margin-bottom:2px;border-bottom:1px dotted #ddd;padding-bottom:2px}.ft{padding:7px 36px;background:linear-gradient(135deg,#0d1b2a,#1b2d42);color:rgba(255,255,255,.8);font-size:7px;line-height:1.7;display:flex;justify-content:space-between;align-items:center;margin-top:auto}.fl{display:flex;flex-direction:column}.fl span{display:inline-flex;align-items:center;gap:4px}.fd{width:1px;height:20px;background:rgba(201,168,76,.3);margin:0 10px}.fr{text-align:right;font-size:6.5px;color:rgba(255,255,255,.5)}.pa{position:fixed;top:20px;right:20px;display:flex;gap:12px;z-index:100}.pa button{padding:12px 24px;border:none;border-radius:8px;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;box-shadow:0 4px 12px rgba(0,0,0,.15)}.bp{background:linear-gradient(135deg,#c9a84c,#e0c070);color:#0d1b2a}.bx{background:linear-gradient(135deg,#0d1b2a,#1b2d42);color:#fff}.warn{background:linear-gradient(135deg,#fff0f0,#ffe8e8);border:1px solid #c0392b;border-radius:4px;padding:4px 8px;font-size:7.5px;color:#3d3830;margin-bottom:5px}</style></head><body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<div class="pa"><button class="bp" onclick="window.print()">🖨️ Print</button><button class="bx" id="btn">📄 Save as PDF</button></div>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var btn=document.getElementById('btn');
+  btn.addEventListener('click',async function(){
+    if(typeof html2canvas==='undefined'||!window.jspdf){alert('PDF libraries still loading — please wait and try again.');return;}
+    btn.disabled=true;
+    try{
+      var jsPDF=window.jspdf.jsPDF;
+      var pdf=new jsPDF({orientation:'portrait',unit:'mm',format:'a4'});
+      var pages=document.querySelectorAll('.page');
+      for(var i=0;i<pages.length;i++){
+        btn.textContent='⏳ '+(i+1)+'/'+pages.length;
+        await new Promise(function(r){setTimeout(r,500);});
+        var c=await html2canvas(pages[i],{scale:2,useCORS:true,backgroundColor:'#ffffff',logging:false});
+        if(i>0) pdf.addPage();
+        pdf.addImage(c.toDataURL('image/jpeg',0.95),'JPEG',0,0,210,297);
+      }
+      pdf.save('Chosanta_Missing_Child_Chronology.pdf');
+    }catch(e){alert('PDF error: '+e.message);console.error(e);}
+    btn.textContent='📄 Save as PDF';btn.disabled=false;
+  });
+});
+</script>
+
+<!-- P1: Individual Incident + Chronological Log -->
+<div class="page"><div class="tb"></div>
+<header class="hd"><div class="lb"><div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="lt"><span class="ln">Chosanta</span><span class="ls">Management</span></div></div><div class="co"><div class="cn">Chosanta Management</div><div>Office 107, Brú Digital Hub · Drogheda · A92 E4CY</div></div></header>
+<main class="ct">
+<h1 class="dt">Missing Child Chronology &amp; Return Interview Log</h1><p class="ds">Tusla/AGS Joint Protocol · HIQA Standard 3 · S.I. 674/2017</p>
+<div class="warn"><strong>⚠ 15-MINUTE RULE:</strong> Under the Tusla/AGS Joint Working Protocol, An Garda Síochána must be notified within <strong>15 minutes</strong> of the child being identified as missing. The child's social worker and parent/guardian must also be notified. Activate the child's individual Absence Management Plan immediately.</div>
+
+<div class="sh"><span class="n">1</span> Missing Incident Record</div>
+<table>
+<tr><th>Incident Ref #</th><td></td><th>Child's Name / Ref</th><td></td><th>DOB</th><td></td></tr>
+<tr><th>Date</th><td></td><th>Day of Week</th><td></td><th>Absence Management Plan on file?</th><td>☐ Yes ☐ No</td></tr>
+</table>
+
+<div class="sh"><span class="n">2</span> Real-Time Chronological Log</div>
+<p class="bt"><em>Record every action taken, in real time, from the moment the child is identified as missing until return/resolution.</em></p>
+<table>
+<tr><th style="width:12%">Time</th><th style="width:55%">Action / Event</th><th style="width:18%">By Whom</th><th style="width:15%">Outcome</th></tr>
+<tr><td></td><td>Child identified as absent / missing</td><td></td><td></td></tr>
+<tr><td></td><td>Centre searched (all rooms, garden, outbuildings)</td><td></td><td>☐ Not found</td></tr>
+<tr><td></td><td>Known locations / associates checked / contacted</td><td></td><td></td></tr>
+<tr><td></td><td><strong>AGS notified (15-min rule)</strong></td><td></td><td>Ref: ______</td></tr>
+<tr><td></td><td>Social worker notified</td><td></td><td></td></tr>
+<tr><td></td><td>Parent / guardian notified</td><td></td><td></td></tr>
+<tr><td></td><td>PIC / Manager notified</td><td></td><td></td></tr>
+<tr><td></td><td>Director / Registered Provider notified</td><td></td><td></td></tr>
+<tr><td></td><td>Tusla out-of-hours (if applicable)</td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td><strong>CHILD RETURNED / LOCATED</strong></td><td></td><td>Time: ______</td></tr>
+</table>
+<table>
+<tr><th>Total duration absent</th><td></td><th>Where found / how returned</th><td></td></tr>
+<tr><th>Condition on return</th><td>☐ Unharmed ☐ Intoxicated ☐ Injured ☐ Distressed ☐ Other:</td><th>Medical attention?</th><td>☐ No ☐ Yes</td></tr>
+</table>
+
+<div class="sh"><span class="n">3</span> Return Interview (within 24 hours)</div>
+<p class="bt"><em>Must be conducted by a staff member the child trusts. Record the child's own words. Do not force participation — if the child declines, record this and offer again later.</em></p>
+<table>
+<tr><th>Interview Date / Time</th><td></td><th>Conducted By</th><td></td></tr>
+<tr><th>Child willing to participate?</th><td colspan="3">☐ Yes ☐ No — declined (offer again within 48 hours)</td></tr>
+</table>
+<table>
+<tr><th style="width:30%">Question</th><th>Child's Response (in their own words)</th></tr>
+<tr><td>Where did you go?</td><td style="height:14px"></td></tr>
+<tr><td>Why did you leave?</td><td style="height:14px"></td></tr>
+<tr><td>Who were you with?</td><td style="height:14px"></td></tr>
+<tr><td>Were you safe while you were away?</td><td style="height:14px"></td></tr>
+<tr><td>Did anything happen that worried you or made you feel unsafe?</td><td style="height:14px"></td></tr>
+<tr><td>Did anyone hurt you or make you do anything you didn't want to?</td><td style="height:14px"></td></tr>
+<tr><td>Did you use any substances?</td><td style="height:14px"></td></tr>
+<tr><td>Is there anything that would help you stay in the centre?</td><td style="height:14px"></td></tr>
+</table>
+<table>
+<tr><td>Safeguarding concern arising from return interview?</td><td>☐ No ☐ Yes — DLP notified &amp; recorded separately</td></tr>
+<tr><td>CSE / exploitation concern?</td><td>☐ No ☐ Yes — referred to SW / AGS</td></tr>
+<tr><td>Substance misuse concern?</td><td>☐ No ☐ Yes — risk assessment updated</td></tr>
+</table>
+<div class="sg">
+<span><strong>Interviewer Signature:</strong> _________________________ Date: __________</span>
+<span><strong>PIC Reviewed:</strong> _________________________ Date: __________</span>
+<span><strong>NIMS/SEN Submitted:</strong> ☐ Yes — Ref: __________ ☐ N/A</span>
+</div>
+</main>
+<footer class="ft"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Missing Child — Page 1 of 2</div></footer></div>
+
+<!-- P2: Master Tracker + Trend -->
+<div class="page"><div class="tb"></div>
+<header class="hd"><div class="lb"><div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="lt"><span class="ln">Chosanta</span><span class="ls">Management</span></div></div><div class="co"><div class="cn">Chosanta Management</div></div></header>
+<main class="ct">
+<h1 class="dt">Missing Child — Master Tracker &amp; Trend Analysis</h1><p class="ds">Section 2 — Absence Management · Repeated Absence Trends</p>
+
+<div class="sh"><span class="n">4</span> Absence Management Plan Review</div>
+<table>
+<tr><td>Child has individual Absence Management Plan?</td><td>☐ Yes ☐ No — must be created</td></tr>
+<tr><td>Plan reviewed after this incident?</td><td>☐ Yes ☐ N/A</td></tr>
+<tr><td>Changes to plan agreed?</td><td>☐ No changes ☐ Yes — detail:</td></tr>
+<tr><td>Social worker consulted?</td><td>☐ Yes ☐ No</td></tr>
+</table>
+<p class="bt"><strong>Changes made to Absence Management Plan:</strong></p>
+<div class="box"></div>
+
+<div class="sh"><span class="n">5</span> PIC Incident Review &amp; Learning</div>
+<table>
+<tr><td>Was the 15-minute AGS notification met?</td><td>☐ Yes ☐ No — reason:</td></tr>
+<tr><td>Was the Joint Protocol followed correctly?</td><td>☐ Yes ☐ No — action:</td></tr>
+<tr><td>Preventive actions identified?</td><td style="height:14px"></td></tr>
+<tr><td>Triggers / patterns identified?</td><td style="height:14px"></td></tr>
+<tr><td>Discussed at governance meeting?</td><td>☐ Yes — date: ______</td></tr>
+</table>
+<div class="sg"><span><strong>PIC Signature:</strong> _________________________ Date: __________</span></div>
+
+<div class="sh"><span class="n">6</span> Master Absence Tracker (Per Child)</div>
+<p class="bt">Running record of all absences for this child. Filed at the front of the Absence Management section in the child's file.</p>
+<table>
+<tr><th>#</th><th>Date</th><th>Day</th><th>Time Out</th><th>Time Back</th><th>Duration</th><th>AGS?</th><th>Where Found</th><th>Return Interview?</th><th>SEN?</th></tr>
+<tr><td>1</td><td></td><td></td><td></td><td></td><td></td><td>☐ Y</td><td></td><td>☐ Y ☐ N</td><td>☐ Y ☐ N</td></tr>
+<tr><td>2</td><td></td><td></td><td></td><td></td><td></td><td>☐ Y</td><td></td><td>☐ Y ☐ N</td><td>☐ Y ☐ N</td></tr>
+<tr><td>3</td><td></td><td></td><td></td><td></td><td></td><td>☐ Y</td><td></td><td>☐ Y ☐ N</td><td>☐ Y ☐ N</td></tr>
+<tr><td>4</td><td></td><td></td><td></td><td></td><td></td><td>☐ Y</td><td></td><td>☐ Y ☐ N</td><td>☐ Y ☐ N</td></tr>
+<tr><td>5</td><td></td><td></td><td></td><td></td><td></td><td>☐ Y</td><td></td><td>☐ Y ☐ N</td><td>☐ Y ☐ N</td></tr>
+<tr><td>6</td><td></td><td></td><td></td><td></td><td></td><td>☐ Y</td><td></td><td>☐ Y ☐ N</td><td>☐ Y ☐ N</td></tr>
+<tr><td>7</td><td></td><td></td><td></td><td></td><td></td><td>☐ Y</td><td></td><td>☐ Y ☐ N</td><td>☐ Y ☐ N</td></tr>
+<tr><td>8</td><td></td><td></td><td></td><td></td><td></td><td>☐ Y</td><td></td><td>☐ Y ☐ N</td><td>☐ Y ☐ N</td></tr>
+</table>
+
+<div class="sh"><span class="n">7</span> Repeated Absence Trend Analysis</div>
+<p class="bt"><em>Completed when a child has 3+ absences in any rolling 3-month period, or at any governance meeting where absconding is on the agenda.</em></p>
+<table>
+<tr><th>Analysis Period</th><td></td><th>Child</th><td></td><th>Total Absences This Period</th><td></td></tr>
+</table>
+<table>
+<tr><th>Pattern / Trigger</th><th>Evidence</th><th>Frequency</th></tr>
+<tr><td>Specific days / times?</td><td></td><td></td></tr>
+<tr><td>Before / after family contact?</td><td></td><td></td></tr>
+<tr><td>Before / after school?</td><td></td><td></td></tr>
+<tr><td>Linked to specific peers / associates?</td><td></td><td></td></tr>
+<tr><td>Linked to specific staff / shift patterns?</td><td></td><td></td></tr>
+<tr><td>Substance use linked?</td><td></td><td></td></tr>
+<tr><td>Exploitation / CSE indicators?</td><td></td><td></td></tr>
+<tr><td>Emotional state / triggers identified?</td><td></td><td></td></tr>
+</table>
+<p class="bt"><strong>Trend direction:</strong> ☐ Increasing ☐ Decreasing ☐ Stable ☐ New pattern emerging</p>
+<p class="bt"><strong>Multi-agency response required?</strong> ☐ No ☐ Yes — strategy meeting requested with SW / AGS</p>
+<p class="bt"><strong>Actions from trend analysis:</strong></p>
+<div class="box"></div>
+
+<div class="sg">
+<span><strong>Analysis By:</strong> _________________________ Date: __________</span>
+<span><strong>PIC Sign-Off:</strong> _________________________ Date: __________</span>
+<span><strong>Shared with Social Worker:</strong> ☐ Yes — Date: __________</span>
+<span><strong>Legislative Basis:</strong> Tusla/AGS Joint Working Protocol for Children Missing from Care · HIQA Standards 2018 (Standard 3) · S.I. 674/2017 · Children First Act 2015</span>
+<span><strong>Ref:</strong> CM-MCC-001 | Version 1.0 | May 2025 | <strong>Filed in:</strong> Child's File &amp; Governance File</span>
+</div>
+</main>
+<footer class="ft"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Missing Child — Page 2 of 2</div></footer></div>
+
+</body></html>

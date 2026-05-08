@@ -1,0 +1,225 @@
+=====Infection_Prevention_Control_Section1_Purpose.pdf=====
+Secure Living Support Services Ltd
+Infection Prevention and Control Policy
+Section 1: Purpose
+1. Purpose
+The purpose of this policy is to establish clear infection prevention and control (IPC) standards and
+procedures across Secure Living Support Services Ltd. This is to protect residents, staff, visitors,
+and contractors from the transmission of infectious diseases in accordance with HIQA National
+Standards, the Health Act 2007, and HSE best practice guidelines.
+This policy outlines preventive and responsive measures to:
+- Minimise risk of infection in care settings
+- Promote hygiene and sanitation
+- Support outbreak management
+- Ensure staff understand their roles in maintaining infection control at all times
+
+=====Infection_Prevention_Control_Section2_Scope.pdf=====
+Secure Living Support Services Ltd
+Infection Prevention and Control Policy
+Section 2: Scope
+2. Scope
+This policy applies to all Secure Living Support Services Ltd locations, staff, residents, contractors,
+agency personnel, and visitors.
+It encompasses all aspects of infection prevention and control in:
+- Residential units and supported living facilities
+- Common areas, kitchens, laundry, and bathrooms
+- Medical and personal care delivery
+- Transport and external activities
+The policy is relevant to all infectious risks, including but not limited to:
+- Respiratory illnesses (e.g. COVID-19, influenza)
+- Gastrointestinal infections (e.g. Norovirus)
+- Bloodborne viruses (e.g. Hepatitis B/C)
+- Antibiotic-resistant organisms (e.g. MRSA, CPE)
+
+=====Infection_Prevention_Control_Section3_Responsibilities.pdf=====
+Secure Living Support Services Ltd
+Infection Prevention and Control Policy
+Section 3: Responsibilities
+3. Responsibilities
+Infection prevention and control is a shared responsibility across all levels of the organisation.
+3.1 Registered Provider:
+- Ensure the organisation has effective IPC systems and resources
+- Oversee compliance with HIQA standards and statutory requirements
+3.2 Person in Charge (PIC):
+- Implement IPC policy in daily operations
+- Ensure all staff receive training and updates
+- Monitor infection risks, outbreaks, and cleaning protocols
+- Report serious incidents to HIQA where required
+3.3 Staff Members:
+- Follow IPC protocols including hand hygiene, PPE, and safe waste disposal
+- Report symptoms, risks, or breaches immediately
+- Attend IPC training and refresher sessions
+3.4 Residents and Visitors:
+- Encouraged to maintain personal hygiene
+- Comply with outbreak precautions and visitor policies
+
+=====Infection_Prevention_Control_Section4_Key_Measures.pdf=====
+Secure Living Support Services Ltd
+Infection Prevention and Control Policy
+Section 4: Key Measures
+4. Key Measures
+To ensure effective infection prevention and control, Secure Living Support Services Ltd implements
+the following measures consistently across all services:
+4.1 Hand Hygiene:
+- Hand washing facilities with soap and water available at key locations
+- Use of alcohol-based hand sanitiser in communal and care areas
+- Staff and residents educated on correct hand hygiene technique
+4.2 Use of Personal Protective Equipment (PPE):
+- PPE provided based on risk assessment (e.g., gloves, aprons, masks, visors)
+- Safe donning, doffing, and disposal procedures in place
+- Training in PPE use for all relevant staff
+4.3 Cleaning and Disinfection:
+- Daily cleaning schedules with increased frequency during outbreaks
+- Approved disinfectants used in high-touch and high-risk areas
+- Deep cleaning protocols following suspected or confirmed infections
+4.4 Waste Management:
+- Segregation of clinical and domestic waste
+- Safe disposal procedures including secure sharps bins and yellow bags
+- Staff training in waste handling protocols
+4.5 Laundry Procedures:
+- Separate handling of soiled and clean linen
+- High-temperature washing as appropriate
+- Staff to use gloves and aprons during handling
+
+=====Infection_Prevention_Control_Section5_Training.pdf=====
+Secure Living Support Services Ltd
+Infection Prevention and Control Policy
+Section 5: Training
+5. Training
+Training is essential to ensure that all staff understand infection risks, control measures, and their
+role in maintaining a safe environment.
+5.1 Mandatory Training:
+- All new staff must complete infection prevention and control training during their induction
+- This includes standard precautions, hand hygiene, PPE use, waste disposal, and outbreak
+response
+5.2 Ongoing Training:
+- Refresher training is required every 2 years, or earlier if policy changes or after outbreaks
+- Training is tailored to staff roles (e.g., cleaning staff, healthcare assistants, kitchen staff)
+5.3 Record-Keeping:
+- Attendance is logged in the Staff Training Register
+- The Person in Charge is responsible for monitoring compliance
+5.4 Evaluation:
+- Training outcomes are reviewed regularly and revised where necessary to align with national
+guidance and HIQA requirements
+
+=====Infection_Prevention_Control_Section6_Cleaning_Protocols.pdf=====
+Secure Living Support Services Ltd
+Infection Prevention and Control Policy
+Section 6: Cleaning Protocols
+6. Cleaning Protocols
+Effective environmental cleaning is critical to minimising infection risk across all facilities. Secure
+Living Support Services Ltd implements strict cleaning protocols in line with HSE and HIQA
+standards.
+6.1 Daily Cleaning:
+- General cleaning of all communal areas, bedrooms, bathrooms, kitchens, and corridors
+- High-touch surfaces (e.g. door handles, switches, handrails) cleaned at least twice daily
+6.2 Deep Cleaning:
+- Conducted weekly in high-traffic areas or more frequently during outbreak periods
+- Includes skirting boards, walls, under furniture, and sanitisation of soft furnishings
+6.3 Disinfectant Use:
+- Only HSE-approved cleaning agents and disinfectants are used
+- Correct dilution and contact times are adhered to
+- Colour-coded equipment is used to prevent cross-contamination
+6.4 Cleaning Logs:
+- All cleaning activities are logged with date, time, area, and initials of staff member
+- Logs are reviewed weekly by the PIC for compliance
+6.5 Staff Training:
+- Cleaning staff are trained in infection prevention, use of PPE, and cleaning techniques
+
+=====Infection_Prevention_Control_Section7_PPE_and_Supplies.pdf=====
+Secure Living Support Services Ltd
+Infection Prevention and Control Policy
+Section 7: PPE and Supplies
+7. PPE and Supplies
+The consistent availability and correct use of personal protective equipment (PPE) and infection
+control supplies is vital to preventing transmission of infectious agents within residential care
+settings.
+7.1 PPE Types and Usage:
+- Gloves, aprons, surgical masks, FFP2/FFP3 respirators, face shields, and goggles
+- PPE is worn according to task-specific risk assessments and HSE guidance
+- Correct donning and doffing techniques are taught and monitored
+7.2 Storage and Access:
+- PPE is stored in designated, easily accessible clean areas
+- Stock levels are checked weekly and reordered proactively
+7.3 Supply Chain:
+- Infection control supplies (hand gel, wipes, sharps bins, disinfectants) are included in standard
+orders
+- Emergency stock reserves are maintained onsite in case of outbreaks
+7.4 Monitoring:
+- PIC is responsible for overseeing stock levels and PPE compliance
+- Any supply issues or PPE misuse are escalated immediately
+7.5 Environmental Considerations:
+- Disposable PPE is disposed of in accordance with healthcare waste protocols
+- Reusable items (e.g., goggles) are sanitised after each use
+
+=====Infection_Prevention_Control_Section8_Outbreak_Response.pdf=====
+Secure Living Support Services Ltd
+Infection Prevention and Control Policy
+Section 8: Outbreak Response
+8. Outbreak Response
+Secure Living Support Services Ltd has clear procedures for identifying, managing, and containing
+infectious outbreaks to protect the health and safety of residents, staff, and visitors.
+8.1 Identification:
+- All suspected outbreaks (e.g., two or more residents/staff with similar symptoms) are reported to
+the Person in Charge
+- Clinical guidance is sought immediately from a GP or HSE Public Health
+8.2 Isolation Measures:
+- Affected individuals are isolated or cohorted as appropriate
+- Dedicated staff and equipment are assigned to affected areas
+- Entry and exit protocols are enforced
+8.3 Communication:
+- Families, staff, and health authorities are informed of the outbreak
+- Transparent updates are provided throughout the outbreak
+8.4 Enhanced Infection Control:
+- Frequency of cleaning and disinfection is increased
+- Additional PPE and hand hygiene measures are introduced
+- Non-essential activities and visits are suspended
+8.5 Documentation:
+- A full outbreak report is maintained including timeline, actions taken, and outcomes
+- Post-outbreak debriefing and review inform future improvements
+
+=====Infection_Prevention_Control_Section9_Monitoring_Audit.pdf=====
+Secure Living Support Services Ltd
+Infection Prevention and Control Policy
+Section 9: Monitoring & Audit
+9. Monitoring & Audit
+Ongoing monitoring and structured audits are conducted to ensure consistent application of infection
+prevention measures and to identify areas for improvement.
+9.1 Routine Monitoring:
+- Daily checks of hand hygiene facilities, PPE availability, and cleanliness
+- PIC and team leaders conduct walk-through reviews and log compliance observations
+9.2 Scheduled Audits:
+- Formal IPC audits conducted monthly using a standard checklist
+- Focus on cleaning protocols, equipment sanitation, staff compliance, and PPE usage
+- Results reviewed by management and discussed during governance meetings
+9.3 Outcomes & Actions:
+- Audit findings documented, dated, and signed
+- Action plans created for any non-compliance with assigned responsibility and deadlines
+- Progress on action plans monitored until resolution
+9.4 Continuous Improvement:
+- Learning from audits and incidents is integrated into future training and protocols
+- Residents and staff are encouraged to provide feedback and suggestions
+- Results are reported to the Registered Provider and retained for inspection by HIQA
+
+=====Infection_Prevention_Control_Section10_Review_Improvement.pdf=====
+Secure Living Support Services Ltd
+Infection Prevention and Control Policy
+Section 10: Policy Review and Continuous Improvement
+10. Policy Review and Continuous Improvement
+This Infection Prevention and Control Policy is a living document that evolves in line with current
+evidence, regulation, and operational learning.
+10.1 Review Cycle:
+- The policy will be formally reviewed at least annually by the Registered Provider and Person in
+Charge
+- Interim reviews will be triggered by HIQA updates, outbreaks, new legislation, or audit findings
+10.2 Feedback Integration:
+- Staff, residents, and families may contribute feedback via governance meetings or suggestion
+processes
+- Lessons learned from incidents and audits are documented and used to inform revisions
+10.3 Version Control:
+- All versions of the policy are dated, signed, and archived for reference
+- The most recent version is clearly marked and accessible to all staff
+10.4 Ongoing Improvement:
+- The organisation remains committed to aligning its IPC standards with best practice and regulatory
+expectations
+

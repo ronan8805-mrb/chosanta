@@ -1,0 +1,13 @@
+Child Safeguarding Risk Assessment Template
+This risk assessment is conducted in accordance with the Children First Act 2015 and is a component of the Child Safeguarding Statement. It identifies potential risks of harm to children while availing of our services and outlines the procedures in place to manage those risks.
+
+
+This risk assessment will be reviewed annually or in the event of any significant change to the service or its operations.
+
+--- TABLE 1 ---
+[Risk Identified] | [Procedure/Policy in Place to Manage Risk] | [Person Responsible]
+[A child may be harmed by a staff member, volunteer or visitor.] | [Safe recruitment procedures, Garda vetting, supervision, Code of Behaviour, DLP reporting procedures.] | [Manager, DLP]
+[Inappropriate behaviour or language used by staff/volunteers.] | [Code of Behaviour, supervision, training and disciplinary procedures.] | [Manager, Team Leads]
+[A child makes a disclosure and is not taken seriously.] | [Mandatory training, clear reporting procedure, DLP oversight.] | [All Staff, DLP]
+[Children left unsupervised in communal areas.] | [Supervision policy, rota, visitor access restrictions.] | [Support Staff, Manager]
+[Children exposed to online or social media risks.] | [Online safety guidance, restrictions on digital communication.] | [Manager, All Staff]

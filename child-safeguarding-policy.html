@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Child Safeguarding Policy — Chosanta Management</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        @page { size: A4; margin: 0; }
+        *, *::before, *::after {
+            box-sizing: border-box; margin: 0; padding: 0;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #e8ecf1; color: #1a1610;
+            display: flex; flex-direction: column;
+            align-items: center; padding: 40px 20px; gap: 40px;
+        }
+        @media print {
+            body { background: white; padding: 0; gap: 0; }
+            .page { box-shadow: none; width: 100%; min-height: unset; page-break-after: always; }
+            .page:last-child { page-break-after: auto; }
+            .print-actions { display: none !important; }
+        }
+        .page {
+            width: 210mm; min-height: 297mm; background: #fff;
+            box-shadow: 0 8px 40px rgba(13,27,42,0.12);
+            position: relative; overflow: hidden;
+            display: flex; flex-direction: column;
+        }
+        .top-band { height: 6px; background: linear-gradient(90deg, #c9a84c 0%, #e0c070 40%, #c9a84c 70%, #a8893c 100%); }
+
+        /* HEADER */
+        .header {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 16px 40px 12px; border-bottom: 2px solid #f0ede8; position: relative;
+        }
+        .header::after {
+            content: ''; position: absolute; bottom: -2px; left: 40px;
+            width: 60px; height: 3px;
+            background: linear-gradient(90deg, #c9a84c, #e0c070); border-radius: 2px;
+        }
+        .logo-box { display: flex; align-items: center; gap: 10px; }
+        .logo-icon {
+            width: 34px; height: 34px;
+            background: linear-gradient(135deg, #c9a84c, #a8893c);
+            border-radius: 7px; display: flex; align-items: center; justify-content: center;
+        }
+        .logo-icon svg { width: 18px; height: 18px; }
+        .logo-text { display: flex; flex-direction: column; line-height: 1; }
+        .logo-name { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: #0d1b2a; }
+        .logo-sub { font-size: 7.5px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: #c9a84c; margin-top: 2px; }
+        .co-details { text-align: right; font-size: 9px; line-height: 1.6; color: #5c5648; }
+        .co-details .cn { font-family: 'Playfair Display', serif; font-size: 12px; font-weight: 700; color: #0d1b2a; }
+        .co-details .tg { font-size: 7.5px; text-transform: uppercase; letter-spacing: 2px; color: #c9a84c; font-weight: 600; }
+
+        .content { flex: 1; padding: 20px 40px 16px; }
+
+        .doc-title {
+            font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700;
+            color: #0d1b2a; margin-bottom: 4px; position: relative; padding-bottom: 10px;
+        }
+        .doc-title::after {
+            content: ''; position: absolute; bottom: 0; left: 0;
+            width: 42px; height: 3px;
+            background: linear-gradient(90deg, #c9a84c, #e0c070); border-radius: 2px;
+        }
+        .doc-sub { font-size: 9px; color: #9a9484; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; margin-bottom: 14px; }
+
+        /* SECTION HEADER */
+        .sh {
+            background: linear-gradient(135deg, #0d1b2a, #1b2d42);
+            color: #fff; padding: 7px 14px; border-radius: 4px;
+            margin: 14px 0 8px; font-size: 10px; font-weight: 700;
+            letter-spacing: 1px; text-transform: uppercase;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .sh .n {
+            background: linear-gradient(135deg, #c9a84c, #e0c070);
+            color: #0d1b2a; width: 20px; height: 20px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 9px; font-weight: 800; flex-shrink: 0;
+        }
+
+        /* BODY TEXT */
+        .body-text { font-size: 10.5px; line-height: 1.6; color: #3d3830; margin-bottom: 10px; max-width: 620px; }
+
+        /* BULLET LIST */
+        .bl { list-style: none; margin-bottom: 10px; }
+        .bl li {
+            position: relative; padding: 6px 10px 6px 30px; margin-bottom: 3px;
+            background: linear-gradient(135deg, #faf9f7, #f5f3ef);
+            border-radius: 4px; border-left: 3px solid #c9a84c;
+            font-size: 10px; line-height: 1.45; color: #3d3830;
+        }
+        .bl li::before {
+            content: '▸'; position: absolute; left: 12px; top: 50%; transform: translateY(-50%);
+            color: #c9a84c; font-size: 11px; font-weight: 700;
+        }
+        .bl li strong { color: #0d1b2a; }
+
+        /* STEP LIST */
+        .steps { list-style: none; margin-bottom: 10px; counter-reset: step-count; }
+        .steps li {
+            counter-increment: step-count;
+            position: relative; padding: 7px 10px 7px 38px; margin-bottom: 4px;
+            background: linear-gradient(135deg, #faf9f7, #f5f3ef);
+            border-radius: 4px; border-left: 3px solid #c9a84c;
+            font-size: 10px; line-height: 1.45; color: #3d3830;
+        }
+        .steps li::before {
+            content: 'Step ' counter(step-count);
+            position: absolute; left: 6px; top: 7px;
+            font-size: 7.5px; font-weight: 800; color: #c9a84c;
+            text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .steps li.emergency { border-left-color: #c0392b; }
+        .steps li.emergency::before { content: '⚠'; color: #c0392b; font-size: 12px; left: 10px; }
+
+        /* DEFINITIONS TABLE */
+        .defs { width: 100%; border-collapse: collapse; margin-bottom: 10px; font-size: 10px; }
+        .defs td { padding: 6px 10px; border: 1px solid #e0dbd2; vertical-align: top; }
+        .defs td:first-child {
+            font-weight: 700; color: #0d1b2a; width: 28%;
+            background: #faf9f7; text-transform: uppercase;
+            font-size: 8.5px; letter-spacing: 1px;
+        }
+
+        /* SUB-HEADING */
+        .sub-h {
+            font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700;
+            color: #0d1b2a; margin: 8px 0 4px;
+            text-transform: uppercase; letter-spacing: 0.8px;
+        }
+
+        /* INFO BOX */
+        .ib {
+            background: linear-gradient(135deg, rgba(201,168,76,0.08), rgba(201,168,76,0.03));
+            border: 1px solid rgba(201,168,76,0.25); border-left: 3px solid #c9a84c;
+            border-radius: 4px; padding: 10px 14px; margin-bottom: 10px;
+        }
+        .ib p { font-size: 10px; line-height: 1.55; color: #3d3830; margin: 0; }
+        .ib strong { color: #0d1b2a; }
+
+        /* FIELD */
+        .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 10px; }
+        .field label { font-size: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: #0d1b2a; display: block; margin-bottom: 3px; }
+        .field-line { border-bottom: 1.5px solid #e0dbd2; min-height: 26px; }
+
+        /* FOOTER */
+        .footer {
+            padding: 12px 40px;
+            background: linear-gradient(135deg, #0d1b2a, #1b2d42);
+            color: rgba(255,255,255,0.8); font-size: 8.5px; line-height: 1.8;
+            display: flex; justify-content: space-between; align-items: center; margin-top: auto;
+        }
+        .fl { display: flex; flex-direction: column; }
+        .fl span { display: inline-flex; align-items: center; gap: 5px; }
+        .fd { width: 1px; height: 32px; background: rgba(201,168,76,0.3); margin: 0 16px; }
+        .fr { text-align: right; font-size: 7.5px; color: rgba(255,255,255,0.5); }
+
+        /* PRINT BUTTONS */
+        .print-actions { position: fixed; top: 20px; right: 20px; display: flex; gap: 12px; z-index: 100; }
+        .print-actions button {
+            padding: 12px 24px; border: none; border-radius: 8px;
+            font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600;
+            cursor: pointer; transition: all 0.2s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .bp { background: linear-gradient(135deg, #c9a84c, #e0c070); color: #0d1b2a; }
+        .bp:hover { transform: translateY(-1px); }
+        .bpdf { background: linear-gradient(135deg, #0d1b2a, #1b2d42); color: #fff; }
+        .bpdf:hover { transform: translateY(-1px); }
+    </style>
+</head>
+<body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<div class="print-actions">
+    <button class="bp" onclick="window.print()">🖨️ Print</button>
+    <button class="bpdf" id="savePdfBtn" onclick="savePDF()">📄 Save as PDF</button>
+</div>
+
+<script>
+async function savePDF() {
+    const btn = document.getElementById('savePdfBtn');
+    btn.textContent = '⏳ Generating...';
+    btn.disabled = true;
+    try {
+        const { jsPDF } = window.jspdf;
+        const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
+        const pages = document.querySelectorAll('.page');
+        for (let i = 0; i < pages.length; i++) {
+            const canvas = await html2canvas(pages[i], {
+                scale: 2, useCORS: true, letterRendering: true,
+                backgroundColor: '#ffffff',
+                width: pages[i].scrollWidth,
+                height: pages[i].scrollHeight
+            });
+            const imgData = canvas.toDataURL('image/jpeg', 0.95);
+            if (i > 0) pdf.addPage();
+            pdf.addImage(imgData, 'JPEG', 0, 0, 210, 297);
+        }
+        pdf.save('Chosanta_Child_Safeguarding_Policy.pdf');
+    } catch (e) {
+        alert('PDF failed: ' + e.message + '. Use Print > Save as PDF instead.');
+    }
+    btn.textContent = '📄 Save as PDF';
+    btn.disabled = false;
+}
+</script>
+
+<!-- ==================== PAGE 1 ==================== -->
+<div class="page">
+    <div class="top-band"></div>
+    <header class="header">
+        <div class="logo-box">
+            <div class="logo-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/>
+                </svg>
+            </div>
+            <div class="logo-text">
+                <span class="logo-name">Chosanta</span>
+                <span class="logo-sub">Management</span>
+            </div>
+        </div>
+        <div class="co-details">
+            <div class="cn">Chosanta Management</div>
+            <div class="tg">Accommodation &amp; Property Solutions</div>
+            <div>Office 107, Brú Digital Hub, 56 West Street</div>
+            <div>Drogheda, Co. Louth · A92 E4CY</div>
+        </div>
+    </header>
+
+    <main class="content">
+        <h1 class="doc-title">Child Safeguarding Policy</h1>
+        <p class="doc-sub">Policy Template Document</p>
+
+        <!-- 1. Purpose -->
+        <div class="sh"><span class="n">1</span> Purpose</div>
+        <p class="body-text">To ensure all children in our care are protected from harm, abuse, and neglect. This policy outlines procedures for recognising and reporting child protection concerns.</p>
+
+        <!-- 2. Scope -->
+        <div class="sh"><span class="n">2</span> Scope</div>
+        <p class="body-text">Applies to all staff, volunteers, contractors, and any person working on behalf of the organisation who may come into contact with children.</p>
+
+        <!-- 3. Policy Statement -->
+        <div class="sh"><span class="n">3</span> Policy Statement</div>
+        <p class="body-text">We are committed to safeguarding all children in our service and believe every child has the right to live free from abuse, exploitation, and harm.</p>
+
+        <!-- 4. Definitions -->
+        <div class="sh"><span class="n">4</span> Definitions</div>
+        <table class="defs">
+            <tr><td>Child</td><td>A person under the age of 18</td></tr>
+            <tr><td>Abuse</td><td>Can be physical, emotional, sexual, or neglect</td></tr>
+            <tr><td>Designated Liaison Person (DLP)</td><td>Staff member appointed to receive and act on child protection concerns</td></tr>
+        </table>
+
+        <!-- 5. Roles and Responsibilities -->
+        <div class="sh"><span class="n">5</span> Roles and Responsibilities</div>
+        <p class="sub-h">All Staff:</p>
+        <ul class="bl">
+            <li>Must report concerns immediately to the DLP</li>
+            <li>Must complete mandatory child protection training</li>
+        </ul>
+        <p class="sub-h">Designated Liaison Person (DLP):</p>
+        <ul class="bl">
+            <li>Maintains records of all concerns</li>
+            <li>Liaises with Tusla and An Garda Síochána</li>
+            <li>Ensures follow-up and protection measures are in place</li>
+        </ul>
+
+        <!-- 6. Recognising Abuse -->
+        <div class="sh"><span class="n">6</span> Recognising Abuse</div>
+        <p class="body-text" style="margin-bottom:4px;">Signs include:</p>
+        <ul class="bl">
+            <li>Unexplained injuries or bruises</li>
+            <li>Sudden changes in behaviour or appearance</li>
+            <li>Reluctance to go home or be with specific adults</li>
+            <li>Poor hygiene or signs of neglect</li>
+        </ul>
+
+        <!-- 7. Reporting Procedure -->
+        <div class="sh"><span class="n">7</span> Reporting Procedure</div>
+        <ol class="steps">
+            <li>Staff member observes or is told about a concern.</li>
+            <li>Record the concern on the Standard Report Form.</li>
+            <li>Notify the DLP immediately.</li>
+            <li>DLP assesses and reports to Tusla if necessary.</li>
+            <li class="emergency">Emergency: Contact Gardaí directly.</li>
+        </ol>
+
+        <!-- 8. Confidentiality -->
+        <div class="sh"><span class="n">8</span> Confidentiality</div>
+        <p class="body-text">All concerns are handled sensitively and confidentially. Information is shared only on a need-to-know basis in accordance with legislation.</p>
+    </main>
+
+    <footer class="footer">
+        <div class="fl">
+            <span>✉ info@chosanta.com</span>
+            <span>📍 Drogheda, Co. Louth · A92 E4CY</span>
+        </div>
+        <div class="fd"></div>
+        <div class="fr">Chosanta Management<br>Child Safeguarding Policy — Page 1 of 2</div>
+    </footer>
+</div>
+
+<!-- ==================== PAGE 2 ==================== -->
+<div class="page">
+    <div class="top-band"></div>
+    <header class="header">
+        <div class="logo-box">
+            <div class="logo-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/>
+                </svg>
+            </div>
+            <div class="logo-text">
+                <span class="logo-name">Chosanta</span>
+                <span class="logo-sub">Management</span>
+            </div>
+        </div>
+        <div class="co-details">
+            <div class="cn">Chosanta Management</div>
+            <div class="tg">Accommodation &amp; Property Solutions</div>
+        </div>
+    </header>
+
+    <main class="content">
+        <h1 class="doc-title">Child Safeguarding Policy</h1>
+        <p class="doc-sub">Continued</p>
+
+        <!-- 9. Recruitment and Vetting -->
+        <div class="sh"><span class="n">9</span> Recruitment and Vetting</div>
+        <p class="body-text" style="margin-bottom:4px;">All staff must undergo:</p>
+        <ul class="bl">
+            <li>Garda Vetting</li>
+            <li>Reference checks (minimum of two)</li>
+            <li>Verification of qualifications</li>
+        </ul>
+
+        <!-- 10. Training -->
+        <div class="sh"><span class="n">10</span> Training</div>
+        <p class="body-text" style="margin-bottom:4px;">All staff must complete:</p>
+        <ul class="bl">
+            <li>Introduction to Children First e-learning</li>
+            <li>Regular refresher training every 2 years</li>
+        </ul>
+
+        <!-- 11. Record Keeping -->
+        <div class="sh"><span class="n">11</span> Record Keeping</div>
+        <p class="body-text">All concerns, disclosures, and actions taken must be documented and stored securely for 7 years, accessible only to DLP and management.</p>
+
+        <!-- 12. Review -->
+        <div class="sh"><span class="n">12</span> Review</div>
+        <p class="body-text">This policy is reviewed annually or after any serious child protection incident.</p>
+
+        <div class="field-row">
+            <div class="field">
+                <label>Date of Last Review</label>
+                <div class="field-line"></div>
+            </div>
+            <div class="field">
+                <label>Next Review Due</label>
+                <div class="field-line"></div>
+            </div>
+        </div>
+
+        <div class="ib" style="margin-top:20px;">
+            <p><strong>Tusla — Child and Family Agency:</strong> If you have concerns about the safety or welfare of a child, contact Tusla. Tel: 01 771 8500 | Web: www.tusla.ie</p>
+        </div>
+        <div class="ib">
+            <p><strong>An Garda Síochána:</strong> In an emergency, contact your local Garda station or call 999 / 112.</p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="fl">
+            <span>✉ info@chosanta.com</span>
+            <span>📍 Drogheda, Co. Louth · A92 E4CY</span>
+        </div>
+        <div class="fd"></div>
+        <div class="fr">Chosanta Management<br>Child Safeguarding Policy — Page 2 of 2</div>
+    </footer>
+</div>
+
+</body>
+</html>

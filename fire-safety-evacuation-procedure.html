@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fire Safety &amp; Evacuation Procedure — Chosanta Management</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        @page { size: A4; margin: 0; }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+        body { font-family: 'Inter', sans-serif; background: #e8ecf1; color: #1a1610; display: flex; flex-direction: column; align-items: center; padding: 40px 20px; gap: 40px; }
+        @media print { body { background: white; padding: 0; gap: 0; } .page { box-shadow: none; width: 100%; min-height: unset; } .print-actions { display: none !important; } }
+        .page { width: 210mm; min-height: 297mm; background: #fff; box-shadow: 0 8px 40px rgba(13,27,42,0.12); position: relative; overflow: hidden; display: flex; flex-direction: column; }
+        .top-band { height: 6px; background: linear-gradient(90deg, #c9a84c 0%, #e0c070 40%, #c9a84c 70%, #a8893c 100%); }
+        .header { display: flex; align-items: center; justify-content: space-between; padding: 16px 40px 12px; border-bottom: 2px solid #f0ede8; position: relative; }
+        .header::after { content: ''; position: absolute; bottom: -2px; left: 40px; width: 60px; height: 3px; background: linear-gradient(90deg, #c9a84c, #e0c070); border-radius: 2px; }
+        .logo-box { display: flex; align-items: center; gap: 10px; }
+        .logo-icon { width: 34px; height: 34px; background: linear-gradient(135deg, #c9a84c, #a8893c); border-radius: 7px; display: flex; align-items: center; justify-content: center; }
+        .logo-icon svg { width: 18px; height: 18px; }
+        .logo-text { display: flex; flex-direction: column; line-height: 1; }
+        .logo-name { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: #0d1b2a; }
+        .logo-sub { font-size: 7.5px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: #c9a84c; margin-top: 2px; }
+        .co-details { text-align: right; font-size: 9px; line-height: 1.6; color: #5c5648; }
+        .co-details .cn { font-family: 'Playfair Display', serif; font-size: 12px; font-weight: 700; color: #0d1b2a; }
+        .co-details .tg { font-size: 7.5px; text-transform: uppercase; letter-spacing: 2px; color: #c9a84c; font-weight: 600; }
+        .content { flex: 1; padding: 28px 40px 20px; }
+        .doc-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: #0d1b2a; margin-bottom: 4px; position: relative; padding-bottom: 12px; }
+        .doc-title::after { content: ''; position: absolute; bottom: 0; left: 0; width: 50px; height: 3px; background: linear-gradient(90deg, #c9a84c, #e0c070); border-radius: 2px; }
+        .doc-sub { font-size: 10px; color: #9a9484; text-transform: uppercase; letter-spacing: 2.5px; font-weight: 600; margin-bottom: 24px; }
+        .sh { background: linear-gradient(135deg, #0d1b2a, #1b2d42); color: #fff; padding: 8px 16px; border-radius: 4px; margin: 20px 0 12px; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; display: flex; align-items: center; gap: 8px; }
+        .sh .n { background: linear-gradient(135deg, #c9a84c, #e0c070); color: #0d1b2a; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 800; flex-shrink: 0; }
+        .body-text { font-size: 12px; line-height: 1.75; color: #3d3830; margin-bottom: 16px; max-width: 620px; }
+        .aims-label { font-size: 12px; font-weight: 600; color: #0d1b2a; margin-bottom: 10px; }
+        .bl { list-style: none; margin-bottom: 16px; }
+        .bl li { position: relative; padding: 12px 14px 12px 42px; margin-bottom: 6px; background: linear-gradient(135deg, #faf9f7, #f5f3ef); border-radius: 6px; border-left: 3px solid #c9a84c; font-size: 11.5px; line-height: 1.55; color: #3d3830; }
+        .bl li::before { content: '✓'; position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: #c9a84c; font-size: 13px; font-weight: 700; }
+        .footer { padding: 14px 40px; background: linear-gradient(135deg, #0d1b2a, #1b2d42); color: rgba(255,255,255,0.8); font-size: 8.5px; line-height: 1.8; display: flex; justify-content: space-between; align-items: center; margin-top: auto; }
+        .fl { display: flex; flex-direction: column; }
+        .fl span { display: inline-flex; align-items: center; gap: 5px; }
+        .fd { width: 1px; height: 32px; background: rgba(201,168,76,0.3); margin: 0 16px; }
+        .fr { text-align: right; font-size: 7.5px; color: rgba(255,255,255,0.5); }
+        .print-actions { position: fixed; top: 20px; right: 20px; display: flex; gap: 12px; z-index: 100; }
+        .print-actions button { padding: 12px 24px; border: none; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+        .bp { background: linear-gradient(135deg, #c9a84c, #e0c070); color: #0d1b2a; }
+        .bp:hover { transform: translateY(-1px); }
+        .bpdf { background: linear-gradient(135deg, #0d1b2a, #1b2d42); color: #fff; }
+        .bpdf:hover { transform: translateY(-1px); }
+    </style>
+</head>
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<div class="print-actions">
+    <button class="bp" onclick="window.print()">🖨️ Print</button>
+    <button class="bpdf" id="savePdfBtn" onclick="savePDF()">📄 Save as PDF</button>
+</div>
+<script>
+async function savePDF() {
+    const btn = document.getElementById('savePdfBtn');
+    btn.disabled = true;
+    try {
+        const { jsPDF } = window.jspdf;
+        const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
+        const pages = document.querySelectorAll('.page');
+        for (let i = 0; i < pages.length; i++) {
+            btn.textContent = '⏳ Page ' + (i+1) + '/' + pages.length;
+            await new Promise(r => setTimeout(r, 300));
+            const canvas = await html2canvas(pages[i], { scale: 1.5, useCORS: true, letterRendering: true, backgroundColor: '#ffffff', width: pages[i].scrollWidth, height: pages[i].scrollHeight, logging: false });
+            const imgData = canvas.toDataURL('image/jpeg', 0.92);
+            if (i > 0) pdf.addPage();
+            pdf.addImage(imgData, 'JPEG', 0, 0, 210, 297);
+            canvas.width = 0; canvas.height = 0;
+        }
+        const blob = pdf.output('blob');
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url; a.download = 'Chosanta_Fire_Safety_Evacuation_Procedure.pdf';
+        document.body.appendChild(a); a.click(); document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    } catch (e) { alert('PDF error: ' + e.message); }
+    btn.textContent = '📄 Save as PDF'; btn.disabled = false;
+}
+</script>
+
+<!-- PAGE 1: PURPOSE -->
+<div class="page">
+    <div class="top-band"></div>
+    <header class="header">
+        <div class="logo-box">
+            <div class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div>
+            <div class="logo-text"><span class="logo-name">Chosanta</span><span class="logo-sub">Management</span></div>
+        </div>
+        <div class="co-details"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div><div>Office 107, Brú Digital Hub, 56 West Street</div><div>Drogheda, Co. Louth · A92 E4CY</div></div>
+    </header>
+    <main class="content">
+        <h1 class="doc-title">Fire Safety &amp; Evacuation Procedure</h1>
+        <p class="doc-sub">Section 1: Purpose</p>
+        <div class="sh"><span class="n">1</span> Purpose</div>
+        <p class="body-text">This procedure outlines the measures to prevent, detect, and respond to fire emergencies and ensure the safe evacuation of residents, staff, and visitors from the premises. It is designed to protect life, minimise risk, and ensure compliance with fire safety legislation and HIQA National Standards.</p>
+    </main>
+    <footer class="footer"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Fire Safety &amp; Evacuation — Page 1 of 10</div></footer>
+</div>
+
+<!-- PAGE 2: SCOPE -->
+<div class="page">
+    <div class="top-band"></div>
+    <header class="header"><div class="logo-box"><div class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="logo-text"><span class="logo-name">Chosanta</span><span class="logo-sub">Management</span></div></div><div class="co-details"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div></header>
+    <main class="content">
+        <h1 class="doc-title">Fire Safety &amp; Evacuation Procedure</h1>
+        <p class="doc-sub">Section 2: Scope</p>
+        <div class="sh"><span class="n">2</span> Scope</div>
+        <p class="body-text">This procedure applies to all:</p>
+        <ul class="bl">
+            <li>Staff members, including full-time, part-time, relief, and agency staff</li>
+            <li>Residents living in HIQA-registered accommodation operated by Chosanta Management</li>
+            <li>Visitors, contractors, and professionals attending the premises</li>
+        </ul>
+        <p class="body-text">The policy ensures that everyone on the premises understands their roles and responsibilities during a fire emergency.</p>
+    </main>
+    <footer class="footer"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Fire Safety &amp; Evacuation — Page 2 of 10</div></footer>
+</div>
+
+<!-- PAGE 3: RESPONSIBILITIES -->
+<div class="page">
+    <div class="top-band"></div>
+    <header class="header"><div class="logo-box"><div class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="logo-text"><span class="logo-name">Chosanta</span><span class="logo-sub">Management</span></div></div><div class="co-details"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div></header>
+    <main class="content">
+        <h1 class="doc-title">Fire Safety &amp; Evacuation Procedure</h1>
+        <p class="doc-sub">Section 3: Responsibilities</p>
+        <div class="sh"><span class="n">3</span> Responsibilities</div>
+        <p class="aims-label">Person in Charge (PIC):</p>
+        <ul class="bl">
+            <li>Ensures fire drills are conducted and documented at least every 6 months</li>
+            <li>Maintains up-to-date fire risk assessments and ensures implementation of required measures</li>
+            <li>Coordinates staff roles, training, and emergency contact plans</li>
+            <li>Liaises with emergency services and ensures communication protocols are followed</li>
+        </ul>
+        <p class="aims-label">All Staff:</p>
+        <ul class="bl">
+            <li>Participate in fire safety training and fire drills</li>
+            <li>Are familiar with evacuation routes, alarm points, and fire extinguishers</li>
+            <li>Ensure the safety of residents during evacuation</li>
+            <li>Support residents in accordance with their Personal Emergency Evacuation Plans (PEEPs)</li>
+        </ul>
+        <p class="aims-label">Residents:</p>
+        <ul class="bl">
+            <li>Are informed about fire safety in accessible ways</li>
+            <li>Participate in fire drills where possible</li>
+            <li>Have a PEEP in place based on individual needs and risks</li>
+        </ul>
+    </main>
+    <footer class="footer"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Fire Safety &amp; Evacuation — Page 3 of 10</div></footer>
+</div>
+
+<!-- PAGE 4: FIRE PREVENTION -->
+<div class="page">
+    <div class="top-band"></div>
+    <header class="header"><div class="logo-box"><div class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="logo-text"><span class="logo-name">Chosanta</span><span class="logo-sub">Management</span></div></div><div class="co-details"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div></header>
+    <main class="content">
+        <h1 class="doc-title">Fire Safety &amp; Evacuation Procedure</h1>
+        <p class="doc-sub">Section 4: Fire Prevention Measures</p>
+        <div class="sh"><span class="n">4</span> Fire Prevention Measures</div>
+        <p class="aims-label">4.1 General Fire Prevention Practices:</p>
+        <ul class="bl">
+            <li>Ensure all fire exits and escape routes are kept clear at all times</li>
+            <li>Do not overload electrical sockets or use faulty appliances</li>
+            <li>Store flammable materials safely and in accordance with COSHH regulations</li>
+            <li>No smoking is permitted on the premises unless in designated areas</li>
+        </ul>
+        <p class="aims-label">4.2 Electrical Safety:</p>
+        <ul class="bl">
+            <li>Portable Appliance Testing (PAT) must be completed annually</li>
+            <li>Any electrical issues or damaged equipment must be reported and removed from use immediately</li>
+        </ul>
+        <p class="aims-label">4.3 Housekeeping &amp; Waste Management:</p>
+        <ul class="bl">
+            <li>Waste bins are emptied regularly to prevent build-up of combustibles</li>
+            <li>Cleanliness standards must be upheld to prevent fire spread</li>
+        </ul>
+        <p class="aims-label">4.4 Kitchen Safety:</p>
+        <ul class="bl">
+            <li>Kitchen areas are supervised when in use</li>
+            <li>Deep fat fryers and ovens are cleaned regularly to prevent grease fires</li>
+            <li>Fire blankets and extinguishers are accessible and staff are trained in their use</li>
+        </ul>
+    </main>
+    <footer class="footer"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Fire Safety &amp; Evacuation — Page 4 of 10</div></footer>
+</div>
+
+<!-- PAGE 5: FIRE SAFETY EQUIPMENT -->
+<div class="page">
+    <div class="top-band"></div>
+    <header class="header"><div class="logo-box"><div class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="logo-text"><span class="logo-name">Chosanta</span><span class="logo-sub">Management</span></div></div><div class="co-details"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div></header>
+    <main class="content">
+        <h1 class="doc-title">Fire Safety &amp; Evacuation Procedure</h1>
+        <p class="doc-sub">Section 5: Fire Safety Equipment</p>
+        <div class="sh"><span class="n">5</span> Fire Safety Equipment</div>
+        <p class="aims-label">5.1 Fire Detection Systems:</p>
+        <ul class="bl">
+            <li>Smoke and heat detectors are installed throughout the building</li>
+            <li>Fire alarm systems are linked to both audible and visual alerts to accommodate residents with sensory needs</li>
+            <li>Fire alarms are tested weekly and results are recorded</li>
+        </ul>
+        <p class="aims-label">5.2 Firefighting Equipment:</p>
+        <ul class="bl">
+            <li>Fire extinguishers (CO₂, foam, water) are located on each floor and near high-risk areas (kitchen, laundry)</li>
+            <li>Fire blankets are available in kitchen areas</li>
+            <li>Equipment is inspected monthly and maintained annually by certified contractors</li>
+        </ul>
+        <p class="aims-label">5.3 Emergency Lighting &amp; Signage:</p>
+        <ul class="bl">
+            <li>Emergency lighting is installed in all corridors, stairwells, and exit routes</li>
+            <li>Illuminated 'EXIT' signs are visible and functional</li>
+            <li>Equipment is tested quarterly</li>
+        </ul>
+        <p class="aims-label">5.4 Maintenance Records:</p>
+        <ul class="bl">
+            <li>A full log of fire equipment checks is maintained on site</li>
+            <li>Any faults or failed tests are actioned immediately and logged</li>
+            <li>The Person in Charge is responsible for ensuring external servicing is up to date</li>
+        </ul>
+    </main>
+    <footer class="footer"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Fire Safety &amp; Evacuation — Page 5 of 10</div></footer>
+</div>
+
+<!-- PAGE 6: EVACUATION PROCEDURE -->
+<div class="page">
+    <div class="top-band"></div>
+    <header class="header"><div class="logo-box"><div class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="logo-text"><span class="logo-name">Chosanta</span><span class="logo-sub">Management</span></div></div><div class="co-details"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div></header>
+    <main class="content">
+        <h1 class="doc-title">Fire Safety &amp; Evacuation Procedure</h1>
+        <p class="doc-sub">Section 6: Evacuation Procedure</p>
+        <div class="sh"><span class="n">6</span> Evacuation Procedure</div>
+        <p class="body-text">The safety of residents, staff, and visitors is paramount during a fire. This evacuation procedure outlines the steps to be taken to ensure a swift, safe, and coordinated response.</p>
+        <p class="aims-label">6.1 Upon Hearing the Alarm:</p>
+        <ul class="bl">
+            <li>Staff must immediately stop all activities and begin evacuation</li>
+            <li>Residents should be guided to the nearest exit using calm and clear instructions</li>
+            <li>Grab &amp; Go emergency bags should be taken if safely accessible</li>
+        </ul>
+        <p class="aims-label">6.2 Safe Evacuation:</p>
+        <ul class="bl">
+            <li>Follow the pre-designated escape routes marked by illuminated signage</li>
+            <li>Close doors behind you to slow fire spread</li>
+            <li>Do not use lifts or attempt to retrieve personal belongings</li>
+        </ul>
+        <p class="aims-label">6.3 Assembly Point:</p>
+        <ul class="bl">
+            <li>All persons must assemble at the designated outdoor assembly point</li>
+            <li>A roll call must be completed by the lead staff member</li>
+            <li>The Person in Charge or assigned fire marshal must report any missing persons to emergency services</li>
+        </ul>
+        <p class="aims-label">6.4 Emergency Services &amp; Post-Incident:</p>
+        <ul class="bl">
+            <li>Call 112 or 999 once safe and provide details of the fire</li>
+            <li>Do not re-enter the building until given all-clear by the fire officer</li>
+            <li>Complete an incident form and attend a debrief session</li>
+            <li>Notify HIQA where required</li>
+        </ul>
+    </main>
+    <footer class="footer"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Fire Safety &amp; Evacuation — Page 6 of 10</div></footer>
+</div>
+
+<!-- PAGE 7: PEEPs -->
+<div class="page">
+    <div class="top-band"></div>
+    <header class="header"><div class="logo-box"><div class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="logo-text"><span class="logo-name">Chosanta</span><span class="logo-sub">Management</span></div></div><div class="co-details"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div></header>
+    <main class="content">
+        <h1 class="doc-title">Fire Safety &amp; Evacuation Procedure</h1>
+        <p class="doc-sub">Section 7: Personal Emergency Evacuation Plans (PEEPs)</p>
+        <div class="sh"><span class="n">7</span> Personal Emergency Evacuation Plans (PEEPs)</div>
+        <p class="body-text">PEEPs are developed for residents who may require assistance in the event of a fire or emergency evacuation. These plans are essential for ensuring the safety and dignity of individuals with disabilities, mobility issues, or cognitive impairments.</p>
+        <p class="aims-label">7.1 Development of PEEPs:</p>
+        <ul class="bl">
+            <li>Each resident will have an individual PEEP developed during their admission process</li>
+            <li>The plan includes details of the resident's specific support needs, communication method, and evacuation route</li>
+            <li>The plan is agreed with the resident and/or their representative</li>
+        </ul>
+        <p class="aims-label">7.2 Staff Responsibilities:</p>
+        <ul class="bl">
+            <li>All relevant staff will be trained in the resident's PEEP and understand their role in the evacuation</li>
+            <li>Copies of the PEEPs will be stored in the resident's care file and in the Grab &amp; Go folder</li>
+        </ul>
+        <p class="aims-label">7.3 Review &amp; Updates:</p>
+        <ul class="bl">
+            <li>PEEPs will be reviewed every 6 months or sooner if the resident's needs change</li>
+            <li>Reviews will include input from the resident, key worker, and clinical team where required</li>
+        </ul>
+    </main>
+    <footer class="footer"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Fire Safety &amp; Evacuation — Page 7 of 10</div></footer>
+</div>
+
+<!-- PAGE 8: FIRE DRILLS -->
+<div class="page">
+    <div class="top-band"></div>
+    <header class="header"><div class="logo-box"><div class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="logo-text"><span class="logo-name">Chosanta</span><span class="logo-sub">Management</span></div></div><div class="co-details"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div></header>
+    <main class="content">
+        <h1 class="doc-title">Fire Safety &amp; Evacuation Procedure</h1>
+        <p class="doc-sub">Section 8: Fire Drills</p>
+        <div class="sh"><span class="n">8</span> Fire Drills</div>
+        <p class="body-text">Regular fire drills are essential to ensure all residents, staff, and visitors are prepared for a fire emergency. Drills provide an opportunity to test evacuation procedures, identify gaps, and build confidence in emergency response.</p>
+        <p class="aims-label">8.1 Frequency:</p>
+        <ul class="bl">
+            <li>Fire drills must be conducted at least once every 6 months</li>
+            <li>Additional drills should be held when new residents or staff join, or after any major layout changes</li>
+            <li>Both planned and unannounced drills may be used</li>
+        </ul>
+        <p class="aims-label">8.2 Procedure:</p>
+        <ul class="bl">
+            <li>Activate the alarm and simulate an evacuation</li>
+            <li>Ensure all staff carry out their roles (sweep, escort, roll call)</li>
+            <li>Assemble all persons at the designated assembly point</li>
+            <li>Complete a headcount and note the duration of evacuation</li>
+        </ul>
+        <p class="aims-label">8.3 Recording &amp; Review:</p>
+        <ul class="bl">
+            <li>Complete a fire drill report form after each drill</li>
+            <li>Note issues encountered, such as delays or resident distress</li>
+            <li>Use findings to improve the Fire Safety Plan and update staff training</li>
+        </ul>
+    </main>
+    <footer class="footer"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Fire Safety &amp; Evacuation — Page 8 of 10</div></footer>
+</div>
+
+<!-- PAGE 9: TRAINING -->
+<div class="page">
+    <div class="top-band"></div>
+    <header class="header"><div class="logo-box"><div class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="logo-text"><span class="logo-name">Chosanta</span><span class="logo-sub">Management</span></div></div><div class="co-details"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div></header>
+    <main class="content">
+        <h1 class="doc-title">Fire Safety &amp; Evacuation Procedure</h1>
+        <p class="doc-sub">Section 9: Training</p>
+        <div class="sh"><span class="n">9</span> Training</div>
+        <p class="body-text">All staff members are required to undergo fire safety training to ensure they are prepared to respond effectively to emergencies. Training is aligned with HIQA standards and legal obligations.</p>
+        <p class="aims-label">9.1 Induction Training:</p>
+        <ul class="bl">
+            <li>New staff must complete fire safety training during their induction period</li>
+            <li>Includes alarm response, evacuation routes, extinguisher use, and resident support</li>
+        </ul>
+        <p class="aims-label">9.2 Refresher Training:</p>
+        <ul class="bl">
+            <li>All staff must attend fire safety refresher training every two years or sooner if policy or layout changes</li>
+            <li>Training includes updates on emergency roles, equipment use, and regulatory changes</li>
+        </ul>
+        <p class="aims-label">9.3 Role-Specific Training:</p>
+        <ul class="bl">
+            <li>Staff with designated fire responsibilities (e.g., fire marshal, sweep coordinator) receive enhanced training</li>
+            <li>Training is recorded in the Training Register and audited annually</li>
+        </ul>
+        <p class="aims-label">9.4 Records:</p>
+        <ul class="bl">
+            <li>Training attendance is tracked and monitored by the Person in Charge</li>
+            <li>Lapsed or overdue training is flagged for urgent completion</li>
+        </ul>
+    </main>
+    <footer class="footer"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Fire Safety &amp; Evacuation — Page 9 of 10</div></footer>
+</div>
+
+<!-- PAGE 10: RECORDS & REVIEW -->
+<div class="page">
+    <div class="top-band"></div>
+    <header class="header"><div class="logo-box"><div class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="logo-text"><span class="logo-name">Chosanta</span><span class="logo-sub">Management</span></div></div><div class="co-details"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div></header>
+    <main class="content">
+        <h1 class="doc-title">Fire Safety &amp; Evacuation Procedure</h1>
+        <p class="doc-sub">Section 10: Records &amp; Review</p>
+        <div class="sh"><span class="n">10</span> Records &amp; Review</div>
+        <p class="body-text">Maintaining accurate fire safety records and regularly reviewing fire procedures are essential components of compliance and continuous safety improvement.</p>
+        <p class="aims-label">10.1 Fire Safety Records:</p>
+        <ul class="bl">
+            <li>Fire alarm tests and maintenance logs</li>
+            <li>Fire drill reports and evacuation timings</li>
+            <li>Staff fire safety training records</li>
+            <li>Equipment servicing certificates and PAT test logs</li>
+            <li>Personal Emergency Evacuation Plans (PEEPs)</li>
+        </ul>
+        <p class="aims-label">10.2 Review Schedule:</p>
+        <ul class="bl">
+            <li>Fire Safety Procedure reviewed annually or following a serious incident</li>
+            <li>Fire risk assessments reviewed at least annually or when the layout/use of the building changes</li>
+            <li>Lessons from drills, audits, or real incidents are used to update procedures</li>
+        </ul>
+        <p class="aims-label">10.3 Compliance:</p>
+        <ul class="bl">
+            <li>All records are securely stored and available for inspection by HIQA or fire authorities</li>
+            <li>Non-compliance is addressed with corrective actions and documented within 7 days</li>
+        </ul>
+    </main>
+    <footer class="footer"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Fire Safety &amp; Evacuation — Page 10 of 10</div></footer>
+</div>
+
+</body>
+</html>

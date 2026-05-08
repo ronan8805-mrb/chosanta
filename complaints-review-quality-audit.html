@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Complaints Review &amp; Quality Audit — Chosanta Management</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>@page{size:A4;margin:0}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}body{font-family:'Inter',sans-serif;background:#e8ecf1;color:#1a1610;display:flex;flex-direction:column;align-items:center;padding:40px 20px;gap:40px}@media print{body{background:#fff;padding:0;gap:0}.page{box-shadow:none;width:100%;min-height:unset}.pa{display:none!important}}.page{width:210mm;min-height:297mm;background:#fff;box-shadow:0 8px 40px rgba(13,27,42,.12);position:relative;overflow:hidden;display:flex;flex-direction:column}.tb{height:6px;background:linear-gradient(90deg,#c9a84c,#e0c070 40%,#c9a84c 70%,#a8893c)}.hd{display:flex;align-items:center;justify-content:space-between;padding:14px 40px 10px;border-bottom:2px solid #f0ede8;position:relative}.hd::after{content:'';position:absolute;bottom:-2px;left:40px;width:60px;height:3px;background:linear-gradient(90deg,#c9a84c,#e0c070);border-radius:2px}.lb{display:flex;align-items:center;gap:10px}.li{width:34px;height:34px;background:linear-gradient(135deg,#c9a84c,#a8893c);border-radius:7px;display:flex;align-items:center;justify-content:center}.li svg{width:18px;height:18px}.lt{display:flex;flex-direction:column;line-height:1}.ln{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#0d1b2a}.ls{font-size:7.5px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:#c9a84c;margin-top:2px}.co{text-align:right;font-size:9px;line-height:1.6;color:#5c5648}.co .cn{font-family:'Playfair Display',serif;font-size:12px;font-weight:700;color:#0d1b2a}.co .tg{font-size:7.5px;text-transform:uppercase;letter-spacing:2px;color:#c9a84c;font-weight:600}.ct{flex:1;padding:20px 40px 14px}.dt{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:#0d1b2a;margin-bottom:4px;position:relative;padding-bottom:10px}.dt::after{content:'';position:absolute;bottom:0;left:0;width:50px;height:3px;background:linear-gradient(90deg,#c9a84c,#e0c070);border-radius:2px}.ds{font-size:9px;color:#9a9484;text-transform:uppercase;letter-spacing:2.5px;font-weight:600;margin-bottom:12px}.sh{background:linear-gradient(135deg,#0d1b2a,#1b2d42);color:#fff;padding:5px 12px;border-radius:4px;margin:10px 0 5px;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;display:flex;align-items:center;gap:8px}.sh .n{background:linear-gradient(135deg,#c9a84c,#e0c070);color:#0d1b2a;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:800;flex-shrink:0}.bt{font-size:9.5px;line-height:1.55;color:#3d3830;margin-bottom:6px}table{width:100%;border-collapse:collapse;font-size:8.5px;margin-bottom:8px}th{background:linear-gradient(135deg,#0d1b2a,#1b2d42);color:#fff;padding:4px 6px;text-align:left;font-weight:700}td{padding:5px 6px;border-bottom:1px solid #f0ede8;color:#3d3830}tr:nth-child(even) td{background:#faf9f7}.sg{font-size:8.5px;color:#3d3830;margin-top:8px;padding:7px;border:1px dashed #c9a84c;border-radius:6px;background:#faf9f7}.sg span{display:block;margin-bottom:4px;border-bottom:1px dotted #ddd;padding-bottom:3px}.ft{padding:9px 40px;background:linear-gradient(135deg,#0d1b2a,#1b2d42);color:rgba(255,255,255,.8);font-size:8px;line-height:1.8;display:flex;justify-content:space-between;align-items:center;margin-top:auto}.fl{display:flex;flex-direction:column}.fl span{display:inline-flex;align-items:center;gap:5px}.fd{width:1px;height:26px;background:rgba(201,168,76,.3);margin:0 14px}.fr{text-align:right;font-size:7px;color:rgba(255,255,255,.5)}.pa{position:fixed;top:20px;right:20px;display:flex;gap:12px;z-index:100}.pa button{padding:12px 24px;border:none;border-radius:8px;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;box-shadow:0 4px 12px rgba(0,0,0,.15)}.bp{background:linear-gradient(135deg,#c9a84c,#e0c070);color:#0d1b2a}.bx{background:linear-gradient(135deg,#0d1b2a,#1b2d42);color:#fff}</style></head><body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<div class="pa"><button class="bp" onclick="window.print()">🖨️ Print</button><button class="bx" id="btn" onclick="savePDF()">📄 Save as PDF</button></div>
+<script>async function savePDF(){const btn=document.getElementById('btn');btn.disabled=true;try{const{jsPDF}=window.jspdf;const pdf=new jsPDF({orientation:'portrait',unit:'mm',format:'a4'});const pages=document.querySelectorAll('.page');for(let i=0;i<pages.length;i++){btn.textContent='⏳ '+(i+1)+'/'+pages.length;await new Promise(r=>setTimeout(r,300));const c=await html2canvas(pages[i],{scale:1.5,useCORS:true,backgroundColor:'#fff',width:pages[i].scrollWidth,height:pages[i].scrollHeight,logging:false});if(i>0)pdf.addPage();pdf.addImage(c.toDataURL('image/jpeg',0.92),'JPEG',0,0,210,297);c.width=0;c.height=0;}const b=pdf.output('blob');const u=URL.createObjectURL(b);const a=document.createElement('a');a.href=u;a.download='Chosanta_Complaints_Review_Quality_Audit.pdf';document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(u);}catch(e){alert('PDF error: '+e.message);}btn.textContent='📄 Save as PDF';btn.disabled=false;}</script>
+
+<!-- P1: Complaints Log & Review -->
+<div class="page"><div class="tb"></div>
+<header class="hd"><div class="lb"><div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="lt"><span class="ln">Chosanta</span><span class="ls">Management</span></div></div><div class="co"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div><div>Office 107, Brú Digital Hub, 56 West Street</div><div>Drogheda, Co. Louth · A92 E4CY</div></div></header>
+<main class="ct">
+<h1 class="dt">Complaints Log &amp; Monthly Review</h1><p class="ds">S.I. 674/2017 Regulation 20 · HIQA National Standards 2018</p>
+<p class="bt">All complaints must be logged on receipt and acknowledged within 5 working days. A full response must be provided within <strong>10 working days</strong>. Children, families, advocates, and anonymous complainants all have equal access to this process. Inspectors review both the log and the quality of the response.</p>
+
+<div class="sh"><span class="n">1</span> Individual Complaint Record</div>
+<table>
+<tr><th>Complaint Ref #</th><td></td><th>Date Received</th><td></td><th>Received By</th><td></td></tr>
+<tr><th>Complainant</th><td>☐ Child &nbsp; ☐ Family &nbsp; ☐ Staff &nbsp; ☐ Anonymous &nbsp; ☐ Other</td><th>Via</th><td colspan="3">☐ Verbal &nbsp; ☐ Written &nbsp; ☐ Email &nbsp; ☐ Advocate</td></tr>
+</table>
+<p class="bt"><strong>Nature of Complaint:</strong></p>
+<div style="border:1px solid #e0ddd8;border-radius:4px;padding:6px 10px;min-height:30px;font-size:9px;margin-bottom:6px"></div>
+<table>
+<tr><th>Acknowledgement Sent</th><td></td><th>Date</th><td></td></tr>
+<tr><th>Investigating Officer</th><td></td><th>Role</th><td></td></tr>
+<tr><th>Investigation Steps</th><td colspan="3"></td></tr>
+<tr><th>Outcome / Finding</th><td colspan="3">☐ Upheld &nbsp; ☐ Partially Upheld &nbsp; ☐ Not Upheld &nbsp; ☐ Referred to Tusla</td></tr>
+<tr><th>Response Sent To Complainant</th><td></td><th>Date</th><td></td></tr>
+<tr><th>Within 10 Working Days?</th><td colspan="3">☐ Yes &nbsp; ☐ No — Reason: ___________________________</td></tr>
+<tr><th>Learning / Service Change</th><td colspan="3"></td></tr>
+</table>
+<div class="sg"><span><strong>PIC Signature:</strong> _________________________ Date: __________</span></div>
+
+<div class="sh"><span class="n">2</span> Monthly Complaints Summary</div>
+<table>
+<tr><th>Month / Year</th><td></td><th>Total Received</th><td></td><th>Total Resolved</th><td></td></tr>
+</table>
+<table>
+<tr><th>Category</th><th>No.</th><th>Upheld</th><th>Not Upheld</th><th>Referred</th><th>Trend</th></tr>
+<tr><td>Care / support quality</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Staff conduct</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Communication / information</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Facilities / environment</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Other</td><td></td><td></td><td></td><td></td><td></td></tr>
+</table>
+<p class="bt"><strong>Key learning from complaints this month:</strong></p>
+<div style="border:1px solid #e0ddd8;border-radius:4px;padding:6px 10px;min-height:24px;font-size:9px;margin-bottom:6px"></div>
+<div class="sg">
+<span><strong>Reviewed By:</strong> _________________________ <strong>Role:</strong> _________________________ Date: __________</span>
+<span><strong>Ref:</strong> CM-CLR-001 · S.I. 674/2017 Reg.20 · HIQA Standard 5</span>
+</div>
+</main>
+<footer class="ft"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Complaints &amp; Quality Audit — Page 1 of 2</div></footer></div>
+
+<!-- P2: Quality Audit -->
+<div class="page"><div class="tb"></div>
+<header class="hd"><div class="lb"><div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="lt"><span class="ln">Chosanta</span><span class="ls">Management</span></div></div><div class="co"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div></header>
+<main class="ct">
+<h1 class="dt">Quarterly Quality Audit</h1><p class="ds">Internal Self-Assessment — Tusla Quality Improvement Framework · HIQA National Standards 2018</p>
+<p class="bt">This internal audit is completed by the PIC quarterly. It maps directly to the HIQA National Standards and the Tusla Quality Improvement Framework. Scoring: <strong>C = Compliant · SC = Substantially Compliant · NC = Non-Compliant</strong>. Non-compliant findings must be entered on the Quality Improvement Plan (QIP) with a time-bound action.</p>
+
+<table>
+<tr><th>Audit Date</th><td></td><th>Auditor</th><td></td><th>Period</th><td></td></tr>
+</table>
+
+<div class="sh"><span class="n">A</span> Standard 3 — Safe Care &amp; Support</div>
+<table>
+<tr><th>Criteria</th><th>C/SC/NC</th><th>Evidence / Action</th></tr>
+<tr><td>Child safeguarding statement current and displayed</td><td></td><td></td></tr>
+<tr><td>Children First training current for all staff</td><td></td><td></td></tr>
+<tr><td>Risk assessments in place for each child</td><td></td><td></td></tr>
+<tr><td>Absence Management Plans current for each child</td><td></td><td></td></tr>
+<tr><td>Medication audits completed monthly</td><td></td><td></td></tr>
+<tr><td>Incident log maintained; NIMS submissions current</td><td></td><td></td></tr>
+</table>
+
+<div class="sh"><span class="n">B</span> Standard 5 — Leadership, Governance &amp; Management</div>
+<table>
+<tr><th>Criteria</th><th>C/SC/NC</th><th>Evidence / Action</th></tr>
+<tr><td>Monthly governance meetings held and minutes recorded</td><td></td><td></td></tr>
+<tr><td>Quality Improvement Plan (QIP) active and reviewed</td><td></td><td></td></tr>
+<tr><td>Complaints log maintained; responses within 10 days</td><td></td><td></td></tr>
+<tr><td>Policies reviewed within last 12 months</td><td></td><td></td></tr>
+<tr><td>Statement of Purpose current and accurate</td><td></td><td></td></tr>
+</table>
+
+<div class="sh"><span class="n">C</span> Standard 6 — Responsive Workforce</div>
+<table>
+<tr><th>Criteria</th><th>C/SC/NC</th><th>Evidence / Action</th></tr>
+<tr><td>All staff supervision conducted every 6–8 weeks</td><td></td><td></td></tr>
+<tr><td>Annual performance appraisals completed</td><td></td><td></td></tr>
+<tr><td>Training matrix up to date; no gaps in mandatory training</td><td></td><td></td></tr>
+<tr><td>Garda vetting current for all staff (within 3 years)</td><td></td><td></td></tr>
+<tr><td>Staffing ratios appropriate to children's needs</td><td></td><td></td></tr>
+</table>
+
+<div class="sh"><span class="n">D</span> Fire &amp; Environmental Safety</div>
+<table>
+<tr><th>Criteria</th><th>C/SC/NC</th><th>Evidence / Action</th></tr>
+<tr><td>Quarterly fire drills completed and recorded</td><td></td><td></td></tr>
+<tr><td>PEEPs current for all children in residence</td><td></td><td></td></tr>
+<tr><td>Fire equipment serviced and certificates on file</td><td></td><td></td></tr>
+<tr><td>Maintenance log current; no outstanding safety issues</td><td></td><td></td></tr>
+</table>
+
+<div class="sh"><span class="n">E</span> Quality Improvement Actions from This Audit</div>
+<table>
+<tr><th>Finding</th><th>Standard</th><th>Action Required</th><th>Owner</th><th>Target Date</th><th>RAG</th></tr>
+<tr><td style="height:16px"></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="height:16px"></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="height:16px"></td><td></td><td></td><td></td><td></td><td></td></tr>
+</table>
+<p class="bt"><em>RAG: 🟢 On Track | 🟡 At Risk | 🔴 Overdue</em></p>
+
+<div class="sg">
+<span><strong>Auditor Signature:</strong> _________________________ Date: __________</span>
+<span><strong>Registered Provider / Director Sign-Off:</strong> _________________________ Date: __________</span>
+<span><strong>Legislative Basis:</strong> HIQA National Standards 2018 (Standards 3, 5, 6) · Tusla Quality Improvement Framework · S.I. 674/2017</span>
+<span><strong>Ref:</strong> CM-QQA-001 | Version 1.0 | May 2025 | Quarterly</span>
+</div>
+</main>
+<footer class="ft"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Complaints &amp; Quality Audit — Page 2 of 2</div></footer></div>
+
+</body></html>

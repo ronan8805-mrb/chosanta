@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incident Reporting Procedure — Chosanta Management</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        @page { size: A4; margin: 0; }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+        body { font-family: 'Inter', sans-serif; background: #e8ecf1; color: #1a1610; display: flex; flex-direction: column; align-items: center; padding: 40px 20px; gap: 40px; }
+        @media print { body { background: white; padding: 0; gap: 0; } .page { box-shadow: none; width: 100%; min-height: unset; } .print-actions { display: none !important; } }
+        .page { width: 210mm; min-height: 297mm; background: #fff; box-shadow: 0 8px 40px rgba(13,27,42,0.12); position: relative; overflow: hidden; display: flex; flex-direction: column; }
+        .top-band { height: 6px; background: linear-gradient(90deg, #c9a84c 0%, #e0c070 40%, #c9a84c 70%, #a8893c 100%); }
+        .hdr { display: flex; align-items: center; justify-content: space-between; padding: 16px 40px 12px; border-bottom: 2px solid #f0ede8; position: relative; }
+        .hdr::after { content: ''; position: absolute; bottom: -2px; left: 40px; width: 60px; height: 3px; background: linear-gradient(90deg, #c9a84c, #e0c070); border-radius: 2px; }
+        .lb { display: flex; align-items: center; gap: 10px; }
+        .li { width: 34px; height: 34px; background: linear-gradient(135deg, #c9a84c, #a8893c); border-radius: 7px; display: flex; align-items: center; justify-content: center; }
+        .li svg { width: 18px; height: 18px; }
+        .lt { display: flex; flex-direction: column; line-height: 1; }
+        .ln { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: #0d1b2a; }
+        .ls { font-size: 7.5px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: #c9a84c; margin-top: 2px; }
+        .cd { text-align: right; font-size: 9px; line-height: 1.6; color: #5c5648; }
+        .cd .cn { font-family: 'Playfair Display', serif; font-size: 12px; font-weight: 700; color: #0d1b2a; }
+        .cd .tg { font-size: 7.5px; text-transform: uppercase; letter-spacing: 2px; color: #c9a84c; font-weight: 600; }
+        .content { flex: 1; padding: 28px 40px 20px; }
+        .doc-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: #0d1b2a; margin-bottom: 4px; position: relative; padding-bottom: 12px; }
+        .doc-title::after { content: ''; position: absolute; bottom: 0; left: 0; width: 50px; height: 3px; background: linear-gradient(90deg, #c9a84c, #e0c070); border-radius: 2px; }
+        .doc-sub { font-size: 10px; color: #9a9484; text-transform: uppercase; letter-spacing: 2.5px; font-weight: 600; margin-bottom: 24px; }
+        .sh { background: linear-gradient(135deg, #0d1b2a, #1b2d42); color: #fff; padding: 8px 16px; border-radius: 4px; margin: 20px 0 12px; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; display: flex; align-items: center; gap: 8px; }
+        .sh .n { background: linear-gradient(135deg, #c9a84c, #e0c070); color: #0d1b2a; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 800; flex-shrink: 0; }
+        .bt { font-size: 12px; line-height: 1.75; color: #3d3830; margin-bottom: 16px; max-width: 620px; }
+        .al { font-size: 12px; font-weight: 600; color: #0d1b2a; margin-bottom: 10px; }
+        .bl { list-style: none; margin-bottom: 16px; }
+        .bl li { position: relative; padding: 12px 14px 12px 42px; margin-bottom: 6px; background: linear-gradient(135deg, #faf9f7, #f5f3ef); border-radius: 6px; border-left: 3px solid #c9a84c; font-size: 11.5px; line-height: 1.55; color: #3d3830; }
+        .bl li::before { content: '✓'; position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: #c9a84c; font-size: 13px; font-weight: 700; }
+        .bl.alert li { border-left-color: #d44; }
+        .bl.alert li::before { content: '⚠'; color: #d44; }
+        .ff { display: flex; align-items: baseline; gap: 8px; margin-bottom: 8px; font-size: 11.5px; color: #3d3830; }
+        .ff label { font-weight: 600; color: #0d1b2a; white-space: nowrap; min-width: 220px; }
+        .ff .line { flex: 1; border-bottom: 1px solid #c9a84c; min-width: 80px; height: 1px; margin-bottom: 2px; }
+        .ftr { padding: 14px 40px; background: linear-gradient(135deg, #0d1b2a, #1b2d42); color: rgba(255,255,255,0.8); font-size: 8.5px; line-height: 1.8; display: flex; justify-content: space-between; align-items: center; margin-top: auto; }
+        .fl { display: flex; flex-direction: column; } .fl span { display: inline-flex; align-items: center; gap: 5px; }
+        .fd { width: 1px; height: 32px; background: rgba(201,168,76,0.3); margin: 0 16px; }
+        .fr { text-align: right; font-size: 7.5px; color: rgba(255,255,255,0.5); }
+        .print-actions { position: fixed; top: 20px; right: 20px; display: flex; gap: 12px; z-index: 100; }
+        .print-actions button { padding: 12px 24px; border: none; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+        .bp { background: linear-gradient(135deg, #c9a84c, #e0c070); color: #0d1b2a; } .bp:hover { transform: translateY(-1px); }
+        .bpdf { background: linear-gradient(135deg, #0d1b2a, #1b2d42); color: #fff; } .bpdf:hover { transform: translateY(-1px); }
+    </style>
+</head>
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<div class="print-actions"><button class="bp" onclick="window.print()">🖨️ Print</button><button class="bpdf" id="savePdfBtn" onclick="savePDF()">📄 Save as PDF</button></div>
+<script>
+async function savePDF(){const btn=document.getElementById('savePdfBtn');btn.disabled=true;try{const{jsPDF}=window.jspdf;const pdf=new jsPDF({orientation:'portrait',unit:'mm',format:'a4'});const pages=document.querySelectorAll('.page');for(let i=0;i<pages.length;i++){btn.textContent='⏳ '+(i+1)+'/'+pages.length;await new Promise(r=>setTimeout(r,300));const c=await html2canvas(pages[i],{scale:1.5,useCORS:true,letterRendering:true,backgroundColor:'#fff',width:pages[i].scrollWidth,height:pages[i].scrollHeight,logging:false});if(i>0)pdf.addPage();pdf.addImage(c.toDataURL('image/jpeg',0.92),'JPEG',0,0,210,297);c.width=0;c.height=0;}const b=pdf.output('blob');const u=URL.createObjectURL(b);const a=document.createElement('a');a.href=u;a.download='Chosanta_Incident_Reporting_Procedure.pdf';document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(u);}catch(e){alert('PDF error: '+e.message);}btn.textContent='📄 Save as PDF';btn.disabled=false;}
+</script>
+
+<!-- P1: PURPOSE -->
+<div class="page"><div class="top-band"></div>
+<header class="hdr"><div class="lb"><div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="lt"><span class="ln">Chosanta</span><span class="ls">Management</span></div></div><div class="cd"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div><div>Office 107, Brú Digital Hub, 56 West Street</div><div>Drogheda, Co. Louth · A92 E4CY</div></div></header>
+<main class="content">
+    <h1 class="doc-title">Incident Reporting Procedure</h1><p class="doc-sub">Section 1: Purpose</p>
+    <div class="sh"><span class="n">1</span> Purpose</div>
+    <p class="bt">The purpose of this procedure is to ensure that all incidents, accidents, near-misses, and safeguarding concerns are identified, recorded, reported, and managed in a timely, consistent, and transparent manner.</p>
+    <p class="bt">This process protects the health, safety, and rights of all residents, staff, and visitors, and ensures compliance with the Health Act 2007, HIQA regulations, and HSE National Incident Management Framework.</p>
+    <ul class="bl">
+        <li>Learning is captured to prevent recurrence</li>
+        <li>Open disclosure is practiced in line with ethical standards</li>
+        <li>Incidents are used to drive service improvement and risk reduction</li>
+    </ul>
+</main>
+<footer class="ftr"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Incident Reporting — Page 1 of 6</div></footer></div>
+
+<!-- P2: SCOPE + DEFINITIONS -->
+<div class="page"><div class="top-band"></div>
+<header class="hdr"><div class="lb"><div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="lt"><span class="ln">Chosanta</span><span class="ls">Management</span></div></div><div class="cd"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div></header>
+<main class="content">
+    <h1 class="doc-title">Incident Reporting Procedure</h1><p class="doc-sub">Sections 2–3: Scope &amp; Definitions</p>
+    <div class="sh"><span class="n">2</span> Scope</div>
+    <p class="bt">This procedure applies to all individuals involved with Chosanta Management, covering all incidents on premises, during off-site duties, online, or involving property, injury, medication, or health and safety risks. Near-misses must also be reported.</p>
+    <ul class="bl">
+        <li>Full-time, part-time, relief, agency, and volunteer staff</li>
+        <li>Residents receiving care or support services</li>
+        <li>Family members or visitors on the premises</li>
+        <li>Contractors, maintenance personnel, and third-party professionals</li>
+    </ul>
+    <div class="sh"><span class="n">3</span> Definition of an Incident</div>
+    <p class="bt">Any event or circumstance that has caused harm, had the potential to cause harm, or interferes with the safety, care, or operations of the service.</p>
+    <p class="al">Examples of Reportable Incidents:</p>
+    <ul class="bl alert">
+        <li>Injuries: slips, falls, self-harm, assaults</li>
+        <li>Aggression: verbal abuse, physical aggression, threats</li>
+        <li>Medication incidents: missed doses, incorrect administration, drug errors</li>
+        <li>Safeguarding issues: abuse, neglect, exploitation</li>
+        <li>Environmental risks: fires, floods, electrical faults</li>
+        <li>Data breaches: lost records, unauthorised access</li>
+        <li>Missing persons: absconsion, residents not returning from leave</li>
+        <li>Emergency service call-outs; property damage or theft</li>
+    </ul>
+</main>
+<footer class="ftr"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Incident Reporting — Page 2 of 6</div></footer></div>
+
+<!-- P3: RESPONSIBILITIES + PROCESS -->
+<div class="page"><div class="top-band"></div>
+<header class="hdr"><div class="lb"><div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="lt"><span class="ln">Chosanta</span><span class="ls">Management</span></div></div><div class="cd"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div></header>
+<main class="content">
+    <h1 class="doc-title">Incident Reporting Procedure</h1><p class="doc-sub">Sections 4–5: Responsibilities &amp; Process</p>
+    <div class="sh"><span class="n">4</span> Reporting Responsibilities</div>
+    <ul class="bl">
+        <li><strong>All Staff:</strong> Report any incident or near-miss immediately to the PIC. Reporting is non-punitive — staff will not be penalised for reporting in good faith</li>
+        <li><strong>Person in Charge (PIC):</strong> Ensures Incident Report Form completed within 1 hour; initiates immediate safety actions; notifies HIQA, HSE, Gardaí if required</li>
+        <li><strong>Escalation:</strong> If abuse suspected, the Designated Safeguarding Officer (DSO) must be informed. For serious incidents, the Registered Provider is notified</li>
+    </ul>
+    <div class="sh"><span class="n">5</span> Reporting Process (5 Steps)</div>
+    <ul class="bl">
+        <li><strong>Step 1 — Ensure Immediate Safety:</strong> Provide first aid, remove others from danger, alert emergency services if needed</li>
+        <li><strong>Step 2 — Notify PIC:</strong> Report to the most senior staff on duty without delay. Also notify DSO if abuse suspected</li>
+        <li><strong>Step 3 — Complete Incident Report Form:</strong> Within 1 hour — date, time, location, people involved, witnesses, actions taken. Be factual and objective</li>
+        <li><strong>Step 4 — PIC Logs &amp; Reviews:</strong> PIC checks and signs the report, logs in the Incident Log Register, determines if external notifications required</li>
+        <li><strong>Step 5 — Escalation &amp; Debrief:</strong> If serious, escalate to management and notify family/next of kin. Arrange debrief and risk review</li>
+    </ul>
+</main>
+<footer class="ftr"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Incident Reporting — Page 3 of 6</div></footer></div>
+
+<!-- P4: DOCUMENTATION + NOTIFICATION -->
+<div class="page"><div class="top-band"></div>
+<header class="hdr"><div class="lb"><div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="lt"><span class="ln">Chosanta</span><span class="ls">Management</span></div></div><div class="cd"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div></header>
+<main class="content">
+    <h1 class="doc-title">Incident Reporting Procedure</h1><p class="doc-sub">Sections 6–7: Documentation &amp; Notification</p>
+    <div class="sh"><span class="n">6</span> Documentation</div>
+    <ul class="bl">
+        <li><strong>Incident Report Form:</strong> Completed within 1 hour — includes date/time, names involved, location, description, actions taken, signatures</li>
+        <li><strong>Incident Log Register:</strong> Central register maintained by PIC tracking trends, frequency, and investigation outcomes</li>
+        <li><strong>Notification Records:</strong> Copies of all external notifications retained on file with evidence of submission</li>
+        <li><strong>Resident File Entries:</strong> Factual entry in individual care record referencing the incident and follow-up support</li>
+    </ul>
+    <div class="sh"><span class="n">7</span> Notification</div>
+    <p class="al">External Notification Requirements:</p>
+    <ul class="bl alert">
+        <li><strong>HIQA:</strong> Within 3 working days (immediately if serious) — death, serious injury, allegation of abuse</li>
+        <li><strong>HSE Safeguarding Team:</strong> Immediately if abuse suspected — physical, financial, emotional, neglect</li>
+        <li><strong>Gardaí:</strong> Immediately if crime suspected — assault, theft, missing person</li>
+        <li><strong>Tusla:</strong> If a child is involved — allegations or concerns involving minors</li>
+        <li><strong>HSA:</strong> Within 10 days if notifiable — dangerous occurrence, major accident</li>
+        <li><strong>Next of Kin:</strong> As soon as practical — resident involved in incident or emergency</li>
+    </ul>
+</main>
+<footer class="ftr"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Incident Reporting — Page 4 of 6</div></footer></div>
+
+<!-- P5: DEBRIEF + RECORDS + REVIEW -->
+<div class="page"><div class="top-band"></div>
+<header class="hdr"><div class="lb"><div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="lt"><span class="ln">Chosanta</span><span class="ls">Management</span></div></div><div class="cd"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div></header>
+<main class="content">
+    <h1 class="doc-title">Incident Reporting Procedure</h1><p class="doc-sub">Sections 8–10: Debriefing, Records &amp; Review</p>
+    <div class="sh"><span class="n">8</span> Debriefing &amp; Learning</div>
+    <ul class="bl">
+        <li>Affected staff and residents invited to a supportive debrief focusing on emotional impact, facts, and improvement</li>
+        <li>Learning Reviews for serious/repeat incidents examining root causes and procedural gaps</li>
+        <li>Lessons shared at governance meetings, staff briefings, and annual training updates</li>
+        <li>Outcomes may trigger policy updates, new risk controls, or revised induction training</li>
+    </ul>
+    <div class="sh"><span class="n">9</span> Record Retention</div>
+    <ul class="bl">
+        <li>Incident records stored securely in locked cabinets or digital systems with restricted access</li>
+        <li>Records retained for minimum 7 years after case closure; if minor involved, until age 25</li>
+        <li>Records available to HIQA, HSE, or regulatory bodies upon request</li>
+        <li>Quarterly internal audits of incident records for completeness and compliance</li>
+        <li>After retention period, records destroyed securely with destruction log maintained</li>
+    </ul>
+    <div class="sh"><span class="n">10</span> Policy Review &amp; Audit</div>
+    <ul class="bl">
+        <li>Reviewed at least annually by the Registered Provider and PIC</li>
+        <li>Interim reviews following legislation changes, serious incidents, or audit recommendations</li>
+        <li>Monitored through quarterly audits, monthly management meetings, and staff supervision feedback</li>
+        <li>All staff encouraged to suggest improvements to the reporting process</li>
+    </ul>
+</main>
+<footer class="ftr"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Incident Reporting — Page 5 of 6</div></footer></div>
+
+<!-- P6: INCIDENT REPORT FORM TEMPLATE -->
+<div class="page"><div class="top-band"></div>
+<header class="hdr"><div class="lb"><div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="lt"><span class="ln">Chosanta</span><span class="ls">Management</span></div></div><div class="cd"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div></div></header>
+<main class="content">
+    <h1 class="doc-title">Incident Report Form</h1><p class="doc-sub">Template — Complete within 1 hour of incident</p>
+    <div class="ff"><label>Date &amp; Time of Incident:</label><span class="line"></span></div>
+    <div class="ff"><label>Location of Incident:</label><span class="line"></span></div>
+    <div class="ff"><label>Name(s) of Person(s) Involved:</label><span class="line"></span></div>
+    <div class="ff"><label>Name(s) of Witnesses:</label><span class="line"></span></div>
+    <div class="ff"><label>Description of Incident:</label><span class="line"></span></div>
+    <div class="ff"><label></label><span class="line"></span></div>
+    <div class="ff"><label></label><span class="line"></span></div>
+    <div class="ff"><label>Immediate Action Taken:</label><span class="line"></span></div>
+    <div class="ff"><label></label><span class="line"></span></div>
+    <div class="ff"><label>Was First Aid Given? (Yes/No):</label><span class="line"></span></div>
+    <div class="ff"><label>Emergency Services Contacted?:</label><span class="line"></span></div>
+    <div class="ff"><label>Reported to PIC by (Name):</label><span class="line"></span></div>
+    <div class="ff"><label>Date &amp; Time Reported:</label><span class="line"></span></div>
+    <div class="ff"><label>Staff Completing Report:</label><span class="line"></span></div>
+    <div class="ff"><label>Signature:</label><span class="line"></span></div>
+    <div class="sh"><span class="n">📋</span> PIC Review Section</div>
+    <div class="ff"><label>Follow-Up Actions Required:</label><span class="line"></span></div>
+    <div class="ff"><label></label><span class="line"></span></div>
+    <div class="ff"><label>Investigation Summary:</label><span class="line"></span></div>
+    <div class="ff"><label></label><span class="line"></span></div>
+    <div class="ff"><label>Date of PIC Review:</label><span class="line"></span></div>
+    <div class="ff"><label>PIC Signature:</label><span class="line"></span></div>
+</main>
+<footer class="ftr"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Incident Reporting — Page 6 of 6</div></footer></div>
+
+</body>
+</html>

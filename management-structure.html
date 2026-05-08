@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Management Structure — Chosanta Management</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        @page { size: A4; margin: 0; }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+        body { font-family: 'Inter', sans-serif; background: #e8ecf1; color: #1a1610; display: flex; flex-direction: column; align-items: center; padding: 40px 20px; gap: 40px; }
+        @media print { body { background: white; padding: 0; gap: 0; } .page { box-shadow: none; width: 100%; min-height: unset; } .pa { display: none !important; } }
+        .page { width: 210mm; min-height: 297mm; background: #fff; box-shadow: 0 8px 40px rgba(13,27,42,0.12); position: relative; overflow: hidden; display: flex; flex-direction: column; }
+        .tb { height: 6px; background: linear-gradient(90deg, #c9a84c 0%, #e0c070 40%, #c9a84c 70%, #a8893c 100%); }
+        .hd { display: flex; align-items: center; justify-content: space-between; padding: 16px 40px 12px; border-bottom: 2px solid #f0ede8; position: relative; }
+        .hd::after { content: ''; position: absolute; bottom: -2px; left: 40px; width: 60px; height: 3px; background: linear-gradient(90deg, #c9a84c, #e0c070); border-radius: 2px; }
+        .lb { display: flex; align-items: center; gap: 10px; }
+        .li { width: 34px; height: 34px; background: linear-gradient(135deg, #c9a84c, #a8893c); border-radius: 7px; display: flex; align-items: center; justify-content: center; }
+        .li svg { width: 18px; height: 18px; }
+        .lt { display: flex; flex-direction: column; line-height: 1; }
+        .ln { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: #0d1b2a; }
+        .ls { font-size: 7.5px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: #c9a84c; margin-top: 2px; }
+        .co { text-align: right; font-size: 9px; line-height: 1.6; color: #5c5648; }
+        .co .cn { font-family: 'Playfair Display', serif; font-size: 12px; font-weight: 700; color: #0d1b2a; }
+        .co .tg { font-size: 7.5px; text-transform: uppercase; letter-spacing: 2px; color: #c9a84c; font-weight: 600; }
+        .ct { flex: 1; padding: 28px 40px 20px; }
+        .dt { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: #0d1b2a; margin-bottom: 4px; position: relative; padding-bottom: 12px; }
+        .dt::after { content: ''; position: absolute; bottom: 0; left: 0; width: 50px; height: 3px; background: linear-gradient(90deg, #c9a84c, #e0c070); border-radius: 2px; }
+        .ds { font-size: 10px; color: #9a9484; text-transform: uppercase; letter-spacing: 2.5px; font-weight: 600; margin-bottom: 28px; }
+        /* Org chart */
+        .org { display: flex; flex-direction: column; align-items: center; gap: 0; }
+        .org-level { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; position: relative; }
+        .org-connector { width: 2px; height: 20px; background: linear-gradient(180deg, #c9a84c, #e0c070); margin: 0 auto; }
+        .org-card { background: linear-gradient(135deg, #0d1b2a, #1b2d42); color: #fff; border-radius: 8px; padding: 14px 20px; text-align: center; min-width: 200px; max-width: 260px; position: relative; }
+        .org-card.gold { background: linear-gradient(135deg, #c9a84c, #a8893c); color: #0d1b2a; }
+        .org-card .role { font-size: 12px; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 4px; }
+        .org-card .desc { font-size: 10px; opacity: 0.85; line-height: 1.5; }
+        .org-card.wide { min-width: 420px; max-width: 500px; }
+        .org-spread { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+        .org-spread .org-card { min-width: 150px; max-width: 180px; padding: 10px 14px; }
+        .org-spread .org-card .role { font-size: 10.5px; }
+        .org-spread .org-card .desc { font-size: 9px; }
+        .ft { padding: 14px 40px; background: linear-gradient(135deg, #0d1b2a, #1b2d42); color: rgba(255,255,255,0.8); font-size: 8.5px; line-height: 1.8; display: flex; justify-content: space-between; align-items: center; margin-top: auto; }
+        .fl { display: flex; flex-direction: column; } .fl span { display: inline-flex; align-items: center; gap: 5px; }
+        .fd { width: 1px; height: 32px; background: rgba(201,168,76,0.3); margin: 0 16px; }
+        .fr { text-align: right; font-size: 7.5px; color: rgba(255,255,255,0.5); }
+        .pa { position: fixed; top: 20px; right: 20px; display: flex; gap: 12px; z-index: 100; }
+        .pa button { padding: 12px 24px; border: none; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+        .bp { background: linear-gradient(135deg, #c9a84c, #e0c070); color: #0d1b2a; } .bp:hover { transform: translateY(-1px); }
+        .bx { background: linear-gradient(135deg, #0d1b2a, #1b2d42); color: #fff; } .bx:hover { transform: translateY(-1px); }
+    </style>
+</head>
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<div class="pa"><button class="bp" onclick="window.print()">🖨️ Print</button><button class="bx" id="savePdfBtn" onclick="savePDF()">📄 Save as PDF</button></div>
+<script>
+async function savePDF(){const btn=document.getElementById('savePdfBtn');btn.disabled=true;try{const{jsPDF}=window.jspdf;const pdf=new jsPDF({orientation:'portrait',unit:'mm',format:'a4'});const pages=document.querySelectorAll('.page');for(let i=0;i<pages.length;i++){btn.textContent='⏳ '+(i+1)+'/'+pages.length;await new Promise(r=>setTimeout(r,300));const c=await html2canvas(pages[i],{scale:1.5,useCORS:true,letterRendering:true,backgroundColor:'#fff',width:pages[i].scrollWidth,height:pages[i].scrollHeight,logging:false});if(i>0)pdf.addPage();pdf.addImage(c.toDataURL('image/jpeg',0.92),'JPEG',0,0,210,297);c.width=0;c.height=0;}const b=pdf.output('blob');const u=URL.createObjectURL(b);const a=document.createElement('a');a.href=u;a.download='Chosanta_Management_Structure.pdf';document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(u);}catch(e){alert('PDF error: '+e.message);}btn.textContent='📄 Save as PDF';btn.disabled=false;}
+</script>
+
+<div class="page"><div class="tb"></div>
+<header class="hd"><div class="lb"><div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="lt"><span class="ln">Chosanta</span><span class="ls">Management</span></div></div><div class="co"><div class="cn">Chosanta Management</div><div class="tg">Accommodation &amp; Property Solutions</div><div>Office 107, Brú Digital Hub, 56 West Street</div><div>Drogheda, Co. Louth · A92 E4CY</div></div></header>
+<main class="ct">
+    <h1 class="dt">Management Structure</h1>
+    <p class="ds">Organisational Hierarchy</p>
+
+    <div class="org">
+        <!-- Level 1: Board -->
+        <div class="org-level">
+            <div class="org-card gold wide">
+                <div class="role">Board of Directors</div>
+                <div class="desc">Strategic oversight, compliance, budgets, and overall governance</div>
+            </div>
+        </div>
+        <div class="org-connector"></div>
+
+        <!-- Level 2: Executive -->
+        <div class="org-level">
+            <div class="org-card wide">
+                <div class="role">Executive Team</div>
+                <div class="desc">MD / CEO · Operations Manager · Clinical Lead · Finance Officer</div>
+            </div>
+        </div>
+        <div class="org-connector"></div>
+
+        <!-- Level 3: Centre Management -->
+        <div class="org-level">
+            <div class="org-card gold wide">
+                <div class="role">Designated Centre Management</div>
+                <div class="desc">Person in Charge (PIC) &amp; PPIM — compliance, audit duties, and day-to-day service management</div>
+            </div>
+        </div>
+        <div class="org-connector"></div>
+
+        <!-- Level 4: Frontline + Compliance -->
+        <div class="org-spread">
+            <div class="org-card">
+                <div class="role">Care Workers</div>
+                <div class="desc">Direct support &amp; personal care</div>
+            </div>
+            <div class="org-card">
+                <div class="role">Relief Staff</div>
+                <div class="desc">Flexible cover &amp; shift support</div>
+            </div>
+            <div class="org-card">
+                <div class="role">Night Staff</div>
+                <div class="desc">Overnight care &amp; monitoring</div>
+            </div>
+            <div class="org-card">
+                <div class="role">Maintenance</div>
+                <div class="desc">Premises &amp; equipment</div>
+            </div>
+        </div>
+        <div class="org-connector"></div>
+
+        <!-- Level 5: Compliance & Safeguarding -->
+        <div class="org-spread">
+            <div class="org-card gold">
+                <div class="role">DLP</div>
+                <div class="desc">Designated Liaison Person — safeguarding</div>
+            </div>
+            <div class="org-card gold">
+                <div class="role">H&amp;S Officer</div>
+                <div class="desc">Health &amp; Safety compliance</div>
+            </div>
+            <div class="org-card gold">
+                <div class="role">DPO / GDPR</div>
+                <div class="desc">Data protection &amp; privacy</div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer class="ft"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Management Structure — Page 1 of 1</div></footer></div>
+
+</body>
+</html>

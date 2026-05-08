@@ -1,0 +1,272 @@
+=====Incident_Reporting_Procedure_Section1_Purpose.pdf=====
+Secure Living Support Services Ltd
+Incident Reporting Procedure - Section 1: Purpose
+1. Purpose
+The purpose of this procedure is to ensure that all incidents, accidents, near-misses, and
+safeguarding concerns are identified, recorded, reported, and managed in a timely, consistent, and
+transparent manner.
+This process protects the health, safety, and rights of all residents, staff, and visitors, and ensures
+the organisation complies with the Health Act 2007, HIQA regulations, and HSE National Incident
+Management Framework.
+It also ensures:
+- That learning is captured to prevent recurrence
+- That open disclosure is practiced in line with ethical standards
+- That incidents are used to drive service improvement and risk reduction
+
+=====Incident_Reporting_Procedure_Section2_Scope.pdf=====
+Secure Living Support Services Ltd
+Incident Reporting Procedure - Section 2: Scope
+2. Scope
+This procedure applies to all individuals involved with Secure Living Support Services Ltd, including:
+- Full-time, part-time, relief, agency, and volunteer staff
+- Residents receiving care or support services
+- Family members or visitors on the premises
+- Contractors, maintenance personnel, and third-party professionals
+It covers all incidents occurring:
+- On the premises, including residential units and communal areas
+- During staff duties, including off-site support and transportation
+- Online or via communication platforms, where abuse, threats, or data breaches may occur
+- Involving property, personal injury, medication, or health and safety risks
+This scope also includes near-misses, which, while not resulting in harm, pose a significant potential
+risk to safety or wellbeing and must also be reported.
+
+=====Incident_Reporting_Procedure_Section3_Definition_of_an_Incident.pdf=====
+Secure Living Support Services Ltd
+Incident Reporting Procedure - Section 3: Definition of an Incident
+3. Definition of an Incident
+An incident is defined as any event or circumstance that:
+- Has caused harm, injury, or distress to a resident, staff member, visitor, or contractor
+- Had the potential to cause harm (near-miss)
+- Interferes with the safety, care, or operations of the service
+Examples of Reportable Incidents:
+- Injuries: slips, falls, self-harm, assaults
+- Aggression: verbal abuse, physical aggression, threats
+- Medication incidents: missed doses, incorrect administration, or drug errors
+- Safeguarding issues: abuse, neglect, exploitation
+- Environmental risks: fires, floods, electrical faults, unsafe infrastructure
+- Health and safety breaches: broken equipment, unsafe procedures, hazards
+- Data breaches: lost records, unauthorised access to personal data
+- Missing persons: absconsion, residents not returning from leave
+- Emergency service call-outs: Gardaí, fire brigade, ambulance
+- Property damage or theft
+All staff must treat near-misses with the same urgency as actual harm events to prevent future risks.
+
+=====Incident_Reporting_Procedure_Section4_Reporting_Responsibilities.pdf=====
+Secure Living Support Services Ltd
+Incident Reporting Procedure - Section 4: Reporting Responsibilities
+4. Reporting Responsibilities
+Secure Living Support Services Ltd requires that all staff, regardless of role or seniority, understand
+and fulfil their duty to report incidents promptly and accurately.
+4.1 General Staff Duties
+- All staff must report any incident or near-miss immediately to their line manager or the Person in
+Charge (PIC).
+- Incident reporting is a non-punitive process - staff will not be penalised for reporting in good faith.
+- The first staff member who becomes aware of the incident is responsible for ensuring the report is
+submitted.
+4.2 Role of the Person in Charge (PIC)
+- Ensures that the Incident Report Form is completed within one hour of the incident.
+- Initiates immediate safety actions if required (e.g. medical attention, Garda call-out).
+- Notifies senior management and other agencies (e.g. HIQA, HSE, Gardaí) if the incident meets the
+criteria for mandatory notification.
+- Records the event in the Incident Log Register and ensures follow-up actions are taken.
+4.3 Escalation Responsibilities
+- If an incident involves potential abuse, the Designated Safeguarding Officer (DSO) must be
+informed.
+- The DSO will initiate a safeguarding response under the HSE Safeguarding Vulnerable Persons
+Policy.
+- For serious incidents, the Registered Provider must be notified and may take over case
+management.
+
+=====Incident_Reporting_Procedure_Section5_Reporting_Process.pdf=====
+Secure Living Support Services Ltd
+Incident Reporting Procedure - Section 5: Reporting Process
+5. Reporting Process
+To ensure swift and accurate handling of all incidents, staff must follow this 5-step reporting process:
+Step 1: Ensure Immediate Safety
+- Provide first aid or medical help if needed
+- Remove others from danger or distress
+- Alert emergency services (Gardaí, ambulance, fire) if the situation requires it
+Step 2: Notify the Person in Charge (PIC)
+- Report the incident to the most senior staff on duty without delay
+- If the incident involves suspected abuse, also notify the Designated Safeguarding Officer (DSO)
+Step 3: Complete the Incident Report Form
+- Fill out the form within one hour of the incident
+- Include date, time, location, people involved, witnesses, and actions taken
+- Be factual and objective - avoid opinions or assumptions
+Step 4: PIC Logs and Reviews
+- The PIC checks and signs the report
+- The incident is logged in the Incident Log Register
+- The PIC determines whether external notifications are required (e.g. HIQA, HSE, Gardaí)
+Step 5: Escalation and Debrief
+- If serious, escalate to senior management and notify family/next of kin
+- A debrief is arranged with staff and/or residents involved
+- A risk review or service improvement may be initiated based on findings
+
+=====Incident_Reporting_Procedure_Section6_Documentation.pdf=====
+Secure Living Support Services Ltd
+Incident Reporting Procedure - Section 6: Documentation
+6. Documentation
+Accurate and timely documentation is essential to ensure transparency, legal compliance, and
+continuous improvement in safeguarding practices.
+6.1 Incident Report Form
+- Every incident must be recorded using the Incident Report Form within 1 hour of the event.
+- The form must include:
+  - Date and time of incident
+  - Names of all individuals involved or affected
+  - Location and description of what occurred
+  - Immediate actions taken
+  - Name and signature of the reporting staff member and reviewing PIC
+6.2 Incident Log Register
+- All reports are logged in a central Incident Log Register maintained by the PIC or manager.
+- The register tracks incident trends, frequency, and outcomes of investigations.
+- It supports audit readiness and management oversight.
+6.3 Notification Records
+- Copies of any external notifications (e.g. to HIQA, HSE, Gardaí) must be retained on file.
+- Evidence of submission via portals, emails, or recorded phone calls should be attached to the
+incident file.
+6.4 Resident File Entries
+- If a resident is involved, a brief factual entry is made in their individual care record, referencing the
+incident and any follow-up support.
+
+=====Incident_Reporting_Procedure_Section7_Notification.pdf=====
+Secure Living Support Services Ltd
+Incident Reporting Procedure - Section 7: Notification
+7. Notification
+Timely notification of relevant internal and external parties is critical to ensure transparency,
+accountability, and compliance with legal obligations.
+7.1 Internal Notifications
+- The Person in Charge (PIC) is notified immediately for all incidents.
+- The Designated Safeguarding Officer (DSO) is informed if any abuse or protection concern is
+suspected.
+- The Registered Provider is informed of all serious incidents or patterns of concern.
+7.2 External Notifications
+Depending on the nature and severity of the incident, the following agencies may need to be
+notified:
+- HIQA: Within 3 working days (or immediately if serious) - death, serious injury, allegation of abuse
+- HSE Safeguarding Team: Immediately if abuse suspected - physical, financial, emotional, neglect
+- Gardaí: Immediately if a crime is suspected - assault, theft, missing person
+- Tusla (Child & Family Agency): If a child is involved - allegations or concerns involving minors
+- Health & Safety Authority (HSA): Within 10 days if notifiable - dangerous occurrence, major
+accident
+- Next of Kin: As soon as practical - resident involved in incident or emergency
+7.3 Evidence of Notification
+- Copies of notifications, emails, call records, or online submission receipts must be retained and
+stored securely with the incident report.
+- Notifications must be clearly recorded in the Incident Log Register with the date and staff
+responsible.
+
+=====Incident_Reporting_Procedure_Section8_Debriefing_and_Learning.pdf=====
+Secure Living Support Services Ltd
+Incident Reporting Procedure - Section 8: Debriefing and Learning
+8. Debriefing and Learning
+Following each significant incident, Secure Living Support Services Ltd ensures a structured
+debriefing process and promotes a culture of continuous learning.
+8.1 Staff and Resident Debrief
+- Affected staff and/or residents are invited to participate in a supportive debrief after the incident.
+- The debrief focuses on:
+  - Emotional impact
+  - Clarifying the facts of what happened
+  - Identifying what worked well and what could improve
+- The Person in Charge (PIC) facilitates the debrief or assigns a qualified staff member.
+8.2 Learning Reviews
+- For serious or repeat incidents, the management team may carry out a Learning Review to
+examine:
+  - Root causes of the incident
+  - Gaps in procedure, communication, or environment
+  - Opportunities to improve safety and care
+- These reviews may include input from frontline staff, clinical leads, or external advisors.
+8.3 Sharing and Training
+- Key lessons learned are shared at:
+  - Monthly Governance & Risk Management meetings
+  - Staff briefings and supervision sessions
+  - Annual training updates where policies or procedures are revised
+- Where necessary, staff receive additional targeted training.
+8.4 Policy and Practice Improvement
+- Learning outcomes may trigger:
+  - Updates to this Incident Reporting Procedure
+  - New risk controls or environmental changes
+  - Updates to induction training for new staff
+
+=====Incident_Reporting_Procedure_Section9_Record_Retention.pdf=====
+Secure Living Support Services Ltd
+Incident Reporting Procedure - Section 9: Record Retention
+9. Record Retention
+All records relating to incidents must be securely stored, readily accessible for inspection, and
+retained in line with legal and regulatory requirements.
+9.1 Storage and Security
+- Incident reports, logs, and related documents must be stored securely in a locked cabinet or
+secure digital system with restricted access.
+- Only authorised personnel (e.g. PIC, Registered Provider, Designated Safeguarding Officer) may
+access these records.
+9.2 Retention Period
+- All incident records must be retained for a minimum of 7 years after the closure of the case, or
+longer if specified by legal or regulatory requirements.
+- If the incident involves a minor, records must be kept until the person reaches age 25.
+9.3 Inspection and Review
+- Records must be available to HIQA, HSE, or other regulatory bodies upon request.
+- Internal audits of incident records will be conducted quarterly by the Registered Provider or
+designated quality officer to ensure completeness, accuracy, and compliance.
+9.4 Destruction of Records
+- After the appropriate retention period, records must be destroyed securely (e.g. shredding physical
+copies or deleting encrypted digital files).
+- A record of destroyed files must be maintained.
+
+=====Incident_Reporting_Procedure_Section10_Policy_Review_and_Audit.pdf=====
+Secure Living Support Services Ltd
+Incident Reporting Procedure - Section 10: Policy Review and Audit
+10. Policy Review and Audit
+This policy is a living document and must be reviewed regularly to ensure it reflects current
+legislation, best practice, and organisational learning.
+10.1 Scheduled Review
+- This procedure will be reviewed at least annually by the Registered Provider and Person in Charge
+(PIC).
+- Interim reviews will be carried out in response to:
+  - Changes in legislation or HIQA standards
+  - A serious incident that reveals policy or procedural gaps
+  - Recommendations from an audit, inspection, or safeguarding review
+10.2 Audit and Monitoring
+- The implementation of this policy is monitored through:
+  - Quarterly audits of the Incident Log and individual reports
+  - Monthly management meetings where trends are analysed
+  - Feedback from staff debriefs and supervision
+- Outcomes from audits are documented and actions tracked until resolved.
+10.3 Staff Feedback
+- All staff are encouraged to suggest improvements to the reporting process or this policy.
+- Suggestions are reviewed by the PIC or management team and, where appropriate, incorporated
+into the next policy update.
+
+=====Incident_Report_Form_Template.docx=====
+Incident Report Form
+This form must be completed within 1 hour of the incident and submitted to the Person in Charge.
+Date and Time of Incident:
+____________________________________________
+Location of Incident:
+____________________________________________
+Name(s) of Person(s) Involved:
+____________________________________________
+Name(s) of Witnesses:
+____________________________________________
+Description of Incident:
+____________________________________________
+Immediate Action Taken:
+____________________________________________
+Was First Aid Given? (Yes/No):
+____________________________________________
+Emergency Services Contacted? (Yes/No, specify):
+____________________________________________
+Reported to Person in Charge by (Name):
+____________________________________________
+Date and Time Reported:
+____________________________________________
+Name of Staff Completing this Report:
+____________________________________________
+Signature:
+____________________________________________
+Follow-Up Actions Required (by PIC):
+____________________________________________
+Investigation Summary:
+____________________________________________
+Date of PIC Review:
+____________________________________________
+PIC Signature:
+____________________________________________

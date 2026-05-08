@@ -1,0 +1,167 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Training Attendance &amp; Competency Sign-Off — Chosanta Management</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"><style>@page{size:A4;margin:0}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}body{font-family:'Inter',sans-serif;background:#e8ecf1;color:#1a1610;display:flex;flex-direction:column;align-items:center;padding:40px 20px;gap:40px}@media print{body{background:#fff;padding:0;gap:0}.page{box-shadow:none;width:100%;min-height:unset}.pa{display:none!important}}.page{width:210mm;min-height:297mm;background:#fff;box-shadow:0 8px 40px rgba(13,27,42,.12);position:relative;overflow:hidden;display:flex;flex-direction:column}.tb{height:6px;background:linear-gradient(90deg,#c9a84c,#e0c070 40%,#c9a84c 70%,#a8893c)}.hd{display:flex;align-items:center;justify-content:space-between;padding:12px 40px 8px;border-bottom:2px solid #f0ede8;position:relative}.hd::after{content:'';position:absolute;bottom:-2px;left:40px;width:60px;height:3px;background:linear-gradient(90deg,#c9a84c,#e0c070);border-radius:2px}.lb{display:flex;align-items:center;gap:10px}.li{width:32px;height:32px;background:linear-gradient(135deg,#c9a84c,#a8893c);border-radius:6px;display:flex;align-items:center;justify-content:center}.li svg{width:16px;height:16px}.lt{display:flex;flex-direction:column;line-height:1}.ln{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:#0d1b2a}.ls{font-size:7px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:#c9a84c;margin-top:2px}.co{text-align:right;font-size:8px;line-height:1.5;color:#5c5648}.co .cn{font-family:'Playfair Display',serif;font-size:11px;font-weight:700;color:#0d1b2a}.ct{flex:1;padding:14px 36px 10px}.dt{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#0d1b2a;margin-bottom:3px;position:relative;padding-bottom:8px}.dt::after{content:'';position:absolute;bottom:0;left:0;width:45px;height:3px;background:linear-gradient(90deg,#c9a84c,#e0c070);border-radius:2px}.ds{font-size:7.5px;color:#9a9484;text-transform:uppercase;letter-spacing:2px;font-weight:600;margin-bottom:8px}.sh{background:linear-gradient(135deg,#0d1b2a,#1b2d42);color:#fff;padding:3px 10px;border-radius:3px;margin:6px 0 3px;font-size:7.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;display:flex;align-items:center;gap:6px}.sh .n{background:linear-gradient(135deg,#c9a84c,#e0c070);color:#0d1b2a;width:14px;height:14px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:6.5px;font-weight:800;flex-shrink:0}.bt{font-size:8px;line-height:1.4;color:#3d3830;margin-bottom:4px}table{width:100%;border-collapse:collapse;font-size:7px;margin-bottom:5px}th{background:linear-gradient(135deg,#0d1b2a,#1b2d42);color:#fff;padding:2.5px 4px;text-align:left;font-weight:700}td{padding:3.5px 4px;border-bottom:1px solid #f0ede8;color:#3d3830}tr:nth-child(even) td{background:#faf9f7}.box{border:1px solid #e0ddd8;border-radius:3px;padding:3px 6px;min-height:16px;font-size:7px;margin-bottom:4px}.sg{font-size:7px;color:#3d3830;margin-top:5px;padding:5px;border:1px dashed #c9a84c;border-radius:5px;background:#faf9f7}.sg span{display:block;margin-bottom:2px;border-bottom:1px dotted #ddd;padding-bottom:2px}.ft{padding:7px 36px;background:linear-gradient(135deg,#0d1b2a,#1b2d42);color:rgba(255,255,255,.8);font-size:7px;line-height:1.7;display:flex;justify-content:space-between;align-items:center;margin-top:auto}.fl{display:flex;flex-direction:column}.fl span{display:inline-flex;align-items:center;gap:4px}.fd{width:1px;height:20px;background:rgba(201,168,76,.3);margin:0 10px}.fr{text-align:right;font-size:6.5px;color:rgba(255,255,255,.5)}.pa{position:fixed;top:20px;right:20px;display:flex;gap:12px;z-index:100}.pa button{padding:12px 24px;border:none;border-radius:8px;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;box-shadow:0 4px 12px rgba(0,0,0,.15)}.bp{background:linear-gradient(135deg,#c9a84c,#e0c070);color:#0d1b2a}.bx{background:linear-gradient(135deg,#0d1b2a,#1b2d42);color:#fff}</style></head><body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<div class="pa"><button class="bp" onclick="window.print()">🖨️ Print</button><button class="bx" id="btn">📄 Save as PDF</button></div>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var btn=document.getElementById('btn');
+  btn.addEventListener('click',async function(){
+    if(typeof html2canvas==='undefined'||!window.jspdf){alert('PDF libraries still loading — please wait and try again.');return;}
+    btn.disabled=true;
+    try{
+      var jsPDF=window.jspdf.jsPDF;
+      var pdf=new jsPDF({orientation:'portrait',unit:'mm',format:'a4'});
+      var pages=document.querySelectorAll('.page');
+      for(var i=0;i<pages.length;i++){
+        btn.textContent='⏳ '+(i+1)+'/'+pages.length;
+        await new Promise(function(r){setTimeout(r,500);});
+        var c=await html2canvas(pages[i],{scale:2,useCORS:true,backgroundColor:'#ffffff',logging:false});
+        if(i>0) pdf.addPage();
+        pdf.addImage(c.toDataURL('image/jpeg',0.95),'JPEG',0,0,210,297);
+      }
+      pdf.save('Chosanta_Training_Attendance_Sign_Off.pdf');
+    }catch(e){alert('PDF error: '+e.message);console.error(e);}
+    btn.textContent='📄 Save as PDF';btn.disabled=false;
+  });
+});
+</script>
+
+<!-- P1: Training Session Attendance -->
+<div class="page"><div class="tb"></div>
+<header class="hd"><div class="lb"><div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="lt"><span class="ln">Chosanta</span><span class="ls">Management</span></div></div><div class="co"><div class="cn">Chosanta Management</div><div>Office 107, Brú Digital Hub · Drogheda · A92 E4CY</div></div></header>
+<main class="ct">
+<h1 class="dt">Training Attendance &amp; Competency Sign-Off</h1><p class="ds">HIQA Standard 6 · S.I. 674/2017 · CORU · Children First Act 2015</p>
+<p class="bt">All mandatory and in-house training must be recorded with signed attendance sheets. HIQA inspectors will request evidence of training completion, competency demonstration, and refresher compliance. These records form part of each staff member's HR file and the centre's Governance File.</p>
+
+<div class="sh"><span class="n">1</span> Training Session Details</div>
+<table>
+<tr><th>Training Title</th><td colspan="3"></td></tr>
+<tr><th>Category</th><td>☐ Mandatory ☐ Refresher ☐ CPD ☐ Induction ☐ In-House ☐ External</td></tr>
+<tr><th>Topic Area</th><td>☐ Safeguarding/Children First ☐ TCI ☐ Fire Safety ☐ First Aid ☐ Medication Mgmt ☐ Manual Handling ☐ Food Safety ☐ GDPR ☐ Policy/Procedure ☐ Other: ___________</td></tr>
+<tr><th>Date(s)</th><td></td><th>Duration</th><td></td></tr>
+<tr><th>Venue / Platform</th><td></td><th>Mode</th><td>☐ In-person ☐ Online ☐ Blended</td></tr>
+<tr><th>Trainer / Provider</th><td></td><th>Organisation</th><td></td></tr>
+<tr><th>Trainer Qualifications</th><td colspan="3"></td></tr>
+</table>
+
+<div class="sh"><span class="n">2</span> Learning Objectives</div>
+<table>
+<tr><th>#</th><th>By the end of this session, participants will be able to:</th></tr>
+<tr><td>1</td><td></td></tr>
+<tr><td>2</td><td></td></tr>
+<tr><td>3</td><td></td></tr>
+<tr><td>4</td><td></td></tr>
+</table>
+
+<div class="sh"><span class="n">3</span> Attendance Register</div>
+<table>
+<tr><th>#</th><th>Staff Name</th><th>Role</th><th>Time In</th><th>Time Out</th><th>Full Attendance?</th><th>Staff Signature</th></tr>
+<tr><td>1</td><td></td><td></td><td></td><td></td><td>☐ Y ☐ Partial</td><td></td></tr>
+<tr><td>2</td><td></td><td></td><td></td><td></td><td>☐ Y ☐ Partial</td><td></td></tr>
+<tr><td>3</td><td></td><td></td><td></td><td></td><td>☐ Y ☐ Partial</td><td></td></tr>
+<tr><td>4</td><td></td><td></td><td></td><td></td><td>☐ Y ☐ Partial</td><td></td></tr>
+<tr><td>5</td><td></td><td></td><td></td><td></td><td>☐ Y ☐ Partial</td><td></td></tr>
+<tr><td>6</td><td></td><td></td><td></td><td></td><td>☐ Y ☐ Partial</td><td></td></tr>
+<tr><td>7</td><td></td><td></td><td></td><td></td><td>☐ Y ☐ Partial</td><td></td></tr>
+<tr><td>8</td><td></td><td></td><td></td><td></td><td>☐ Y ☐ Partial</td><td></td></tr>
+<tr><td>9</td><td></td><td></td><td></td><td></td><td>☐ Y ☐ Partial</td><td></td></tr>
+<tr><td>10</td><td></td><td></td><td></td><td></td><td>☐ Y ☐ Partial</td><td></td></tr>
+</table>
+<p class="bt"><strong>Staff absent / unable to attend:</strong></p>
+<table>
+<tr><th>Name</th><th>Reason</th><th>Catch-Up Arranged?</th><th>Catch-Up Date</th></tr>
+<tr><td></td><td></td><td>☐ Y</td><td></td></tr>
+<tr><td></td><td></td><td>☐ Y</td><td></td></tr>
+</table>
+
+<div class="sh"><span class="n">4</span> Competency Assessment &amp; Sign-Off</div>
+<p class="bt"><em>For training requiring demonstrated competency (e.g. TCI, First Aid, Medication, Fire Warden). Trainer confirms each participant has demonstrated the required skills.</em></p>
+<table>
+<tr><th>Staff Name</th><th>Competency Area</th><th>Demonstrated?</th><th>Trainer Sign-Off</th><th>Staff Sign-Off</th><th>Cert Issued?</th></tr>
+<tr><td></td><td></td><td>☐ Competent ☐ Needs review</td><td></td><td></td><td>☐ Y ☐ N/A</td></tr>
+<tr><td></td><td></td><td>☐ Competent ☐ Needs review</td><td></td><td></td><td>☐ Y ☐ N/A</td></tr>
+<tr><td></td><td></td><td>☐ Competent ☐ Needs review</td><td></td><td></td><td>☐ Y ☐ N/A</td></tr>
+<tr><td></td><td></td><td>☐ Competent ☐ Needs review</td><td></td><td></td><td>☐ Y ☐ N/A</td></tr>
+<tr><td></td><td></td><td>☐ Competent ☐ Needs review</td><td></td><td></td><td>☐ Y ☐ N/A</td></tr>
+<tr><td></td><td></td><td>☐ Competent ☐ Needs review</td><td></td><td></td><td>☐ Y ☐ N/A</td></tr>
+</table>
+<p class="bt"><strong>"Needs review" follow-up plan:</strong></p>
+<div class="box"></div>
+
+<div class="sg">
+<span><strong>Trainer Signature:</strong> _________________________ Date: __________</span>
+<span><strong>PIC / Training Coordinator:</strong> _________________________ Date: __________</span>
+<span><strong>Certificates filed in staff HR files?</strong> ☐ Yes</span>
+</div>
+</main>
+<footer class="ft"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Training Sign-Off — Page 1 of 2</div></footer></div>
+
+<!-- P2: Refresher + Mandatory Matrix + Evaluation -->
+<div class="page"><div class="tb"></div>
+<header class="hd"><div class="lb"><div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><div class="lt"><span class="ln">Chosanta</span><span class="ls">Management</span></div></div><div class="co"><div class="cn">Chosanta Management</div></div></header>
+<main class="ct">
+<h1 class="dt">Refresher Tracker, Evaluation &amp; Mandatory Compliance</h1><p class="ds">Section 2 — Training Governance Evidence</p>
+
+<div class="sh"><span class="n">5</span> Mandatory Training Refresher Schedule</div>
+<p class="bt">All mandatory training must be refreshed within the required cycle. Overdue training is a regulatory non-compliance and will be flagged by HIQA inspectors.</p>
+<table>
+<tr><th>Training</th><th>Frequency</th><th>Staff Name</th><th>Last Completed</th><th>Next Due</th><th>Status</th></tr>
+<tr><td>Children First / Safeguarding</td><td>Every 2 years</td><td></td><td></td><td></td><td>☐ Current ☐ Due ☐ <strong>Overdue</strong></td></tr>
+<tr><td>Children First / Safeguarding</td><td>Every 2 years</td><td></td><td></td><td></td><td>☐ Current ☐ Due ☐ <strong>Overdue</strong></td></tr>
+<tr><td>TCI (Therapeutic Crisis Intervention)</td><td>Annual</td><td></td><td></td><td></td><td>☐ Current ☐ Due ☐ <strong>Overdue</strong></td></tr>
+<tr><td>TCI (Therapeutic Crisis Intervention)</td><td>Annual</td><td></td><td></td><td></td><td>☐ Current ☐ Due ☐ <strong>Overdue</strong></td></tr>
+<tr><td>First Aid / CPR</td><td>Every 2 years</td><td></td><td></td><td></td><td>☐ Current ☐ Due ☐ <strong>Overdue</strong></td></tr>
+<tr><td>Fire Safety / Warden</td><td>Annual</td><td></td><td></td><td></td><td>☐ Current ☐ Due ☐ <strong>Overdue</strong></td></tr>
+<tr><td>Medication Management</td><td>Annual</td><td></td><td></td><td></td><td>☐ Current ☐ Due ☐ <strong>Overdue</strong></td></tr>
+<tr><td>Manual Handling</td><td>Every 3 years</td><td></td><td></td><td></td><td>☐ Current ☐ Due ☐ <strong>Overdue</strong></td></tr>
+<tr><td>Food Hygiene (HACCP)</td><td>Every 3 years</td><td></td><td></td><td></td><td>☐ Current ☐ Due ☐ <strong>Overdue</strong></td></tr>
+<tr><td>GDPR / Data Protection</td><td>Annual</td><td></td><td></td><td></td><td>☐ Current ☐ Due ☐ <strong>Overdue</strong></td></tr>
+</table>
+
+<div class="sh"><span class="n">6</span> Training Session Evaluation</div>
+<p class="bt"><em>Completed by trainer/PIC. Demonstrates quality of training delivery and learning outcomes achieved.</em></p>
+<table>
+<tr><th>Question</th><th>Rating / Response</th></tr>
+<tr><td>Were all learning objectives achieved?</td><td>☐ Fully ☐ Mostly ☐ Partially ☐ Not met</td></tr>
+<tr><td>Participant engagement level</td><td>☐ Excellent ☐ Good ☐ Fair ☐ Poor</td></tr>
+<tr><td>Knowledge test / quiz completed?</td><td>☐ Yes — pass rate: ____% ☐ N/A</td></tr>
+<tr><td>Practical assessment completed?</td><td>☐ Yes ☐ N/A</td></tr>
+<tr><td>Any staff require additional support / re-training?</td><td>☐ No ☐ Yes — name(s):</td></tr>
+<tr><td>Training materials provided to participants?</td><td>☐ Yes ☐ N/A</td></tr>
+</table>
+<p class="bt"><strong>Participant feedback summary:</strong></p>
+<div class="box"></div>
+<p class="bt"><strong>Improvements for next delivery:</strong></p>
+<div class="box"></div>
+
+<div class="sh"><span class="n">7</span> Induction Training Checklist (New Staff)</div>
+<p class="bt"><em>All items must be completed within first 2 weeks. Sign off each item as delivered.</em></p>
+<table>
+<tr><th>Induction Topic</th><th>Delivered?</th><th>Date</th><th>Delivered By</th><th>Staff Initials</th></tr>
+<tr><td>Centre tour &amp; introductions</td><td>☐</td><td></td><td></td><td></td></tr>
+<tr><td>Statement of Purpose &amp; Function</td><td>☐</td><td></td><td></td><td></td></tr>
+<tr><td>Safeguarding / Children First policy</td><td>☐</td><td></td><td></td><td></td></tr>
+<tr><td>DLP / Mandated Persons briefing</td><td>☐</td><td></td><td></td><td></td></tr>
+<tr><td>Fire safety &amp; evacuation procedure</td><td>☐</td><td></td><td></td><td></td></tr>
+<tr><td>Medication management policy</td><td>☐</td><td></td><td></td><td></td></tr>
+<tr><td>Missing child / absence procedure</td><td>☐</td><td></td><td></td><td></td></tr>
+<tr><td>Restrictive practice policy</td><td>☐</td><td></td><td></td><td></td></tr>
+<tr><td>Complaints procedure</td><td>☐</td><td></td><td></td><td></td></tr>
+<tr><td>GDPR / confidentiality</td><td>☐</td><td></td><td></td><td></td></tr>
+<tr><td>Health &amp; safety / manual handling</td><td>☐</td><td></td><td></td><td></td></tr>
+<tr><td>Lone working / on-call procedures</td><td>☐</td><td></td><td></td><td></td></tr>
+<tr><td>Shift handover process</td><td>☐</td><td></td><td></td><td></td></tr>
+<tr><td>Keyworking &amp; care planning overview</td><td>☐</td><td></td><td></td><td></td></tr>
+<tr><td>Code of Behaviour / professional conduct</td><td>☐</td><td></td><td></td><td></td></tr>
+</table>
+
+<div class="sg">
+<span><strong>New Staff Member:</strong> _________________________ Start Date: __________</span>
+<span><strong>All Induction Items Completed?</strong> ☐ Yes ☐ No — outstanding items to be completed by: __________</span>
+<span><strong>PIC Sign-Off:</strong> _________________________ Date: __________</span>
+<span><strong>Legislative Basis:</strong> HIQA National Standards 2018 (Standard 6) · S.I. 674/2017 · Children First Act 2015 · CORU Registration · Safety, Health &amp; Welfare at Work Act 2005</span>
+<span><strong>Ref:</strong> CM-TAS-001 | Version 1.0 | May 2025 | <strong>Filed in:</strong> Staff HR File &amp; Governance File</span>
+</div>
+</main>
+<footer class="ft"><div class="fl"><span>✉ info@chosanta.com</span><span>📍 Drogheda, Co. Louth · A92 E4CY</span></div><div class="fd"></div><div class="fr">Chosanta Management<br>Training Sign-Off — Page 2 of 2</div></footer></div>
+
+</body></html>
